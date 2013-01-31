@@ -20,7 +20,8 @@ public class HibernateSession {
 	
 	private static Session hibernateSession;
 	private static Stack<Transaction> transactions = new Stack<>();
-
+	private static int pendingTransactions = 0;
+	
 	public static Session get() {
 		ensureInitialized();
 		return hibernateSession;
@@ -49,14 +50,21 @@ public class HibernateSession {
 	public static void beginTransaction() {
 		ensureInitialized();
 		transactions.add(hibernateSession.beginTransaction());
+		pendingTransactions++;
 	}
 	
 	public static void commitTransaction() {
 		if(transactions.isEmpty()) {
 			throw new IllegalStateException("No pending transactions to commit during call to commitTransaction()");
 		}
-		
 		ensureInitialized();
+		
+		pendingTransactions--;
+		
+		// Only commit the transactions if this is the outermost transaction
+		if(pendingTransactions != 0)
+			return;
+		
 		for(Transaction txToCommit : transactions){
 			try {
 				txToCommit.commit();
@@ -64,7 +72,7 @@ public class HibernateSession {
 				System.err.println(he);
 				he.printStackTrace(System.err);
 			} 
-		}
+		}	
 	}
 	
 	public static void rollbackTransaction() {
