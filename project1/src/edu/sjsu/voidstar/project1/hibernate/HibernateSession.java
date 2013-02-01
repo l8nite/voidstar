@@ -1,7 +1,5 @@
 package edu.sjsu.voidstar.project1.hibernate;
 
-import java.util.Stack;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,27 +17,111 @@ import edu.sjsu.voidstar.project1.dao.Entity;
 public class HibernateSession {
 	
 	private static Session hibernateSession;
-	private static Stack<Transaction> transactions = new Stack<>();
-	private static int pendingTransactions = 0;
+	private static Transaction transaction;
 	
+	/**
+	 * @return The application's current Hibernate Session object.
+	 */
 	public static Session get() {
-		ensureInitialized();
+		if (!isInitialized()) {
+			initialize();
+		}
+		assertInitialized();
 		return hibernateSession;
 	}
 	
-	private static void initializeSession() {
-		SessionFactory sessionFactory = null;
-		HibernateModule module = new HibernateModule();
+	/**
+	 * Starts a new database Transaction.
+	 */
+	public static void beginTransaction() {
+		assertInitialized();
+		assertNoPendingTransaction();
+		transaction = hibernateSession.beginTransaction();
+	}
+
+	/**
+	 * Commits a database transaction. 
+	 */
+	public static void commitTransaction() {
+		assertInitialized();
+		assertPendingTransaction();
+		
 		try {
-			Configuration config = new Configuration();
-			config.setProperties(module.getProperties());
-			
-			for (Class<? extends Entity> entityClass : module.getClasses()) {
-				config.addClass(entityClass);
-			}
-			
-			config.configure();
-			hibernateSession = config.buildSessionFactory().openSession();
+			transaction.commit();
+		} catch (HibernateException he) {
+			System.err.println(he);
+			he.printStackTrace(System.err);
+		} finally {
+			transaction = null;
+		}
+	}
+	
+	/**
+	 * Rolls back a databse transaction.
+	 */
+	public static void rollbackTransaction() {
+		assertInitialized();
+		assertPendingTransaction();
+		
+		try {
+			transaction.rollback();
+		} catch (HibernateException he) {
+			System.err.println(he);
+			he.printStackTrace(System.err);
+		} finally {
+			transaction = null;
+		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * Throws a RuntimeException if hibernateSession has not been initialized.
+	 */
+	private static void assertInitialized() {
+		if(!isInitialized()){
+			throw new RuntimeException("The HibernateSession has not been initialized. Use HibernateSession.get() to initialize.");
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * Returns true if hibernateSession is not null.
+	 */
+	private static boolean isInitialized() {
+		return hibernateSession != null;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * Throws a HibernateException if transaction is null.
+	 */
+	private static void assertPendingTransaction() {
+		if(transaction == null){
+			throw new HibernateException("No Transaction is active.");
+		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * Throws a HibernateException if transaction is not null.
+	 */
+	private static void assertNoPendingTransaction() {
+		if(transaction != null){
+			rollbackTransaction();
+			throw new HibernateException("A Transaction is already active.");
+		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * Intializes the hibernateSession variable.
+	 */
+	private static void initialize() {
+		SessionFactory sessionFactory = null;
+		try {
+			Configuration config = loadConfiguration(new HibernateModule());
+			sessionFactory = config.buildSessionFactory();
+			hibernateSession = sessionFactory.openSession();
 		} finally {
 			if (sessionFactory != null) {
 				sessionFactory.close();
@@ -47,48 +129,19 @@ public class HibernateSession {
 		}
 	}
 
-	public static void beginTransaction() {
-		ensureInitialized();
-		transactions.add(hibernateSession.beginTransaction());
-		pendingTransactions++;
-	}
-	
-	public static void commitTransaction() {
-		if(transactions.isEmpty()) {
-			throw new IllegalStateException("No pending transactions to commit during call to commitTransaction()");
-		}
-		ensureInitialized();
+	/*
+	 * (non-Javadoc)
+	 * Returns a Configuration object initialized using the settings from the argument HibernateModule.
+	 */
+	private static Configuration loadConfiguration(HibernateModule module) {
+		Configuration config = new Configuration();
+		config.setProperties(module.getProperties());
 		
-		pendingTransactions--;
-		
-		// Only commit the transactions if this is the outermost transaction
-		if(pendingTransactions != 0)
-			return;
-		
-		for(Transaction txToCommit : transactions){
-			try {
-				txToCommit.commit();
-			} catch (HibernateException he) {
-				System.err.println(he);
-				he.printStackTrace(System.err);
-			} 
-		}	
-	}
-	
-	public static void rollbackTransaction() {
-		if(transactions.isEmpty()) {
-			throw new IllegalStateException("No pending transactions to commit during call to rollbackTransaction()");
+		for (Class<? extends Entity> entityClass : module.getClasses()) {
+			config.addClass(entityClass);
 		}
-		transactions.pop();
-	}
-	
-	private static void ensureInitialized() {
-		if(!isInitialized()){
-			initializeSession();
-		}
-	}
-
-	private static boolean isInitialized() {
-		return hibernateSession != null;
+		
+		config.configure();
+		return config;
 	}
 }
