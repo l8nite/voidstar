@@ -2,7 +2,7 @@ package edu.sjsu.voidstar.project1.dao;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
-public class Entity {
+public class HEntity {
 	
 	public void save() {
 		HibernateSession.get().save(this);
