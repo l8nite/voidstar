@@ -1,7 +1,10 @@
 package edu.sjsu.voidstar.project1.dao;
 
+import org.hibernate.annotations.Entity;
+
 
 // TODO
-public class Country extends Entity {
+@Entity
+public class Country extends HEntity {
 
 }

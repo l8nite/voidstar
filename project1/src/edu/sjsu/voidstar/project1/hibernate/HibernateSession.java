@@ -6,7 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import edu.sjsu.voidstar.project1.dao.Entity;
+import edu.sjsu.voidstar.project1.dao.HEntity;
 
 /**
  * This class is responsible for maintaining a persistent Session for the life of the program 
@@ -137,11 +137,10 @@ public class HibernateSession {
 		Configuration config = new Configuration();
 		config.setProperties(module.getProperties());
 		
-		for (Class<? extends Entity> entityClass : module.getClasses()) {
+		for (Class<? extends HEntity> entityClass : module.getClasses()) {
 			config.addClass(entityClass);
 		}
 		
-		config.configure();
 		return config;
 	}
 }
