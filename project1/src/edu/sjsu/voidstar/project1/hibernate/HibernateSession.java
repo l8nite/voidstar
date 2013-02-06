@@ -138,7 +138,7 @@ public class HibernateSession {
 		config.setProperties(module.getProperties());
 		
 		for (Class<? extends HEntity> entityClass : module.getClasses()) {
-			config.addClass(entityClass);
+			config.addAnnotatedClass(entityClass);
 		}
 		
 		return config;
