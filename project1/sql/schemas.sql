@@ -20,13 +20,23 @@ CREATE TABLE `Country` (
 
 DROP TABLE IF EXISTS `CountryLanguage`;
 CREATE TABLE `CountryLanguage` (
-    `CountryCode` char(3) NOT NULL DEFAULT '',
-    `Language` char(30) NOT NULL DEFAULT '',
+    `CountryCode` char(3) NOT NULL,
+    `LanguageID` int(11) NOT NULL,
     `IsOfficial` char(1) NOT NULL DEFAULT 'F',
     `Percentage` float(4 , 1 ) NOT NULL DEFAULT '0.0',
     FOREIGN KEY (CountryCode)
         REFERENCES Country (Code)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (LanguageID)
+        REFERENCES Language (ID)
         ON DELETE CASCADE ON UPDATE CASCADE
+)  ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `Language`;
+CREATE TABLE `Language` (
+    `ID` int(11) NOT NULL AUTO_INCREMENT,
+    `Language` char(30) NOT NULL DEFAULT '',
+	PRIMARY KEY (`ID`)
 )  ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `City`;
@@ -42,11 +52,12 @@ CREATE TABLE `City` (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `InfectedCity`;
-CREATE TABLE `InfectedCity` (
+DROP TABLE IF EXISTS `Infection`;
+CREATE TABLE `Infection` (
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
     `CityID` int(11) NOT NULL,
-    `ZombiePopulation` int(11) NOT NULL DEFAULT '0',
-    PRIMARY KEY (`CityID`),
+    `Zombies` int(11) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`ID`),
     FOREIGN KEY (CityID)
         REFERENCES Country (Code)
         ON DELETE CASCADE ON UPDATE CASCADE
