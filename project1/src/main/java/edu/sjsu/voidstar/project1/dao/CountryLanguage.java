@@ -52,7 +52,7 @@ public class CountryLanguage  extends HEntity {
 		return isOfficial;
 	}
 
-	public void setIsOfficial(IsOfficial isOfficialt) {
+	public void setIsOfficial(IsOfficial isOfficial) {
 		this.isOfficial = isOfficial;
 	}
 	
