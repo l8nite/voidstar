@@ -8,7 +8,7 @@ public class Country extends HEntity {
 	@Id
 	private String code;
 	private String name;
-	
+
 	private Continent continent;
 	private String region;
 	private Float surfaceArea;
