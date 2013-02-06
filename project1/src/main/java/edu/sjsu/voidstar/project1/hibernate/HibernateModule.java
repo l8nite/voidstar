@@ -32,7 +32,7 @@ public class HibernateModule {
 	Properties getProperties(){
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-		properties.put("hibernate.connection.driver.class", "com.mysql.jdbc.Driver");
+		properties.put("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
 		properties.put("hibernate.connection.url", "jdbc:mysql://kong.idlemonkeys.net:3306/se157bproject1");
 		properties.put("hibernate.connection.username", "jcampos");
 		properties.put("hibernate.connection.password", "sopmacj");
