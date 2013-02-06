@@ -118,16 +118,10 @@ public class HibernateSession {
 	 */
 	private static void initialize() {
 		SessionFactory sessionFactory = null;
-		try {
-			Configuration config = loadConfiguration(new HibernateModule());
-			sessionFactory = config.buildSessionFactory();
-			hibernateSession = sessionFactory.openSession();
-		} finally {
-			if (sessionFactory != null) {
-				sessionFactory.close();
-			}
-		}
-	}
+		Configuration config = loadConfiguration(new HibernateModule());
+		sessionFactory = config.buildSessionFactory();
+		hibernateSession = sessionFactory.openSession();
+}
 
 	/*
 	 * (non-Javadoc)
@@ -136,9 +130,9 @@ public class HibernateSession {
 	private static Configuration loadConfiguration(HibernateModule module) {
 		Configuration config = new Configuration();
 		config.setProperties(module.getProperties());
-		
+
 		for (Class<? extends HEntity> entityClass : module.getClasses()) {
-			config.addClass(entityClass);
+			config.addAnnotatedClass(entityClass);
 		}
 		
 		return config;
