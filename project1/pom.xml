@@ -41,7 +41,12 @@
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
 		<version>5.1.6</version>
-	</dependency>         
+	</dependency>
+    <dependency>
+    	<groupId>jboss</groupId>
+    	<artifactId>javassist</artifactId>
+    	<version>3.7.ga</version>
+    </dependency>
   </dependencies>
   <scm>
   	<url>http://github.com/l8nite/voidstar</url>
