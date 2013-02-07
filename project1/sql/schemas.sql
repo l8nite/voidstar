@@ -24,6 +24,7 @@ CREATE TABLE `CountryLanguage` (
     `LanguageID` int(11) NOT NULL,
     `IsOfficial` char(1) NOT NULL DEFAULT 'F',
     `Percentage` float(4 , 1 ) NOT NULL DEFAULT '0.0',
+    PRIMARY KEY (CountryCode, LanguageID),
     FOREIGN KEY (CountryCode)
         REFERENCES Country (Code)
         ON DELETE CASCADE ON UPDATE CASCADE,
