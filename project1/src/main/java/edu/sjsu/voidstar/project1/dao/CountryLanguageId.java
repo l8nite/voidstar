@@ -13,11 +13,19 @@ public class CountryLanguageId implements Serializable {
 	}
 
 	public boolean equals(Object object) {
+		if (countryCode == null || languageId == null || object == null) { 
+			return false;
+		}
+		
 		if (object instanceof CountryLanguageId) {
 			CountryLanguageId otherId = (CountryLanguageId) object;
+			
+			if (otherId.countryCode == null || otherId.languageId == null) {
+				return false;
+			}
+			
 			return (otherId.countryCode == this.countryCode && otherId.languageId == this.languageId);
 		}
-
 		return false;
 	}
 }
