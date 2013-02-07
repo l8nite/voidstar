@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import edu.sjsu.voidstar.project1.dao.City;
+import edu.sjsu.voidstar.project1.dao.CountryLanguage;
 import edu.sjsu.voidstar.project1.dao.HEntity;
 import edu.sjsu.voidstar.project1.dao.Country;
+import edu.sjsu.voidstar.project1.dao.Language;
 
 /**
  * Contains configuration data for the Hibernate connection. 
@@ -21,6 +24,9 @@ public class HibernateModule {
 	List<Class<? extends HEntity>> getClasses() {
 		List<Class<? extends HEntity>> entityClasses = new ArrayList<>();
 		entityClasses.add(Country.class);
+		entityClasses.add(City.class);
+		entityClasses.add(CountryLanguage.class);
+		entityClasses.add(Language.class);
 		verifyClassesAreAnnotated(entityClasses);
 		return entityClasses;
 	}
@@ -36,7 +42,7 @@ public class HibernateModule {
 		properties.put("hibernate.connection.username", "jcampos");
 		properties.put("hibernate.connection.password", "sopmacj");
 		properties.put("hibernate.current_session_context_class", "org.hibernate.context.ThreadLocalSessionContext");
-		properties.put("show.sql", "true");
+		properties.put("hibernate.show.sql", "true");
 		return properties;
 	}
 	

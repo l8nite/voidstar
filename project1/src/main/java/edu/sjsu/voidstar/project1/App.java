@@ -1,11 +1,13 @@
 package edu.sjsu.voidstar.project1;
 
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.criterion.Restrictions;
 
-import edu.sjsu.voidstar.project1.dao.Continent;
 import edu.sjsu.voidstar.project1.dao.Country;
+import edu.sjsu.voidstar.project1.dao.CountryLanguage;
+import edu.sjsu.voidstar.project1.dao.Language;
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
 /**
@@ -22,14 +24,22 @@ public class App
 	    		.createCriteria(Country.class)
 	    		.add(Restrictions.eq("code", "USA"))
 	    		.list();
-
-    	System.out.println(countries.get(0).getIndepYear());
-    	System.out.println(countries.get(0).getContinent());
     	
-    	HibernateSession.beginTransaction();
-    	countries.get(0).setContinent(Continent.Africa); // This doesn't work... I believe this is because of the enum
-    	countries.get(0).setIndepYear(1776);
-    	countries.get(0).save();
-    	HibernateSession.commitTransaction();
+    	Country usa = countries.get(0);
+
+    	System.out.println(usa.getIndepYear());
+    	System.out.println(usa.getContinent());
+
+    	Set<CountryLanguage> countryLanguages = usa.getLanguages();
+    	
+    	for (CountryLanguage countryLanguage : countryLanguages) {
+    		Language language = countryLanguage.getLanguage();
+    		System.out.println(language.getLanguage() + " is spoken by " + countryLanguage.getPercentage() + " of the population.");
+    	}
+  
+    	
+//    	HibernateSession.beginTransaction();
+//    	countries.get(0).save();
+//    	HibernateSession.commitTransaction();
     }
 }

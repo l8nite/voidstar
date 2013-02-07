@@ -2,60 +2,74 @@ package edu.sjsu.voidstar.project1.dao;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Column;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class CountryLanguage  extends HEntity {
+@IdClass(CountryLanguageId.class)
+public class CountryLanguage extends HEntity {
 	@Id
-	
-
-	
 	private String countryCode;
+	@Id
+	private Integer languageId;
 	
-	
-	private String language;
-	
-	
-	private  Float percentage;
-	
-	
-	private IsOfficial isOfficial;
+	private Float percentage;
+	private String isOfficial;
 
+	@ManyToOne
+	@JoinColumn(name="CountryCode")
+	private Country country;
+	
+	@ManyToOne
+	@JoinColumn(name="LanguageID")
+	private Language language;
 
-	
-	
-	public String getcountryCode() {
+	public String getCountryCode() {
 		return countryCode;
 	}
-	public void setcountryCode(String countryCode) {
+
+	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
 
-	
-	public String getLanguage() {
-		return language;
+	public Integer getLanguageId() {
+		return languageId;
 	}
-	public void setLanguage(String language) {
-		this.language = language;
+
+	public void setLanguageId(Integer languageId) {
+		this.languageId = languageId;
 	}
-	
-	
+
 	public Float getPercentage() {
 		return percentage;
 	}
+
 	public void setPercentage(Float percentage) {
 		this.percentage = percentage;
 	}
 
-	
-	public IsOfficial getIsOfficial() {
+	public String getIsOfficial() {
 		return isOfficial;
 	}
 
-	public void setIsOfficial(IsOfficial isOfficial) {
+	public void setIsOfficial(String isOfficial) {
 		this.isOfficial = isOfficial;
 	}
-	
 
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+
+	public Language getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(Language language) {
+		this.language = language;
+	}
 }
-

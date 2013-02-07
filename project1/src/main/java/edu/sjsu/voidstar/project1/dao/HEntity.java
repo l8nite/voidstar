@@ -19,12 +19,12 @@ public class HEntity {
 	@Override
 	public int hashCode() {
 		// TODO
-		return this.hashCode(); 
+		return super.hashCode(); 
 	}
 	
 	@Override
 	public boolean equals(Object o) {
 		// TODO
-		return this.equals(o);
+		return super.equals(o);
 	}
 }

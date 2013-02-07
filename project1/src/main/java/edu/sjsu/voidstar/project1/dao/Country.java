@@ -1,7 +1,10 @@
 package edu.sjsu.voidstar.project1.dao;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Country extends HEntity {
@@ -9,7 +12,7 @@ public class Country extends HEntity {
 	private String code;
 	private String name;
 
-	private Continent continent;
+	private String continent;
 	private String region;
 	private Float surfaceArea;
 	private Integer indepYear;
@@ -22,6 +25,12 @@ public class Country extends HEntity {
 	private String headOfState;
 	private Integer capital;
 	private String code2;
+	
+	@OneToMany(mappedBy="countryCode")
+	private Set<City> cities;
+	
+	@OneToMany(mappedBy="countryCode")
+	private Set<CountryLanguage> languages;
 
 	public String getCode() {
 		return code;
@@ -39,11 +48,11 @@ public class Country extends HEntity {
 		this.name = name;
 	}
 
-	public Continent getContinent() {
+	public String getContinent() {
 		return continent;
 	}
 
-	public void setContinent(Continent continent) {
+	public void setContinent(String continent) {
 		this.continent = continent;
 	}
 
@@ -143,4 +152,19 @@ public class Country extends HEntity {
 		this.code2 = code2;
 	}
 
+	public Set<CountryLanguage> getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(Set<CountryLanguage> countryLanguages) {
+		this.languages = countryLanguages;
+	}
+
+	public Set<City> getCities() {
+		return cities;
+	}
+
+	public void setCities(Set<City> cities) {
+		this.cities = cities;
+	}
 }
