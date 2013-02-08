@@ -5,15 +5,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
+
+import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+
 @Entity
 public class City extends HEntity {
 	@Id
 	private Integer id;
 
 	private String name;
-	
+
 	@ManyToOne
-	@JoinColumn(name="CountryCode")
+	@JoinColumn(name = "CountryCode")
 	private Country country;
 
 	private String countryCode;
@@ -58,5 +63,26 @@ public class City extends HEntity {
 
 	public void setPopulation(Integer population) {
 		this.population = population;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+	
+	public String getFullCityName() {
+		return this.getName() + ", " + this.getCountry().getName();
+	}
+
+	public static City getRandom() {
+		Criteria criteria = HibernateSession.get().createCriteria(City.class);
+		criteria.add(Restrictions.isNotNull("id"));
+		// hack because the .sqlRestriction adds an "and"
+		criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
+		criteria.setMaxResults(1);
+		return (City) criteria.uniqueResult();
 	}
 }

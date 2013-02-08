@@ -1,45 +1,28 @@
 package edu.sjsu.voidstar.project1;
 
-import java.util.List;
-import java.util.Set;
-
-import org.hibernate.criterion.Restrictions;
-
-import edu.sjsu.voidstar.project1.dao.Country;
-import edu.sjsu.voidstar.project1.dao.CountryLanguage;
-import edu.sjsu.voidstar.project1.dao.Language;
-import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+import edu.sjsu.voidstar.project1.dao.City;
 
 /**
  * Hello world!
- *
+ * 
  */
-public class App 
-{
-    
-	public static void main( String[] args )
-    {
-    	@SuppressWarnings("unchecked")
-		List<Country> countries = HibernateSession.get()
-	    		.createCriteria(Country.class)
-	    		.add(Restrictions.eq("code", "USA"))
-	    		.list();
-    	
-    	Country usa = countries.get(0);
+public class App {
 
-    	System.out.println(usa.getIndepYear());
-    	System.out.println(usa.getContinent());
+	public static void main(String[] args) throws InterruptedException {				
+		ZombieInfection z = new ZombieInfection();
+		
+		City genesis = z.getGenesisCity();
+		z.infect(genesis);
+		
+		System.out.println("Panic! The virus is spreading!");
+		Thread.sleep(5000);
 
-    	Set<CountryLanguage> countryLanguages = usa.getLanguages();
-    	
-    	for (CountryLanguage countryLanguage : countryLanguages) {
-    		Language language = countryLanguage.getLanguage();
-    		System.out.println(language.getLanguage() + " is spoken by " + countryLanguage.getPercentage() + " of the population.");
-    	}
-  
-    	
-//    	HibernateSession.beginTransaction();
-//    	countries.get(0).save();
-//    	HibernateSession.commitTransaction();
-    }
+		for (int i = 1; i <= 1000; ++i) {
+			z.infect(City.getRandom());
+			if (i % 100 == 0) {
+				z.reportInfectionProgress();
+				Thread.sleep(5000);
+			}
+		}
+	}
 }
