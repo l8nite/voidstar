@@ -1,10 +1,16 @@
 package edu.sjsu.voidstar.project1.dao;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.hibernate.criterion.Restrictions;
+
+import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
 @Entity
 @IdClass(CountryLanguageId.class)
@@ -71,5 +77,20 @@ public class CountryLanguage extends HEntity {
 
 	public void setLanguage(Language language) {
 		this.language = language;
+	}
+	
+	@SuppressWarnings("unchecked")	
+	public static List<CountryLanguage> get(){
+		return HibernateSession.get()
+			.createCriteria(CountryLanguage.class)
+			.list();
+	}
+	
+	@SuppressWarnings("unchecked")	
+	public static List<CountryLanguage> get(Language language){
+		return HibernateSession.get()
+			.createCriteria(CountryLanguage.class)
+			.add(Restrictions.eq("languageId", language.getId()))
+			.list();
 	}
 }

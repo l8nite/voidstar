@@ -17,6 +17,7 @@ import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.dao.City;
 import edu.sjsu.voidstar.project1.dao.Country;
+import edu.sjsu.voidstar.project1.dao.CountryLanguage;
 import edu.sjsu.voidstar.project1.dao.Infection;
 import edu.sjsu.voidstar.project1.dao.Language;
 import edu.sjsu.voidstar.project1.dao.World;
@@ -92,7 +93,7 @@ public class ZombieInfection {
 		System.out.println("-------------- WORLD NEWS FLASH!!! --------------");
 		reportPopulationInfected();
 		reportInfectedCountries();
-		reportFavoriteLanguages();		
+		reportTopLanguages();		
 		System.out.println("-------------------------------------------------");
 	}
 
@@ -151,17 +152,40 @@ public class ZombieInfection {
 		return sortedCountryInfections;
 	}
 	
-	private void reportFavoriteLanguages() {
-		System.out.println("Zombies Favorite Languages: ");		
-		int languagesToDisplay = 5;
+	private void reportTopLanguages() {
+		System.out.println("World's Popular Languages: ");		
+		int languagesToDisplay = 3;
 		
-		for(Entry<Language,Long> infectedLanguage: getSortedInfectionsByLanguage().entrySet()) {
+		for(Entry<Language,Long> infectedLanguage: Language.getSortedMostSpoken().entrySet()) {
 			Language language = infectedLanguage.getKey();
-			long infections = infectedLanguage.getValue();
+			long speakers = infectedLanguage.getValue();
+			long infectedSpeakersWorldwide = 0L;
 			
-			long languageSpeakers = Language.getSpeakers();
+			// Calculate an estimated number of speakers remaining in the world
+			List<CountryLanguage> countryLanguages = CountryLanguage.get(language);
+			Map<Country,Double> speakersInfectedByCountry = new HashMap<>();
 			
-			System.out.println(String.format("%s - %d infected, %d remaining speakers", language, infections, languageSpeakers - infections));
+			for(CountryLanguage cl : countryLanguages) {
+				// number of infected speakers is the number of infected in the country * percentage of speakers of the language
+				// TODO: would be better to query for all countries at once instead of one at a time
+				Country country = cl.getCountry();
+				long infectedInCountry = getNumberInfected(country);
+				double percentInfected = 1.0 * infectedInCountry / country.getPopulation();
+				double percentSpeakersInfected = percentInfected * cl.getPercentage();
+				
+				speakersInfectedByCountry.put(country, percentInfected);
+				infectedSpeakersWorldwide += country.getPopulation() * percentSpeakersInfected;
+			}
+			
+			double percentInfectedWorldwide = infectedSpeakersWorldwide * 1.0 / speakers;
+			System.out.println(String.format(language.toString().toUpperCase() + " %.2f%% infected worldwide", percentInfectedWorldwide));
+			
+			for(Entry<Country,Double> r : speakersInfectedByCountry.entrySet()) {
+				System.out.println(String.format("%s - %.2f%% of speakers infected", r.getKey(), r.getValue()));	
+			}
+			
+			System.out.println();
+			
 			if(--languagesToDisplay == 0) {
 				break;
 			}
@@ -170,11 +194,17 @@ public class ZombieInfection {
 		System.out.println();
 	}
 
-	private TreeMap<Language,Long> getSortedInfectionsByLanguage() {
-		//TODO
-		return new TreeMap<>();
+	private long getNumberInfected(Country country) {
+		Long infections = (Long) HibernateSession.get()
+				.createCriteria(Infection.class)
+				.createAlias("city", "city")
+				.createAlias("city.country", "country")
+				.add(Restrictions.eq("city.country", country))
+				.setProjection(Projections.sum("zombies"))
+				.uniqueResult();
+		
+		return infections == null ? 0L : infections;
 	}
-
 
 	private static void sanitize() {
 		System.out.println("Sanitizing infected cities");
@@ -192,8 +222,7 @@ public class ZombieInfection {
 
 		@Override
 		public int compare(Country o1, Country o2) {
-			// - to sort descending
-			return -(zombiesPerCountry.get(o1).compareTo(zombiesPerCountry.get(o2)));
+			return zombiesPerCountry.get(o2).compareTo(zombiesPerCountry.get(o1));
 		}
 	}
 }
