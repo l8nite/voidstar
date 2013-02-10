@@ -170,14 +170,24 @@ public class ZombieInfection {
 				// TODO: would be better to query for all countries at once instead of one at a time
 				Country country = cl.getCountry();
 				long infectedInCountry = getNumberInfected(country);
-				double percentInfected = 1.0 * infectedInCountry / country.getPopulation();
-				double percentSpeakersInfected = percentInfected * cl.getPercentage();
+				double speakersInCountry = country.getPopulation() * (cl.getPercentage() / 100);
+				double estSpeakersInfected = infectedInCountry * ( cl.getPercentage() / 100);
+				double estPercentInfected = 100.0 * (estSpeakersInfected / speakersInCountry);
 				
-				speakersInfectedByCountry.put(country, percentInfected);
-				infectedSpeakersWorldwide += country.getPopulation() * percentSpeakersInfected;
+				// It is possible for more than 100% to be infected since this is only an estimate
+				if (estPercentInfected > 100) {
+					estPercentInfected = 100;
+				}
+					
+				if(Double.isNaN(estPercentInfected)) {
+					estPercentInfected = 0;
+				}
+				
+				speakersInfectedByCountry.put(country, estPercentInfected);
+				infectedSpeakersWorldwide += estSpeakersInfected;
 			}
 			
-			double percentInfectedWorldwide = infectedSpeakersWorldwide * 1.0 / speakers;
+			double percentInfectedWorldwide = 100.0 * (infectedSpeakersWorldwide / speakers);
 			System.out.println(String.format(language.toString().toUpperCase() + " %.2f%% infected worldwide", percentInfectedWorldwide));
 			
 			for(Entry<Country,Double> r : speakersInfectedByCountry.entrySet()) {
@@ -203,7 +213,7 @@ public class ZombieInfection {
 				.setProjection(Projections.sum("zombies"))
 				.uniqueResult();
 		
-		return infections == null ? 0L : infections;
+		return infections != null ? infections : 0L;
 	}
 
 	private static void sanitize() {

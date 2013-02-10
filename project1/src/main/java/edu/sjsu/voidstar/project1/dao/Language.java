@@ -63,7 +63,7 @@ public class Language extends HEntity {
 			}
 			
 			// TODO: cast to long then box to Long - better way?
-			speakers += (long) (c.getPopulation() * cl.getPercentage());
+			speakers += (long) (c.getPopulation() * ( cl.getPercentage() / 100 ));
 			unsortedLanguages.put(l, speakers);
 		}
 		
