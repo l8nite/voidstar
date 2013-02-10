@@ -38,4 +38,9 @@ public class Language extends HEntity {
 	public void setCountries(Set<CountryLanguage> countries) {
 		this.countries = countries;
 	}
+
+	public static long getSpeakers() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

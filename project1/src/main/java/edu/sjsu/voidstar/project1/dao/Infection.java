@@ -51,7 +51,6 @@ public class Infection extends HEntity {
 		Criteria criteria = HibernateSession.get().createCriteria(
 				Infection.class);
 		criteria.add(Restrictions.eq("city.id", city.getId()));
-		criteria.setMaxResults(1);
 
 		Infection infection = (Infection) criteria.uniqueResult();
 

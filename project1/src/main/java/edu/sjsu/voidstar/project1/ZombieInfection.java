@@ -3,13 +3,17 @@ package edu.sjsu.voidstar.project1;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.dao.City;
+import edu.sjsu.voidstar.project1.dao.Country;
 import edu.sjsu.voidstar.project1.dao.Infection;
+import edu.sjsu.voidstar.project1.dao.Language;
 import edu.sjsu.voidstar.project1.dao.World;
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
@@ -81,14 +85,58 @@ public class ZombieInfection {
 
 	public void reportInfectionProgress() {
 		System.out.println("-------------- WORLD NEWS FLASH!!! --------------");
-		double percentInfected = (infectedWorldPopulation * 100f) / World.getPopulation();
-		
-		String citiesOrCity = infectedCities.size() == 1 ? "city has" : "cities have";
-		System.out.println(infectedCities.size() + " " + citiesOrCity + " been infected!");
-		
-		System.out.println(String.format("The world population is %.2f%% infected %n", percentInfected));
+		reportPopulationInfected();
+		reportInfectedCountries();
+		reportFavoriteLanguages();		
 		System.out.println("-------------------------------------------------");
 	}
+
+	private void reportPopulationInfected() {
+		double percentInfected = (infectedWorldPopulation * 100f) / World.getPopulation();
+		String citiesOrCity = infectedCities.size() == 1 ? "city has" : "cities have";
+		System.out.println(infectedCities.size() + " " + citiesOrCity + " been infected!");
+		System.out.println(String.format("The world population is %.2f%% infected %n", percentInfected));
+	}
+	
+	private void reportInfectedCountries() {
+		System.out.println("Most Infected Countries: ");		
+		int countriesToDisplay = 5;
+		
+		for(Entry<Country,Long> infectedCountry: getSortedInfectionsByCountry().entrySet()) {
+			System.out.println(String.format("%s - %d infections%n", infectedCountry.getKey(), infectedCountry.getValue()));
+			if(--countriesToDisplay == 0) {
+				break;
+			}
+		}
+	}
+	
+	private TreeMap<Country,Long> getSortedInfectionsByCountry() {
+		//TODO
+		return new TreeMap<>();
+	}
+	
+	private void reportFavoriteLanguages() {
+		System.out.println("Zombies Favorite Languages: ");		
+		int languagesToDisplay = 5;
+		
+		for(Entry<Language,Long> infectedLanguage: getSortedInfectionsByLanguage().entrySet()) {
+			Language language = infectedLanguage.getKey();
+			long infections = infectedLanguage.getValue();
+			
+			long languageSpeakers = Language.getSpeakers();
+			
+			System.out.println(String.format("%s - %d infected, %d remaining speakers%n", language, infections, languageSpeakers - infections));
+			if(--languagesToDisplay == 0) {
+				break;
+			}
+		}
+	}
+
+	private TreeMap<Language,Long> getSortedInfectionsByLanguage() {
+		//TODO
+		return new TreeMap<>();
+	}
+
 
 	private static void sanitize() {
 		System.out.println("Sanitizing infected cities");
