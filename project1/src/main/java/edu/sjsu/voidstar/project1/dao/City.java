@@ -1,11 +1,13 @@
 package edu.sjsu.voidstar.project1.dao;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
@@ -23,7 +25,10 @@ public class City extends HEntity {
 	private String countryCode;
 	private String district;
 	private Integer population;
-
+	
+	@Transient
+	private Integer hashCode;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -81,5 +86,31 @@ public class City extends HEntity {
 		return HibernateSession.get()
 				.createCriteria(City.class)
 				.list();
+	}
+	
+	public static City getRandomCity() {
+		List<City> allCities = City.getCities();
+		return allCities.get(new Random().nextInt(allCities.size()));
+	}
+	
+	@Override
+	public int hashCode() {
+		// returned cached hashCode if its initialized. Otherwise, calculate
+		synchronized(this) {
+			if (hashCode == null) {
+				hashCode = name.hashCode() + 31 * countryCode.hashCode() + 31 * district.hashCode(); 
+			}
+		}
+		return hashCode;
+	}
+	
+	@Override 
+	public boolean equals(Object o) {
+		if(!(o instanceof City)) {
+			return false;
+		}
+		
+		City oCity = (City) o;
+		return this.name.equals(oCity.name) && this.countryCode.equals(oCity.countryCode) && this.district.equals(oCity.district);
 	}
 }
