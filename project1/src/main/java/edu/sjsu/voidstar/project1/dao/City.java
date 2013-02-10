@@ -1,12 +1,11 @@
 package edu.sjsu.voidstar.project1.dao;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
@@ -76,13 +75,11 @@ public class City extends HEntity {
 	public String getFullCityName() {
 		return this.getName() + ", " + this.getCountry().getName();
 	}
-
-	public static City getRandom() {
-		Criteria criteria = HibernateSession.get().createCriteria(City.class);
-		criteria.add(Restrictions.isNotNull("id"));
-		// hack because the .sqlRestriction adds an "and"
-		criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
-		criteria.setMaxResults(1);
-		return (City) criteria.uniqueResult();
+	
+	@SuppressWarnings("unchecked")
+	public static List<City> getCities() {
+		return HibernateSession.get()
+				.createCriteria(City.class)
+				.list();
 	}
 }

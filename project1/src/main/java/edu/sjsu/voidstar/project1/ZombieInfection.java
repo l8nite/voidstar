@@ -1,6 +1,7 @@
 package edu.sjsu.voidstar.project1;
 
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import org.hibernate.Criteria;
@@ -19,19 +20,15 @@ public class ZombieInfection {
 
 	public City getGenesisCity() {
 		this.sanitize();
+		List<City> allCities = City.getCities();
 
-		Criteria criteria = HibernateSession.get().createCriteria(City.class);
-		criteria.setProjection(Projections.projectionList().add(
-				Projections.sum("population")));
-		worldPopulation = (Long) criteria.uniqueResult();
-
-		System.out.println("World population: "
-				+ NumberFormat.getNumberInstance(Locale.US).format(
-						worldPopulation));
+		System.out.println("World population: " + NumberFormat.getNumberInstance(Locale.US).format(allCities.size()));
 
 		// get a random City record from the City table
 		System.out.println("Choosing random city for virulent strain genesis");
-		genesis = City.getRandom();
+
+		Random r = new Random();
+		genesis = allCities.get(r.nextInt(allCities.size()));
 
 		System.out.println("City chosen: " + genesis.getFullCityName() + "\n");
 
