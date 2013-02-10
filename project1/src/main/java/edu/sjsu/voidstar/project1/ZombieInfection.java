@@ -1,13 +1,18 @@
 package edu.sjsu.voidstar.project1;
 
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.dao.City;
@@ -102,17 +107,48 @@ public class ZombieInfection {
 		System.out.println("Most Infected Countries: ");		
 		int countriesToDisplay = 5;
 		
+		
 		for(Entry<Country,Long> infectedCountry: getSortedInfectionsByCountry().entrySet()) {
-			System.out.println(String.format("%s - %d infections%n", infectedCountry.getKey(), infectedCountry.getValue()));
+			Country country = infectedCountry.getKey();
+			Long infections = infectedCountry.getValue();
+			System.out.println(String.format("%s - %d infections", country, infections));
+			
 			if(--countriesToDisplay == 0) {
 				break;
 			}
 		}
+		
+		System.out.println();
 	}
 	
 	private TreeMap<Country,Long> getSortedInfectionsByCountry() {
-		//TODO
-		return new TreeMap<>();
+		// Query the database for top zombies/country
+		@SuppressWarnings("unchecked")
+		List<Object[]> rawCountryInfections = (List<Object[]>) HibernateSession.get()
+				.createCriteria(Infection.class)
+				.createAlias("city", "city")
+				.setProjection(Projections.projectionList()
+						.add(Projections.groupProperty("city.country"))
+						.add(Projections.sum("zombies").as("zombieCount")))
+				.addOrder(Order.desc("zombieCount"))
+				.setMaxResults(5)
+				.list();
+		
+		// Add the results to an usorted map that can be used to build a comparator
+		Map<Country,Long> unsortedCountryInfections = new HashMap<Country,Long>();
+		for (Object[] o : rawCountryInfections) {
+			Country c = (Country) o[0];
+			Long i = (Long) o[1];
+			unsortedCountryInfections.put(c,i);
+		}
+
+		// Add to sorted map
+		TreeMap<Country,Long> sortedCountryInfections = new TreeMap<>( new ZombiesPerCountryComparator(unsortedCountryInfections));
+		sortedCountryInfections.putAll(unsortedCountryInfections);
+		
+		// API vs Stupid-proof... return a tree map instead of an unmodifiable in order to 
+		// give the implication that the resulting map is sorted.
+		return sortedCountryInfections;
 	}
 	
 	private void reportFavoriteLanguages() {
@@ -125,11 +161,13 @@ public class ZombieInfection {
 			
 			long languageSpeakers = Language.getSpeakers();
 			
-			System.out.println(String.format("%s - %d infected, %d remaining speakers%n", language, infections, languageSpeakers - infections));
+			System.out.println(String.format("%s - %d infected, %d remaining speakers", language, infections, languageSpeakers - infections));
 			if(--languagesToDisplay == 0) {
 				break;
 			}
 		}
+		
+		System.out.println();
 	}
 
 	private TreeMap<Language,Long> getSortedInfectionsByLanguage() {
@@ -142,5 +180,20 @@ public class ZombieInfection {
 		System.out.println("Sanitizing infected cities");
 		HibernateSession.get().createQuery("delete from Infection")
 				.executeUpdate();
+	}
+	
+	private class ZombiesPerCountryComparator implements Comparator<Country> {
+		
+		Map<Country,Long> zombiesPerCountry;
+		
+		public ZombiesPerCountryComparator(Map<Country,Long> zombiesPerCountry) {
+			this.zombiesPerCountry = zombiesPerCountry;
+		}
+
+		@Override
+		public int compare(Country o1, Country o2) {
+			// - to sort descending
+			return -(zombiesPerCountry.get(o1).compareTo(zombiesPerCountry.get(o2)));
+		}
 	}
 }

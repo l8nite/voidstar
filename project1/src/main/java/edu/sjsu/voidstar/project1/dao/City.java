@@ -98,7 +98,10 @@ public class City extends HEntity {
 		// returned cached hashCode if its initialized. Otherwise, calculate
 		synchronized(this) {
 			if (hashCode == null) {
-				hashCode = name.hashCode() + 31 * countryCode.hashCode() + 31 * district.hashCode(); 
+				hashCode = 
+						(name != null ? name.hashCode() : 0)  + 
+						31 * ( countryCode != null ? countryCode.hashCode() : 0 ) + 
+						31 * ( district != null ? district.hashCode() : 0 ); 
 			}
 		}
 		return hashCode;
@@ -111,6 +114,22 @@ public class City extends HEntity {
 		}
 		
 		City oCity = (City) o;
+		
+		if (name == null 
+				|| countryCode == null 
+				|| district == null 
+				|| oCity.name == null 
+				|| oCity.countryCode == null 
+				|| oCity.district == null
+			) {
+			return false;
+		}
+		
 		return this.name.equals(oCity.name) && this.countryCode.equals(oCity.countryCode) && this.district.equals(oCity.district);
+	}
+	
+	@Override
+	public String toString() {
+		return name;
 	}
 }

@@ -167,4 +167,28 @@ public class Country extends HEntity {
 	public void setCities(Set<City> cities) {
 		this.cities = cities;
 	}
+	
+	@Override
+	public int hashCode() {
+		return code.hashCode();
+	}
+	
+	@Override 
+	public boolean equals(Object o1) {
+		if(!(o1 instanceof Country)) { 
+			return false;
+		}
+		
+		Country oCountry = (Country) o1;		
+		if ( code == null || oCountry == null) {
+			return false;
+		}
+		
+		return code.equals(oCountry.code);
+	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

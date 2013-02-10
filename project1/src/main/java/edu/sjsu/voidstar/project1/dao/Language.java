@@ -43,4 +43,9 @@ public class Language extends HEntity {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	@Override
+	public String toString() {
+		return this.language;
+	}
 }
