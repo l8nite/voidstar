@@ -9,6 +9,7 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
@@ -177,10 +178,10 @@ public class Country extends HEntity {
 	
 	@SuppressWarnings("unchecked")
 	public List<Language> getMostPopularLanguages() {
-		return (List<Language>)HibernateSession.get().createCriteria(Language.class, "language")
-		.createAlias("countries", "country")
-		.add(Restrictions.eq("country.countryCode", this.code))
-		.addOrder(Order.desc("country.percentage"))
+		return (List<Language>)HibernateSession.get().createCriteria(CountryLanguage.class, "countryLanguage")
+		.add(Restrictions.eq("countryCode", this.code))
+		.setProjection(Projections.property("language"))
+		.addOrder(Order.desc("percentage"))
 		.setMaxResults(3)
 		.list();
 	}
