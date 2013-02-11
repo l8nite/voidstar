@@ -62,12 +62,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<!-- JBoss repository for Hibernate -->
 	<repositories>
+		<!-- JBoss repository for Hibernate -->
 		<repository>
 			<id>JBoss repository</id>
 			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
 		</repository>
+		<!--  glassfish repository contains com.google.common.base.Joiner -->
+		<repository>
+			<id>glassfish</id>
+		    <name>Glassfish</name>
+	        <url>https://repository.jboss.org/nexus/content/repositories/glassfish</url>
+      	</repository>
+		    
 	</repositories>
 
 	<dependencies>
@@ -96,6 +103,11 @@
 			<groupId>jboss</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.7.ga</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.collections</groupId>
+			<artifactId>google-collections</artifactId>
+			<version>1.0-rc1</version>
 		</dependency>
 	</dependencies>
 	
