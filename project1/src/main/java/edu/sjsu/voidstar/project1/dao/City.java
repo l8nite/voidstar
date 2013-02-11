@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
@@ -25,6 +26,9 @@ public class City extends HEntity {
 	private String countryCode;
 	private String district;
 	private Integer population;
+	
+	@OneToOne(mappedBy = "city")
+	private Infection infection;
 	
 	@Transient
 	private Integer hashCode;
