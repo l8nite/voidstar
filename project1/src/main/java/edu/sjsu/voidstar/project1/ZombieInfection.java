@@ -124,7 +124,7 @@ public class ZombieInfection {
 				popularLanguageNames.add(l.getLanguage());
 			}
 
-			System.out.println(String.format("% 3.2f%% - %s (%s)", infectionPercentage, country, Joiner.on(", ").join(popularLanguageNames)));
+			System.out.println(String.format("%3.2f%% - %s (%s)", infectionPercentage, country, Joiner.on(", ").join(popularLanguageNames)));
 			
 			if(--countriesToDisplay == 0) {
 				break;
