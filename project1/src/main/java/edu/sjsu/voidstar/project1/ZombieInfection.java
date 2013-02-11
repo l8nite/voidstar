@@ -63,11 +63,16 @@ public class ZombieInfection {
 		Infection infectedCity = Infection.forCity(city);
 		Integer population = city.getPopulation();
 		Integer infected = infectedCity.getZombies();
-		String inOrTo = infectedCity.getZombies() == 0 ? "to" : "in";
+		String inOrTo = infected == 0 ? "to" : "in";
 
 		// Randomly infect a new number of people
 		Random generator = new Random();
-		Integer newInfections = (int) (generator.nextDouble() * (population - infected));
+		Integer newInfections = infected + (int) (generator.nextDouble() * (population - infected));;
+		
+		if (newInfections + infected > population) {
+			newInfections = population - infected;
+		}
+
 		String peoplePerson = newInfections == 1 ? "person" : "people";
 		
 		System.out.println("The infection spreads " + inOrTo + " " + city.getFullCityName() + "!");
