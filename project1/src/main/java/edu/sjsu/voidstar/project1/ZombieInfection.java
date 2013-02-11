@@ -1,5 +1,6 @@
 package edu.sjsu.voidstar.project1;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,9 +12,11 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 
-import org.hibernate.criterion.Order;
+import org.hibernate.Criteria;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+
+import com.google.common.base.Joiner;
 
 import edu.sjsu.voidstar.project1.dao.City;
 import edu.sjsu.voidstar.project1.dao.Country;
@@ -30,18 +33,15 @@ public class ZombieInfection {
 	private Set<City> infectedCities = new HashSet<>();
 	
 	public ZombieInfection() {
-		// Sanitize any previous infection
-		sanitize();
+	}
 	
-		// Set the genesis city
-		initializeGensis();
-		
-		// begin the infection
+	public void startInfection() {
+		sanitize();
+		initializeGenesis();
 		infect(genesis);
 	}
 
-	private void initializeGensis() {
-		// Select genesis city 
+	private void initializeGenesis() {
 		System.out.println("Choosing random city for virulent strain genesis");
 		genesis = City.getRandomCity();
 		System.out.println("City chosen: " + genesis.getFullCityName() + "\n");
@@ -69,6 +69,7 @@ public class ZombieInfection {
 		Random generator = new Random();
 		Integer newInfections = infected + (int) (generator.nextDouble() * (population - infected));;
 		
+		// cap # of newInfections at remaining healthy population 
 		if (newInfections + infected > population) {
 			newInfections = population - infected;
 		}
@@ -86,7 +87,7 @@ public class ZombieInfection {
 		infectedCities.add(city);
 		
 		double percentInfected = (infected * 100.0f) / population;
-		System.out.println(String.format("In this city: %d/%d or %.2f%% of the population are infected!%n", infected, population, percentInfected));
+		System.out.println(String.format("In this city: %d/%d (%.2f%%) of the population is infected!%n", infected, population, percentInfected));
 		
 		// save the infected city data back into the database
 		HibernateSession.beginTransaction();
@@ -98,7 +99,7 @@ public class ZombieInfection {
 		System.out.println("-------------- WORLD NEWS FLASH!!! --------------");
 		reportPopulationInfected();
 		reportInfectedCountries();
-		reportTopLanguages();		
+		//reportTopLanguages();		
 		System.out.println("-------------------------------------------------");
 	}
 
@@ -114,10 +115,16 @@ public class ZombieInfection {
 		int countriesToDisplay = 5;
 		
 		
-		for(Entry<Country,Long> infectedCountry: getSortedInfectionsByCountry().entrySet()) {
+		for(Entry<Country,Float> infectedCountry: getSortedInfectionsByCountry().entrySet()) {
 			Country country = infectedCountry.getKey();
-			Long infections = infectedCountry.getValue();
-			System.out.println(String.format("%s - %d infections", country, infections));
+			Float infectionPercentage = infectedCountry.getValue();
+			List<Language> popularLanguages = country.getMostPopularLanguages();
+			List<String> popularLanguageNames = new ArrayList<String>();
+			for (Language l : popularLanguages) {
+				popularLanguageNames.add(l.getLanguage());
+			}
+
+			System.out.println(String.format("% 3.2f%% - %s (%s)", infectionPercentage, country, Joiner.on(", ").join(popularLanguageNames)));
 			
 			if(--countriesToDisplay == 0) {
 				break;
@@ -127,29 +134,35 @@ public class ZombieInfection {
 		System.out.println();
 	}
 	
-	private TreeMap<Country,Long> getSortedInfectionsByCountry() {
-		// Query the database for top zombies/country
+	private TreeMap<Country,Float> getSortedInfectionsByCountry() {
 		@SuppressWarnings("unchecked")
+		// get all countries and their associated populations (infected, total)
 		List<Object[]> rawCountryInfections = (List<Object[]>) HibernateSession.get()
-				.createCriteria(Infection.class)
-				.createAlias("city", "city")
+				.createCriteria(City.class, "city")
+				.createAlias("country",  "country", Criteria.LEFT_JOIN)
+				.createAlias("city.infection", "infection", Criteria.LEFT_JOIN)
 				.setProjection(Projections.projectionList()
-						.add(Projections.groupProperty("city.country"))
-						.add(Projections.sum("zombies").as("zombieCount")))
-				.addOrder(Order.desc("zombieCount"))
-				.setMaxResults(5)
+						.add(Projections.groupProperty("country"))
+						.add(Projections.sum("infection.zombies").as("infectedPopulation"))
+						.add(Projections.sum("city.population").as("totalPopulation"))
+				)
 				.list();
 		
-		// Add the results to an usorted map that can be used to build a comparator
-		Map<Country,Long> unsortedCountryInfections = new HashMap<Country,Long>();
+		// Add the results to an unsorted map that can be used to build a comparator
+		Map<Country,Float> unsortedCountryInfections = new HashMap<Country,Float>();
 		for (Object[] o : rawCountryInfections) {
-			Country c = (Country) o[0];
-			Long i = (Long) o[1];
-			unsortedCountryInfections.put(c,i);
+			Country country = (Country) o[0];
+			Long infectedPopulation = (Long)o[1];
+			if (infectedPopulation == null) { 
+				infectedPopulation = 0L;
+			}
+			Long totalPopulation = (Long)o[2];
+			Float percentInfected = infectedPopulation * 1.0f / totalPopulation * 100.0f; 
+			unsortedCountryInfections.put(country,percentInfected);
 		}
 
 		// Add to sorted map
-		TreeMap<Country,Long> sortedCountryInfections = new TreeMap<>( new ZombiesPerCountryComparator(unsortedCountryInfections));
+		TreeMap<Country,Float> sortedCountryInfections = new TreeMap<>( new InfectionPercentagePerCountryComparator(unsortedCountryInfections));
 		sortedCountryInfections.putAll(unsortedCountryInfections);
 		
 		// API vs Stupid-proof... return a tree map instead of an unmodifiable in order to 
@@ -227,12 +240,12 @@ public class ZombieInfection {
 				.executeUpdate();
 	}
 	
-	private class ZombiesPerCountryComparator implements Comparator<Country> {
+	private class InfectionPercentagePerCountryComparator implements Comparator<Country> {
 		
-		Map<Country,Long> zombiesPerCountry;
+		Map<Country,Float> zombiesPerCountry;
 		
-		public ZombiesPerCountryComparator(Map<Country,Long> zombiesPerCountry) {
-			this.zombiesPerCountry = zombiesPerCountry;
+		public InfectionPercentagePerCountryComparator(Map<Country, Float> unsortedCountryInfections) {
+			this.zombiesPerCountry = unsortedCountryInfections;
 		}
 
 		@Override
