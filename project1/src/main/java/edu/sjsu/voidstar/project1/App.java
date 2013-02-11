@@ -1,20 +1,20 @@
 package edu.sjsu.voidstar.project1;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 import edu.sjsu.voidstar.project1.dao.City;
 import edu.sjsu.voidstar.project1.dao.World;
 
-/**
- * Hello world!
- * 
- */
 public class App {
 
-	public static void main(String[] args) throws InterruptedException {				
+	public static void main(String[] args) throws InterruptedException {
 		ZombieInfection z = new ZombieInfection();
-		System.out.println("World population: " + World.getPopulation());
+		// z.reportInfectionProgress();
+		z.startInfection();
+		System.out.println("World population: " + NumberFormat.getNumberInstance(Locale.US).format(World.getPopulation()));
 		System.out.println("Panic! The virus is spreading!");
 		Thread.sleep(5000);
 		List<City> allCities = City.getCities();
