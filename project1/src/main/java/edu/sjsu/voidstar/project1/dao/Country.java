@@ -1,10 +1,17 @@
 package edu.sjsu.voidstar.project1.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+
+import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
 @Entity
 public class Country extends HEntity {
@@ -166,6 +173,16 @@ public class Country extends HEntity {
 
 	public void setCities(Set<City> cities) {
 		this.cities = cities;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Language> getMostPopularLanguages() {
+		return (List<Language>)HibernateSession.get().createCriteria(Language.class, "language")
+		.createAlias("countries", "country")
+		.add(Restrictions.eq("country.countryCode", this.code))
+		.addOrder(Order.desc("country.percentage"))
+		.setMaxResults(3)
+		.list();
 	}
 	
 	@Override
