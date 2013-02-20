@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<CountryLanguages>
+<CountryLanguages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CountryLanguage.xsd">
   <CountryLanguage>
     <CountryCode>ABW</CountryCode>
     <LanguageID>105</LanguageID>
