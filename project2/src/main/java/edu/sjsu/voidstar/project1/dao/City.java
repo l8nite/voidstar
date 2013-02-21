@@ -9,22 +9,42 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "id",
+    "name",
+    "countryCode",
+    "district",
+    "population"
+})
 
 @Entity
 public class City extends HEntity {
+	
 	@Id
+	@XmlElement(name = "ID")
 	private Integer id;
 
+	@XmlElement(name = "Name")
 	private String name;
 
 	@ManyToOne
 	@JoinColumn(name = "CountryCode")
 	private Country country;
 
+	@XmlElement(name = "CountryCode")
 	private String countryCode;
+	
+	@XmlElement(name = "District")
 	private String district;
+    
+	@XmlElement(name = "Population")
 	private Integer population;
 	
 	@OneToOne(mappedBy = "city")

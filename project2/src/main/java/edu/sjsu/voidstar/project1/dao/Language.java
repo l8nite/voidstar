@@ -10,11 +10,24 @@ import java.util.TreeMap;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 @Entity
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "id",
+    "language"
+})
 public class Language extends HEntity {
+	
 	@Id
-	private Integer id;
+	@XmlElement(name = "ID")
+	private Integer id;        
+    
+    @XmlElement(name = "Language")
 	private String language;
 	
 	@OneToMany(mappedBy="languageId")

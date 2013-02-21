@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
@@ -12,15 +16,26 @@ import org.hibernate.criterion.Restrictions;
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
 @Entity
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "id",
+    "cityID",
+    "zombies"
+})
 public class Infection extends HEntity {
 	@Id
 	@GeneratedValue
+	@XmlElement(name = "ID")
 	private Integer id;
 
 	@OneToOne
 	@JoinColumn(name = "CityId")
 	private City city;
-
+    
+	@XmlElement(name = "CityID")
+    private String cityID;
+    
+	@XmlElement(name = "Zombies")
 	private Integer zombies = 0;
 
 	public Integer getId() {

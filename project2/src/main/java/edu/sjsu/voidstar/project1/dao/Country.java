@@ -6,6 +6,10 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
@@ -14,24 +18,71 @@ import org.hibernate.criterion.Restrictions;
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
 @Entity
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "code",
+    "name",
+    "continent",
+    "region",
+    "surfaceArea",
+    "indepYear",
+    "population",
+    "lifeExpectancy",
+    "gnp",
+    "gnpOld",
+    "localName",
+    "governmentForm",
+    "headOfState",
+    "capital",
+    "code2"
+})
+
 public class Country extends HEntity {
 	@Id
+	@XmlElement(name = "Code")
 	private String code;
-	private String name;
 
+	@XmlElement(name = "Name")
+	private String name;    
+    
+    @XmlElement(name = "Continent")
 	private String continent;
-	private String region;
-	private Float surfaceArea;
-	private Integer indepYear;
-	private Integer population;
-	private Integer lifeExpectancy;
-	private Float gnp;
-	private Float gnpOld;
-	private String localName;
-	private String governmentForm;
-	private String headOfState;
-	private Integer capital;
-	private String code2;
+
+    @XmlElement(name = "Region")
+    private String region;
+	
+    @XmlElement(name = "SurfaceArea")
+    private Float surfaceArea;
+	
+    @XmlElement(name = "IndepYear")
+    private Integer indepYear;
+	
+    @XmlElement(name = "Population")
+    private Integer population;
+	
+    @XmlElement(name = "LifeExpectancy")
+    private Integer lifeExpectancy;
+	
+    @XmlElement(name = "GNP")
+    private Float gnp;
+	
+    @XmlElement(name = "GNPOld")
+    private Float gnpOld;
+	
+    @XmlElement(name = "LocalName")
+    private String localName;
+	
+    @XmlElement(name = "GovernmentForm")
+    private String governmentForm;
+	
+    @XmlElement(name = "HeadOfState")
+    private String headOfState;
+	
+    @XmlElement(name = "Capital")
+    private Integer capital;
+	
+    @XmlElement(name = "Code2")
+    private String code2;
 	
 	@OneToMany(mappedBy="countryCode")
 	private Set<City> cities;

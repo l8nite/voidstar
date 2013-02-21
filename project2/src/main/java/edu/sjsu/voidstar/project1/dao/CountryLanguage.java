@@ -7,6 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 import org.hibernate.criterion.Restrictions;
 
@@ -14,13 +18,26 @@ import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
 @Entity
 @IdClass(CountryLanguageId.class)
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "countryCode",
+    "languageID",
+    "isOfficial",
+    "percentage"
+})
 public class CountryLanguage extends HEntity {
 	@Id
+	@XmlElement(name = "CountryCode")
 	private String countryCode;
-	@Id
-	private Integer languageId;
 	
+	@Id
+	@XmlElement(name = "LanguageID")
+	private Integer languageId;
+
+    @XmlElement(name = "Percentage")
 	private Float percentage;
+	
+    @XmlElement(name = "IsOfficial")
 	private String isOfficial;
 
 	@ManyToOne
