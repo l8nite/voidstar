@@ -170,6 +170,7 @@ public class ZombieInfection {
 		return sortedCountryInfections;
 	}
 	
+	@SuppressWarnings("unused")
 	private void reportTopLanguages() {
 		System.out.println("World's Popular Languages: ");		
 		int languagesToDisplay = 3;
