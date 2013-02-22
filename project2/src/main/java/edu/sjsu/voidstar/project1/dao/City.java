@@ -12,6 +12,7 @@ import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
@@ -36,6 +37,7 @@ public class City extends HEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "CountryCode")
+	@XmlTransient
 	private Country country;
 
 	@XmlElement(name = "CountryCode")
@@ -48,9 +50,11 @@ public class City extends HEntity {
 	private Integer population;
 	
 	@OneToOne(mappedBy = "city")
+	@XmlTransient
 	private Infection infection;
 	
 	@Transient
+	@XmlTransient
 	private Integer hashCode;
 	
 	public Integer getId() {

@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import org.hibernate.criterion.Restrictions;
@@ -42,10 +43,12 @@ public class CountryLanguage extends HEntity {
 
 	@ManyToOne
 	@JoinColumn(name="CountryCode")
+	@XmlTransient
 	private Country country;
 	
 	@ManyToOne
 	@JoinColumn(name="LanguageID")
+	@XmlTransient
 	private Language language;
 
 	public String getCountryCode() {

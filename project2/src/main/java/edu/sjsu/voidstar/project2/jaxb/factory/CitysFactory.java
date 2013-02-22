@@ -6,4 +6,4 @@ import edu.sjsu.voidstar.project1.dao.City;
 import edu.sjsu.voidstar.project2.jaxb.tables.Citys;
 
 @XmlRegistry
-public class CitysFactory extends TableFactory<Citys,City>{}
+public class CitysFactory extends XmlFactory<Citys,City>{}

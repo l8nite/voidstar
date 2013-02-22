@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 @Entity
@@ -31,6 +32,7 @@ public class Language extends HEntity {
 	private String language;
 	
 	@OneToMany(mappedBy="languageId")
+	@XmlTransient
 	private Set<CountryLanguage> countries;
 
 	public Integer getId() {

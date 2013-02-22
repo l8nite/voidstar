@@ -6,4 +6,4 @@ import edu.sjsu.voidstar.project1.dao.Infection;
 import edu.sjsu.voidstar.project2.jaxb.tables.Infections;
 
 @XmlRegistry
-public class InfectionsFactory extends TableFactory<Infections,Infection>{}
+public class InfectionsFactory extends XmlFactory<Infections,Infection>{}

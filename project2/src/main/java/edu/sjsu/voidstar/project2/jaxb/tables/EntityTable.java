@@ -1,9 +1,10 @@
 package edu.sjsu.voidstar.project2.jaxb.tables;
 
-import java.util.List;
+import java.util.Collection;
 
 import edu.sjsu.voidstar.project1.dao.HEntity;
 
-public interface EntityTable <E extends HEntity> {
-	public List<E> get();
+public interface EntityTable <E extends HEntity>{
+	public void add(E entity);
+	public void addAll(Collection<E> entities);
 }

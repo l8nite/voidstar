@@ -8,6 +8,7 @@
 package edu.sjsu.voidstar.project2.jaxb.tables;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -56,36 +57,14 @@ import edu.sjsu.voidstar.project1.dao.City;
 @XmlType(name = "", propOrder = {"city"})
 @XmlRootElement(name = "Citys")
 public class Citys implements EntityTable<City> {
-
     @XmlElement(name = "City")
-    protected List<City> city;
-
-    /**
-     * Gets the value of the city property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the city property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCity().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Citys.City }
-     * 
-     * 
-     */
-    public List<City> get() {
-        if (city == null) {
-            city = new ArrayList<City>();
-        }
-        return this.city;
-    }
+    protected List<City> city = new ArrayList<>();
+    
+    public final void add(City city) {
+		this.city.add(city);
+	}
+	
+	public final void addAll(Collection<City> cities) {
+		city.addAll(cities);	
+	}
 }

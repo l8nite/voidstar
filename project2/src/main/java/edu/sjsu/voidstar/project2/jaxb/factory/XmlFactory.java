@@ -5,7 +5,7 @@ import java.lang.reflect.ParameterizedType;
 import edu.sjsu.voidstar.project1.dao.HEntity;
 import edu.sjsu.voidstar.project2.jaxb.tables.EntityTable;
 
-public class TableFactory <T extends EntityTable<E>, E extends HEntity>{
+public class XmlFactory <T extends EntityTable<E>, E extends HEntity>{
 	
 	// Cache reflected object
 	Class<T> tableClass;

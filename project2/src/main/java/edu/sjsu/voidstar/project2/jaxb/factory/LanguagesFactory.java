@@ -6,4 +6,4 @@ import edu.sjsu.voidstar.project1.dao.Language;
 import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
 
 @XmlRegistry
-public class LanguagesFactory extends TableFactory<Languages,Language>{}
+public class LanguagesFactory extends XmlFactory<Languages,Language>{}

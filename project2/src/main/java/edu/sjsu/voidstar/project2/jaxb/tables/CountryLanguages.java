@@ -8,6 +8,7 @@
 package edu.sjsu.voidstar.project2.jaxb.tables;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -52,41 +53,17 @@ import edu.sjsu.voidstar.project1.dao.CountryLanguage;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "countryLanguage"
-})
+@XmlType(name = "", propOrder = { "countryLanguage" })
 @XmlRootElement(name = "CountryLanguages")
 public class CountryLanguages implements EntityTable<CountryLanguage> {
-
     @XmlElement(name = "CountryLanguage")
-    protected List<CountryLanguage> countryLanguage;
-
-    /**
-     * Gets the value of the countryLanguage property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the countryLanguage property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCountryLanguage().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CountryLanguages.CountryLanguage }
-     * 
-     * 
-     */
-    public List<CountryLanguage> get() {
-        if (countryLanguage == null) {
-            countryLanguage = new ArrayList<CountryLanguage>();
-        }
-        return this.countryLanguage;
-    }
+    protected List<CountryLanguage> countryLanguage = new ArrayList<>();
+    
+    public final void add(CountryLanguage countryLanguage) {
+    	this.countryLanguage.add(countryLanguage);
+	}
+	
+	public final void addAll(Collection<CountryLanguage> countryLanguages) {
+		countryLanguage.addAll(countryLanguages);	
+	}
 }

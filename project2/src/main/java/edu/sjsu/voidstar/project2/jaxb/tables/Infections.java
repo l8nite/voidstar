@@ -9,6 +9,7 @@
 package edu.sjsu.voidstar.project2.jaxb.tables;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -52,41 +53,17 @@ import edu.sjsu.voidstar.project1.dao.Infection;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "infection"
-})
+@XmlType(name = "", propOrder = { "infection" })
 @XmlRootElement(name = "Infections")
-public class Infections implements EntityTable<Infection> {
-
+public class Infections implements EntityTable<Infection>{
     @XmlElement(name = "Infection")
-    protected List<Infection> infection;
-
-    /**
-     * Gets the value of the infection property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the infection property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getInfection().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Infections.Infection }
-     * 
-     * 
-     */
-    public List<Infection> get() {
-        if (infection == null) {
-            infection = new ArrayList<Infection>();
-        }
-        return this.infection;
+    protected List<Infection> infection = new ArrayList<>();
+    
+    public void add(Infection infection) {
+    	this.infection.add(infection);
+    }
+    
+    public void addAll(Collection<Infection> infections) {
+    	infection.addAll(infections);
     }
 }

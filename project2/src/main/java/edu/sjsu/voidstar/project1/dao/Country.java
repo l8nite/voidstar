@@ -9,6 +9,7 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import org.hibernate.criterion.Order;
@@ -36,7 +37,6 @@ import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
     "capital",
     "code2"
 })
-
 public class Country extends HEntity {
 	@Id
 	@XmlElement(name = "Code")
@@ -85,9 +85,11 @@ public class Country extends HEntity {
     private String code2;
 	
 	@OneToMany(mappedBy="countryCode")
+	@XmlTransient
 	private Set<City> cities;
 	
 	@OneToMany(mappedBy="countryCode")
+	@XmlTransient
 	private Set<CountryLanguage> languages;
 
 	public String getCode() {
