@@ -14,7 +14,6 @@ public class EntityMarshaller <T extends EntityTable<E>, E extends HEntity>{
 	
 	T table;
 	
-	//TODO: See if I can figure out a way to do this reflectively
 	public EntityMarshaller(T table) {
 		this.table = table;
 	}
