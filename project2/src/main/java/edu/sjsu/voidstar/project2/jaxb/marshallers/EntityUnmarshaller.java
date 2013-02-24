@@ -1,5 +1,8 @@
 package edu.sjsu.voidstar.project2.jaxb.marshallers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import javax.xml.bind.JAXBContext;
@@ -20,6 +23,10 @@ public class EntityUnmarshaller <T extends EntityTable<?>> {
 		} catch (JAXBException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	public T unmarshall(File file) throws FileNotFoundException, JAXBException {
+		return unmarshall(new FileInputStream(file));
 	}
 	
 	@SuppressWarnings("unchecked")

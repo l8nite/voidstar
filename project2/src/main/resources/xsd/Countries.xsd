@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <xs:element name="Countries" type="Countries"/>
+
   <xs:element name="Country" type="Country"/>
+
+  <xs:complexType name="Countries">
+    <xs:sequence>
+      <xs:element ref="Country" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="Country">
     <xs:sequence>

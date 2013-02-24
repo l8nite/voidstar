@@ -9,6 +9,7 @@ package edu.sjsu.voidstar.project2.jaxb.tables;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -20,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 import edu.sjsu.voidstar.project1.dao.City;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"city"})
-@XmlRootElement(name = "Citys")
-public class Citys implements EntityTable<City> {
+@XmlType(name = "Cities", propOrder = {"city"})
+@XmlRootElement(name = "Cities")
+public class Cities implements EntityTable<City> {
     @XmlElement(name = "City")
     protected List<City> city = new ArrayList<>();
     
@@ -32,5 +33,9 @@ public class Citys implements EntityTable<City> {
 	
 	public final void addAll(Collection<City> cities) {
 		city.addAll(cities);	
+	}
+	
+	public List<City> getEntities() {
+		return Collections.unmodifiableList(city);
 	}
 }

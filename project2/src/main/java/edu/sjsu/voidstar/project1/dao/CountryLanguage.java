@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
@@ -19,10 +20,11 @@ import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
 @Entity
 @IdClass(CountryLanguageId.class)
+@XmlRootElement(name="CountryLanguage")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "CountryLanguage", propOrder = {
     "countryCode",
-    "languageID",
+    "languageId",
     "isOfficial",
     "percentage"
 })

@@ -3,6 +3,14 @@
 
   <xs:element name="Infection" type="Infection"/>
 
+  <xs:element name="Infections" type="Infections"/>
+
+  <xs:complexType name="Infections">
+    <xs:sequence>
+      <xs:element ref="Infection" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="Infection">
     <xs:sequence>
       <xs:element name="ID" type="xs:int" minOccurs="0"/>

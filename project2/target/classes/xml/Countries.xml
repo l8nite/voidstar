@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Countrys xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Country.xsd">
+<Countries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Countries.xsd">
   <Country>
     <Code>ABW</Code>
     <Name>Aruba</Name>
@@ -4063,4 +4063,4 @@
     <Capital>4068</Capital>
     <Code2>ZW</Code2>
   </Country>
-</Countrys>
+</Countries>

@@ -40,7 +40,7 @@ public class HibernateModule {
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		properties.put("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-		properties.put("hibernate.connection.url", "jdbc:mysql://kong.idlemonkeys.net:3306/se157bproject1");
+		properties.put("hibernate.connection.url", "jdbc:mysql://kong.idlemonkeys.net:3306/se157bproject2");
 		properties.put("hibernate.connection.username", "jcampos");
 		properties.put("hibernate.connection.password", "sopmacj");
 		properties.put("hibernate.current_session_context_class", "org.hibernate.context.ThreadLocalSessionContext");

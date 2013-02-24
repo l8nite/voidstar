@@ -10,6 +10,7 @@ package edu.sjsu.voidstar.project2.jaxb.tables;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -20,40 +21,8 @@ import javax.xml.bind.annotation.XmlType;
 
 import edu.sjsu.voidstar.project1.dao.Infection;
 
-
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded" minOccurs="0">
- *         &lt;element name="Infection">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="CityID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="Zombies" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/choice>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "infection" })
+@XmlType(name = "Infections", propOrder = { "infection" })
 @XmlRootElement(name = "Infections")
 public class Infections implements EntityTable<Infection>{
     @XmlElement(name = "Infection")
@@ -66,4 +35,8 @@ public class Infections implements EntityTable<Infection>{
     public void addAll(Collection<Infection> infections) {
     	infection.addAll(infections);
     }
+    
+    public List<Infection> getEntities() {
+		return Collections.unmodifiableList(infection);
+	}
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Citys xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="City.xsd">
+<Cities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Cities.xsd">
   <City>
     <ID>1</ID>
     <Name>Kabul</Name>
@@ -28553,4 +28553,4 @@
     <District>Rafah</District>
     <Population>92020</Population>
   </City>
-</Citys>
+</Cities>

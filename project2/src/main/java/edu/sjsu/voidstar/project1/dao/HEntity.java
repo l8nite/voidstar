@@ -1,7 +1,10 @@
 package edu.sjsu.voidstar.project1.dao;
 
+import javax.xml.bind.annotation.XmlTransient;
+
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 
+@XmlTransient
 public class HEntity {
 	
 	public void save() {

@@ -9,6 +9,7 @@ package edu.sjsu.voidstar.project2.jaxb.tables;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,41 +20,8 @@ import javax.xml.bind.annotation.XmlType;
 
 import edu.sjsu.voidstar.project1.dao.CountryLanguage;
 
-
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;choice maxOccurs="unbounded" minOccurs="0">
- *         &lt;element name="CountryLanguage">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="CountryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="LanguageID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="IsOfficial" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                   &lt;element name="Percentage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/choice>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "countryLanguage" })
+@XmlType(name = "CountryLanguages", propOrder = { "countryLanguage" })
 @XmlRootElement(name = "CountryLanguages")
 public class CountryLanguages implements EntityTable<CountryLanguage> {
     @XmlElement(name = "CountryLanguage")
@@ -65,5 +33,9 @@ public class CountryLanguages implements EntityTable<CountryLanguage> {
 	
 	public final void addAll(Collection<CountryLanguage> countryLanguages) {
 		countryLanguage.addAll(countryLanguages);	
+	}
+	
+	public List<CountryLanguage> getEntities() {
+		return Collections.unmodifiableList(countryLanguage);
 	}
 }
