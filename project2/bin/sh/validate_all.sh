@@ -1,4 +1,5 @@
 #!/bin/bash
-for table in City Country CountryLanguage Infection Language; do
-    xmllint --noout --schema $table.xsd $table.xml
+
+for table in Cities CountryLanguages Languages Countries Infections; do
+    xmllint --noout --schema src/main/resources/xsd/$table.xsd src/main/resources/xml/$table.xml
 done;
