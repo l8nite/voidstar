@@ -25,10 +25,24 @@ public class EntityMarshaller <T extends EntityTable<E>, E extends HEntity>{
 	private static final Logger log = LoggerFactory.getLogger(EntityMarshaller.class);
 	
 	// The EntityTable object holding the collection of Entities to marshal.
+	private Class<T> tableClass;
 	private T table;
 	
-	public EntityMarshaller(T table) {
-		this.table = table;
+	private EntityMarshaller(Class<T> tableClass) throws InstantiationException, IllegalAccessException {
+		this.tableClass = tableClass;
+		this.table = tableClass.newInstance();
+
+		//TODO: 
+		// Can all functionality be moved to this class and away from the EntityTable interface?
+		// To do this, need to use the argument table class' annotations to dynamically create a 
+		// new instance of a class which contains the correct add/addall/getEntities methods. Then,
+		// the returned EntityMarshaller will pass the method calls through to that object instead 
+		// of to the EntityTable instance. 
+		// The purpose of this would be to avoid the boilerplate code in all of the EntityTable classes.
+	}
+	
+	public static <T extends EntityTable<E>, E extends HEntity> EntityMarshaller<T,E> create (Class<T> tableClass) throws InstantiationException, IllegalAccessException {
+		return new EntityMarshaller<T,E>(tableClass);
 	}
 	
 	public void add(E entity) {
@@ -52,13 +66,13 @@ public class EntityMarshaller <T extends EntityTable<E>, E extends HEntity>{
 	 */
 	public void marshal(OutputStream out) {
 		try {
-			JAXBContext context = JAXBContext.newInstance(new Class[]{table.getClass()});
+			JAXBContext context = JAXBContext.newInstance(new Class[]{tableClass});
 			Marshaller marshaller = context.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 			
 			// If the class has the SchemaLocation annotation, set the schema location
-			if(table.getClass().isAnnotationPresent(SchemaLocation.class)) {
-				SchemaLocation location = table.getClass().getAnnotation(SchemaLocation.class);
+			if(tableClass.isAnnotationPresent(SchemaLocation.class)) {
+				SchemaLocation location = tableClass.getAnnotation(SchemaLocation.class);
 				marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, location.value());
 			}
 			

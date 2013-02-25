@@ -28,15 +28,15 @@ import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
 public class GenerateXml {
 	private static final Logger log = LoggerFactory.getLogger(GenerateXml.class);
 	
-	public static void main(String... args) throws IOException {
+	public static void main(String... args) throws IOException, InstantiationException, IllegalAccessException {
 		
 		// Initialize all the marshallers
 		log.info("Intializing marshallers...");
-		EntityMarshaller<Cities,City> cities = new EntityMarshaller<>(new Cities());
-		EntityMarshaller<Countries,Country> countries = new EntityMarshaller<>(new Countries());
-		EntityMarshaller<CountryLanguages,CountryLanguage> countryLanguages = new EntityMarshaller<>(new CountryLanguages());
-		EntityMarshaller<Infections,Infection> infections = new EntityMarshaller<>(new Infections());
-		EntityMarshaller<Languages,Language> languages = new EntityMarshaller<>(new Languages());
+		EntityMarshaller<Cities,City> cities = EntityMarshaller.create(Cities.class);
+		EntityMarshaller<Countries,Country> countries = EntityMarshaller.create(Countries.class);
+		EntityMarshaller<CountryLanguages,CountryLanguage> countryLanguages = EntityMarshaller.create(CountryLanguages.class);
+		EntityMarshaller<Infections,Infection> infections = EntityMarshaller.create(Infections.class);
+		EntityMarshaller<Languages,Language> languages = EntityMarshaller.create(Languages.class);
 		
 		// Populate marshal objects
 		log.info("Populating marshallers...");
