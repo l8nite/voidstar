@@ -21,14 +21,14 @@ import edu.sjsu.voidstar.project2.jaxb.tables.EntityTable;
  * @param <T> The EntityTable wrapper responsible for marshalling the Entity
  * @param <E> The Entity being marshalled
  */
-public class EntityMarshaller <T extends EntityTable<E>, E extends HEntity>{
+public class EntityMarshaller <E extends HEntity>{
 	private static final Logger log = LoggerFactory.getLogger(EntityMarshaller.class);
 	
 	// The EntityTable object holding the collection of Entities to marshal.
-	private Class<T> tableClass;
-	private T table;
+	private Class<? extends EntityTable<E>> tableClass;
+	private EntityTable<E> table;
 	
-	private EntityMarshaller(Class<T> tableClass) throws InstantiationException, IllegalAccessException {
+	private <T extends EntityTable<E>> EntityMarshaller(Class<T> tableClass) throws InstantiationException, IllegalAccessException {
 		this.tableClass = tableClass;
 		this.table = tableClass.newInstance();
 
@@ -39,10 +39,11 @@ public class EntityMarshaller <T extends EntityTable<E>, E extends HEntity>{
 		// the returned EntityMarshaller will pass the method calls through to that object instead 
 		// of to the EntityTable instance. 
 		// The purpose of this would be to avoid the boilerplate code in all of the EntityTable classes.
+		
 	}
 	
-	public static <T extends EntityTable<E>, E extends HEntity> EntityMarshaller<T,E> create (Class<T> tableClass) throws InstantiationException, IllegalAccessException {
-		return new EntityMarshaller<T,E>(tableClass);
+	public static <T extends EntityTable<E>, E extends HEntity> EntityMarshaller<E> create (Class<T> tableClass) throws InstantiationException, IllegalAccessException {
+		return new EntityMarshaller<E>(tableClass);
 	}
 	
 	public void add(E entity) {

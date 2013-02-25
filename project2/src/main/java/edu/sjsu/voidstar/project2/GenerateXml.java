@@ -32,11 +32,11 @@ public class GenerateXml {
 		
 		// Initialize all the marshallers
 		log.info("Intializing marshallers...");
-		EntityMarshaller<Cities,City> cities = EntityMarshaller.create(Cities.class);
-		EntityMarshaller<Countries,Country> countries = EntityMarshaller.create(Countries.class);
-		EntityMarshaller<CountryLanguages,CountryLanguage> countryLanguages = EntityMarshaller.create(CountryLanguages.class);
-		EntityMarshaller<Infections,Infection> infections = EntityMarshaller.create(Infections.class);
-		EntityMarshaller<Languages,Language> languages = EntityMarshaller.create(Languages.class);
+		EntityMarshaller<City> cities = EntityMarshaller.create(Cities.class);
+		EntityMarshaller<Country> countries = EntityMarshaller.create(Countries.class);
+		EntityMarshaller<CountryLanguage> countryLanguages = EntityMarshaller.create(CountryLanguages.class);
+		EntityMarshaller<Infection> infections = EntityMarshaller.create(Infections.class);
+		EntityMarshaller<Language> languages = EntityMarshaller.create(Languages.class);
 		
 		// Populate marshal objects
 		log.info("Populating marshallers...");
