@@ -44,12 +44,12 @@ public class CountryLanguage extends HEntity {
 	private String isOfficial;
 
 	@ManyToOne
-	@JoinColumn(name="CountryCode")
+	@JoinColumn(name="CountryCode", insertable=false)
 	@XmlTransient
 	private Country country;
 	
 	@ManyToOne
-	@JoinColumn(name="LanguageID")
+	@JoinColumn(name="LanguageID", insertable=false)
 	@XmlTransient
 	private Language language;
 
@@ -114,5 +114,10 @@ public class CountryLanguage extends HEntity {
 			.createCriteria(CountryLanguage.class)
 			.add(Restrictions.eq("languageId", language.getId()))
 			.list();
+	}
+	
+	@Override
+	public String toString() {
+		return "Country: " + country.toString() + ", Language: " + language.toString();
 	}
 }

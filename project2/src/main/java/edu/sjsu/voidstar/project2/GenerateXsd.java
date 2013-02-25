@@ -16,6 +16,10 @@ import edu.sjsu.voidstar.project2.jaxb.tables.CountryLanguages;
 import edu.sjsu.voidstar.project2.jaxb.tables.Infections;
 import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
 
+/**
+ * Generates an XSD for the HEntity and EntityTable classes.
+ * @author Jason Campos
+ */
 public class GenerateXsd {
 
 	public static void main(String... args) throws JAXBException, IOException {

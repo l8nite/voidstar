@@ -32,7 +32,7 @@ public class Infection extends HEntity {
 	private Integer id;
 
 	@OneToOne
-	@JoinColumn(name = "CityId")
+	@JoinColumn(name = "CityId", insertable=false)
 	@XmlTransient
 	private City city;
     
@@ -79,5 +79,9 @@ public class Infection extends HEntity {
 		}
 
 		return infection;
+	}
+	
+	public String toString() {
+		return "ID: " + id + ", CityID: " + cityID + ", Zombies: " + zombies;
 	}
 }

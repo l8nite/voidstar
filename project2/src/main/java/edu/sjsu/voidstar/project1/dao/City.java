@@ -37,12 +37,11 @@ public class City extends HEntity {
 	private String name;
 
 	@ManyToOne
-	@JoinColumn(name = "CountryCode")
+	@JoinColumn(name = "CountryCode", insertable=false)
 	@XmlTransient
 	private Country country;
 
 	@XmlElement(name = "CountryCode")
-
 	private String countryCode;
 	
 	@XmlElement(name = "District")
