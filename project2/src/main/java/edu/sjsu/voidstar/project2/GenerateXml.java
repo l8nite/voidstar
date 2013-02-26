@@ -15,11 +15,6 @@ import edu.sjsu.voidstar.project1.dao.Infection;
 import edu.sjsu.voidstar.project1.dao.Language;
 import edu.sjsu.voidstar.project1.hibernate.HibernateService;
 import edu.sjsu.voidstar.project2.jaxb.marshallers.EntityMarshaller;
-import edu.sjsu.voidstar.project2.jaxb.tables.Cities;
-import edu.sjsu.voidstar.project2.jaxb.tables.Countries;
-import edu.sjsu.voidstar.project2.jaxb.tables.CountryLanguages;
-import edu.sjsu.voidstar.project2.jaxb.tables.Infections;
-import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
 
 /**
  * Generates XML for all HEntity objects persisted in the database. 
@@ -32,11 +27,11 @@ public class GenerateXml {
 		
 		// Initialize all the marshallers
 		log.info("Intializing marshallers...");
-		EntityMarshaller<City> cities = EntityMarshaller.create(Cities.class);
-		EntityMarshaller<Country> countries = EntityMarshaller.create(Countries.class);
-		EntityMarshaller<CountryLanguage> countryLanguages = EntityMarshaller.create(CountryLanguages.class);
-		EntityMarshaller<Infection> infections = EntityMarshaller.create(Infections.class);
-		EntityMarshaller<Language> languages = EntityMarshaller.create(Languages.class);
+		EntityMarshaller<City> cities = EntityMarshaller.create(City.class);
+		EntityMarshaller<Country> countries = EntityMarshaller.create(Country.class);
+		EntityMarshaller<CountryLanguage> countryLanguages = EntityMarshaller.create(CountryLanguage.class);
+		EntityMarshaller<Infection> infections = EntityMarshaller.create(Infection.class);
+		EntityMarshaller<Language> languages = EntityMarshaller.create(Language.class);
 		
 		// Populate marshal objects
 		log.info("Populating marshallers...");

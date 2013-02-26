@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 
 import edu.sjsu.voidstar.project1.dao.HEntity;
 import edu.sjsu.voidstar.project2.jaxb.annotations.SchemaLocation;
+import edu.sjsu.voidstar.project2.jaxb.annotations.XmlGroup;
+import edu.sjsu.voidstar.project2.jaxb.assertions.JAXBAssertions;
 import edu.sjsu.voidstar.project2.jaxb.tables.EntityTable;
 
 /**
@@ -28,6 +30,17 @@ public class EntityMarshaller <E extends HEntity>{
 	private Class<? extends EntityTable<E>> tableClass;
 	private EntityTable<E> table;
 	
+	public static <E extends HEntity> EntityMarshaller<E> create(Class<E> entityClass) throws InstantiationException, IllegalAccessException {
+		JAXBAssertions.assertXmlGroupAnnotationIsPresent(entityClass);
+		XmlGroup group = entityClass.getAnnotation(XmlGroup.class);
+		
+		// Runtime error if the tableclass's type parameter does not match E
+		@SuppressWarnings("unchecked")
+		Class<? extends EntityTable<E>> tableClass = (Class<? extends EntityTable<E>>) group.value();
+		
+		return new EntityMarshaller<E>(tableClass);
+	}
+	
 	private <T extends EntityTable<E>> EntityMarshaller(Class<T> tableClass) throws InstantiationException, IllegalAccessException {
 		this.tableClass = tableClass;
 		this.table = tableClass.newInstance();
@@ -38,14 +51,9 @@ public class EntityMarshaller <E extends HEntity>{
 		// new instance of a class which contains the correct add/addall/getEntities methods. Then,
 		// the returned EntityMarshaller will pass the method calls through to that object instead 
 		// of to the EntityTable instance. 
-		// The purpose of this would be to avoid the boilerplate code in all of the EntityTable classes.
-		
+		// The purpose of this would be to avoid the boilerplate code in all of the EntityTable classes.	
 	}
-	
-	public static <T extends EntityTable<E>, E extends HEntity> EntityMarshaller<E> create (Class<T> tableClass) throws InstantiationException, IllegalAccessException {
-		return new EntityMarshaller<E>(tableClass);
-	}
-	
+
 	public void add(E entity) {
 		table.add(entity);
 	}

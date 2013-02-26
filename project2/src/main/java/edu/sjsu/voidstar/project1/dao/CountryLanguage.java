@@ -17,6 +17,8 @@ import javax.xml.bind.annotation.XmlType;
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+import edu.sjsu.voidstar.project2.jaxb.annotations.XmlGroup;
+import edu.sjsu.voidstar.project2.jaxb.tables.CountryLanguages;
 
 @Entity
 @IdClass(CountryLanguageId.class)
@@ -28,6 +30,7 @@ import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
     "isOfficial",
     "percentage"
 })
+@XmlGroup(CountryLanguages.class)
 public class CountryLanguage extends HEntity {
 	@Id
 	@XmlElement(name = "CountryCode")

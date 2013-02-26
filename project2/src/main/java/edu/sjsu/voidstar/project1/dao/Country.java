@@ -18,6 +18,8 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+import edu.sjsu.voidstar.project2.jaxb.annotations.XmlGroup;
+import edu.sjsu.voidstar.project2.jaxb.tables.Countries;
 
 @Entity
 @XmlRootElement(name="Country")
@@ -39,6 +41,7 @@ import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
     "capital",
     "code2"
 })
+@XmlGroup(Countries.class)
 public class Country extends HEntity {
 	@Id
 	@XmlElement(name = "Code")

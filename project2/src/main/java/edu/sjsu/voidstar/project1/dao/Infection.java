@@ -16,6 +16,8 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+import edu.sjsu.voidstar.project2.jaxb.annotations.XmlGroup;
+import edu.sjsu.voidstar.project2.jaxb.tables.Infections;
 
 @Entity
 @XmlRootElement(name="Infection")
@@ -25,6 +27,7 @@ import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
     "cityID",
     "zombies"
 })
+@XmlGroup(Infections.class)
 public class Infection extends HEntity {
 	@Id
 	@GeneratedValue

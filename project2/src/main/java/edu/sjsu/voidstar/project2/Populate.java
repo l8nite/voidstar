@@ -2,6 +2,7 @@ package edu.sjsu.voidstar.project2;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 import javax.xml.bind.JAXBException;
 
@@ -16,11 +17,6 @@ import edu.sjsu.voidstar.project1.dao.Infection;
 import edu.sjsu.voidstar.project1.dao.Language;
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
 import edu.sjsu.voidstar.project2.jaxb.marshallers.EntityUnmarshaller;
-import edu.sjsu.voidstar.project2.jaxb.tables.Cities;
-import edu.sjsu.voidstar.project2.jaxb.tables.Countries;
-import edu.sjsu.voidstar.project2.jaxb.tables.CountryLanguages;
-import edu.sjsu.voidstar.project2.jaxb.tables.Infections;
-import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
 
 /**
  * Populates the database with the objects unmarshalled from the XML files.
@@ -33,11 +29,11 @@ public class Populate {
 		
 		// Each table needs its own unmarshaller
 		log.info("Preparing unmarshallers...");
-		EntityUnmarshaller<Cities> uCities = new EntityUnmarshaller<>(Cities.class);
-		EntityUnmarshaller<Countries> uCountries = new EntityUnmarshaller<>(Countries.class);
-		EntityUnmarshaller<CountryLanguages> uCountryLanguages = new EntityUnmarshaller<>(CountryLanguages.class);
-		EntityUnmarshaller<Infections> uInfections = new EntityUnmarshaller<>(Infections.class);
-		EntityUnmarshaller<Languages> uLanguages = new EntityUnmarshaller<>(Languages.class);
+		EntityUnmarshaller<City> uCities = EntityUnmarshaller.create(City.class);
+		EntityUnmarshaller<Country> uCountries = EntityUnmarshaller.create(Country.class);
+		EntityUnmarshaller<CountryLanguage> uCountryLanguages = EntityUnmarshaller.create(CountryLanguage.class);
+		EntityUnmarshaller<Infection> uInfections = EntityUnmarshaller.create(Infection.class);
+		EntityUnmarshaller<Language> uLanguages = EntityUnmarshaller.create(Language.class);
 		
 		// Set up file objects 
 		log.info("Loading XML...");
@@ -49,11 +45,11 @@ public class Populate {
 		
 		// Perform the unmarshal step
 		log.info("Creating unmarshallers...");
-		Cities cities = uCities.unmarshall(fCities);
-		Countries countries = uCountries.unmarshall(fCountries);
-		CountryLanguages countryLanguages = uCountryLanguages.unmarshall(fCountryLanguages);
-		Infections infections = uInfections.unmarshall(fInfections);
-		Languages languages = uLanguages.unmarshall(fLanguages);
+		List<City> cities = uCities.unmarshall(fCities);
+		List<Country> countries = uCountries.unmarshall(fCountries);
+		List<CountryLanguage> countryLanguages = uCountryLanguages.unmarshall(fCountryLanguages);
+		List<Infection> infections = uInfections.unmarshall(fInfections);
+		List<Language> languages = uLanguages.unmarshall(fLanguages);
 		
 		log.info("Establishing connection...");
 		HibernateSession.get();
@@ -61,31 +57,31 @@ public class Populate {
 		try {			
 			// Save the entities 
 			log.info("Saving countries...");
-			for (Country country: countries.getEntities()) {
+			for (Country country: countries) {
 				country.save();
 			}
 			log.info("Countries saved!");
 			
 			log.info("Saving languages...");
-			for (Language language : languages.getEntities()) {
+			for (Language language : languages) {
 				language.save();
 			}
 			log.info("Languages saved!");
 			
 			log.info("Saving cities...");
-			for (City city : cities.getEntities()) {
+			for (City city : cities) {
 				city.save();
 			}
 			log.info("Cities saved!");
 			
 			log.info("Saving CountryLanguages...");
-			for (CountryLanguage countryLanguage : countryLanguages.getEntities()) {
+			for (CountryLanguage countryLanguage : countryLanguages) {
 				countryLanguage.save();
 			}
 			log.info("CountryLanguages saved!");
 			
 			log.info("Saving infections...");
-			for (Infection infection : infections.getEntities()) {
+			for (Infection infection : infections) {
 				infection.save();
 			}
 		

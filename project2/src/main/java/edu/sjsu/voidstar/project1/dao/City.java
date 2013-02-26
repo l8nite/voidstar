@@ -17,6 +17,8 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+import edu.sjsu.voidstar.project2.jaxb.annotations.XmlGroup;
+import edu.sjsu.voidstar.project2.jaxb.tables.Cities;
 @XmlRootElement(name = "City")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name="City", propOrder = {
@@ -27,6 +29,7 @@ import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
     "population"
 })
 @Entity
+@XmlGroup(Cities.class)
 public class City extends HEntity {
 	
 	@Id

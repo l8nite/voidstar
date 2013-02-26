@@ -17,6 +17,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import edu.sjsu.voidstar.project2.jaxb.annotations.XmlGroup;
+import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
+
 @Entity
 @XmlRootElement(name="Language")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -24,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
     "id",
     "language"
 })
+@XmlGroup(Languages.class)
 public class Language extends HEntity {
 	
 	@Id
