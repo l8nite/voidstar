@@ -1,7 +1,7 @@
 package edu.sjsu.voidstar.project2.jaxb.assertions;
 
 import edu.sjsu.voidstar.project2.jaxb.annotations.XmlGroup;
-import edu.sjsu.voidstart.project2.util.Assertions;
+import edu.sjsu.voidstar.project2.util.Assertions;
 
 public class JAXBAssertions {
 	public static void assertXmlGroupAnnotationIsPresent(Class<?> entityClass){

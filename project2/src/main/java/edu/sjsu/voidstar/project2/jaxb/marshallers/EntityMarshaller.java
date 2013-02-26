@@ -43,15 +43,7 @@ public class EntityMarshaller <E extends HEntity>{
 	
 	private <T extends EntityTable<E>> EntityMarshaller(Class<T> tableClass) throws InstantiationException, IllegalAccessException {
 		this.tableClass = tableClass;
-		this.table = tableClass.newInstance();
-
-		//TODO: 
-		// Can all functionality be moved to this class and away from the EntityTable interface?
-		// To do this, need to use the argument table class' annotations to dynamically create a 
-		// new instance of a class which contains the correct add/addall/getEntities methods. Then,
-		// the returned EntityMarshaller will pass the method calls through to that object instead 
-		// of to the EntityTable instance. 
-		// The purpose of this would be to avoid the boilerplate code in all of the EntityTable classes.	
+		this.table = tableClass.newInstance();	
 	}
 
 	public void add(E entity) {
@@ -89,6 +81,6 @@ public class EntityMarshaller <E extends HEntity>{
 		} catch (JAXBException e) {
 			log.error(e.getMessage(), e);
 			throw new RuntimeException(e);
-		}	
+		}
 	}
 }
