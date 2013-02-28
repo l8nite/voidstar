@@ -28,7 +28,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>edu.sjsu.voidstar.project2.App</mainClass>
+							<mainClass>edu.sjsu.voidstar.project2.GenerateXsd</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -48,7 +48,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>edu.sjsu.voidstar.project2.App</mainClass>
+									<mainClass>edu.sjsu.voidstar.project2.GenerateXsd</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>

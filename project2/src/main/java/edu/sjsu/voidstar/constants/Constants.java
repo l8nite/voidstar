@@ -19,7 +19,7 @@ public class Constants {
 		}
 		
 		public static class XSD {
-			public static final String PATH = "../xsd";
+			public static final String PATH = "src/main/resources/xsd";
 			
 			public static final String CITIES = PATH + "/Cities.xsd";
 			public static final String COUNTRIES = PATH + "/Countries.xsd";
