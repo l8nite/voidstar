@@ -49,11 +49,11 @@ public class EntityUnmarshaller <E extends HEntity> {
 		}
 	}
 	
-	public List<E> unmarshall(File file) throws FileNotFoundException, JAXBException {
-		return unmarshall(new FileInputStream(file));
+	public List<E> unmarshal(File file) throws FileNotFoundException, JAXBException {
+		return unmarshal(new FileInputStream(file));
 	}
 	
-	public List<E> unmarshall(InputStream is) throws JAXBException {
+	public List<E> unmarshal(InputStream is) throws JAXBException {
 		EntityTable<E> entityTable = unmarshalFromXml(is);
 		return entityTable.getEntities();
 	}

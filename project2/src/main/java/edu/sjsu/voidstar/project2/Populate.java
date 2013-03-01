@@ -47,11 +47,11 @@ public class Populate {
 
 		// Perform the unmarshal step
 		log.info("Creating unmarshallers...");
-		List<City> cities = uCities.unmarshall(fCities);
-		List<Country> countries = uCountries.unmarshall(fCountries);
-		List<CountryLanguage> countryLanguages = uCountryLanguages.unmarshall(fCountryLanguages);
-		List<Infection> infections = uInfections.unmarshall(fInfections);
-		List<Language> languages = uLanguages.unmarshall(fLanguages);
+		List<City> cities = uCities.unmarshal(fCities);
+		List<Country> countries = uCountries.unmarshal(fCountries);
+		List<CountryLanguage> countryLanguages = uCountryLanguages.unmarshal(fCountryLanguages);
+		List<Infection> infections = uInfections.unmarshal(fInfections);
+		List<Language> languages = uLanguages.unmarshal(fLanguages);
 
 		log.info("Establishing connection...");
 		
