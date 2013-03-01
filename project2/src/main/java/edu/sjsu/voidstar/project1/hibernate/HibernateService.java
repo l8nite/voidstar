@@ -4,7 +4,12 @@ import java.util.List;
 
 import javax.persistence.Table;
 
+import edu.sjsu.voidstar.project1.dao.City;
+import edu.sjsu.voidstar.project1.dao.Country;
+import edu.sjsu.voidstar.project1.dao.CountryLanguage;
 import edu.sjsu.voidstar.project1.dao.HEntity;
+import edu.sjsu.voidstar.project1.dao.Infection;
+import edu.sjsu.voidstar.project1.dao.Language;
 import edu.sjsu.voidstar.project2.util.Assertions;
 
 /**
@@ -32,5 +37,13 @@ public class HibernateService {
 		return HibernateSession.get()
 				.createQuery("delete from " + tableName)
 				.executeUpdate();
+	}
+
+	public static void resetDatabase() {
+		// TODO: Another reason to use some sort of dependency injection like Guice
+		HibernateModule module = new HibernateModule(); 
+		for(Class<? extends HEntity> c : module.getClasses()) {
+			deleteAll(c);
+		}
 	}
 }
