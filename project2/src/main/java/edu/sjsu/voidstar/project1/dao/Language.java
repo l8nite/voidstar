@@ -10,6 +10,7 @@ import java.util.TreeMap;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -28,6 +29,7 @@ import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
     "language"
 })
 @XmlGroup(Languages.class)
+@Table(name = "Language")
 public class Language extends HEntity {
 	
 	@Id

@@ -2,7 +2,10 @@ package edu.sjsu.voidstar.project1.hibernate;
 
 import java.util.List;
 
+import javax.persistence.Table;
+
 import edu.sjsu.voidstar.project1.dao.HEntity;
+import edu.sjsu.voidstar.project2.util.Assertions;
 
 /**
  * Service class for any common Hibernate queries.
@@ -20,5 +23,14 @@ public class HibernateService {
 		return HibernateSession.get()
 				.createCriteria(entityClass)
 				.list();
+	}
+	
+	public static <T extends HEntity> int deleteAll(Class<T> entityClass) {
+		Assertions.assertAnnotationPresent(entityClass,Table.class);
+		
+		String tableName = entityClass.getAnnotation(Table.class).name();
+		return HibernateSession.get()
+				.createQuery("delete from " + tableName)
+				.executeUpdate();
 	}
 }

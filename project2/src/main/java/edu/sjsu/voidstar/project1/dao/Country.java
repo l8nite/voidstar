@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,6 +43,7 @@ import edu.sjsu.voidstar.project2.jaxb.tables.Countries;
     "code2"
 })
 @XmlGroup(Countries.class)
+@Table(name = "Country")
 public class Country extends HEntity {
 	@Id
 	@XmlElement(name = "Code")

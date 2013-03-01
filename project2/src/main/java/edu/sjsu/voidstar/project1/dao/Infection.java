@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -28,6 +29,7 @@ import edu.sjsu.voidstar.project2.jaxb.tables.Infections;
     "zombies"
 })
 @XmlGroup(Infections.class)
+@Table(name = "Infection")
 public class Infection extends HEntity {
 	@Id
 	@GeneratedValue
