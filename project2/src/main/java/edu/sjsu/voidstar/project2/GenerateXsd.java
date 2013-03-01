@@ -4,17 +4,17 @@ import java.io.IOException;
 
 import javax.xml.bind.JAXBException;
 
-import edu.sjsu.voidstar.project1.dao.City;
-import edu.sjsu.voidstar.project1.dao.Country;
-import edu.sjsu.voidstar.project1.dao.CountryLanguage;
-import edu.sjsu.voidstar.project1.dao.Infection;
-import edu.sjsu.voidstar.project1.dao.Language;
-import edu.sjsu.voidstar.project2.jaxb.generators.XsdGenerator;
-import edu.sjsu.voidstar.project2.jaxb.tables.Cities;
-import edu.sjsu.voidstar.project2.jaxb.tables.Countries;
-import edu.sjsu.voidstar.project2.jaxb.tables.CountryLanguages;
-import edu.sjsu.voidstar.project2.jaxb.tables.Infections;
-import edu.sjsu.voidstar.project2.jaxb.tables.Languages;
+import edu.sjsu.voidstar.dao.City;
+import edu.sjsu.voidstar.dao.Country;
+import edu.sjsu.voidstar.dao.CountryLanguage;
+import edu.sjsu.voidstar.dao.Infection;
+import edu.sjsu.voidstar.dao.Language;
+import edu.sjsu.voidstar.jaxb.generators.XsdGenerator;
+import edu.sjsu.voidstar.jaxb.tables.Cities;
+import edu.sjsu.voidstar.jaxb.tables.Countries;
+import edu.sjsu.voidstar.jaxb.tables.CountryLanguages;
+import edu.sjsu.voidstar.jaxb.tables.Infections;
+import edu.sjsu.voidstar.jaxb.tables.Languages;
 
 /**
  * Generates an XSD for the HEntity and EntityTable classes.

@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-import edu.sjsu.voidstar.project1.dao.City;
-import edu.sjsu.voidstar.project1.dao.World;
+import edu.sjsu.voidstar.dao.City;
+import edu.sjsu.voidstar.dao.World;
 
 public class App {
 

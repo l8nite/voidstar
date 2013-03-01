@@ -10,14 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import edu.sjsu.voidstar.constants.Constants.Files.XML;
-import edu.sjsu.voidstar.project1.dao.City;
-import edu.sjsu.voidstar.project1.dao.Country;
-import edu.sjsu.voidstar.project1.dao.CountryLanguage;
-import edu.sjsu.voidstar.project1.dao.Infection;
-import edu.sjsu.voidstar.project1.dao.Language;
-import edu.sjsu.voidstar.project1.hibernate.HibernateService;
-import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
-import edu.sjsu.voidstar.project2.jaxb.marshallers.EntityUnmarshaller;
+import edu.sjsu.voidstar.dao.City;
+import edu.sjsu.voidstar.dao.Country;
+import edu.sjsu.voidstar.dao.CountryLanguage;
+import edu.sjsu.voidstar.dao.Infection;
+import edu.sjsu.voidstar.dao.Language;
+import edu.sjsu.voidstar.hibernate.HibernateService;
+import edu.sjsu.voidstar.hibernate.HibernateSession;
+import edu.sjsu.voidstar.jaxb.marshallers.EntityUnmarshaller;
 
 /**
  * Populates the database with the objects unmarshalled from the XML files.

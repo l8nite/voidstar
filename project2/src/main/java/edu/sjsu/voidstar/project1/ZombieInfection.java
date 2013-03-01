@@ -18,13 +18,13 @@ import org.hibernate.criterion.Restrictions;
 
 import com.google.common.base.Joiner;
 
-import edu.sjsu.voidstar.project1.dao.City;
-import edu.sjsu.voidstar.project1.dao.Country;
-import edu.sjsu.voidstar.project1.dao.CountryLanguage;
-import edu.sjsu.voidstar.project1.dao.Infection;
-import edu.sjsu.voidstar.project1.dao.Language;
-import edu.sjsu.voidstar.project1.dao.World;
-import edu.sjsu.voidstar.project1.hibernate.HibernateSession;
+import edu.sjsu.voidstar.dao.City;
+import edu.sjsu.voidstar.dao.Country;
+import edu.sjsu.voidstar.dao.CountryLanguage;
+import edu.sjsu.voidstar.dao.Infection;
+import edu.sjsu.voidstar.dao.Language;
+import edu.sjsu.voidstar.dao.World;
+import edu.sjsu.voidstar.hibernate.HibernateSession;
 
 public class ZombieInfection {
 	private City genesis;
