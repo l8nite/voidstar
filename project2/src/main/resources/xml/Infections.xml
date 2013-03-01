@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Infections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="../xsd/Infections.xsd">
+<Infections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="src/main/resources/xsd/Infections.xsd">
     <Infection>
         <ID>17136</ID>
         <CityID>3186</CityID>
