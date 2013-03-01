@@ -10,6 +10,7 @@ import edu.sjsu.voidstar.project1.dao.HEntity;
 import edu.sjsu.voidstar.project1.dao.Country;
 import edu.sjsu.voidstar.project1.dao.Infection;
 import edu.sjsu.voidstar.project1.dao.Language;
+import edu.sjsu.voidstar.project2.util.Assertions;
 
 /**
  * Contains configuration data for the Hibernate connection. 
@@ -54,9 +55,7 @@ public class HibernateModule {
 	 */
 	private void verifyClassesAreAnnotated(List<Class<? extends HEntity>> entityClasses) {
 		for(Class<? extends HEntity> entityClass : entityClasses) {
-			if (!entityClass.isAnnotationPresent(javax.persistence.Entity.class)) {
-				throw new RuntimeException("Class " + entityClass.getSimpleName() + " does not contain the @Entity annotation but is mapped in " + this.getClass().getSimpleName());
-			}
+			Assertions.assertAnnotationPresent(entityClass, javax.persistence.Entity.class);
 		}
 	}
 }
