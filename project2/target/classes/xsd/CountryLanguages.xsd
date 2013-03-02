@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="CountryLanguage" type="CountryLanguage"/>
+
+  <xs:element name="CountryLanguages" type="CountryLanguages"/>
+
+  <xs:complexType name="CountryLanguages">
+    <xs:sequence>
+      <xs:element ref="CountryLanguage" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CountryLanguage">
+    <xs:sequence>
+      <xs:element name="CountryCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="LanguageID" type="xs:int" minOccurs="0"/>
+      <xs:element name="IsOfficial" type="xs:string" minOccurs="0"/>
+      <xs:element name="Percentage" type="xs:float" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,8 @@
+cities.xql - queries the names of cities that have a population more that three hundred thousand
+
+cities_Infection.xql - queries the names of cities where the number of zombies is more than fourty thousand,( query Joins cities.xml and infection.xml)
+
+Countries1.xql - queries the names of countries where the life expectency of people is greater than 75
+
+
+Countries2.xql - queries the names of the head of state of countries where the GNP is greater than 5000

@@ -1,0 +1,117 @@
+http://www.w3.org/2001/XMLSchema-instance	Mohammad Omar
+http://www.w3.org/2001/XMLSchema-instance	Abdelaziz Bouteflika
+http://www.w3.org/2001/XMLSchema-instance	Jos� Eduardo dos Santos
+http://www.w3.org/2001/XMLSchema-instance	Fernando de la R�a
+http://www.w3.org/2001/XMLSchema-instance	Elisabeth II
+http://www.w3.org/2001/XMLSchema-instance	Thomas Klestil
+http://www.w3.org/2001/XMLSchema-instance	Hamad ibn Isa al-Khalifa
+http://www.w3.org/2001/XMLSchema-instance	Shahabuddin Ahmad
+http://www.w3.org/2001/XMLSchema-instance	Aljaksandr Luka�enka
+http://www.w3.org/2001/XMLSchema-instance	Albert II
+http://www.w3.org/2001/XMLSchema-instance	Hugo B�nzer Su�rez
+http://www.w3.org/2001/XMLSchema-instance	Fernando Henrique Cardoso
+http://www.w3.org/2001/XMLSchema-instance	Haji Hassan al-Bolkiah
+http://www.w3.org/2001/XMLSchema-instance	Petar Stojanov
+http://www.w3.org/2001/XMLSchema-instance	Norodom Sihanouk
+http://www.w3.org/2001/XMLSchema-instance	Paul Biya
+http://www.w3.org/2001/XMLSchema-instance	Elisabeth II
+http://www.w3.org/2001/XMLSchema-instance	Ricardo Lagos Escobar
+http://www.w3.org/2001/XMLSchema-instance	Jiang Zemin
+http://www.w3.org/2001/XMLSchema-instance	Andr�s Pastrana Arango
+http://www.w3.org/2001/XMLSchema-instance	Joseph Kabila
+http://www.w3.org/2001/XMLSchema-instance	Miguel �ngel Rodr�guez Echeverr�a
+http://www.w3.org/2001/XMLSchema-instance	�tipe Mesic
+http://www.w3.org/2001/XMLSchema-instance	Fidel Castro Ruz
+http://www.w3.org/2001/XMLSchema-instance	Glafkos Klerides
+http://www.w3.org/2001/XMLSchema-instance	V�clav Havel
+http://www.w3.org/2001/XMLSchema-instance	Laurent Gbagbo
+http://www.w3.org/2001/XMLSchema-instance	Margrethe II
+http://www.w3.org/2001/XMLSchema-instance	Hip�lito Mej�a Dom�nguez
+http://www.w3.org/2001/XMLSchema-instance	Gustavo Noboa Bejarano
+http://www.w3.org/2001/XMLSchema-instance	Hosni Mubarak
+http://www.w3.org/2001/XMLSchema-instance	Francisco Guillermo Flores P�rez
+http://www.w3.org/2001/XMLSchema-instance	Lennart Meri
+http://www.w3.org/2001/XMLSchema-instance	Negasso Gidada
+http://www.w3.org/2001/XMLSchema-instance	Tarja Halonen
+http://www.w3.org/2001/XMLSchema-instance	Jacques Chirac
+http://www.w3.org/2001/XMLSchema-instance	Omar Bongo
+http://www.w3.org/2001/XMLSchema-instance	Eduard �evardnadze
+http://www.w3.org/2001/XMLSchema-instance	Johannes Rau
+http://www.w3.org/2001/XMLSchema-instance	John Kufuor
+http://www.w3.org/2001/XMLSchema-instance	Kostis Stefanopoulos
+http://www.w3.org/2001/XMLSchema-instance	Alfonso Portillo Cabrera
+http://www.w3.org/2001/XMLSchema-instance	Carlos Roberto Flores Facuss�
+http://www.w3.org/2001/XMLSchema-instance	Jiang Zemin
+http://www.w3.org/2001/XMLSchema-instance	Ferenc M�dl
+http://www.w3.org/2001/XMLSchema-instance	�lafur Ragnar Gr�msson
+http://www.w3.org/2001/XMLSchema-instance	Kocheril Raman Narayanan
+http://www.w3.org/2001/XMLSchema-instance	Abdurrahman Wahid
+http://www.w3.org/2001/XMLSchema-instance	Ali Mohammad Khatami-Ardakani
+http://www.w3.org/2001/XMLSchema-instance	Saddam Hussein al-Takriti
+http://www.w3.org/2001/XMLSchema-instance	Mary McAleese
+http://www.w3.org/2001/XMLSchema-instance	Moshe Katzav
+http://www.w3.org/2001/XMLSchema-instance	Carlo Azeglio Ciampi
+http://www.w3.org/2001/XMLSchema-instance	Elisabeth II
+http://www.w3.org/2001/XMLSchema-instance	Akihito
+http://www.w3.org/2001/XMLSchema-instance	Abdullah II
+http://www.w3.org/2001/XMLSchema-instance	Nursultan Nazarbajev
+http://www.w3.org/2001/XMLSchema-instance	Daniel arap Moi
+http://www.w3.org/2001/XMLSchema-instance	Jabir al-Ahmad al-Jabir al-Sabah
+http://www.w3.org/2001/XMLSchema-instance	Vaira Vike-Freiberga
+http://www.w3.org/2001/XMLSchema-instance	�mile Lahoud
+http://www.w3.org/2001/XMLSchema-instance	Muammar al-Qadhafi
+http://www.w3.org/2001/XMLSchema-instance	Valdas Adamkus
+http://www.w3.org/2001/XMLSchema-instance	Henri
+http://www.w3.org/2001/XMLSchema-instance	Jiang Zemin
+http://www.w3.org/2001/XMLSchema-instance	Salahuddin Abdul Aziz Shah Alhaj
+http://www.w3.org/2001/XMLSchema-instance	Vicente Fox Quesada
+http://www.w3.org/2001/XMLSchema-instance	Mohammed VI
+http://www.w3.org/2001/XMLSchema-instance	kenraali Than Shwe
+http://www.w3.org/2001/XMLSchema-instance	Beatrix
+http://www.w3.org/2001/XMLSchema-instance	Elisabeth II
+http://www.w3.org/2001/XMLSchema-instance	Olusegun Obasanjo
+http://www.w3.org/2001/XMLSchema-instance	Kim Jong-il
+http://www.w3.org/2001/XMLSchema-instance	Harald V
+http://www.w3.org/2001/XMLSchema-instance	Qabus ibn Sa�id
+http://www.w3.org/2001/XMLSchema-instance	Mohammad Rafiq Tarar
+http://www.w3.org/2001/XMLSchema-instance	Mireya Elisa Moscoso Rodr�guez
+http://www.w3.org/2001/XMLSchema-instance	Luis �ngel Gonz�lez Macchi
+http://www.w3.org/2001/XMLSchema-instance	Valentin Paniagua Corazao
+http://www.w3.org/2001/XMLSchema-instance	Gloria Macapagal-Arroyo
+http://www.w3.org/2001/XMLSchema-instance	Aleksander Kwasniewski
+http://www.w3.org/2001/XMLSchema-instance	Jorge Samp�io
+http://www.w3.org/2001/XMLSchema-instance	George W. Bush
+http://www.w3.org/2001/XMLSchema-instance	Hamad ibn Khalifa al-Thani
+http://www.w3.org/2001/XMLSchema-instance	Ion Iliescu
+http://www.w3.org/2001/XMLSchema-instance	Vladimir Putin
+http://www.w3.org/2001/XMLSchema-instance	Jacques Chirac
+http://www.w3.org/2001/XMLSchema-instance	Fahd ibn Abdul-Aziz al-Sa�ud
+http://www.w3.org/2001/XMLSchema-instance	Sellapan Rama Nathan
+http://www.w3.org/2001/XMLSchema-instance	Rudolf Schuster
+http://www.w3.org/2001/XMLSchema-instance	Milan Kucan
+http://www.w3.org/2001/XMLSchema-instance	Thabo Mbeki
+http://www.w3.org/2001/XMLSchema-instance	Kim Dae-jung
+http://www.w3.org/2001/XMLSchema-instance	Juan Carlos I
+http://www.w3.org/2001/XMLSchema-instance	Chandrika Kumaratunga
+http://www.w3.org/2001/XMLSchema-instance	Omar Hassan Ahmad al-Bashir
+http://www.w3.org/2001/XMLSchema-instance	Carl XVI Gustaf
+http://www.w3.org/2001/XMLSchema-instance	Adolf Ogi
+http://www.w3.org/2001/XMLSchema-instance	Bashar al-Assad
+http://www.w3.org/2001/XMLSchema-instance	Chen Shui-bian
+http://www.w3.org/2001/XMLSchema-instance	Benjamin William Mkapa
+http://www.w3.org/2001/XMLSchema-instance	Bhumibol Adulyadej
+http://www.w3.org/2001/XMLSchema-instance	Arthur N. R. Robinson
+http://www.w3.org/2001/XMLSchema-instance	Zine al-Abidine Ben Ali
+http://www.w3.org/2001/XMLSchema-instance	Ahmet Necdet Sezer
+http://www.w3.org/2001/XMLSchema-instance	Yoweri Museveni
+http://www.w3.org/2001/XMLSchema-instance	Leonid Kut�ma
+http://www.w3.org/2001/XMLSchema-instance	Zayid bin Sultan al-Nahayan
+http://www.w3.org/2001/XMLSchema-instance	Elisabeth II
+http://www.w3.org/2001/XMLSchema-instance	George W. Bush
+http://www.w3.org/2001/XMLSchema-instance	Jorge Batlle Ib��ez
+http://www.w3.org/2001/XMLSchema-instance	Islam Karimov
+http://www.w3.org/2001/XMLSchema-instance	Hugo Ch�vez Fr�as
+http://www.w3.org/2001/XMLSchema-instance	Tr�n Duc Luong
+http://www.w3.org/2001/XMLSchema-instance	Ali Abdallah Salih
+http://www.w3.org/2001/XMLSchema-instance	Vojislav Ko�tunica
+http://www.w3.org/2001/XMLSchema-instance	Robert G. Mugabe
