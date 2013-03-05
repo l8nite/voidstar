@@ -17,7 +17,7 @@ public class CityClient {
 	
 	public void doTest() {
 		CityService service = portService.getCityServicePort();
-		City fremont = service.getCityById(3877L);
+		City fremont = service.getCityById(3877);
 		System.out.println(fremont.getName());
 	}
 }

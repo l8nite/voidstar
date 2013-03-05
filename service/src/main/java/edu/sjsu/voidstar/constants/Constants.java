@@ -33,6 +33,6 @@ public class Constants {
 	 * Soap Constants
 	 */
 	public static class Soap {
-		public static final String NAMESPACE = "http://ws.voidstar.sjsu.edu";
+		public static final String NAMESPACE = "http://ws.voidstar.sjsu.edu/";
 	}
 }

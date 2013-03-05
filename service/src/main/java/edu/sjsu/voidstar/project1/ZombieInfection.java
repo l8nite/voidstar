@@ -24,6 +24,9 @@ import edu.sjsu.voidstar.dao.CountryLanguage;
 import edu.sjsu.voidstar.dao.Infection;
 import edu.sjsu.voidstar.dao.Language;
 import edu.sjsu.voidstar.dao.World;
+import edu.sjsu.voidstar.dao.service.CountryLanguageService;
+import edu.sjsu.voidstar.dao.service.InfectionService;
+import edu.sjsu.voidstar.dao.service.LanguageService;
 import edu.sjsu.voidstar.hibernate.HibernateSession;
 
 public class ZombieInfection {
@@ -60,7 +63,7 @@ public class ZombieInfection {
 	}
 
 	public void infect(City city) {
-		Infection infectedCity = Infection.forCity(city);
+		Infection infectedCity = InfectionService.forCity(city);
 		Integer population = city.getPopulation();
 		Integer infected = infectedCity.getZombies();
 		String inOrTo = infected == 0 ? "to" : "in";
@@ -175,13 +178,13 @@ public class ZombieInfection {
 		System.out.println("World's Popular Languages: ");		
 		int languagesToDisplay = 3;
 		
-		for(Entry<Language,Long> infectedLanguage: Language.getSortedMostSpoken().entrySet()) {
+		for(Entry<Language,Long> infectedLanguage: LanguageService.getSortedMostSpoken().entrySet()) {
 			Language language = infectedLanguage.getKey();
 			long speakers = infectedLanguage.getValue();
 			long infectedSpeakersWorldwide = 0L;
 			
 			// Calculate an estimated number of speakers remaining in the world
-			List<CountryLanguage> countryLanguages = CountryLanguage.get(language);
+			List<CountryLanguage> countryLanguages = CountryLanguageService.getByLanguage(language);
 			Map<Country,Double> speakersInfectedByCountry = new HashMap<>();
 			
 			for(CountryLanguage cl : countryLanguages) {

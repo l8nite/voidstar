@@ -36,7 +36,7 @@ public interface CityService {
     @ResponseWrapper(localName = "getCityByIdResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/", className = "edu.sjsu.voidstar.soap.city.GetCityByIdResponse")
     public City getCityById(
         @WebParam(name = "cityId", targetNamespace = "")
-        Long cityId);
+        Integer cityId);
 
     /**
      * 

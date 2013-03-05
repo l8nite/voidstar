@@ -22,7 +22,7 @@ public class CityService {
 				.add(Restrictions.eq("name", name)).list();
 	}
 	
-	public static City getCityById(Long id) {
+	public static City getCityById(Integer id) {
 		return (City) HibernateSession.get().createCriteria(City.class)
 				.add(Restrictions.eq("id", id)).uniqueResult();
 	}

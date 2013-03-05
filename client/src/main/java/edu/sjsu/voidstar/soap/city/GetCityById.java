@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="cityId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+ *         &lt;element name="cityId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,17 +31,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class GetCityById {
 
-    protected Long cityId;
+    protected Integer cityId;
 
     /**
      * Gets the value of the cityId property.
      * 
      * @return
      *     possible object is
-     *     {@link Long }
+     *     {@link Integer }
      *     
      */
-    public Long getCityId() {
+    public Integer getCityId() {
         return cityId;
     }
 
@@ -50,10 +50,10 @@ public class GetCityById {
      * 
      * @param value
      *     allowed object is
-     *     {@link Long }
+     *     {@link Integer }
      *     
      */
-    public void setCityId(Long value) {
+    public void setCityId(Integer value) {
         this.cityId = value;
     }
 

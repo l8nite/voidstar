@@ -1,4 +1,4 @@
-package edu.sjsu.voidstar.ws;
+package edu.sjsu.voidstar.soap;
 
 import java.util.List;
 
@@ -15,11 +15,11 @@ import edu.sjsu.voidstar.dao.service.CityService;
 
 @WebService(serviceName="CityPortService", name="CityService", targetNamespace= Constants.Soap.NAMESPACE)
 @SOAPBinding(style=SOAPBinding.Style.DOCUMENT, use=SOAPBinding.Use.LITERAL, parameterStyle=SOAPBinding.ParameterStyle.WRAPPED)
-public class CityPort {
+public class CitySoapService {
 	
 	@WebMethod
 	@WebResult(name="City", targetNamespace=Constants.Soap.NAMESPACE)
-	public City getCityById(@WebParam(name="cityId") Long cityId) {
+	public City getCityById(@WebParam(name="cityId") Integer cityId) {
 		return CityService.getCityById(cityId);
 	}
 	

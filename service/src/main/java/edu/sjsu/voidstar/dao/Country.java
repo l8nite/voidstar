@@ -235,16 +235,6 @@ public class Country extends HEntity {
 		this.cities = cities;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public List<Language> getMostPopularLanguages() {
-		return (List<Language>)HibernateSession.get().createCriteria(CountryLanguage.class, "countryLanguage")
-		.add(Restrictions.eq("countryCode", this.code))
-		.setProjection(Projections.property("language"))
-		.addOrder(Order.desc("percentage"))
-		.setMaxResults(3)
-		.list();
-	}
-	
 	@Override
 	public int hashCode() {
 		return code.hashCode();
@@ -268,4 +258,18 @@ public class Country extends HEntity {
 	public String toString() {
 		return name;
 	}
+	
+	/*
+	 * QUERY METHODS
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Language> getMostPopularLanguages() {
+		return (List<Language>)HibernateSession.get().createCriteria(CountryLanguage.class, "countryLanguage")
+		.add(Restrictions.eq("countryCode", this.code))
+		.setProjection(Projections.property("language"))
+		.addOrder(Order.desc("percentage"))
+		.setMaxResults(3)
+		.list();
+	}
+	
 }

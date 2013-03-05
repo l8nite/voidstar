@@ -41,11 +41,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCityByNameResponse }
+     * Create an instance of {@link City }
      * 
      */
-    public GetCityByNameResponse createGetCityByNameResponse() {
-        return new GetCityByNameResponse();
+    public City createCity() {
+        return new City();
+    }
+
+    /**
+     * Create an instance of {@link GetCityByIdResponse }
+     * 
+     */
+    public GetCityByIdResponse createGetCityByIdResponse() {
+        return new GetCityByIdResponse();
     }
 
     /**
@@ -57,27 +65,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetCityByCountryResponse }
+     * 
+     */
+    public GetCityByCountryResponse createGetCityByCountryResponse() {
+        return new GetCityByCountryResponse();
+    }
+
+    /**
      * Create an instance of {@link Country }
      * 
      */
     public Country createCountry() {
         return new Country();
-    }
-
-    /**
-     * Create an instance of {@link GetCityByName }
-     * 
-     */
-    public GetCityByName createGetCityByName() {
-        return new GetCityByName();
-    }
-
-    /**
-     * Create an instance of {@link City }
-     * 
-     */
-    public City createCity() {
-        return new City();
     }
 
     /**
@@ -89,19 +89,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCityByCountryResponse }
+     * Create an instance of {@link GetCityByName }
      * 
      */
-    public GetCityByCountryResponse createGetCityByCountryResponse() {
-        return new GetCityByCountryResponse();
+    public GetCityByName createGetCityByName() {
+        return new GetCityByName();
     }
 
     /**
-     * Create an instance of {@link GetCityByIdResponse }
+     * Create an instance of {@link GetCityByNameResponse }
      * 
      */
-    public GetCityByIdResponse createGetCityByIdResponse() {
-        return new GetCityByIdResponse();
+    public GetCityByNameResponse createGetCityByNameResponse() {
+        return new GetCityByNameResponse();
     }
 
     /**

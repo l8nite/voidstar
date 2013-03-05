@@ -1,7 +1,5 @@
 package edu.sjsu.voidstar.dao;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -15,9 +13,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
-import org.hibernate.criterion.Restrictions;
-
-import edu.sjsu.voidstar.hibernate.HibernateSession;
 import edu.sjsu.voidstar.jaxb.annotations.XmlGroup;
 import edu.sjsu.voidstar.jaxb.tables.CountryLanguages;
 
@@ -104,21 +99,6 @@ public class CountryLanguage extends HEntity {
 
 	public void setLanguage(Language language) {
 		this.language = language;
-	}
-	
-	@SuppressWarnings("unchecked")	
-	public static List<CountryLanguage> get(){
-		return HibernateSession.get()
-			.createCriteria(CountryLanguage.class)
-			.list();
-	}
-	
-	@SuppressWarnings("unchecked")	
-	public static List<CountryLanguage> get(Language language){
-		return HibernateSession.get()
-			.createCriteria(CountryLanguage.class)
-			.add(Restrictions.eq("languageId", language.getId()))
-			.list();
 	}
 	
 	@Override
