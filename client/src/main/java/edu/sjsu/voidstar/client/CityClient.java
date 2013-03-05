@@ -2,9 +2,9 @@ package edu.sjsu.voidstar.client;
 
 import javax.xml.ws.WebServiceRef;
 
-import edu.sjsu.voidstar.ws.city.City;
-import edu.sjsu.voidstar.ws.city.CityPortService;
-import edu.sjsu.voidstar.ws.city.CityService;
+import edu.sjsu.voidstar.soap.city.City;
+import edu.sjsu.voidstar.soap.city.CityPortService;
+import edu.sjsu.voidstar.soap.city.CityService;
 
 public class CityClient {
 	@WebServiceRef(wsdlLocation="http://localhost:8123/city?wsdl")
@@ -17,7 +17,7 @@ public class CityClient {
 	
 	public void doTest() {
 		CityService service = portService.getCityServicePort();
-		City fremont = service.getCityById(3877);
+		City fremont = service.getCityById(3877L);
 		System.out.println(fremont.getName());
 	}
 }

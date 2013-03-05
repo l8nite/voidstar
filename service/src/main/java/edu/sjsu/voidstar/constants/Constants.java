@@ -28,4 +28,11 @@ public class Constants {
 			public static final String LANGUAGES = PATH + "/Languages.xsd";
 		}
 	}
+	
+	/*
+	 * Soap Constants
+	 */
+	public static class Soap {
+		public static final String NAMESPACE = "http://ws.voidstar.sjsu.edu";
+	}
 }

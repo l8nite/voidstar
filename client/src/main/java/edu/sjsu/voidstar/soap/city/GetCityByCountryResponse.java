@@ -1,5 +1,5 @@
 
-package edu.sjsu.voidstar.ws.city;
+package edu.sjsu.voidstar.soap.city;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getCitiesByCountryResponse complex type.
+ * <p>Java class for getCityByCountryResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getCitiesByCountryResponse">
+ * &lt;complexType name="getCityByCountryResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Cities" type="{http://ws.voidstar.sjsu.edu/}City" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{http://ws.voidstar.sjsu.edu/}City" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,27 +29,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getCitiesByCountryResponse", propOrder = {
-    "cities"
+@XmlType(name = "getCityByCountryResponse", propOrder = {
+    "city"
 })
-public class GetCitiesByCountryResponse {
+public class GetCityByCountryResponse {
 
-    @XmlElement(name = "Cities")
-    protected List<City> cities;
+    @XmlElement(name = "City", namespace = "http://ws.voidstar.sjsu.edu/")
+    protected List<City> city;
 
     /**
-     * Gets the value of the cities property.
+     * Gets the value of the city property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cities property.
+     * This is why there is not a <CODE>set</CODE> method for the city property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCities().add(newItem);
+     *    getCity().add(newItem);
      * </pre>
      * 
      * 
@@ -59,11 +59,11 @@ public class GetCitiesByCountryResponse {
      * 
      * 
      */
-    public List<City> getCities() {
-        if (cities == null) {
-            cities = new ArrayList<City>();
+    public List<City> getCity() {
+        if (city == null) {
+            city = new ArrayList<City>();
         }
-        return this.cities;
+        return this.city;
     }
 
 }

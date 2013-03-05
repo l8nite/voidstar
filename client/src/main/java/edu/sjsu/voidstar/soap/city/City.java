@@ -1,5 +1,5 @@
 
-package edu.sjsu.voidstar.ws.city;
+package edu.sjsu.voidstar.soap.city;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
