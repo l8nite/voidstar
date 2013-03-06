@@ -63,7 +63,7 @@ public interface CityService {
     @RequestWrapper(localName = "getCityByCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/", className = "edu.sjsu.voidstar.soap.city.GetCityByCountry")
     @ResponseWrapper(localName = "getCityByCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/", className = "edu.sjsu.voidstar.soap.city.GetCityByCountryResponse")
     public List<City> getCityByCountry(
-        @WebParam(name = "country", targetNamespace = "")
+        @WebParam(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/")
         Country country);
 
 }

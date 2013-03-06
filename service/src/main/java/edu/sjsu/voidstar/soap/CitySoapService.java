@@ -31,7 +31,7 @@ public class CitySoapService {
 	
 	@WebMethod
 	@WebResult(name="City", targetNamespace=Constants.Soap.NAMESPACE)
-	public List<City> getCityByCountry(@WebParam(name="country") Country country) {
+	public List<City> getCityByCountry(@WebParam(name="Country", targetNamespace=Constants.Soap.NAMESPACE) Country country) {
 		return CityService.getCitiesByCountry(country);
 	}
 }

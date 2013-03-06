@@ -1,5 +1,5 @@
 
-package edu.sjsu.voidstar.soap.city;
+package edu.sjsu.voidstar.soap.infection;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getCityByCountry complex type.
+ * <p>Java class for getInfectionsForCountry complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getCityByCountry">
+ * &lt;complexType name="getInfectionsForCountry">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getCityByCountry", propOrder = {
+@XmlType(name = "getInfectionsForCountry", propOrder = {
     "country"
 })
-public class GetCityByCountry {
+public class GetInfectionsForCountry {
 
     @XmlElement(name = "Country", namespace = "http://ws.voidstar.sjsu.edu/")
     protected Country country;

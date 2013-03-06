@@ -63,7 +63,7 @@ public class ZombieInfection {
 	}
 
 	public void infect(City city) {
-		Infection infectedCity = InfectionService.forCity(city);
+		Infection infectedCity = InfectionService.findOrCreateForCity(city);
 		Integer population = city.getPopulation();
 		Integer infected = infectedCity.getZombies();
 		String inOrTo = infected == 0 ? "to" : "in";
