@@ -1,0 +1,101 @@
+<definitions 
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+	xmlns:wsp="http://www.w3.org/ns/ws-policy" 
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" 
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/city/"
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/city/"
+	name="CityPortService"
+>	
+
+	<types>
+		<xs:schema>
+			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/city/" schemaLocation="../xsd/soap/CityTypes.xsd" />
+		</xs:schema>
+	</types>
+	
+	<message name="getCityById">
+		<part name="parameters" element="tns:getCityById"/>
+	</message>
+	
+	<message name="getCityByName">
+		<part name="parameters" element="tns:getCityByName"/>
+	</message>
+	
+	<message name="getCityByCountry">
+		<part name="parameters" element="tns:getCityByCountry"/>
+	</message>
+
+	<message name="getCityByIdResponse">
+		<part name="parameters" element="tns:cityResponse"/>
+	</message>
+
+	<message name="getCityByNameResponse">
+		<part name="parameters" element="tns:citiesResponse"/>
+	</message>
+	
+	<message name="getCityByCountryResponse">
+		<part name="parameters" element="tns:citiesResponse"/>
+	</message>
+	
+	
+	<portType name="CityService">
+		<operation name="getCityById">
+			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByIdRequest" message="tns:getCityById"/>
+			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByIdResponse" message="tns:getCityByIdResponse"/>
+		</operation>
+	
+		<operation name="getCityByName">
+			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByNameRequest" message="tns:getCityByName"/>
+			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByNameResponse" message="tns:getCityByNameResponse"/>
+		</operation>
+	
+		<operation name="getCityByCountry">
+			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByCountryRequest" message="tns:getCityByCountry"/>
+			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByCountryResponse" message="tns:getCityByCountryResponse"/>
+		</operation>
+	</portType>
+	
+	<binding name="CityServicePortBinding" type="tns:CityService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+		
+		<operation name="getCityById">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+
+		<operation name="getCityByName">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		
+		<operation name="getCityByCountry">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+  
+	<service name="CityPortService">
+		<port name="CityServicePort" binding="tns:CityServicePortBinding">
+			<soap:address location="http://localhost:8123/city"/>
+		</port>
+	</service>
+</definitions>

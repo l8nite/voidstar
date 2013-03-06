@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-import edu.sjsu.voidstar.constants.Constants.Files.XSD;
+import edu.sjsu.voidstar.constants.Constants.Resources.XSD;
 import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.jaxb.annotations.SchemaLocation;
 

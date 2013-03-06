@@ -12,18 +12,18 @@ import edu.sjsu.voidstar.constants.Constants;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.service.CountryService;
 
-@WebService(serviceName="CountryPortService", name="CountryService", targetNamespace= Constants.Soap.NAMESPACE)
+@WebService(serviceName="CountryPortService", name="CountryService", targetNamespace= Constants.Namespaces.Services.COUNTRY)
 @SOAPBinding(style=SOAPBinding.Style.DOCUMENT, use=SOAPBinding.Use.LITERAL, parameterStyle=SOAPBinding.ParameterStyle.WRAPPED)
 public class CountrySoapService {
 	
 	@WebMethod
-	@WebResult(name="Country", targetNamespace=Constants.Soap.NAMESPACE)
+	@WebResult(name="Country", targetNamespace=Constants.Namespaces.DAO)
 	public Country getCountryByCode(@WebParam(name="countryCode") String countryCode) {
 		return CountryService.getCountryByCode(countryCode);
 	}
 	
 	@WebMethod
-	@WebResult(name="Countries", targetNamespace=Constants.Soap.NAMESPACE)
+	@WebResult(name="Countries", targetNamespace=Constants.Namespaces.DAO)
 	public List<Country> getCountryByContinent(@WebParam(name="continent") String continent) {
 		return CountryService.getCountriesByContinent(continent);
 	}

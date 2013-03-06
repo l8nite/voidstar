@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.sjsu.voidstar.constants.Constants.Files.XML;
+import edu.sjsu.voidstar.constants.Constants.Resources.XML;
 import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.CountryLanguage;

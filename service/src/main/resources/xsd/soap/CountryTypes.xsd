@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/country"
+	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/country"
+	>
+		<xs:import namespace="http://ws.voidstar.sjsu.edu" schemaLocation="../dao/Dao.xsd" />
+		 
+		<xs:element name="getCountryByContinent" type="tns:getCountryByContinent" />
+		<xs:element name="getCountryByCode" type="tns:getCountryByCode" />
+		<xs:element name="countryResponse" type="tns:countryResponse" />
+		<xs:element name="countriesResponse" type="tns:countriesResponse" />
+		
+		<xs:complexType name="getCountryByContinent">
+			<xs:sequence>
+				<xs:element name="continent" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="getCountryByCode">
+			<xs:sequence>
+				<xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+			
+		<xs:complexType name="countryResponse">
+			<xs:sequence>
+				<xs:element ref="dao:Country" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+			
+		<xs:complexType name="countriesResponse">
+			<xs:sequence>
+				<xs:element ref="dao:Country" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

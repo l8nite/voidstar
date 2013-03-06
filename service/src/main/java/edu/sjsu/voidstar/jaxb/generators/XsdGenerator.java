@@ -12,7 +12,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.sjsu.voidstar.constants.Constants.Files.XSD;
+import edu.sjsu.voidstar.constants.Constants.Resources.XSD;
 
 /**
  * This class creates an XSD for any JAXB annotated class. The sole method, {@link #generateSchema(Class)}, accepts as an 
