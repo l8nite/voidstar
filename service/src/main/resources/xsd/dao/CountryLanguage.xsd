@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
-  <xs:element name="CountryLanguage" type="CountryLanguage"/>
-
-  <xs:element name="CountryLanguages" type="CountryLanguages"/>
-
-  <xs:complexType name="CountryLanguages">
-    <xs:sequence>
-      <xs:element ref="CountryLanguage" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
+<xs:schema version="1.0" 
+ 	xmlns="http://ws.voidstar.sjsu.edu/dao"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
+	targetNamespace="http://ws.voidstar.sjsu.edu/dao"
+>
+  <xs:element name="CountryLanguage" type="dao:CountryLanguage"/>
 
   <xs:complexType name="CountryLanguage">
     <xs:sequence>

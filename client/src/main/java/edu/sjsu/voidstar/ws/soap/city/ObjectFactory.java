@@ -26,8 +26,8 @@ public class ObjectFactory {
 
     private final static QName _GetCityById_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityById");
     private final static QName _GetCityByCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityByCountry");
-    private final static QName _CityResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "cityResponse");
     private final static QName _CitiesResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "citiesResponse");
+    private final static QName _CityResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "cityResponse");
     private final static QName _GetCityByName_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityByName");
 
     /**
@@ -46,22 +46,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CityResponse }
-     * 
-     */
-    public CityResponse createCityResponse() {
-        return new CityResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCityById }
-     * 
-     */
-    public GetCityById createGetCityById() {
-        return new GetCityById();
-    }
-
-    /**
      * Create an instance of {@link GetCityByCountry }
      * 
      */
@@ -75,6 +59,22 @@ public class ObjectFactory {
      */
     public CitiesResponse createCitiesResponse() {
         return new CitiesResponse();
+    }
+
+    /**
+     * Create an instance of {@link CityResponse }
+     * 
+     */
+    public CityResponse createCityResponse() {
+        return new CityResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCityById }
+     * 
+     */
+    public GetCityById createGetCityById() {
+        return new GetCityById();
     }
 
     /**
@@ -96,21 +96,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CityResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "cityResponse")
-    public JAXBElement<CityResponse> createCityResponse(CityResponse value) {
-        return new JAXBElement<CityResponse>(_CityResponse_QNAME, CityResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link CitiesResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "citiesResponse")
     public JAXBElement<CitiesResponse> createCitiesResponse(CitiesResponse value) {
         return new JAXBElement<CitiesResponse>(_CitiesResponse_QNAME, CitiesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CityResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "cityResponse")
+    public JAXBElement<CityResponse> createCityResponse(CityResponse value) {
+        return new JAXBElement<CityResponse>(_CityResponse_QNAME, CityResponse.class, null, value);
     }
 
     /**

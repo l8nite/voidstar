@@ -6,13 +6,13 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/country/"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/country/"
+	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/country"
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/country"
 	name="CountryPortService"
 >	
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/country/" schemaLocation="../xsd/soap/CountryTypes.xsd" />
+			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/country" schemaLocation="../xsd/soap/CountryTypes.xsd" />
 		</xs:schema>
 	</types>
 	

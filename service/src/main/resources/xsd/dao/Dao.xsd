@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" 
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://ws.voidstar.sjsu.edu"
-	>
-		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="City.xsd" />
-		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="Country.xsd" />
-		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="Infection.xsd" />
-		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="Language.xsd" />
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://ws.voidstar.sjsu.edu/dao"
+>
+		<xs:include schemaLocation="Cities.xsd"/>
+		<xs:include schemaLocation="Countries.xsd"/>
+		<xs:include schemaLocation="CountryLanguages.xsd"/>
+		<xs:include schemaLocation="Infections.xsd"/>
+		<xs:include schemaLocation="Languages.xsd"/>
 </xs:schema>

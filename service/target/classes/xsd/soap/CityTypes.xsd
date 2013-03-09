@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema version="1.0" 
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/city"
 	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/city"
-	>
-		<xs:import namespace="http://ws.voidstar.sjsu.edu" schemaLocation="../dao/Dao.xsd" />
-		 
-		<xs:element name="getCityByCountry" type="tns:getCityByCountry" />
-		<xs:element name="getCityById" type="tns:getCityById" />
-		<xs:element name="getCityByName" type="tns:getCityByName" />
-		<xs:element name="cityResponse" type="tns:cityResponse" />
-		<xs:element name="citiesResponse" type="tns:citiesResponse"/>
-		
-		<xs:complexType name="getCityById">
-			<xs:sequence>
-				<xs:element name="cityId" type="xs:int" minOccurs="0" />
-			</xs:sequence>
-		</xs:complexType>
-		
-		<xs:complexType name="citiesResponse">
-			<xs:sequence>
-				<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-			
-		<xs:complexType name="cityResponse">
-			<xs:sequence>
-				<xs:element ref="dao:City" minOccurs="0" />
-			</xs:sequence>
-		</xs:complexType>
-			
-		<xs:complexType name="getCityByCountry">
-			<xs:sequence>
-				<xs:element ref="dao:Country" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-		
-		<xs:complexType name="getCityByName">
-			<xs:sequence>
-				<xs:element name="cityName" type="xs:string" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/city">
+
+    <xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd"/>
+
+	<xs:element name="getCityByCountry" type="tns:getCityByCountry" />
+	<xs:element name="getCityById" type="tns:getCityById" />
+	<xs:element name="getCityByName" type="tns:getCityByName" />
+	<xs:element name="cityResponse" type="tns:cityResponse" />
+	<xs:element name="citiesResponse" type="tns:citiesResponse" />
+
+	<xs:complexType name="getCityById">
+		<xs:sequence>
+			<xs:element name="cityId" type="xs:int" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="citiesResponse">
+		<xs:sequence>
+			<xs:element name="blah" type="dao:Cities" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="cityResponse">
+		<xs:sequence>
+			<xs:element ref="dao:City" minOccurs="0" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getCityByCountry">
+		<xs:sequence>
+			<xs:element ref="dao:Country" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getCityByName">
+		<xs:sequence>
+			<xs:element name="cityName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>

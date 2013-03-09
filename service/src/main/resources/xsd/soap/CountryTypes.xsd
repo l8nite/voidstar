@@ -5,7 +5,7 @@
 	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
 	targetNamespace="http://ws.voidstar.sjsu.edu/soap/country"
 	>
-		<xs:import namespace="http://ws.voidstar.sjsu.edu" schemaLocation="../dao/Dao.xsd" />
+		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd" />
 		 
 		<xs:element name="getCountryByContinent" type="tns:getCountryByContinent" />
 		<xs:element name="getCountryByCode" type="tns:getCountryByCode" />

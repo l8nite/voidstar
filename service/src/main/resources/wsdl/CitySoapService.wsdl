@@ -6,14 +6,14 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/city/"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/city/"
+	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/city"
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/city"
 	name="CityPortService"
 >	
 
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/city/" schemaLocation="../xsd/soap/CityTypes.xsd" />
+			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/city" schemaLocation="../xsd/soap/CityTypes.xsd" />
 		</xs:schema>
 	</types>
 	

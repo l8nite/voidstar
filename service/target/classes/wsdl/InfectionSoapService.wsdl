@@ -6,13 +6,13 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/infection/"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/infection/"
+	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/infection"
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/infection"
 	name="InfectionPortService"
 >	
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/infection/" schemaLocation="../xsd/soap/InfectionTypes.xsd" />
+			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/infection" schemaLocation="../xsd/soap/InfectionTypes.xsd" />
 		</xs:schema>
 	</types>
 	

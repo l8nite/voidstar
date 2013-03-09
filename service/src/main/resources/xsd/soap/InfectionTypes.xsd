@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" 
+	xmlns="http://ws.voidstar.sjsu.edu"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/infection"
 	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
 	targetNamespace="http://ws.voidstar.sjsu.edu/soap/infection"
 	>
-		<xs:import namespace="http://ws.voidstar.sjsu.edu" schemaLocation="../dao/Dao.xsd" />
+		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd" />
 		 
 		<xs:element name="getInfectionByCity" type="tns:getInfectionByCity" />
 		<xs:element name="getInfectionsByCountry" type="tns:getInfectionsByCountry" />
