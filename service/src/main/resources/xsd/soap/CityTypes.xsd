@@ -6,34 +6,36 @@
 
     <xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd"/>
 
-	<xs:element name="getCityByCountry" type="tns:getCityByCountry" />
 	<xs:element name="getCityById" type="tns:getCityById" />
-	<xs:element name="getCityByName" type="tns:getCityByName" />
-	<xs:element name="cityResponse" type="tns:cityResponse" />
-	<xs:element name="citiesResponse" type="tns:citiesResponse" />
+	<xs:element name="getCityByIdResponse" type="tns:getCityByIdResponse" />
 
+	<xs:element name="getCityByCountry" type="tns:getCityByCountry" />
+	<xs:element name="getCityByCountryResponse" type="tns:getCityByCountryResponse" />
+
+	<xs:element name="getCityByName" type="tns:getCityByName" />
+	<xs:element name="getCityByNameResponse" type="tns:getCityByNameResponse" />
+	
 	<xs:complexType name="getCityById">
 		<xs:sequence>
 			<xs:element name="cityId" type="xs:int" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="citiesResponse">
+	<xs:complexType name="getCityByIdResponse">
 		<xs:sequence>
-			<xs:element name="blah" type="dao:Cities" minOccurs="0" />
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="cityResponse">
-		<xs:sequence>
-			<xs:element ref="dao:City" minOccurs="0" />
-
+			<xs:element name="city" type="dao:City" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="getCityByCountry">
 		<xs:sequence>
-			<xs:element ref="dao:Country" minOccurs="0" />
+			<xs:element name="country" type="dao:Country" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getCityByCountryResponse">
+		<xs:sequence>
+			<xs:element name="cities" type="dao:Cities" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -42,4 +44,11 @@
 			<xs:element name="cityName" type="xs:string" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
+	
+		<xs:complexType name="getCityByNameResponse">
+		<xs:sequence>
+			<xs:element name="cities" type="dao:Cities" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	
 </xs:schema>

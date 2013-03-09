@@ -9,12 +9,12 @@ import edu.sjsu.voidstar.ws.dao.Infection;
 
 
 /**
- * <p>Java class for infectionResponse complex type.
+ * <p>Java class for getInfectionByCityResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="infectionResponse">
+ * &lt;complexType name="getInfectionByCityResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -28,10 +28,10 @@ import edu.sjsu.voidstar.ws.dao.Infection;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "infectionResponse", propOrder = {
+@XmlType(name = "getInfectionByCityResponse", propOrder = {
     "infection"
 })
-public class InfectionResponse {
+public class GetInfectionByCityResponse {
 
     @XmlElement(name = "Infection", namespace = "http://ws.voidstar.sjsu.edu/dao")
     protected Infection infection;

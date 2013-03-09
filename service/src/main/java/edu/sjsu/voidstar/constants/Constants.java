@@ -31,9 +31,9 @@ public class Constants {
 		public static class WSDL {
 			public static final String PATH = "wsdl/";
 					
-			public static final String CITY_SOAP_SERVICE = PATH + "CitySoapService.wsdl";
-			public static final String COUNTRY_SOAP_SERVICE = PATH + "CountrySoapService.wsdl";
-			public static final String INFECTION_SOAP_SERVICE = PATH + "InfectionSoapService.wsdl";
+			public static final String CITY_SERVICE = PATH + "CitySoapService.wsdl";
+			public static final String COUNTRY_SERVICE = PATH + "CountrySoapService.wsdl";
+			public static final String INFECTION_SERVICE = PATH + "InfectionSoapService.wsdl";
 		}
 	}
 	
@@ -41,14 +41,14 @@ public class Constants {
 	 * Soap Constants
 	 */
 	public static class Namespaces {
-		public static final String BASE_NAMESPACE = "http://ws.voidstar.sjsu.edu/";
-		public static final String DAO = BASE_NAMESPACE + "dao/";
+		public static final String NS = "http://ws.voidstar.sjsu.edu/";
+		public static final String DAO = NS + "dao";
 		
-		public static class Services {
-			public static final String SERVICES_NAMESPACE = BASE_NAMESPACE + "ws/";
-			public static final String CITY = SERVICES_NAMESPACE + "city";
-			public static final String COUNTRY = SERVICES_NAMESPACE + "country";
-			public static final String INFECTION = SERVICES_NAMESPACE + "infection";
+		public static class Soap {
+			public static final String SOAP_NS = NS + "soap";
+			public static final String CITY_SERVICE = SOAP_NS + "/city";
+			public static final String COUNTRY = SOAP_NS + "/country";
+			public static final String INFECTION_SERVICE = SOAP_NS + "/infection";
 		}
 	}
 }

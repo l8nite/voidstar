@@ -25,11 +25,11 @@
 	</message>
 
 	<message name="getCountryByCodeResponse">
-		<part name="parameters" element="tns:countryResponse"/>
+		<part name="parameters" element="tns:getCountryByCodeResponse"/>
 	</message>
 	
 	<message name="getCountryByContinentResponse">
-		<part name="parameters" element="tns:countriesResponse"/>
+		<part name="parameters" element="tns:getCountryByContinentResponse"/>
 	</message>
 
 	<portType name="CountryService">

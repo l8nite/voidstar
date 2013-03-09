@@ -8,16 +8,16 @@ import edu.sjsu.voidstar.ws.dao.Cities;
 
 
 /**
- * <p>Java class for citiesResponse complex type.
+ * <p>Java class for getCityByCountryResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="citiesResponse">
+ * &lt;complexType name="getCityByCountryResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="blah" type="{http://ws.voidstar.sjsu.edu/dao}Cities" minOccurs="0"/>
+ *         &lt;element name="cities" type="{http://ws.voidstar.sjsu.edu/dao}Cities" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,35 +27,35 @@ import edu.sjsu.voidstar.ws.dao.Cities;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "citiesResponse", propOrder = {
-    "blah"
+@XmlType(name = "getCityByCountryResponse", propOrder = {
+    "cities"
 })
-public class CitiesResponse {
+public class GetCityByCountryResponse {
 
-    protected Cities blah;
+    protected Cities cities;
 
     /**
-     * Gets the value of the blah property.
+     * Gets the value of the cities property.
      * 
      * @return
      *     possible object is
      *     {@link Cities }
      *     
      */
-    public Cities getBlah() {
-        return blah;
+    public Cities getCities() {
+        return cities;
     }
 
     /**
-     * Sets the value of the blah property.
+     * Sets the value of the cities property.
      * 
      * @param value
      *     allowed object is
      *     {@link Cities }
      *     
      */
-    public void setBlah(Cities value) {
-        this.blah = value;
+    public void setCities(Cities value) {
+        this.cities = value;
     }
 
 }

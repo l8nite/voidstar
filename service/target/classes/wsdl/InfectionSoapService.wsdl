@@ -25,11 +25,11 @@
 	</message>
 	
 	<message name="getInfectionByCityResponse">
-		<part name="parameters" element="tns:infectionResponse"/>
+		<part name="parameters" element="tns:getInfectionByCityResponse"/>
 	</message>
 	
 	<message name="getInfectionsByCountryResponse">
-		<part name="parameters" element="tns:infectionsResponse"/>
+		<part name="parameters" element="tns:getInfectionsByCountryResponse"/>
 	</message>
 	
 	

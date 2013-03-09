@@ -43,11 +43,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Language }
+     * 
+     */
+    public Language createLanguage() {
+        return new Language();
+    }
+
+    /**
      * Create an instance of {@link CountryLanguages }
      * 
      */
     public CountryLanguages createCountryLanguages() {
         return new CountryLanguages();
+    }
+
+    /**
+     * Create an instance of {@link Country }
+     * 
+     */
+    public Country createCountry() {
+        return new Country();
+    }
+
+    /**
+     * Create an instance of {@link Infections }
+     * 
+     */
+    public Infections createInfections() {
+        return new Infections();
     }
 
     /**
@@ -67,11 +91,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Infections }
+     * Create an instance of {@link Languages }
      * 
      */
-    public Infections createInfections() {
-        return new Infections();
+    public Languages createLanguages() {
+        return new Languages();
     }
 
     /**
@@ -83,22 +107,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Countries }
-     * 
-     */
-    public Countries createCountries() {
-        return new Countries();
-    }
-
-    /**
-     * Create an instance of {@link Language }
-     * 
-     */
-    public Language createLanguage() {
-        return new Language();
-    }
-
-    /**
      * Create an instance of {@link City }
      * 
      */
@@ -107,19 +115,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Languages }
+     * Create an instance of {@link Countries }
      * 
      */
-    public Languages createLanguages() {
-        return new Languages();
-    }
-
-    /**
-     * Create an instance of {@link Country }
-     * 
-     */
-    public Country createCountry() {
-        return new Country();
+    public Countries createCountries() {
+        return new Countries();
     }
 
     /**

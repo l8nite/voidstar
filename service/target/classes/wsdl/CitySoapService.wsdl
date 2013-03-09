@@ -30,15 +30,15 @@
 	</message>
 
 	<message name="getCityByIdResponse">
-		<part name="parameters" element="tns:cityResponse"/>
+		<part name="parameters" element="tns:getCityByIdResponse"/>
 	</message>
 
 	<message name="getCityByNameResponse">
-		<part name="parameters" element="tns:citiesResponse"/>
+		<part name="parameters" element="tns:getCityByNameResponse"/>
 	</message>
 	
 	<message name="getCityByCountryResponse">
-		<part name="parameters" element="tns:citiesResponse"/>
+		<part name="parameters" element="tns:getCityByCountryResponse"/>
 	</message>
 	
 	

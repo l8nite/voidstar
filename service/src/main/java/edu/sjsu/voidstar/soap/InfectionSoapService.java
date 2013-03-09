@@ -8,25 +8,40 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import edu.sjsu.voidstar.constants.Constants;
 import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.Infection;
 import edu.sjsu.voidstar.dao.service.InfectionService;
 
-@WebService(serviceName="InfectionPortService", name="InfectionService", targetNamespace= Constants.Namespaces.Services.INFECTION)
-@SOAPBinding(style=SOAPBinding.Style.DOCUMENT, use=SOAPBinding.Use.LITERAL, parameterStyle=SOAPBinding.ParameterStyle.WRAPPED)
+@WebService(
+		 targetNamespace= Constants.Namespaces.Soap.INFECTION_SERVICE,
+		 wsdlLocation = Constants.Resources.WSDL.INFECTION_SERVICE,
+		 serviceName = "InfectionPortService",
+		 name = "InfectionService"
+)
+@SOAPBinding(
+		style=SOAPBinding.Style.DOCUMENT, 
+		use=SOAPBinding.Use.LITERAL,
+		parameterStyle=SOAPBinding.ParameterStyle.WRAPPED
+)
 public class InfectionSoapService {
-
+	private static final Logger log = LoggerFactory.getLogger(InfectionSoapService.class);
+	
 	@WebMethod
-	@WebResult(name="Infection", targetNamespace=Constants.Namespaces.DAO)
-	public Infection getInfectionByCity(@WebParam(name="City", targetNamespace=Constants.Namespaces.DAO) City city) {
+	@WebResult(targetNamespace=Constants.Namespaces.DAO)
+	public Infection getInfectionByCity(@WebParam(name="city", targetNamespace=Constants.Namespaces.DAO) City city) {
+		log.info("getInfectionByCity(): city = " + city);
 		return InfectionService.getForCity(city);
 	}
 	
 	@WebMethod
-	@WebResult(name="Infections", targetNamespace=Constants.Namespaces.DAO)
-	public List<Infection> getInfectionsForCountry(@WebParam(name="Country", targetNamespace=Constants.Namespaces.DAO) Country country) {
+	@WebResult(targetNamespace=Constants.Namespaces.DAO)
+	public List<Infection> getInfectionsByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
+		log.info("getInfectionByCountry(): country = " + country);
 		return InfectionService.getForCountry(country);
 	}
 }

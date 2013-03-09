@@ -20,8 +20,8 @@ import edu.sjsu.voidstar.ws.dao.Country;
  */
 @WebService(name = "CountryService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country")
 @XmlSeeAlso({
-    edu.sjsu.voidstar.ws.dao.ObjectFactory.class,
-    edu.sjsu.voidstar.ws.soap.country.ObjectFactory.class
+    edu.sjsu.voidstar.ws.soap.country.ObjectFactory.class,
+    edu.sjsu.voidstar.ws.dao.ObjectFactory.class
 })
 public interface CountryService {
 
@@ -35,7 +35,7 @@ public interface CountryService {
     @WebMethod
     @WebResult(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
     @RequestWrapper(localName = "getCountryByCode", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByCode")
-    @ResponseWrapper(localName = "countryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.CountryResponse")
+    @ResponseWrapper(localName = "getCountryByCodeResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByCodeResponse")
     public Country getCountryByCode(
         @WebParam(name = "countryCode", targetNamespace = "")
         String countryCode);
@@ -49,7 +49,7 @@ public interface CountryService {
     @WebMethod
     @WebResult(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
     @RequestWrapper(localName = "getCountryByContinent", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByContinent")
-    @ResponseWrapper(localName = "countriesResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.CountriesResponse")
+    @ResponseWrapper(localName = "getCountryByContinentResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByContinentResponse")
     public List<Country> getCountryByContinent(
         @WebParam(name = "continent", targetNamespace = "")
         String continent);

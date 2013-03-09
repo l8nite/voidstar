@@ -4,20 +4,20 @@ package edu.sjsu.voidstar.ws.soap.city;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
-import edu.sjsu.voidstar.ws.dao.Country;
+import edu.sjsu.voidstar.ws.dao.City;
 
 
 /**
- * <p>Java class for getCityByCountry complex type.
+ * <p>Java class for getCityByIdResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getCityByCountry">
+ * &lt;complexType name="getCityByIdResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="country" type="{http://ws.voidstar.sjsu.edu/dao}Country" minOccurs="0"/>
+ *         &lt;element name="city" type="{http://ws.voidstar.sjsu.edu/dao}City" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,35 +27,35 @@ import edu.sjsu.voidstar.ws.dao.Country;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getCityByCountry", propOrder = {
-    "country"
+@XmlType(name = "getCityByIdResponse", propOrder = {
+    "city"
 })
-public class GetCityByCountry {
+public class GetCityByIdResponse {
 
-    protected Country country;
+    protected City city;
 
     /**
-     * Gets the value of the country property.
+     * Gets the value of the city property.
      * 
      * @return
      *     possible object is
-     *     {@link Country }
+     *     {@link City }
      *     
      */
-    public Country getCountry() {
-        return country;
+    public City getCity() {
+        return city;
     }
 
     /**
-     * Sets the value of the country property.
+     * Sets the value of the city property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Country }
+     *     {@link City }
      *     
      */
-    public void setCountry(Country value) {
-        this.country = value;
+    public void setCity(City value) {
+        this.city = value;
     }
 
 }

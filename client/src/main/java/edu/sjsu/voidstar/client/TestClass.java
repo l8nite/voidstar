@@ -16,10 +16,10 @@ public class TestClass {
 	@WebServiceRef(wsdlLocation="http://localhost:8123/city?wsdl")
 	static CityPortService cityPortService = new CityPortService();
 	
-	@WebServiceRef(wsdlLocation="http://localhost:8124/country?wsdl")
+	@WebServiceRef(wsdlLocation="http://localhost:8123/country?wsdl")
 	static CountryPortService countryPortService = new CountryPortService();
 	
-	@WebServiceRef(wsdlLocation="http://localhost:8125/infection?wsdl")
+	@WebServiceRef(wsdlLocation="http://localhost:8123/infection?wsdl")
 	static InfectionPortService infectionPortService = new InfectionPortService();
 	
 	public static void main(String[] args) {

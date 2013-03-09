@@ -9,12 +9,12 @@ import edu.sjsu.voidstar.ws.dao.Country;
 
 
 /**
- * <p>Java class for countryResponse complex type.
+ * <p>Java class for getCountryByCodeResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="countryResponse">
+ * &lt;complexType name="getCountryByCodeResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -28,10 +28,10 @@ import edu.sjsu.voidstar.ws.dao.Country;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "countryResponse", propOrder = {
+@XmlType(name = "getCountryByCodeResponse", propOrder = {
     "country"
 })
-public class CountryResponse {
+public class GetCountryByCodeResponse {
 
     @XmlElement(name = "Country", namespace = "http://ws.voidstar.sjsu.edu/dao")
     protected Country country;

@@ -25,9 +25,9 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetInfectionsByCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/infection", "getInfectionsByCountry");
-    private final static QName _InfectionsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/infection", "infectionsResponse");
-    private final static QName _InfectionResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/infection", "infectionResponse");
+    private final static QName _GetInfectionByCityResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/infection", "getInfectionByCityResponse");
     private final static QName _GetInfectionByCity_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/infection", "getInfectionByCity");
+    private final static QName _GetInfectionsByCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/infection", "getInfectionsByCountryResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: edu.sjsu.voidstar.ws.soap.infection
@@ -37,27 +37,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetInfectionsByCountryResponse }
+     * 
+     */
+    public GetInfectionsByCountryResponse createGetInfectionsByCountryResponse() {
+        return new GetInfectionsByCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInfectionByCityResponse }
+     * 
+     */
+    public GetInfectionByCityResponse createGetInfectionByCityResponse() {
+        return new GetInfectionByCityResponse();
+    }
+
+    /**
      * Create an instance of {@link GetInfectionByCity }
      * 
      */
     public GetInfectionByCity createGetInfectionByCity() {
         return new GetInfectionByCity();
-    }
-
-    /**
-     * Create an instance of {@link InfectionResponse }
-     * 
-     */
-    public InfectionResponse createInfectionResponse() {
-        return new InfectionResponse();
-    }
-
-    /**
-     * Create an instance of {@link InfectionsResponse }
-     * 
-     */
-    public InfectionsResponse createInfectionsResponse() {
-        return new InfectionsResponse();
     }
 
     /**
@@ -78,21 +78,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link InfectionsResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionByCityResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/infection", name = "infectionsResponse")
-    public JAXBElement<InfectionsResponse> createInfectionsResponse(InfectionsResponse value) {
-        return new JAXBElement<InfectionsResponse>(_InfectionsResponse_QNAME, InfectionsResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link InfectionResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/infection", name = "infectionResponse")
-    public JAXBElement<InfectionResponse> createInfectionResponse(InfectionResponse value) {
-        return new JAXBElement<InfectionResponse>(_InfectionResponse_QNAME, InfectionResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/infection", name = "getInfectionByCityResponse")
+    public JAXBElement<GetInfectionByCityResponse> createGetInfectionByCityResponse(GetInfectionByCityResponse value) {
+        return new JAXBElement<GetInfectionByCityResponse>(_GetInfectionByCityResponse_QNAME, GetInfectionByCityResponse.class, null, value);
     }
 
     /**
@@ -102,6 +93,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/infection", name = "getInfectionByCity")
     public JAXBElement<GetInfectionByCity> createGetInfectionByCity(GetInfectionByCity value) {
         return new JAXBElement<GetInfectionByCity>(_GetInfectionByCity_QNAME, GetInfectionByCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionsByCountryResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/infection", name = "getInfectionsByCountryResponse")
+    public JAXBElement<GetInfectionsByCountryResponse> createGetInfectionsByCountryResponse(GetInfectionsByCountryResponse value) {
+        return new JAXBElement<GetInfectionsByCountryResponse>(_GetInfectionsByCountryResponse_QNAME, GetInfectionsByCountryResponse.class, null, value);
     }
 
 }

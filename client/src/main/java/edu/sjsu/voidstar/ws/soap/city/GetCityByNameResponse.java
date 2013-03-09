@@ -3,22 +3,21 @@ package edu.sjsu.voidstar.ws.soap.city;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import edu.sjsu.voidstar.ws.dao.City;
+import edu.sjsu.voidstar.ws.dao.Cities;
 
 
 /**
- * <p>Java class for cityResponse complex type.
+ * <p>Java class for getCityByNameResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="cityResponse">
+ * &lt;complexType name="getCityByNameResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}City" minOccurs="0"/>
+ *         &lt;element name="cities" type="{http://ws.voidstar.sjsu.edu/dao}Cities" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,36 +27,35 @@ import edu.sjsu.voidstar.ws.dao.City;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "cityResponse", propOrder = {
-    "city"
+@XmlType(name = "getCityByNameResponse", propOrder = {
+    "cities"
 })
-public class CityResponse {
+public class GetCityByNameResponse {
 
-    @XmlElement(name = "City", namespace = "http://ws.voidstar.sjsu.edu/dao")
-    protected City city;
+    protected Cities cities;
 
     /**
-     * Gets the value of the city property.
+     * Gets the value of the cities property.
      * 
      * @return
      *     possible object is
-     *     {@link City }
+     *     {@link Cities }
      *     
      */
-    public City getCity() {
-        return city;
+    public Cities getCities() {
+        return cities;
     }
 
     /**
-     * Sets the value of the city property.
+     * Sets the value of the cities property.
      * 
      * @param value
      *     allowed object is
-     *     {@link City }
+     *     {@link Cities }
      *     
      */
-    public void setCity(City value) {
-        this.city = value;
+    public void setCities(Cities value) {
+        this.cities = value;
     }
 
 }
