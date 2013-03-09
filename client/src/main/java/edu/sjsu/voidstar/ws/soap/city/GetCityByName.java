@@ -3,6 +3,7 @@ package edu.sjsu.voidstar.ws.soap.city;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -31,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class GetCityByName {
 
+    @XmlElement(namespace = "")
     protected String cityName;
 
     /**

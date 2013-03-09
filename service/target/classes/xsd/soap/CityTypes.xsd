@@ -23,19 +23,19 @@
 
 	<xs:complexType name="getCityByIdResponse">
 		<xs:sequence>
-			<xs:element name="city" type="dao:City" minOccurs="0" />
+			<xs:element ref="dao:City" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="getCityByCountry">
 		<xs:sequence>
-			<xs:element name="country" type="dao:Country" minOccurs="0" />
+			<xs:element ref="dao:Country" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="getCityByCountryResponse">
 		<xs:sequence>
-			<xs:element name="cities" type="dao:Cities" minOccurs="0" />
+			<xs:element ref="dao:Cities" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -47,7 +47,7 @@
 	
 		<xs:complexType name="getCityByNameResponse">
 		<xs:sequence>
-			<xs:element name="cities" type="dao:Cities" minOccurs="0" />
+			<xs:element ref="dao:Cities" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	

@@ -32,14 +32,14 @@ public class InfectionSoapService {
 	private static final Logger log = LoggerFactory.getLogger(InfectionSoapService.class);
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO)
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Infection")
 	public Infection getInfectionByCity(@WebParam(name="city", targetNamespace=Constants.Namespaces.DAO) City city) {
 		log.info("getInfectionByCity(): city = " + city);
 		return InfectionService.getForCity(city);
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO)
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Infections")
 	public List<Infection> getInfectionsByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
 		log.info("getInfectionByCountry(): country = " + country);
 		return InfectionService.getForCountry(country);

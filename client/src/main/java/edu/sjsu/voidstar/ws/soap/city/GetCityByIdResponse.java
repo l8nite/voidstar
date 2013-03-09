@@ -3,6 +3,7 @@ package edu.sjsu.voidstar.ws.soap.city;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import edu.sjsu.voidstar.ws.dao.City;
 
@@ -17,7 +18,7 @@ import edu.sjsu.voidstar.ws.dao.City;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="city" type="{http://ws.voidstar.sjsu.edu/dao}City" minOccurs="0"/>
+ *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}City" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,6 +33,7 @@ import edu.sjsu.voidstar.ws.dao.City;
 })
 public class GetCityByIdResponse {
 
+    @XmlElement(name = "City", namespace = "http://ws.voidstar.sjsu.edu/dao")
     protected City city;
 
     /**

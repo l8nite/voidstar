@@ -43,22 +43,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Language }
-     * 
-     */
-    public Language createLanguage() {
-        return new Language();
-    }
-
-    /**
-     * Create an instance of {@link CountryLanguages }
-     * 
-     */
-    public CountryLanguages createCountryLanguages() {
-        return new CountryLanguages();
-    }
-
-    /**
      * Create an instance of {@link Country }
      * 
      */
@@ -67,27 +51,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Infections }
+     * Create an instance of {@link Language }
      * 
      */
-    public Infections createInfections() {
-        return new Infections();
-    }
-
-    /**
-     * Create an instance of {@link Cities }
-     * 
-     */
-    public Cities createCities() {
-        return new Cities();
-    }
-
-    /**
-     * Create an instance of {@link Infection }
-     * 
-     */
-    public Infection createInfection() {
-        return new Infection();
+    public Language createLanguage() {
+        return new Language();
     }
 
     /**
@@ -99,6 +67,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Infection }
+     * 
+     */
+    public Infection createInfection() {
+        return new Infection();
+    }
+
+    /**
      * Create an instance of {@link CountryLanguage }
      * 
      */
@@ -107,11 +83,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Infections }
+     * 
+     */
+    public Infections createInfections() {
+        return new Infections();
+    }
+
+    /**
      * Create an instance of {@link City }
      * 
      */
     public City createCity() {
         return new City();
+    }
+
+    /**
+     * Create an instance of {@link Cities }
+     * 
+     */
+    public Cities createCities() {
+        return new Cities();
+    }
+
+    /**
+     * Create an instance of {@link CountryLanguages }
+     * 
+     */
+    public CountryLanguages createCountryLanguages() {
+        return new CountryLanguages();
     }
 
     /**

@@ -30,14 +30,14 @@ public class CountrySoapService {
 	private static final Logger log = LoggerFactory.getLogger(CountrySoapService.class);
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO)
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Country")
 	public Country getCountryByCode(@WebParam(name="countryCode") String countryCode) {
 		log.info("getCountryByCode(): countryCode = " + countryCode);
 		return CountryService.getCountryByCode(countryCode);
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO)
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Countries")
 	public List<Country> getCountryByContinent(@WebParam(name="continent") String continent) {
 		log.info("getCityByContinent(): continent = " + continent);
 		return CountryService.getCountriesByContinent(continent);

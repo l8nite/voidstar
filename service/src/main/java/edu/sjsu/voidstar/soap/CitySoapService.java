@@ -31,7 +31,7 @@ public class CitySoapService {
 	private static final Logger log = LoggerFactory.getLogger(CitySoapService.class);
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="city")
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="City")
 	public City getCityById(@WebParam(name="cityId") Integer cityId) {
 		log.info("getCityById(): cityId = " + cityId);
 		City city = CityService.getCityById(cityId);
@@ -40,14 +40,14 @@ public class CitySoapService {
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="cities")
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Cities")
 	public List<City> getCityByName(@WebParam(name="cityName") String cityName) {
 		log.info("getCityByName(): cityName = " + cityName);
 		return CityService.getCitiesByName(cityName);
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="cities")
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Cities")
 	public List<City> getCityByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
 		log.info("getCityByCountry(): country = " + country);
 		return CityService.getCitiesByCountry(country);

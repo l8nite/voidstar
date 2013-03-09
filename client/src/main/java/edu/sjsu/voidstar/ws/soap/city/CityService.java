@@ -34,7 +34,7 @@ public interface CityService {
      *     returns edu.sjsu.voidstar.ws.dao.City
      */
     @WebMethod
-    @WebResult(name = "city", targetNamespace = "")
+    @WebResult(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
     @RequestWrapper(localName = "getCityById", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityById")
     @ResponseWrapper(localName = "getCityByIdResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityByIdResponse")
     public City getCityById(
@@ -48,7 +48,7 @@ public interface CityService {
      *     returns edu.sjsu.voidstar.ws.dao.Cities
      */
     @WebMethod
-    @WebResult(name = "cities", targetNamespace = "")
+    @WebResult(name = "Cities", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
     @RequestWrapper(localName = "getCityByName", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityByName")
     @ResponseWrapper(localName = "getCityByNameResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityByNameResponse")
     public Cities getCityByName(
@@ -62,11 +62,11 @@ public interface CityService {
      *     returns edu.sjsu.voidstar.ws.dao.Cities
      */
     @WebMethod
-    @WebResult(name = "cities", targetNamespace = "")
+    @WebResult(name = "Cities", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
     @RequestWrapper(localName = "getCityByCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityByCountry")
     @ResponseWrapper(localName = "getCityByCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityByCountryResponse")
     public Cities getCityByCountry(
-        @WebParam(name = "country", targetNamespace = "")
+        @WebParam(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
         Country country);
 
 }
