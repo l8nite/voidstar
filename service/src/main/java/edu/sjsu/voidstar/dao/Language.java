@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import edu.sjsu.voidstar.constants.Constants.Resources.XSD;
+import edu.sjsu.voidstar.jaxb.annotations.SchemaLocation;
 import edu.sjsu.voidstar.jaxb.annotations.XmlGroup;
 import edu.sjsu.voidstar.jaxb.tables.Languages;
 
@@ -25,6 +27,7 @@ import edu.sjsu.voidstar.jaxb.tables.Languages;
 })
 @XmlGroup(Languages.class)
 @Table(name = "Language")
+@SchemaLocation(XSD.LANGUAGE)
 public class Language extends HEntity {
 	
 	@Id

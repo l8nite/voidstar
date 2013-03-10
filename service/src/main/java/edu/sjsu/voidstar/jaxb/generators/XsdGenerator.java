@@ -1,6 +1,7 @@
 package edu.sjsu.voidstar.jaxb.generators;
 
 import java.io.File;
+
 import java.io.IOException;
 
 import javax.xml.bind.JAXBContext;
@@ -12,7 +13,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.sjsu.voidstar.constants.Constants.Resources.XSD;
+import edu.sjsu.voidstar.jaxb.annotations.SchemaLocation;
 
 /**
  * This class creates an XSD for any JAXB annotated class. The sole method, {@link #generateSchema(Class)}, accepts as an 
@@ -28,7 +29,7 @@ public class XsdGenerator {
 	
 	public static void generateSchema(Class<?> entityClass) throws JAXBException, IOException {
 		JAXBContext
-			.newInstance(entityClass)
+			.newInstance(entityClass.getPackage().getName())
 			.generateSchema(new EntitySchemaOutputResolver(entityClass));
 	}
 	
@@ -44,7 +45,7 @@ public class XsdGenerator {
 		}
 		
 		public Result createOutput(String namespaceURI, String suggestedFileName) throws IOException {
-	        File file = new File(XSD.PATH + "/" + entityClass.getSimpleName() + ".xsd");
+	        File file = new File(entityClass.getAnnotation(SchemaLocation.class).value());
 	        StreamResult result = new StreamResult(file);
 	        result.setSystemId(file.toURI().toURL().toString());
 	        log.info("Created XSD: " + file.toURI().toURL().toString());

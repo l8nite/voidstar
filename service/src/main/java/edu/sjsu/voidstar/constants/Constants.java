@@ -22,10 +22,15 @@ public class Constants {
 			public static final String PATH = "src/main/resources/xsd/dao/";
 			
 			public static final String CITIES = PATH + "/Cities.xsd";
+			public static final String CITY = PATH + "/City.xsd";
 			public static final String COUNTRIES = PATH + "/Countries.xsd";
+			public static final String COUNTRY = PATH + "/Country.xsd";
 			public static final String COUNTRY_LANGUAGES = PATH + "/CountryLanguages.xsd";
+			public static final String COUNTRY_LANGUAGE = PATH + "/CountryLanguage.xsd";
 			public static final String INFECTIONS = PATH + "/Infections.xsd";
+			public static final String INFECTION = PATH + "/Infection.xsd";
 			public static final String LANGUAGES = PATH + "/Languages.xsd";
+			public static final String LANGUAGE = PATH + "/Language.xsd";
 		}
 		
 		public static class WSDL {
