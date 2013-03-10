@@ -40,14 +40,14 @@ public class CitySoapService {
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Cities")
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="City")
 	public List<City> getCityByName(@WebParam(name="cityName") String cityName) {
 		log.info("getCityByName(): cityName = " + cityName);
 		return CityService.getCitiesByName(cityName);
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Cities")
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="City")
 	public List<City> getCityByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
 		log.info("getCityByCountry(): country = " + country);
 		return CityService.getCitiesByCountry(country);

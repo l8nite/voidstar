@@ -22,8 +22,8 @@ import edu.sjsu.voidstar.ws.dao.Infection;
  */
 @WebService(name = "InfectionService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection")
 @XmlSeeAlso({
-    edu.sjsu.voidstar.ws.soap.infection.ObjectFactory.class,
-    edu.sjsu.voidstar.ws.dao.ObjectFactory.class
+    edu.sjsu.voidstar.ws.dao.ObjectFactory.class,
+    edu.sjsu.voidstar.ws.soap.infection.ObjectFactory.class
 })
 public interface InfectionService {
 

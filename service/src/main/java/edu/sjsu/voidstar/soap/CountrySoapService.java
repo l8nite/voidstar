@@ -37,7 +37,7 @@ public class CountrySoapService {
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Countries")
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Country")
 	public List<Country> getCountryByContinent(@WebParam(name="continent") String continent) {
 		log.info("getCityByContinent(): continent = " + continent);
 		return CountryService.getCountriesByContinent(continent);

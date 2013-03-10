@@ -1,11 +1,13 @@
 
 package edu.sjsu.voidstar.ws.soap.city;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import edu.sjsu.voidstar.ws.dao.Cities;
+import edu.sjsu.voidstar.ws.dao.City;
 
 
 /**
@@ -18,7 +20,7 @@ import edu.sjsu.voidstar.ws.dao.Cities;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}Cities" minOccurs="0"/>
+ *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}City" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,35 +31,40 @@ import edu.sjsu.voidstar.ws.dao.Cities;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getCityByCountryResponse", propOrder = {
-    "cities"
+    "city"
 })
 public class GetCityByCountryResponse {
 
-    @XmlElement(name = "Cities", namespace = "http://ws.voidstar.sjsu.edu/dao")
-    protected Cities cities;
+    @XmlElement(name = "City", namespace = "http://ws.voidstar.sjsu.edu/dao")
+    protected List<City> city;
 
     /**
-     * Gets the value of the cities property.
+     * Gets the value of the city property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Cities }
-     *     
-     */
-    public Cities getCities() {
-        return cities;
-    }
-
-    /**
-     * Sets the value of the cities property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the city property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Cities }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getCity().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link City }
+     * 
+     * 
      */
-    public void setCities(Cities value) {
-        this.cities = value;
+    public List<City> getCity() {
+        if (city == null) {
+            city = new ArrayList<City>();
+        }
+        return this.city;
     }
 
 }

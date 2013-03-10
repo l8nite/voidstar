@@ -39,7 +39,7 @@ public class InfectionSoapService {
 	}
 	
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Infections")
+	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Infection")
 	public List<Infection> getInfectionsByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
 		log.info("getInfectionByCountry(): country = " + country);
 		return InfectionService.getForCountry(country);
