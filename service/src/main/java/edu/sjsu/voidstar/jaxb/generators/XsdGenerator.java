@@ -29,7 +29,7 @@ public class XsdGenerator {
 	
 	public static void generateSchema(Class<?> entityClass) throws JAXBException, IOException {
 		JAXBContext
-			.newInstance(entityClass.getPackage().getName())
+			.newInstance(entityClass)
 			.generateSchema(new EntitySchemaOutputResolver(entityClass));
 	}
 	
