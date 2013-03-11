@@ -1,6 +1,5 @@
 package edu.sjsu.voidstar.constants;
 
-
 public class Constants {
 
 	/*
@@ -38,24 +37,42 @@ public class Constants {
 					
 			public static final String CITY_SERVICE = PATH + "CitySoapService.wsdl";
 			public static final String COUNTRY_SERVICE = PATH + "CountrySoapService.wsdl";
+			public static final String COUNTRY_LANGUAGE_SERVICE = PATH + "CountryLanguageSoapService.wsdl";
 			public static final String INFECTION_SERVICE = PATH + "InfectionSoapService.wsdl";
 			public static final String LANGUAGE_SERVICE = PATH + "LanguageSoapService.wsdl";
 		}
 	}
 	
 	/*
-	 * Soap Constants
+	 * Xml Constants
 	 */
-	public static class Namespaces {
-		public static final String NS = "http://ws.voidstar.sjsu.edu/";
-		public static final String DAO = NS + "dao";
-		
-		public static class Soap {
-			public static final String SOAP_NS = NS + "soap";
-			public static final String CITY_SERVICE = SOAP_NS + "/city";
-			public static final String COUNTRY = SOAP_NS + "/country";
-			public static final String INFECTION_SERVICE = SOAP_NS + "/infection";
-			public static final String LANGUAGE_SERVICE = SOAP_NS + "/language";
+	public static class XML {
+		public static class Namespaces {
+			public static final String NS = "http://ws.voidstar.sjsu.edu/";
+			public static final String DAO = NS + "dao";
+			
+			public static class Soap {
+				public static final String SOAP_NS = NS + "soap";
+				public static final String CITY_SERVICE = SOAP_NS + "/city";
+				public static final String COUNTRY = SOAP_NS + "/country";
+				public static final String INFECTION_SERVICE = SOAP_NS + "/infection";
+				public static final String LANGUAGE_SERVICE = SOAP_NS + "/language";
+			}		
+		}
+	}
+	
+	public static class Names {
+		public static class Service {
+			public static final String CITY_PORT_SERVICE = "CityPortService";
+			public static final String CITY_SERVICE = "CityService";
+			public static final String COUNTRY_PORT_SERVICE = "CountryPortService";
+			public static final String COUNTRY_SERVICE = "CountryService";
+			public static final String COUNTRY_LANGUAGE_PORT_SERVICE = "CountryLanguagePortService";
+			public static final String COUNTRY_LANGUAGE_SERVICE = "CountryLanguageService";
+			public static final String INFECTION_PORT_SERVICE = "InfectionPortService";
+			public static final String INFECTION_SERVICE = "InfectionService";
+			public static final String LANGUAGE_PORT_SERVICE = "LanguagePortService";
+			public static final String LANGUAGE_SERVICE = "LanguageService";
 		}
 	}
 }

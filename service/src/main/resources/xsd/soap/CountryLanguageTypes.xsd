@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/countrylanguage"
+	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/countrylanguage"
+	>
+		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd" />
+		 
+		<xs:element name="getCountryLanguagesByCountry" type="tns:getCountryLanguagesByCountry" />
+		<xs:element name="getCountryLanguagesByCountryResponse" type="tns:getCountryLanguagesByCountryResponse" />
+		
+		<xs:element name="getCountryLanguagesByLanguage" type="tns:getCountryLanguagesByLanguage" />
+		<xs:element name="getCountryLanguagesByLanguageResponse" type="tns:getCountryLanguagesByLanguageResponse" />
+		
+		<xs:complexType name="getCountryLanguagesByCountry">
+			<xs:sequence>
+				<xs:element ref="dao:Country" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+			
+		<xs:complexType name="getCountryLanguagesByCountryResponse">
+			<xs:sequence>
+				<xs:element ref="dao:CountryLanguage" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="getCountryLanguagesByLanguage">
+			<xs:sequence>
+				<xs:element ref="dao:Language" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+			
+		<xs:complexType name="getCountryLanguagesByLanguageResponse">
+			<xs:sequence>
+				<xs:element ref="dao:CountryLanguage" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+		</xs:schema>

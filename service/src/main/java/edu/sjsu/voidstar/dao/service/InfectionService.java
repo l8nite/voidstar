@@ -8,6 +8,5 @@ import edu.sjsu.voidstar.dao.Infection;
 
 public interface InfectionService {
 	Infection getInfectionByCity(City city);
-
 	List<Infection> getInfectionsByCountry(Country country);
 }

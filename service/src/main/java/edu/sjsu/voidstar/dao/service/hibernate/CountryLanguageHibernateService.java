@@ -15,15 +15,9 @@ import edu.sjsu.voidstar.hibernate.HibernateSession;
 @Singleton
 public class CountryLanguageHibernateService implements CountryLanguageService {
 	
+	@Override
 	@SuppressWarnings("unchecked")	
-	public List<CountryLanguage> getAll(){
-		return HibernateSession.get()
-			.createCriteria(CountryLanguage.class)
-			.list();
-	}
-	
-	@SuppressWarnings("unchecked")	
-	public List<CountryLanguage> getByLanguage(Language language){
+	public List<CountryLanguage> getCountryLanguagesByLanguage(Language language){
 		return HibernateSession.get()
 			.createCriteria(CountryLanguage.class)
 			.add(Restrictions.eq("languageId", language.getId()))
@@ -31,8 +25,11 @@ public class CountryLanguageHibernateService implements CountryLanguageService {
 	}
 
 	@Override
-	public List<CountryLanguage> getByCountry(Country country) {
-		// TODO Auto-generated method stub
-		return null;
+	@SuppressWarnings("unchecked")	
+	public List<CountryLanguage> getCountryLanguagesByCountry(Country country) {
+		return HibernateSession.get()
+				.createCriteria(CountryLanguage.class)
+				.add(Restrictions.eq("countryCode", country.getCode()))
+				.list();
 	}
 }

@@ -7,9 +7,6 @@ import edu.sjsu.voidstar.dao.CountryLanguage;
 import edu.sjsu.voidstar.dao.Language;
 
 public interface CountryLanguageService {
-	List<CountryLanguage> getAll();
-
-	List<CountryLanguage> getByLanguage(Language language);
-
-	List<CountryLanguage> getByCountry(Country country);
+	List<CountryLanguage> getCountryLanguagesByLanguage(Language language);
+	List<CountryLanguage> getCountryLanguagesByCountry(Country country);
 }

@@ -13,16 +13,18 @@ import javax.jws.soap.SOAPBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.sjsu.voidstar.constants.Constants;
+import edu.sjsu.voidstar.constants.Constants.Names;
+import edu.sjsu.voidstar.constants.Constants.Resources.WSDL;
+import edu.sjsu.voidstar.constants.Constants.XML.Namespaces;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.service.CountryService;
 import edu.sjsu.voidstar.guice.annotations.HibernateService;
 
 @WebService(
-		targetNamespace = Constants.Namespaces.Soap.COUNTRY,
-		wsdlLocation = Constants.Resources.WSDL.COUNTRY_SERVICE,
-		serviceName = "CountryPortService",
-		name = "CountryService"
+		targetNamespace = Namespaces.Soap.COUNTRY,
+		wsdlLocation = WSDL.COUNTRY_SERVICE,
+		serviceName = Names.Service.COUNTRY_PORT_SERVICE,
+		name = Names.Service.COUNTRY_SERVICE
 )
 @SOAPBinding(
 		style = SOAPBinding.Style.DOCUMENT, 
@@ -37,15 +39,17 @@ public class CountrySoapService implements CountryService {
 	@HibernateService
 	private CountryService hibernateService;
 	
+	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Country")
+	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
 	public Country getCountryByCode(@WebParam(name="code") String countryCode) {
 		log.info("getCountryByCode(): countryCode = " + countryCode);
 		return hibernateService.getCountryByCode(countryCode);
 	}
 	
+	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Country")
+	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
 	public List<Country> getCountriesByContinent(@WebParam(name="continent") String continent) {
 		log.info("getCountriesByContinent(): continent = " + continent);
 		return hibernateService.getCountriesByContinent(continent);

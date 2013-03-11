@@ -8,12 +8,7 @@ import edu.sjsu.voidstar.dao.Language;
 
 public interface LanguageService {
 	Language getLanguageById(Integer id);
-
 	Language getLanguageByName(String name);
-
 	List<Language> getLanguagesByCountry(Country country);
-
 	List<Language> getLanguagesByCity(City city);
-
-	List<Language> getSortedLanguagesByCountry(Country country);
 }

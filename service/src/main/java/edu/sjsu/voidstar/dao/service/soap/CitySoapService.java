@@ -13,17 +13,19 @@ import javax.jws.soap.SOAPBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.sjsu.voidstar.constants.Constants;
+import edu.sjsu.voidstar.constants.Constants.Names.Service;
+import edu.sjsu.voidstar.constants.Constants.Resources.WSDL;
+import edu.sjsu.voidstar.constants.Constants.XML.Namespaces;
 import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.service.CityService;
 import edu.sjsu.voidstar.guice.annotations.HibernateService;
 
 @WebService(
-		targetNamespace = Constants.Namespaces.Soap.CITY_SERVICE,
-		wsdlLocation = Constants.Resources.WSDL.CITY_SERVICE,
-		serviceName = "CityPortService",
-		name = "CityService"
+		targetNamespace = Namespaces.Soap.CITY_SERVICE,
+		wsdlLocation = WSDL.CITY_SERVICE,
+		serviceName = Service.CITY_PORT_SERVICE,
+		name = Service.CITY_SERVICE
 )
 @SOAPBinding(
 		style = SOAPBinding.Style.DOCUMENT, 
@@ -38,8 +40,9 @@ public class CitySoapService implements CityService {
 	@HibernateService
 	private CityService hibernateService;
 	
+	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="City")
+	@WebResult(targetNamespace=Namespaces.DAO, name="id")
 	public City getCityById(@WebParam(name="id") Integer id) {
 		log.info("getCityById(): cityId = " + id);
 		City city = hibernateService.getCityById(id);
@@ -47,16 +50,18 @@ public class CitySoapService implements CityService {
 		return city;
 	}
 	
+	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="City")
+	@WebResult(targetNamespace=Namespaces.DAO, name="City")
 	public List<City> getCitiesByName(@WebParam(name="name") String cityName) {
 		log.info("getCityByName(): cityName = " + cityName);
 		return hibernateService.getCitiesByName(cityName);
 	}
 	
+	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="City")
-	public List<City> getCitiesByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
+	@WebResult(targetNamespace=Namespaces.DAO, name="City")
+	public List<City> getCitiesByCountry(@WebParam(name="country", targetNamespace=Namespaces.DAO) Country country) {
 		log.info("getCityByCountry(): country = " + country);
 		return hibernateService.getCitiesByCountry(country);
 	}

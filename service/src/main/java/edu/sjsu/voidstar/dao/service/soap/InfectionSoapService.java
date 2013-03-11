@@ -13,7 +13,9 @@ import javax.jws.soap.SOAPBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.sjsu.voidstar.constants.Constants;
+import edu.sjsu.voidstar.constants.Constants.Names;
+import edu.sjsu.voidstar.constants.Constants.Resources.WSDL;
+import edu.sjsu.voidstar.constants.Constants.XML.Namespaces;
 import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.Infection;
@@ -21,10 +23,10 @@ import edu.sjsu.voidstar.dao.service.InfectionService;
 import edu.sjsu.voidstar.guice.annotations.HibernateService;
 
 @WebService(
-		 targetNamespace= Constants.Namespaces.Soap.INFECTION_SERVICE,
-		 wsdlLocation = Constants.Resources.WSDL.INFECTION_SERVICE,
-		 serviceName = "InfectionPortService",
-		 name = "InfectionService"
+		 targetNamespace=Namespaces.Soap.INFECTION_SERVICE,
+		 wsdlLocation = WSDL.INFECTION_SERVICE,
+		 serviceName = Names.Service.INFECTION_PORT_SERVICE,
+		 name = Names.Service.INFECTION_SERVICE
 )
 @SOAPBinding(
 		style=SOAPBinding.Style.DOCUMENT, 
@@ -39,16 +41,18 @@ public class InfectionSoapService implements InfectionService {
 	@HibernateService
 	private InfectionService hibernateService;
 	
+	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Infection")
-	public Infection getInfectionByCity(@WebParam(name="city", targetNamespace=Constants.Namespaces.DAO) City city) {
+	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
+	public Infection getInfectionByCity(@WebParam(name="city", targetNamespace=Namespaces.DAO) City city) {
 		log.info("getInfectionByCity(): city = " + city);
 		return hibernateService.getInfectionByCity(city);
 	}
 	
+	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Infection")
-	public List<Infection> getInfectionsByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
+	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
+	public List<Infection> getInfectionsByCountry(@WebParam(name="country", targetNamespace=Namespaces.DAO) Country country) {
 		log.info("getInfectionByCountry(): country = " + country);
 		return hibernateService.getInfectionsByCountry(country);
 	}

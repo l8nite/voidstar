@@ -17,23 +17,14 @@ import edu.sjsu.voidstar.hibernate.HibernateSession;
 @Singleton
 public class InfectionHibernateService implements InfectionService {
 	
-	public Infection findOrCreateForCity(City city) {
-		Infection infection = getInfectionByCity(city);
-
-		if (infection == null) {
-			infection = new Infection();
-			infection.setCity(city);
-		}
-
-		return infection;
-	}
-	
+	@Override
 	public Infection getInfectionByCity (City city) {
 		return (Infection) HibernateSession.get().createCriteria(Infection.class)
 				.add(Restrictions.eq("city.id", city.getId()))
 				.uniqueResult();
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public List<Infection> getInfectionsByCountry(Country country) {
 		return (List<Infection>) HibernateSession.get().createCriteria(Infection.class)
