@@ -19,13 +19,13 @@
 	<message name="getCountryByCode">
 		<part name="parameters" element="tns:getCountryByCode"/>
 	</message>
+	
+	<message name="getCountryByCodeResponse">
+		<part name="parameters" element="tns:getCountryByCodeResponse"/>
+	</message>
 
 	<message name="getCountriesByContinent">
 		<part name="parameters" element="tns:getCountriesByContinent"/>
-	</message>
-
-	<message name="getCountryByCodeResponse">
-		<part name="parameters" element="tns:getCountryByCodeResponse"/>
 	</message>
 	
 	<message name="getCountriesByContinentResponse">
