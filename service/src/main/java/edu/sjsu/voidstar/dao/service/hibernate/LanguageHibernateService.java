@@ -7,7 +7,6 @@ import javax.inject.Singleton;
 
 import org.hibernate.criterion.Restrictions;
 
-import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.Language;
 import edu.sjsu.voidstar.dao.service.CountryLanguageService;
@@ -35,11 +34,6 @@ public class LanguageHibernateService implements LanguageService {
 				.createCriteria(Language.class)
 				.add(Restrictions.eq("language", languageName))
 				.uniqueResult();
-	}
-
-	@Override
-	public List<Language> getLanguagesByCity(City city) {
-		return getLanguagesByCountry(city.getCountry());
 	}
 
 	@Override

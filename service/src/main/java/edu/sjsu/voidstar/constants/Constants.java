@@ -54,7 +54,8 @@ public class Constants {
 			public static class Soap {
 				public static final String SOAP_NS = NS + "soap";
 				public static final String CITY_SERVICE = SOAP_NS + "/city";
-				public static final String COUNTRY = SOAP_NS + "/country";
+				public static final String COUNTRY_SERVICE = SOAP_NS + "/country";
+				public static final String COUNTRY_LANGUAGE_SERVICE = SOAP_NS + "/countrylanguage";
 				public static final String INFECTION_SERVICE = SOAP_NS + "/infection";
 				public static final String LANGUAGE_SERVICE = SOAP_NS + "/language";
 			}		

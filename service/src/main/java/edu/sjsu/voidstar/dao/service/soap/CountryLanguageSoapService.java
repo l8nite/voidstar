@@ -23,7 +23,7 @@ import edu.sjsu.voidstar.dao.service.CountryLanguageService;
 import edu.sjsu.voidstar.guice.annotations.HibernateService;
 
 @WebService(
-		targetNamespace = Namespaces.Soap.COUNTRY,
+		targetNamespace = Namespaces.Soap.COUNTRY_LANGUAGE_SERVICE,
 		wsdlLocation = WSDL.COUNTRY_LANGUAGE_SERVICE,
 		serviceName = Names.Service.COUNTRY_LANGUAGE_PORT_SERVICE,
 		name = Names.Service.COUNTRY_LANGUAGE_SERVICE

@@ -13,6 +13,7 @@ import edu.sjsu.voidstar.dao.service.hibernate.CountryLanguageHibernateService;
 import edu.sjsu.voidstar.dao.service.hibernate.InfectionHibernateService;
 import edu.sjsu.voidstar.dao.service.hibernate.LanguageHibernateService;
 import edu.sjsu.voidstar.dao.service.soap.CitySoapService;
+import edu.sjsu.voidstar.dao.service.soap.CountryLanguageSoapService;
 import edu.sjsu.voidstar.dao.service.soap.CountrySoapService;
 import edu.sjsu.voidstar.dao.service.soap.InfectionSoapService;
 import edu.sjsu.voidstar.dao.service.soap.LanguageSoapService;
@@ -34,6 +35,7 @@ public class CoreModule extends AbstractModule {
 		// Soap Services
 		bind(CityService.class).annotatedWith(SoapService.class).to(CitySoapService.class);
 		bind(CountryService.class).annotatedWith(SoapService.class).to(CountrySoapService.class);
+		bind(CountryLanguageService.class).annotatedWith(SoapService.class).to(CountryLanguageSoapService.class);
 		bind(InfectionService.class).annotatedWith(SoapService.class).to(InfectionSoapService.class);
 		bind(LanguageService.class).annotatedWith(SoapService.class).to(LanguageSoapService.class);
 	}	

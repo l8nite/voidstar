@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import edu.sjsu.voidstar.constants.Constants.Names;
 import edu.sjsu.voidstar.constants.Constants.Resources.WSDL;
 import edu.sjsu.voidstar.constants.Constants.XML.Namespaces;
-import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.Language;
 import edu.sjsu.voidstar.dao.service.LanguageService;
@@ -64,13 +63,5 @@ public class LanguageSoapService implements LanguageService {
 	public List<Language> getLanguagesByCountry(@WebParam(targetNamespace=Namespaces.DAO, name="country") Country country) {
 		log.info("getLanguagesByCountry(): country = " + country);
 		return hibernateService.getLanguagesByCountry(country);
-	}
-
-	@Override
-	@WebMethod
-	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
-	public List<Language> getLanguagesByCity(City city) {
-		log.info("getLanguagesByCity(): city = " + city);
-		return hibernateService.getLanguagesByCity(city);
 	}
 }

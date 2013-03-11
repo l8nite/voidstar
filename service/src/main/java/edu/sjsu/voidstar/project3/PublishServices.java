@@ -7,6 +7,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import edu.sjsu.voidstar.dao.service.CityService;
+import edu.sjsu.voidstar.dao.service.CountryLanguageService;
 import edu.sjsu.voidstar.dao.service.CountryService;
 import edu.sjsu.voidstar.dao.service.InfectionService;
 import edu.sjsu.voidstar.dao.service.LanguageService;
@@ -31,6 +32,10 @@ public class PublishServices {
 		
 		@Inject
 		@SoapService
+		CountryLanguageService countryLanguageService;
+		
+		@Inject
+		@SoapService
 		InfectionService infectionService;
 		
 		@Inject
@@ -40,7 +45,8 @@ public class PublishServices {
 		public void run() {
 			Endpoint.publish("http://localhost:8123/city", cityService);
 			Endpoint.publish("http://localhost:8123/country", countryService);
-			//Endpoint.publish("http://localhost:8123/infection", infectionService);
+			Endpoint.publish("http://localhost:8123/countrylanguage", countryLanguageService);
+			Endpoint.publish("http://localhost:8123/infection", infectionService);
 			Endpoint.publish("http://localhost:8123/language", languageService);
 		}
 	}
