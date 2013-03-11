@@ -42,7 +42,7 @@ public class CitySoapService implements CityService {
 	
 	@Override
 	@WebMethod
-	@WebResult(targetNamespace=Namespaces.DAO, name="id")
+	@WebResult(targetNamespace=Namespaces.DAO, name="City")
 	public City getCityById(@WebParam(name="id") Integer id) {
 		log.info("getCityById(): cityId = " + id);
 		City city = hibernateService.getCityById(id);
