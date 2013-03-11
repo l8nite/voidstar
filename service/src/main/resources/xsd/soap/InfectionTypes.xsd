@@ -16,7 +16,7 @@
 		
 		<xs:complexType name="getInfectionByCity">
 			<xs:sequence>
-				<xs:element name="city" type="dao:City" minOccurs="0" />
+				<xs:element ref="dao:City" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 			

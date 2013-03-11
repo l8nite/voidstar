@@ -2,8 +2,8 @@ package edu.sjsu.voidstar.client;
 
 import javax.xml.ws.WebServiceRef;
 
-import edu.sjsu.voidstar.ws.dao.City;
 import edu.sjsu.voidstar.ws.dao.Country;
+import edu.sjsu.voidstar.ws.dao.City;
 import edu.sjsu.voidstar.ws.dao.Infection;
 import edu.sjsu.voidstar.ws.soap.city.CityPortService;
 import edu.sjsu.voidstar.ws.soap.city.CityService;
@@ -11,6 +11,7 @@ import edu.sjsu.voidstar.ws.soap.country.CountryPortService;
 import edu.sjsu.voidstar.ws.soap.country.CountryService;
 import edu.sjsu.voidstar.ws.soap.infection.InfectionPortService;
 import edu.sjsu.voidstar.ws.soap.infection.InfectionService;
+
 
 public class TestClass {
 	@WebServiceRef(wsdlLocation="http://localhost:8123/city?wsdl")

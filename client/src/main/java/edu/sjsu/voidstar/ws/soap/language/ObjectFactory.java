@@ -25,12 +25,10 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetLanguageByName_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageByName");
-    private final static QName _GetLanguagesByCityResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguagesByCityResponse");
     private final static QName _GetLanguageByNameResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageByNameResponse");
     private final static QName _GetLanguageById_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageById");
     private final static QName _GetLanguagesByCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguagesByCountry");
     private final static QName _GetLanguagesByCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguagesByCountryResponse");
-    private final static QName _GetLanguagesByCity_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguagesByCity");
     private final static QName _GetLanguageByIdResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageByIdResponse");
 
     /**
@@ -41,35 +39,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLanguagesByCity }
-     * 
-     */
-    public GetLanguagesByCity createGetLanguagesByCity() {
-        return new GetLanguagesByCity();
-    }
-
-    /**
      * Create an instance of {@link GetLanguageByIdResponse }
      * 
      */
     public GetLanguageByIdResponse createGetLanguageByIdResponse() {
         return new GetLanguageByIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesByCountry }
-     * 
-     */
-    public GetLanguagesByCountry createGetLanguagesByCountry() {
-        return new GetLanguagesByCountry();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguageByName }
-     * 
-     */
-    public GetLanguageByName createGetLanguageByName() {
-        return new GetLanguageByName();
     }
 
     /**
@@ -89,19 +63,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLanguagesByCityResponse }
-     * 
-     */
-    public GetLanguagesByCityResponse createGetLanguagesByCityResponse() {
-        return new GetLanguagesByCityResponse();
-    }
-
-    /**
      * Create an instance of {@link GetLanguagesByCountryResponse }
      * 
      */
     public GetLanguagesByCountryResponse createGetLanguagesByCountryResponse() {
         return new GetLanguagesByCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesByCountry }
+     * 
+     */
+    public GetLanguagesByCountry createGetLanguagesByCountry() {
+        return new GetLanguagesByCountry();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguageByName }
+     * 
+     */
+    public GetLanguageByName createGetLanguageByName() {
+        return new GetLanguageByName();
     }
 
     /**
@@ -111,15 +93,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguageByName")
     public JAXBElement<GetLanguageByName> createGetLanguageByName(GetLanguageByName value) {
         return new JAXBElement<GetLanguageByName>(_GetLanguageByName_QNAME, GetLanguageByName.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesByCityResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguagesByCityResponse")
-    public JAXBElement<GetLanguagesByCityResponse> createGetLanguagesByCityResponse(GetLanguagesByCityResponse value) {
-        return new JAXBElement<GetLanguagesByCityResponse>(_GetLanguagesByCityResponse_QNAME, GetLanguagesByCityResponse.class, null, value);
     }
 
     /**
@@ -156,15 +129,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguagesByCountryResponse")
     public JAXBElement<GetLanguagesByCountryResponse> createGetLanguagesByCountryResponse(GetLanguagesByCountryResponse value) {
         return new JAXBElement<GetLanguagesByCountryResponse>(_GetLanguagesByCountryResponse_QNAME, GetLanguagesByCountryResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesByCity }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguagesByCity")
-    public JAXBElement<GetLanguagesByCity> createGetLanguagesByCity(GetLanguagesByCity value) {
-        return new JAXBElement<GetLanguagesByCity>(_GetLanguagesByCity_QNAME, GetLanguagesByCity.class, null, value);
     }
 
     /**

@@ -8,8 +8,7 @@
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
 	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/infection"
 	targetNamespace="http://ws.voidstar.sjsu.edu/soap/infection"
-	name="InfectionPortService"
->	
+	name="InfectionPortService">	
 	<types>
 		<xs:schema>
 			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/infection" schemaLocation="../xsd/soap/InfectionTypes.xsd" />

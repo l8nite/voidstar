@@ -14,9 +14,6 @@
 		<xs:element name="getLanguageByName" type="tns:getLanguageByName" />
 		<xs:element name="getLanguageByNameResponse" type="tns:getLanguageByNameResponse"/>
 		
-		<xs:element name="getLanguagesByCity" type="tns:getLanguagesByCity" />
-		<xs:element name="getLanguagesByCityResponse" type="tns:getLanguagesByCityResponse"/>
-		
 		<xs:element name="getLanguagesByCountry" type="tns:getLanguagesByCountry" />
 		<xs:element name="getLanguagesByCountryResponse" type="tns:getLanguagesByCountryResponse"/>
 		
@@ -35,25 +32,13 @@
 		
 		<xs:complexType name="getLanguageByName">
 			<xs:sequence>
-				<xs:element name="language" type="xs:string" minOccurs="0"/>
+				<xs:element name="name" type="xs:string" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 			
 		<xs:complexType name="getLanguageByNameResponse">
 			<xs:sequence>
 				<xs:element ref="dao:Language" minOccurs="0" />
-			</xs:sequence>
-		</xs:complexType>
-		
-		<xs:complexType name="getLanguagesByCity">
-			<xs:sequence>
-				<xs:element ref="dao:City" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-			
-		<xs:complexType name="getLanguagesByCityResponse">
-			<xs:sequence>
-				<xs:element ref="dao:Language" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 		

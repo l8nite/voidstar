@@ -21,24 +21,24 @@
 		<part name="parameters" element="tns:getCityById"/>
 	</message>
 	
-	<message name="getCityByName">
-		<part name="parameters" element="tns:getCityByName"/>
+	<message name="getCitiesByName">
+		<part name="parameters" element="tns:getCitiesByName"/>
 	</message>
 	
-	<message name="getCityByCountry">
-		<part name="parameters" element="tns:getCityByCountry"/>
+	<message name="getCitiesByCountry">
+		<part name="parameters" element="tns:getCitiesByCountry"/>
 	</message>
 
 	<message name="getCityByIdResponse">
 		<part name="parameters" element="tns:getCityByIdResponse"/>
 	</message>
 
-	<message name="getCityByNameResponse">
-		<part name="parameters" element="tns:getCityByNameResponse"/>
+	<message name="getCitiesByNameResponse">
+		<part name="parameters" element="tns:getCitiesByNameResponse"/>
 	</message>
 	
-	<message name="getCityByCountryResponse">
-		<part name="parameters" element="tns:getCityByCountryResponse"/>
+	<message name="getCitiesByCountryResponse">
+		<part name="parameters" element="tns:getCitiesByCountryResponse"/>
 	</message>
 	
 	
@@ -48,14 +48,14 @@
 			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByIdResponse" message="tns:getCityByIdResponse"/>
 		</operation>
 	
-		<operation name="getCityByName">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByNameRequest" message="tns:getCityByName"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByNameResponse" message="tns:getCityByNameResponse"/>
+		<operation name="getCitiesByName">
+			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCitiesByNameRequest" message="tns:getCitiesByName"/>
+			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCitiesByNameResponse" message="tns:getCitiesByNameResponse"/>
 		</operation>
 	
-		<operation name="getCityByCountry">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByCountryRequest" message="tns:getCityByCountry"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByCountryResponse" message="tns:getCityByCountryResponse"/>
+		<operation name="getCitiesByCountry">
+			<input wsam:Action="http://ws.voidstar.sjsu.edu/CitySer113vice/getCitiesByCountryRequest" message="tns:getCitiesByCountry"/>
+			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCitiesByCountryResponse" message="tns:getCitiesByCountryResponse"/>
 		</operation>
 	</portType>
 	
@@ -72,7 +72,7 @@
 			</output>
 		</operation>
 
-		<operation name="getCityByName">
+		<operation name="getCitiesByName">
 			<soap:operation soapAction=""/>
 			<input>
 				<soap:body use="literal"/>
@@ -82,7 +82,7 @@
 			</output>
 		</operation>
 		
-		<operation name="getCityByCountry">
+		<operation name="getCitiesByCountry">
 			<soap:operation soapAction=""/>
 			<input>
 				<soap:body use="literal"/>

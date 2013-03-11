@@ -7,19 +7,19 @@
 	>
 		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd" />
 		 
-		<xs:element name="getCountryByContinent" type="tns:getCountryByContinent" />
-		<xs:element name="getCountryByContinentResponse" type="tns:getCountryByContinentResponse" />
+		<xs:element name="getCountriesByContinent" type="tns:getCountriesByContinent" />
+		<xs:element name="getCountriesByContinentResponse" type="tns:getCountriesByContinentResponse" />
 		
 		<xs:element name="getCountryByCode" type="tns:getCountryByCode" />
 		<xs:element name="getCountryByCodeResponse" type="tns:getCountryByCodeResponse" />
 		
-		<xs:complexType name="getCountryByContinent">
+		<xs:complexType name="getCountriesByContinent">
 			<xs:sequence>
 				<xs:element name="continent" type="xs:string" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 			
-		<xs:complexType name="getCountryByContinentResponse">
+		<xs:complexType name="getCountriesByContinentResponse">
 			<xs:sequence>
 				<xs:element ref="dao:Country" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
@@ -27,7 +27,7 @@
 		
 		<xs:complexType name="getCountryByCode">
 			<xs:sequence>
-				<xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="code" type="xs:string" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 			
