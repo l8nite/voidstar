@@ -9,15 +9,15 @@
 	<xs:element name="getCityById" type="tns:getCityById" />
 	<xs:element name="getCityByIdResponse" type="tns:getCityByIdResponse" />
 
-	<xs:element name="getCityByCountry" type="tns:getCityByCountry" />
-	<xs:element name="getCityByCountryResponse" type="tns:getCityByCountryResponse" />
+	<xs:element name="getCitiesByCountry" type="tns:getCitiesByCountry" />
+	<xs:element name="getCitiesByCountryResponse" type="tns:getCitiesByCountryResponse" />
 
-	<xs:element name="getCityByName" type="tns:getCityByName" />
-	<xs:element name="getCityByNameResponse" type="tns:getCityByNameResponse" />
+	<xs:element name="getCitiesByName" type="tns:getCitiesByName" />
+	<xs:element name="getCitiesByNameResponse" type="tns:getCitiesByNameResponse" />
 	
 	<xs:complexType name="getCityById">
 		<xs:sequence>
-			<xs:element name="cityId" type="xs:int" minOccurs="0" />
+			<xs:element name="id" type="xs:int" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
@@ -27,25 +27,25 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getCityByCountry">
+	<xs:complexType name="getCitiesByCountry">
 		<xs:sequence>
 			<xs:element ref="dao:Country" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getCityByCountryResponse">
+	<xs:complexType name="getCitiesByCountryResponse">
 		<xs:sequence>
 			<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getCityByName">
+	<xs:complexType name="getCitiesByName">
 		<xs:sequence>
-			<xs:element name="cityName" type="xs:string" minOccurs="0" />
+			<xs:element name="name" type="xs:string" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	
-		<xs:complexType name="getCityByNameResponse">
+		<xs:complexType name="getCitiesByNameResponse">
 		<xs:sequence>
 			<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>

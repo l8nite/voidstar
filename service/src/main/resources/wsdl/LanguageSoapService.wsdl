@@ -32,14 +32,6 @@
 		<part name="parameters" element="tns:getLanguageByNameResponse"/>
 	</message>
 	
-	<message name="getLanguagesByCity">
-		<part name="parameters" element="tns:getLanguagesByCity"/>
-	</message>
-	
-	<message name="getLanguagesByCityResponse">
-		<part name="parameters" element="tns:getLanguagesByCityResponse"/>
-	</message>
-	
 	<message name="getLanguagesByCountry">
 		<part name="parameters" element="tns:getLanguagesByCountry"/>
 	</message>
@@ -58,12 +50,7 @@
 			<input wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByNameRequest" message="tns:getLanguageByName"/>
 			<output wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByNameResponse" message="tns:getLanguageByNameResponse"/>
 		</operation>
-		
-		<operation name="getLanguagesByCity">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCityRequest" message="tns:getLanguagesByCity"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCityResponse" message="tns:getLanguagesByCityResponse"/>
-		</operation>
-		
+			
 		<operation name="getLanguagesByCountry">
 			<input wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCountryRequest" message="tns:getLanguagesByCountry"/>
 			<output wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCountryResponse" message="tns:getLanguagesByCountryResponse"/>
@@ -84,16 +71,6 @@
 		</operation>
 
 		<operation name="getLanguageByName">
-			<soap:operation soapAction=""/>
-			<input>
-				<soap:body use="literal"/>
-			</input>
-			<output>
-				<soap:body use="literal"/>
-			</output>
-		</operation>
-		
-		<operation name="getLanguagesByCity">
 			<soap:operation soapAction=""/>
 			<input>
 				<soap:body use="literal"/>

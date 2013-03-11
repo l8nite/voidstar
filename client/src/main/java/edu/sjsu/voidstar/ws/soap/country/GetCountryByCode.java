@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="countryCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getCountryByCode", propOrder = {
-    "countryCode"
+    "code"
 })
 public class GetCountryByCode {
 
     @XmlElement(namespace = "")
-    protected String countryCode;
+    protected String code;
 
     /**
-     * Gets the value of the countryCode property.
+     * Gets the value of the code property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCountryCode() {
-        return countryCode;
+    public String getCode() {
+        return code;
     }
 
     /**
-     * Sets the value of the countryCode property.
+     * Sets the value of the code property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCountryCode(String value) {
-        this.countryCode = value;
+    public void setCode(String value) {
+        this.code = value;
     }
 
 }

@@ -39,7 +39,7 @@ public interface InfectionService {
     @RequestWrapper(localName = "getInfectionByCity", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionByCity")
     @ResponseWrapper(localName = "getInfectionByCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionByCityResponse")
     public Infection getInfectionByCity(
-        @WebParam(name = "city", targetNamespace = "")
+        @WebParam(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
         City city);
 
     /**

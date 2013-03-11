@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" 
+	xmlns="http://ws.voidstar.sjsu.edu"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/infection"
+	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
+	targetNamespace="http://ws.voidstar.sjsu.edu/soap/infection"
+	>
+		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd" />
+		 
+		<xs:element name="getInfectionByCity" type="tns:getInfectionByCity" />
+		<xs:element name="getInfectionsByCountry" type="tns:getInfectionsByCountry" />
+		
+		<xs:element name="getInfectionByCityResponse" type="tns:getInfectionByCityResponse" />
+		<xs:element name="getInfectionsByCountryResponse" type="tns:getInfectionsByCountryResponse"/>
+		
+		<xs:complexType name="getInfectionByCity">
+			<xs:sequence>
+				<xs:element ref="dao:City" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+			
+		<xs:complexType name="getInfectionByCityResponse">
+			<xs:sequence>
+				<xs:element ref="dao:Infection" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="getInfectionsByCountry">
+			<xs:sequence>
+				<xs:element ref="dao:Country" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+			
+		<xs:complexType name="getInfectionsByCountryResponse">
+			<xs:sequence>
+				<xs:element ref="dao:Infection" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

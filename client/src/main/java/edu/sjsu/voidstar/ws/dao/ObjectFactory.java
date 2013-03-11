@@ -29,8 +29,8 @@ public class ObjectFactory {
     private final static QName _CountryLanguage_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "CountryLanguage");
     private final static QName _Cities_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "Cities");
     private final static QName _Countries_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "Countries");
-    private final static QName _Country_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "Country");
     private final static QName _Infection_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "Infection");
+    private final static QName _Country_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "Country");
     private final static QName _Languages_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "Languages");
     private final static QName _City_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "City");
     private final static QName _CountryLanguages_QNAME = new QName("http://ws.voidstar.sjsu.edu/dao", "CountryLanguages");
@@ -51,43 +51,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CountryLanguage }
+     * Create an instance of {@link Cities }
      * 
      */
-    public CountryLanguage createCountryLanguage() {
-        return new CountryLanguage();
-    }
-
-    /**
-     * Create an instance of {@link Infections }
-     * 
-     */
-    public Infections createInfections() {
-        return new Infections();
-    }
-
-    /**
-     * Create an instance of {@link City }
-     * 
-     */
-    public City createCity() {
-        return new City();
-    }
-
-    /**
-     * Create an instance of {@link Countries }
-     * 
-     */
-    public Countries createCountries() {
-        return new Countries();
-    }
-
-    /**
-     * Create an instance of {@link Country }
-     * 
-     */
-    public Country createCountry() {
-        return new Country();
+    public Cities createCities() {
+        return new Cities();
     }
 
     /**
@@ -99,6 +67,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Infections }
+     * 
+     */
+    public Infections createInfections() {
+        return new Infections();
+    }
+
+    /**
+     * Create an instance of {@link CountryLanguage }
+     * 
+     */
+    public CountryLanguage createCountryLanguage() {
+        return new CountryLanguage();
+    }
+
+    /**
+     * Create an instance of {@link Countries }
+     * 
+     */
+    public Countries createCountries() {
+        return new Countries();
+    }
+
+    /**
      * Create an instance of {@link Language }
      * 
      */
@@ -107,11 +99,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Cities }
+     * Create an instance of {@link City }
      * 
      */
-    public Cities createCities() {
-        return new Cities();
+    public City createCity() {
+        return new City();
     }
 
     /**
@@ -120,6 +112,14 @@ public class ObjectFactory {
      */
     public Languages createLanguages() {
         return new Languages();
+    }
+
+    /**
+     * Create an instance of {@link Country }
+     * 
+     */
+    public Country createCountry() {
+        return new Country();
     }
 
     /**
@@ -168,21 +168,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Country }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/dao", name = "Country")
-    public JAXBElement<Country> createCountry(Country value) {
-        return new JAXBElement<Country>(_Country_QNAME, Country.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Infection }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/dao", name = "Infection")
     public JAXBElement<Infection> createInfection(Infection value) {
         return new JAXBElement<Infection>(_Infection_QNAME, Infection.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Country }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/dao", name = "Country")
+    public JAXBElement<Country> createCountry(Country value) {
+        return new JAXBElement<Country>(_Country_QNAME, Country.class, null, value);
     }
 
     /**

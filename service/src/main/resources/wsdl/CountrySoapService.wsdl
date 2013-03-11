@@ -20,16 +20,16 @@
 		<part name="parameters" element="tns:getCountryByCode"/>
 	</message>
 
-	<message name="getCountryByContinent">
-		<part name="parameters" element="tns:getCountryByContinent"/>
+	<message name="getCountriesByContinent">
+		<part name="parameters" element="tns:getCountriesByContinent"/>
 	</message>
 
 	<message name="getCountryByCodeResponse">
 		<part name="parameters" element="tns:getCountryByCodeResponse"/>
 	</message>
 	
-	<message name="getCountryByContinentResponse">
-		<part name="parameters" element="tns:getCountryByContinentResponse"/>
+	<message name="getCountriesByContinentResponse">
+		<part name="parameters" element="tns:getCountriesByContinentResponse"/>
 	</message>
 
 	<portType name="CountryService">
@@ -38,9 +38,9 @@
 			<output wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountryByCodeResponse" message="tns:getCountryByCodeResponse"/>
 		</operation>
 		
-		<operation name="getCountryByContinent">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountryByContinentRequest" message="tns:getCountryByContinent"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountryByContinentResponse" message="tns:getCountryByContinentResponse"/>
+		<operation name="getCountriesByContinent">
+			<input wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentRequest" message="tns:getCountriesByContinent"/>
+			<output wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentResponse" message="tns:getCountriesByContinentResponse"/>
 		</operation>
 	</portType>
 	
@@ -55,7 +55,7 @@
 				<soap:body use="literal"/>
 			</output>
 		</operation>
-		<operation name="getCountryByContinent">
+		<operation name="getCountriesByContinent">
 			<soap:operation soapAction=""/>
 			<input>
 				<soap:body use="literal"/>

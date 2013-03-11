@@ -9,7 +9,6 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
-import edu.sjsu.voidstar.ws.dao.City;
 import edu.sjsu.voidstar.ws.dao.Country;
 import edu.sjsu.voidstar.ws.dao.Language;
 
@@ -44,7 +43,7 @@ public interface LanguageService {
 
     /**
      * 
-     * @param language
+     * @param name
      * @return
      *     returns edu.sjsu.voidstar.ws.dao.Language
      */
@@ -53,22 +52,8 @@ public interface LanguageService {
     @RequestWrapper(localName = "getLanguageByName", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByName")
     @ResponseWrapper(localName = "getLanguageByNameResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByNameResponse")
     public Language getLanguageByName(
-        @WebParam(name = "language", targetNamespace = "")
-        String language);
-
-    /**
-     * 
-     * @param city
-     * @return
-     *     returns java.util.List<edu.sjsu.voidstar.ws.dao.Language>
-     */
-    @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguagesByCity", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCity")
-    @ResponseWrapper(localName = "getLanguagesByCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCityResponse")
-    public List<Language> getLanguagesByCity(
-        @WebParam(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-        City city);
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
     /**
      * 
