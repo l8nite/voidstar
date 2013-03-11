@@ -17,7 +17,7 @@ public class MashupClient {
 
 	public void runMashupQueries() {
 		MashupService service = mashupPortService.getMashupServicePort();
-		String mostSpoken = service.getMostSpokenLanguageInCountry("USA");
+		String mostSpoken = service.getLanguagesSpokenInCountry("USA");
 		System.out.println(mostSpoken);
 	}
 }
