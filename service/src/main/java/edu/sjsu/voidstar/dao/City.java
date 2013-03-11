@@ -1,6 +1,7 @@
 package edu.sjsu.voidstar.dao;
 
 import java.util.List;
+
 import java.util.Random;
 
 import javax.persistence.Entity;
@@ -17,9 +18,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import edu.sjsu.voidstar.constants.Constants.Resources.XSD;
 import edu.sjsu.voidstar.hibernate.HibernateSession;
+import edu.sjsu.voidstar.jaxb.annotations.SchemaLocation;
 import edu.sjsu.voidstar.jaxb.annotations.XmlGroup;
 import edu.sjsu.voidstar.jaxb.tables.Cities;
+
 @XmlRootElement(name = "City")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name="City", propOrder = {
@@ -32,6 +36,7 @@ import edu.sjsu.voidstar.jaxb.tables.Cities;
 @Entity
 @XmlGroup(Cities.class)
 @Table(name = "City")
+@SchemaLocation(XSD.CITY)
 public class City extends HEntity {
 	
 	@Id

@@ -1,6 +1,7 @@
 package edu.sjsu.voidstar.dao;
 
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -13,8 +14,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import edu.sjsu.voidstar.jaxb.annotations.SchemaLocation;
 import edu.sjsu.voidstar.jaxb.annotations.XmlGroup;
 import edu.sjsu.voidstar.jaxb.tables.CountryLanguages;
+import edu.sjsu.voidstar.constants.Constants.Resources.XSD;
 
 @Entity
 @IdClass(CountryLanguageId.class)
@@ -28,6 +31,7 @@ import edu.sjsu.voidstar.jaxb.tables.CountryLanguages;
 })
 @XmlGroup(CountryLanguages.class)
 @Table(name = "CountryLanguage")
+@SchemaLocation(XSD.COUNTRY_LANGUAGE)
 public class CountryLanguage extends HEntity {
 	@Id
 	@XmlElement(name = "CountryCode")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Cities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="src/main/resources/xsd/Cities.xsd">
+<dao:Cities xmlns:dao="http://ws.voidstar.sjsu.edu/dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="src/main/resources/xsd/dao//Cities.xsd">
     <City>
         <ID>1</ID>
         <Name>Kabul</Name>
@@ -28553,4 +28553,4 @@
         <District>Rafah</District>
         <Population>92020</Population>
     </City>
-</Cities>
+</dao:Cities>

@@ -19,8 +19,10 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.hibernate.HibernateSession;
+import edu.sjsu.voidstar.jaxb.annotations.SchemaLocation;
 import edu.sjsu.voidstar.jaxb.annotations.XmlGroup;
 import edu.sjsu.voidstar.jaxb.tables.Countries;
+import edu.sjsu.voidstar.constants.Constants.Resources.XSD;
 
 @Entity
 @XmlRootElement(name="Country")
@@ -44,6 +46,7 @@ import edu.sjsu.voidstar.jaxb.tables.Countries;
 })
 @XmlGroup(Countries.class)
 @Table(name = "Country")
+@SchemaLocation(XSD.COUNTRY)
 public class Country extends HEntity {
 	@Id
 	@XmlElement(name = "Code")
