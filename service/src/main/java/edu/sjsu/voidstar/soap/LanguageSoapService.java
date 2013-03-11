@@ -15,6 +15,7 @@ import edu.sjsu.voidstar.constants.Constants;
 import edu.sjsu.voidstar.dao.City;
 import edu.sjsu.voidstar.dao.Country;
 import edu.sjsu.voidstar.dao.Language;
+import edu.sjsu.voidstar.dao.service.LanguageService;
 
 @WebService(
 		 targetNamespace= Constants.Namespaces.Soap.LANGUAGE_SERVICE,
@@ -34,27 +35,27 @@ public class LanguageSoapService {
 	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Language")
 	public Language getLanguageById(@WebParam(name="id") Integer id) {
 		log.info("getLanguageById(): id = " + id);
-		return null;
+		return LanguageService.getLanguageById(id);
 	}
 	
 	@WebMethod
 	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Language")
 	public Language getLanguageByName(@WebParam(name="name") String name) {
 		log.info("getLanguageByName(): name = " + name);
-		return null;
+		return LanguageService.getLanguageByName(name);
 	}
 
 	@WebMethod
 	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Language")
 	public List<Language> getLanguagesByCity(@WebParam(targetNamespace=Constants.Namespaces.DAO, name="city") City city) {
 		log.info("getLanguageByCity(): city = " + city);
-		return null;
+		return LanguageService.getLanguagesByCity(city);
 	}
 	
 	@WebMethod
 	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Language")
 	public List<Language> getLanguagesByCountry(@WebParam(name="country", targetNamespace=Constants.Namespaces.DAO) Country country) {
 		log.info("getLanguageByCountry(): country = " + country);
-		return null;
+		return LanguageService.getLanguagesByCountry(country);
 	}
 }
