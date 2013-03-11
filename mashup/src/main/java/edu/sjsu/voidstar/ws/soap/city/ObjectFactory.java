@@ -24,18 +24,34 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetCityByCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityByCountryResponse");
-    private final static QName _GetCityByNameResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityByNameResponse");
+    private final static QName _GetCitiesByNameResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCitiesByNameResponse");
+    private final static QName _GetCitiesByName_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCitiesByName");
+    private final static QName _GetCitiesByCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCitiesByCountry");
     private final static QName _GetCityByIdResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityByIdResponse");
     private final static QName _GetCityById_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityById");
-    private final static QName _GetCityByCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityByCountry");
-    private final static QName _GetCityByName_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCityByName");
+    private final static QName _GetCitiesByCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/city", "getCitiesByCountryResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: edu.sjsu.voidstar.ws.soap.city
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesByCountryResponse }
+     * 
+     */
+    public GetCitiesByCountryResponse createGetCitiesByCountryResponse() {
+        return new GetCitiesByCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesByCountry }
+     * 
+     */
+    public GetCitiesByCountry createGetCitiesByCountry() {
+        return new GetCitiesByCountry();
     }
 
     /**
@@ -47,30 +63,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCityByNameResponse }
-     * 
-     */
-    public GetCityByNameResponse createGetCityByNameResponse() {
-        return new GetCityByNameResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCityByName }
-     * 
-     */
-    public GetCityByName createGetCityByName() {
-        return new GetCityByName();
-    }
-
-    /**
-     * Create an instance of {@link GetCityByCountryResponse }
-     * 
-     */
-    public GetCityByCountryResponse createGetCityByCountryResponse() {
-        return new GetCityByCountryResponse();
-    }
-
-    /**
      * Create an instance of {@link GetCityById }
      * 
      */
@@ -79,29 +71,46 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCityByCountry }
+     * Create an instance of {@link GetCitiesByNameResponse }
      * 
      */
-    public GetCityByCountry createGetCityByCountry() {
-        return new GetCityByCountry();
+    public GetCitiesByNameResponse createGetCitiesByNameResponse() {
+        return new GetCitiesByNameResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityByCountryResponse }{@code >}}
+     * Create an instance of {@link GetCitiesByName }
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCityByCountryResponse")
-    public JAXBElement<GetCityByCountryResponse> createGetCityByCountryResponse(GetCityByCountryResponse value) {
-        return new JAXBElement<GetCityByCountryResponse>(_GetCityByCountryResponse_QNAME, GetCityByCountryResponse.class, null, value);
+    public GetCitiesByName createGetCitiesByName() {
+        return new GetCitiesByName();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityByNameResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCitiesByNameResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCityByNameResponse")
-    public JAXBElement<GetCityByNameResponse> createGetCityByNameResponse(GetCityByNameResponse value) {
-        return new JAXBElement<GetCityByNameResponse>(_GetCityByNameResponse_QNAME, GetCityByNameResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCitiesByNameResponse")
+    public JAXBElement<GetCitiesByNameResponse> createGetCitiesByNameResponse(GetCitiesByNameResponse value) {
+        return new JAXBElement<GetCitiesByNameResponse>(_GetCitiesByNameResponse_QNAME, GetCitiesByNameResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCitiesByName }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCitiesByName")
+    public JAXBElement<GetCitiesByName> createGetCitiesByName(GetCitiesByName value) {
+        return new JAXBElement<GetCitiesByName>(_GetCitiesByName_QNAME, GetCitiesByName.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCitiesByCountry }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCitiesByCountry")
+    public JAXBElement<GetCitiesByCountry> createGetCitiesByCountry(GetCitiesByCountry value) {
+        return new JAXBElement<GetCitiesByCountry>(_GetCitiesByCountry_QNAME, GetCitiesByCountry.class, null, value);
     }
 
     /**
@@ -123,21 +132,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityByCountry }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCitiesByCountryResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCityByCountry")
-    public JAXBElement<GetCityByCountry> createGetCityByCountry(GetCityByCountry value) {
-        return new JAXBElement<GetCityByCountry>(_GetCityByCountry_QNAME, GetCityByCountry.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCityByName }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCityByName")
-    public JAXBElement<GetCityByName> createGetCityByName(GetCityByName value) {
-        return new JAXBElement<GetCityByName>(_GetCityByName_QNAME, GetCityByName.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/city", name = "getCitiesByCountryResponse")
+    public JAXBElement<GetCitiesByCountryResponse> createGetCitiesByCountryResponse(GetCitiesByCountryResponse value) {
+        return new JAXBElement<GetCitiesByCountryResponse>(_GetCitiesByCountryResponse_QNAME, GetCitiesByCountryResponse.class, null, value);
     }
 
 }

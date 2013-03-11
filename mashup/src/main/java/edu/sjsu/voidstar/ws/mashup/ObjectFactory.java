@@ -24,8 +24,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetMostSpokenLanguageInCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getMostSpokenLanguageInCountryResponse");
-    private final static QName _GetMostSpokenLanguageInCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getMostSpokenLanguageInCountry");
+    private final static QName _GetLanguagesSpokenInCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getLanguagesSpokenInCountryResponse");
+    private final static QName _GetNumberOfZombiesInCityResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getNumberOfZombiesInCityResponse");
+    private final static QName _GetCountriesWhichSpeakLanguageResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguageResponse");
+    private final static QName _GetLanguagesSpokenInCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getLanguagesSpokenInCountry");
+    private final static QName _GetCountriesWhichSpeakLanguage_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguage");
+    private final static QName _GetNumberOfZombiesInCity_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getNumberOfZombiesInCity");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: edu.sjsu.voidstar.ws.mashup
@@ -35,37 +39,105 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetMostSpokenLanguageInCountry }
+     * Create an instance of {@link GetLanguagesSpokenInCountry }
      * 
      */
-    public GetMostSpokenLanguageInCountry createGetMostSpokenLanguageInCountry() {
-        return new GetMostSpokenLanguageInCountry();
+    public GetLanguagesSpokenInCountry createGetLanguagesSpokenInCountry() {
+        return new GetLanguagesSpokenInCountry();
     }
 
     /**
-     * Create an instance of {@link GetMostSpokenLanguageInCountryResponse }
+     * Create an instance of {@link GetNumberOfZombiesInCity }
      * 
      */
-    public GetMostSpokenLanguageInCountryResponse createGetMostSpokenLanguageInCountryResponse() {
-        return new GetMostSpokenLanguageInCountryResponse();
+    public GetNumberOfZombiesInCity createGetNumberOfZombiesInCity() {
+        return new GetNumberOfZombiesInCity();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetMostSpokenLanguageInCountryResponse }{@code >}}
+     * Create an instance of {@link GetCountriesWhichSpeakLanguage }
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getMostSpokenLanguageInCountryResponse")
-    public JAXBElement<GetMostSpokenLanguageInCountryResponse> createGetMostSpokenLanguageInCountryResponse(GetMostSpokenLanguageInCountryResponse value) {
-        return new JAXBElement<GetMostSpokenLanguageInCountryResponse>(_GetMostSpokenLanguageInCountryResponse_QNAME, GetMostSpokenLanguageInCountryResponse.class, null, value);
+    public GetCountriesWhichSpeakLanguage createGetCountriesWhichSpeakLanguage() {
+        return new GetCountriesWhichSpeakLanguage();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetMostSpokenLanguageInCountry }{@code >}}
+     * Create an instance of {@link GetCountriesWhichSpeakLanguageResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getMostSpokenLanguageInCountry")
-    public JAXBElement<GetMostSpokenLanguageInCountry> createGetMostSpokenLanguageInCountry(GetMostSpokenLanguageInCountry value) {
-        return new JAXBElement<GetMostSpokenLanguageInCountry>(_GetMostSpokenLanguageInCountry_QNAME, GetMostSpokenLanguageInCountry.class, null, value);
+    public GetCountriesWhichSpeakLanguageResponse createGetCountriesWhichSpeakLanguageResponse() {
+        return new GetCountriesWhichSpeakLanguageResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetNumberOfZombiesInCityResponse }
+     * 
+     */
+    public GetNumberOfZombiesInCityResponse createGetNumberOfZombiesInCityResponse() {
+        return new GetNumberOfZombiesInCityResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesSpokenInCountryResponse }
+     * 
+     */
+    public GetLanguagesSpokenInCountryResponse createGetLanguagesSpokenInCountryResponse() {
+        return new GetLanguagesSpokenInCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesSpokenInCountryResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getLanguagesSpokenInCountryResponse")
+    public JAXBElement<GetLanguagesSpokenInCountryResponse> createGetLanguagesSpokenInCountryResponse(GetLanguagesSpokenInCountryResponse value) {
+        return new JAXBElement<GetLanguagesSpokenInCountryResponse>(_GetLanguagesSpokenInCountryResponse_QNAME, GetLanguagesSpokenInCountryResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetNumberOfZombiesInCityResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getNumberOfZombiesInCityResponse")
+    public JAXBElement<GetNumberOfZombiesInCityResponse> createGetNumberOfZombiesInCityResponse(GetNumberOfZombiesInCityResponse value) {
+        return new JAXBElement<GetNumberOfZombiesInCityResponse>(_GetNumberOfZombiesInCityResponse_QNAME, GetNumberOfZombiesInCityResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWhichSpeakLanguageResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCountriesWhichSpeakLanguageResponse")
+    public JAXBElement<GetCountriesWhichSpeakLanguageResponse> createGetCountriesWhichSpeakLanguageResponse(GetCountriesWhichSpeakLanguageResponse value) {
+        return new JAXBElement<GetCountriesWhichSpeakLanguageResponse>(_GetCountriesWhichSpeakLanguageResponse_QNAME, GetCountriesWhichSpeakLanguageResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesSpokenInCountry }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getLanguagesSpokenInCountry")
+    public JAXBElement<GetLanguagesSpokenInCountry> createGetLanguagesSpokenInCountry(GetLanguagesSpokenInCountry value) {
+        return new JAXBElement<GetLanguagesSpokenInCountry>(_GetLanguagesSpokenInCountry_QNAME, GetLanguagesSpokenInCountry.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWhichSpeakLanguage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCountriesWhichSpeakLanguage")
+    public JAXBElement<GetCountriesWhichSpeakLanguage> createGetCountriesWhichSpeakLanguage(GetCountriesWhichSpeakLanguage value) {
+        return new JAXBElement<GetCountriesWhichSpeakLanguage>(_GetCountriesWhichSpeakLanguage_QNAME, GetCountriesWhichSpeakLanguage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetNumberOfZombiesInCity }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getNumberOfZombiesInCity")
+    public JAXBElement<GetNumberOfZombiesInCity> createGetNumberOfZombiesInCity(GetNumberOfZombiesInCity value) {
+        return new JAXBElement<GetNumberOfZombiesInCity>(_GetNumberOfZombiesInCity_QNAME, GetNumberOfZombiesInCity.class, null, value);
     }
 
 }

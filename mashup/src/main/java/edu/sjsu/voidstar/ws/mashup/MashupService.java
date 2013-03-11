@@ -26,17 +26,47 @@ public interface MashupService {
 
     /**
      * 
+     * @param languageName
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCountriesWhichSpeakLanguage", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWhichSpeakLanguage")
+    @ResponseWrapper(localName = "getCountriesWhichSpeakLanguageResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWhichSpeakLanguageResponse")
+    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageResponse")
+    public String getCountriesWhichSpeakLanguage(
+        @WebParam(name = "languageName", targetNamespace = "")
+        String languageName);
+
+    /**
+     * 
      * @param countryCode
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMostSpokenLanguageInCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetMostSpokenLanguageInCountry")
-    @ResponseWrapper(localName = "getMostSpokenLanguageInCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetMostSpokenLanguageInCountryResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getMostSpokenLanguageInCountryRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getMostSpokenLanguageInCountryResponse")
-    public String getMostSpokenLanguageInCountry(
+    @RequestWrapper(localName = "getLanguagesSpokenInCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetLanguagesSpokenInCountry")
+    @ResponseWrapper(localName = "getLanguagesSpokenInCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetLanguagesSpokenInCountryResponse")
+    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getLanguagesSpokenInCountryRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getLanguagesSpokenInCountryResponse")
+    public String getLanguagesSpokenInCountry(
         @WebParam(name = "countryCode", targetNamespace = "")
         String countryCode);
+
+    /**
+     * 
+     * @param cityName
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getNumberOfZombiesInCity", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCity")
+    @ResponseWrapper(localName = "getNumberOfZombiesInCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCityResponse")
+    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getNumberOfZombiesInCityRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getNumberOfZombiesInCityResponse")
+    public String getNumberOfZombiesInCity(
+        @WebParam(name = "cityName", targetNamespace = "")
+        String cityName);
 
 }

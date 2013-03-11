@@ -29,7 +29,7 @@ public interface CountryService {
 
     /**
      * 
-     * @param countryCode
+     * @param code
      * @return
      *     returns edu.sjsu.voidstar.ws.dao.Country
      */
@@ -39,8 +39,8 @@ public interface CountryService {
     @ResponseWrapper(localName = "getCountryByCodeResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByCodeResponse")
     @Action(input = "http://ws.voidstar.sjsu.edu/CountryService/getCountryByCodeRequest", output = "http://ws.voidstar.sjsu.edu/CountryService/getCountryByCodeResponse")
     public Country getCountryByCode(
-        @WebParam(name = "countryCode", targetNamespace = "")
-        String countryCode);
+        @WebParam(name = "code", targetNamespace = "")
+        String code);
 
     /**
      * 
@@ -50,10 +50,10 @@ public interface CountryService {
      */
     @WebMethod
     @WebResult(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getCountryByContinent", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByContinent")
-    @ResponseWrapper(localName = "getCountryByContinentResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByContinentResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/CountryService/getCountryByContinentRequest", output = "http://ws.voidstar.sjsu.edu/CountryService/getCountryByContinentResponse")
-    public List<Country> getCountryByContinent(
+    @RequestWrapper(localName = "getCountriesByContinent", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountriesByContinent")
+    @ResponseWrapper(localName = "getCountriesByContinentResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountriesByContinentResponse")
+    @Action(input = "http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentRequest", output = "http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentResponse")
+    public List<Country> getCountriesByContinent(
         @WebParam(name = "continent", targetNamespace = "")
         String continent);
 
