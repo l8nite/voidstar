@@ -7,6 +7,8 @@ import edu.sjsu.voidstar.dao.Country;
 
 public interface CityService {
 	City getCityById(Integer cityId);
+
 	List<City> getCitiesByName(String cityName);
+
 	List<City> getCitiesByCountry(Country country);
 }
