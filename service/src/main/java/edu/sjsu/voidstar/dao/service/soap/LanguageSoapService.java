@@ -70,7 +70,7 @@ public class LanguageSoapService implements LanguageService {
 
 	@WebMethod
 	@WebResult(targetNamespace=Constants.Namespaces.DAO, name="Language")
-	public List<Object[]> getSortedLanguagesByCountry(Country country) {
+	public List<Language> getSortedLanguagesByCountry(Country country) {
 		log.info("getSortedLanguagesByCountry(): country = " + country);
 		return hibernateService.getSortedLanguagesByCountry(country);
 	}

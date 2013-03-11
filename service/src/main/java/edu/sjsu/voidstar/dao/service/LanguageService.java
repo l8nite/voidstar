@@ -15,5 +15,5 @@ public interface LanguageService {
 
 	List<Language> getLanguagesByCity(City city);
 
-	List<Object[]> getSortedLanguagesByCountry(Country country);
+	List<Language> getSortedLanguagesByCountry(Country country);
 }

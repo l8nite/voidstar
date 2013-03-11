@@ -9,7 +9,6 @@ import java.util.TreeMap;
 import javax.inject.Singleton;
 
 import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import edu.sjsu.voidstar.dao.City;
@@ -47,10 +46,10 @@ public class LanguageHibernateService implements LanguageService {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Object[]> getSortedLanguagesByCountry(Country country) {
+	public List<Language> getSortedLanguagesByCountry(Country country) {
 		return HibernateSession.get().createCriteria(Language.class, "l").createAlias("countries", "cl")
 				.add(Restrictions.eq("cl.countryCode", country.getCode()))
-				.setProjection(Projections.projectionList().add(Projections.groupProperty("cl.language")).add(Projections.property("cl.percentage")))
+				//.setProjection(Projections.projectionList().add(Projections.groupProperty("cl.language")).add(Projections.property("cl.percentage")))
 				.addOrder(Order.desc("cl.percentage")).list();
 	}
 
