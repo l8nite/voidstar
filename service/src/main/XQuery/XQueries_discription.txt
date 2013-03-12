@@ -1,3 +1,18 @@
+====
+                                  .__
+    ______      ____ ______  __ __|  |   ____      __ __  ______
+    \____ \    /  _ \\____ \|  |  \  |  /  _ \    |  |  \/  ___/
+    |  |_> >  (  <_> )  |_> >  |  /  |_(  <_> )   |  |  /\___ \
+    |   __/ /\ \____/|   __/|____/|____/\____/ /\ |____//____  >
+    |__|    \/       |__|                      \/            \/
+
+
+    Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
+    All Rights Reserved.
+
+    This software is licensed under The MIT License (MIT)
+    http://opensource.org/licenses/MIT
+====
 cities.xql - queries the names of cities that have a population more that three hundred thousand
 
 cities_Infection.xql - queries the names of cities where the number of zombies is more than fourty thousand,( query Joins cities.xml and infection.xml)
