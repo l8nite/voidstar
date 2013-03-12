@@ -277,9 +277,7 @@ public class Country extends HEntity {
 		return name;
 	}
 	
-	/*
-	 * QUERY METHODS
-	 */
+	//TODO: Move to library
 	@SuppressWarnings("unchecked")
 	public List<Language> getMostPopularLanguages() {
 		return (List<Language>)HibernateSession.get().createCriteria(CountryLanguage.class, "countryLanguage")

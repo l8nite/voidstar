@@ -72,19 +72,39 @@ public class CountryLanguage extends HEntity {
 	@XmlTransient
 	private Language language;
 
-	public String getCountryCode() {
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private String getCountryCode() {
 		return countryCode;
 	}
 
-	public void setCountryCode(String countryCode) {
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
 
-	public Integer getLanguageId() {
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private Integer getLanguageId() {
 		return languageId;
 	}
 
-	public void setLanguageId(Integer languageId) {
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private void setLanguageId(Integer languageId) {
 		this.languageId = languageId;
 	}
 
@@ -110,6 +130,7 @@ public class CountryLanguage extends HEntity {
 
 	public void setCountry(Country country) {
 		this.country = country;
+		this.countryCode = country != null ? country.getCode() : null;
 	}
 
 	public Language getLanguage() {
@@ -118,6 +139,7 @@ public class CountryLanguage extends HEntity {
 
 	public void setLanguage(Language language) {
 		this.language = language;
+		this.languageId = language != null ? language.getId() : null;
 	}
 	
 	@Override

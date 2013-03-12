@@ -99,11 +99,21 @@ public class City extends HEntity {
 		this.name = name;
 	}
 
-	public String getCountryCode() {
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private String getCountryCode() {
 		return countryCode;
 	}
 
-	public void setCountryCode(String countryCode) {
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
 
@@ -129,12 +139,14 @@ public class City extends HEntity {
 
 	public void setCountry(Country country) {
 		this.country = country;
+		this.countryCode = country != null ? country.getCode() : null;
 	}
 	
 	public String getFullCityName() {
 		return this.getName() + ", " + this.getCountry().getName();
 	}
 	
+	// TODO Move to library 
 	@SuppressWarnings("unchecked")
 	public static List<City> getCities() {
 		return HibernateSession.get()
@@ -142,6 +154,7 @@ public class City extends HEntity {
 				.list();
 	}
 	
+	//TODO: Move to library
 	public static City getRandomCity() {
 		List<City> allCities = City.getCities();
 		return allCities.get(new Random().nextInt(allCities.size()));

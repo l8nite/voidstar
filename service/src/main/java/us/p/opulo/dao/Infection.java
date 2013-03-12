@@ -61,6 +61,10 @@ public class Infection extends HEntity {
 	@XmlElement(name = "Zombies")
 	private Integer zombies = 0;
 
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
 	@SuppressWarnings("unused")
 	private Infection () { }
 	
@@ -76,6 +80,24 @@ public class Infection extends HEntity {
 		this.id = id;
 	}
 
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private Integer getCityID() {
+		return cityID;
+	}
+	
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private void setCityID(Integer cityID) {
+		this.cityID = cityID;
+	}
+	
 	public City getCity() {
 		return city;
 	}
