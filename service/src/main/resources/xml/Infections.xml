@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<dao:Infections xmlns:dao="http://ws.voidstar.sjsu.edu/dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="src/main/resources/xsd/dao//Infections.xsd">
+<dao:Infections xmlns:dao="http://p.opulo.us/dao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="src/main/resources/xsd/dao//Infections.xsd">
     <Infection>
         <ID>21601</ID>
         <CityID>3186</CityID>

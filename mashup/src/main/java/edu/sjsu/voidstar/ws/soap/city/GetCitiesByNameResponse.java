@@ -20,7 +20,7 @@ import edu.sjsu.voidstar.ws.dao.City;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}City" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{http://p.opulo.us/dao}City" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +35,7 @@ import edu.sjsu.voidstar.ws.dao.City;
 })
 public class GetCitiesByNameResponse {
 
-    @XmlElement(name = "City", namespace = "http://ws.voidstar.sjsu.edu/dao")
+    @XmlElement(name = "City", namespace = "http://p.opulo.us/dao")
     protected List<City> city;
 
     /**

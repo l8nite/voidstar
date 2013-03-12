@@ -24,10 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetCountryByCodeResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/country", "getCountryByCodeResponse");
-    private final static QName _GetCountriesByContinent_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/country", "getCountriesByContinent");
-    private final static QName _GetCountryByCode_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/country", "getCountryByCode");
-    private final static QName _GetCountriesByContinentResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/country", "getCountriesByContinentResponse");
+    private final static QName _GetCountryByCodeResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountryByCodeResponse");
+    private final static QName _GetCountriesByContinent_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesByContinent");
+    private final static QName _GetCountryByCode_QNAME = new QName("http://p.opulo.us/soap/country", "getCountryByCode");
+    private final static QName _GetCountriesByContinentResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesByContinentResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: edu.sjsu.voidstar.ws.soap.country
@@ -72,7 +72,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryByCodeResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/country", name = "getCountryByCodeResponse")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountryByCodeResponse")
     public JAXBElement<GetCountryByCodeResponse> createGetCountryByCodeResponse(GetCountryByCodeResponse value) {
         return new JAXBElement<GetCountryByCodeResponse>(_GetCountryByCodeResponse_QNAME, GetCountryByCodeResponse.class, null, value);
     }
@@ -81,7 +81,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesByContinent }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/country", name = "getCountriesByContinent")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesByContinent")
     public JAXBElement<GetCountriesByContinent> createGetCountriesByContinent(GetCountriesByContinent value) {
         return new JAXBElement<GetCountriesByContinent>(_GetCountriesByContinent_QNAME, GetCountriesByContinent.class, null, value);
     }
@@ -90,7 +90,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryByCode }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/country", name = "getCountryByCode")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountryByCode")
     public JAXBElement<GetCountryByCode> createGetCountryByCode(GetCountryByCode value) {
         return new JAXBElement<GetCountryByCode>(_GetCountryByCode_QNAME, GetCountryByCode.class, null, value);
     }
@@ -99,7 +99,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesByContinentResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/country", name = "getCountriesByContinentResponse")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesByContinentResponse")
     public JAXBElement<GetCountriesByContinentResponse> createGetCountriesByContinentResponse(GetCountriesByContinentResponse value) {
         return new JAXBElement<GetCountriesByContinentResponse>(_GetCountriesByContinentResponse_QNAME, GetCountriesByContinentResponse.class, null, value);
     }

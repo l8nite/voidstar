@@ -6,13 +6,13 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/language"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/language"
+	xmlns:tns="http://p.opulo.us/soap/language"
+	targetNamespace="http://p.opulo.us/soap/language"
 	name="LanguagePortService"
 >	
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/language" schemaLocation="../xsd/soap/LanguageTypes.xsd" />
+			<xs:import namespace="http://p.opulo.us/soap/language" schemaLocation="../xsd/soap/LanguageTypes.xsd" />
 		</xs:schema>
 	</types>
 	
@@ -42,18 +42,18 @@
 	
 	<portType name="LanguageService">
 		<operation name="getLanguageById">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByIdRequest" message="tns:getLanguageById"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByIdResponse" message="tns:getLanguageByIdResponse"/>
+			<input wsam:Action="http://p.opulo.us/LanguageService/getLanguageByIdRequest" message="tns:getLanguageById"/>
+			<output wsam:Action="http://p.opulo.us/LanguageService/getLanguageByIdResponse" message="tns:getLanguageByIdResponse"/>
 		</operation>
 	
 		<operation name="getLanguageByName">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByNameRequest" message="tns:getLanguageByName"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByNameResponse" message="tns:getLanguageByNameResponse"/>
+			<input wsam:Action="http://p.opulo.us/LanguageService/getLanguageByNameRequest" message="tns:getLanguageByName"/>
+			<output wsam:Action="http://p.opulo.us/LanguageService/getLanguageByNameResponse" message="tns:getLanguageByNameResponse"/>
 		</operation>
 			
 		<operation name="getLanguagesByCountry">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCountryRequest" message="tns:getLanguagesByCountry"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCountryResponse" message="tns:getLanguagesByCountryResponse"/>
+			<input wsam:Action="http://p.opulo.us/LanguageService/getLanguagesByCountryRequest" message="tns:getLanguagesByCountry"/>
+			<output wsam:Action="http://p.opulo.us/LanguageService/getLanguagesByCountryResponse" message="tns:getLanguagesByCountryResponse"/>
 		</operation>
 	</portType>
 	

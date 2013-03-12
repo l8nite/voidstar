@@ -19,7 +19,7 @@ import edu.sjsu.voidstar.ws.dao.Country;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "CountryService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country")
+@WebService(name = "CountryService", targetNamespace = "http://p.opulo.us/soap/country")
 @XmlSeeAlso({
     edu.sjsu.voidstar.ws.dao.ObjectFactory.class,
     edu.sjsu.voidstar.ws.soap.country.ObjectFactory.class
@@ -34,10 +34,10 @@ public interface CountryService {
      *     returns edu.sjsu.voidstar.ws.dao.Country
      */
     @WebMethod
-    @WebResult(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getCountryByCode", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByCode")
-    @ResponseWrapper(localName = "getCountryByCodeResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByCodeResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/CountryService/getCountryByCodeRequest", output = "http://ws.voidstar.sjsu.edu/CountryService/getCountryByCodeResponse")
+    @WebResult(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCountryByCode", targetNamespace = "http://p.opulo.us/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByCode")
+    @ResponseWrapper(localName = "getCountryByCodeResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountryByCodeResponse")
+    @Action(input = "http://p.opulo.us/CountryService/getCountryByCodeRequest", output = "http://p.opulo.us/CountryService/getCountryByCodeResponse")
     public Country getCountryByCode(
         @WebParam(name = "code", targetNamespace = "")
         String code);
@@ -49,10 +49,10 @@ public interface CountryService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.Country>
      */
     @WebMethod
-    @WebResult(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getCountriesByContinent", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountriesByContinent")
-    @ResponseWrapper(localName = "getCountriesByContinentResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountriesByContinentResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentRequest", output = "http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentResponse")
+    @WebResult(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCountriesByContinent", targetNamespace = "http://p.opulo.us/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountriesByContinent")
+    @ResponseWrapper(localName = "getCountriesByContinentResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "edu.sjsu.voidstar.ws.soap.country.GetCountriesByContinentResponse")
+    @Action(input = "http://p.opulo.us/CountryService/getCountriesByContinentRequest", output = "http://p.opulo.us/CountryService/getCountriesByContinentResponse")
     public List<Country> getCountriesByContinent(
         @WebParam(name = "continent", targetNamespace = "")
         String continent);

@@ -1,2 +1,2 @@
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://ws.voidstar.sjsu.edu/dao")
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://p.opulo.us/dao")
 package edu.sjsu.voidstar.ws.dao;

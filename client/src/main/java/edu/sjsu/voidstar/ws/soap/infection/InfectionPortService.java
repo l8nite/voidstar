@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "InfectionPortService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/InfectionSoapService.wsdl")
+@WebServiceClient(name = "InfectionPortService", targetNamespace = "http://p.opulo.us/soap/infection", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/InfectionSoapService.wsdl")
 public class InfectionPortService
     extends Service
 {
@@ -43,7 +43,7 @@ public class InfectionPortService
     }
 
     public InfectionPortService() {
-        super(INFECTIONPORTSERVICE_WSDL_LOCATION, new QName("http://ws.voidstar.sjsu.edu/soap/infection", "InfectionPortService"));
+        super(INFECTIONPORTSERVICE_WSDL_LOCATION, new QName("http://p.opulo.us/soap/infection", "InfectionPortService"));
     }
 
     /**
@@ -53,7 +53,7 @@ public class InfectionPortService
      */
     @WebEndpoint(name = "InfectionServicePort")
     public InfectionService getInfectionServicePort() {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/infection", "InfectionServicePort"), InfectionService.class);
+        return super.getPort(new QName("http://p.opulo.us/soap/infection", "InfectionServicePort"), InfectionService.class);
     }
 
     /**
@@ -65,7 +65,7 @@ public class InfectionPortService
      */
     @WebEndpoint(name = "InfectionServicePort")
     public InfectionService getInfectionServicePort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/infection", "InfectionServicePort"), InfectionService.class, features);
+        return super.getPort(new QName("http://p.opulo.us/soap/infection", "InfectionServicePort"), InfectionService.class, features);
     }
 
 }

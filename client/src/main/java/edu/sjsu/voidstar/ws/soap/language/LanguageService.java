@@ -19,7 +19,7 @@ import edu.sjsu.voidstar.ws.dao.Language;
  * Generated source version: 2.1
  * 
  */
-@WebService(name = "LanguageService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language")
+@WebService(name = "LanguageService", targetNamespace = "http://p.opulo.us/soap/language")
 @XmlSeeAlso({
     edu.sjsu.voidstar.ws.dao.ObjectFactory.class,
     edu.sjsu.voidstar.ws.soap.language.ObjectFactory.class
@@ -34,9 +34,9 @@ public interface LanguageService {
      *     returns edu.sjsu.voidstar.ws.dao.Language
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguageById", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageById")
-    @ResponseWrapper(localName = "getLanguageByIdResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByIdResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguageById", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageById")
+    @ResponseWrapper(localName = "getLanguageByIdResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByIdResponse")
     public Language getLanguageById(
         @WebParam(name = "id", targetNamespace = "")
         Integer id);
@@ -48,9 +48,9 @@ public interface LanguageService {
      *     returns edu.sjsu.voidstar.ws.dao.Language
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguageByName", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByName")
-    @ResponseWrapper(localName = "getLanguageByNameResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByNameResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguageByName", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByName")
+    @ResponseWrapper(localName = "getLanguageByNameResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByNameResponse")
     public Language getLanguageByName(
         @WebParam(name = "name", targetNamespace = "")
         String name);
@@ -62,11 +62,11 @@ public interface LanguageService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.Language>
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguagesByCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountry")
-    @ResponseWrapper(localName = "getLanguagesByCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountryResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguagesByCountry", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountry")
+    @ResponseWrapper(localName = "getLanguagesByCountryResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountryResponse")
     public List<Language> getLanguagesByCountry(
-        @WebParam(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
 
 }

@@ -6,13 +6,13 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/country"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/country"
+	xmlns:tns="http://p.opulo.us/soap/country"
+	targetNamespace="http://p.opulo.us/soap/country"
 	name="CountryPortService"
 >	
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/country" schemaLocation="../xsd/soap/CountryTypes.xsd" />
+			<xs:import namespace="http://p.opulo.us/soap/country" schemaLocation="../xsd/soap/CountryTypes.xsd" />
 		</xs:schema>
 	</types>
 	
@@ -34,13 +34,13 @@
 
 	<portType name="CountryService">
 		<operation name="getCountryByCode">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountryByCodeRequest" message="tns:getCountryByCode"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountryByCodeResponse" message="tns:getCountryByCodeResponse"/>
+			<input wsam:Action="http://p.opulo.us/CountryService/getCountryByCodeRequest" message="tns:getCountryByCode"/>
+			<output wsam:Action="http://p.opulo.us/CountryService/getCountryByCodeResponse" message="tns:getCountryByCodeResponse"/>
 		</operation>
 		
 		<operation name="getCountriesByContinent">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentRequest" message="tns:getCountriesByContinent"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CountryService/getCountriesByContinentResponse" message="tns:getCountriesByContinentResponse"/>
+			<input wsam:Action="http://p.opulo.us/CountryService/getCountriesByContinentRequest" message="tns:getCountriesByContinent"/>
+			<output wsam:Action="http://p.opulo.us/CountryService/getCountriesByContinentResponse" message="tns:getCountriesByContinentResponse"/>
 		</operation>
 	</portType>
 	

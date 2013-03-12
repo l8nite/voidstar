@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "CityPortService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/CitySoapService.wsdl")
+@WebServiceClient(name = "CityPortService", targetNamespace = "http://p.opulo.us/soap/city", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/CitySoapService.wsdl")
 public class CityPortService
     extends Service
 {
@@ -43,7 +43,7 @@ public class CityPortService
     }
 
     public CityPortService() {
-        super(CITYPORTSERVICE_WSDL_LOCATION, new QName("http://ws.voidstar.sjsu.edu/soap/city", "CityPortService"));
+        super(CITYPORTSERVICE_WSDL_LOCATION, new QName("http://p.opulo.us/soap/city", "CityPortService"));
     }
 
     /**
@@ -53,7 +53,7 @@ public class CityPortService
      */
     @WebEndpoint(name = "CityServicePort")
     public CityService getCityServicePort() {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/city", "CityServicePort"), CityService.class);
+        return super.getPort(new QName("http://p.opulo.us/soap/city", "CityServicePort"), CityService.class);
     }
 
     /**
@@ -65,7 +65,7 @@ public class CityPortService
      */
     @WebEndpoint(name = "CityServicePort")
     public CityService getCityServicePort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/city", "CityServicePort"), CityService.class, features);
+        return super.getPort(new QName("http://p.opulo.us/soap/city", "CityServicePort"), CityService.class, features);
     }
 
 }

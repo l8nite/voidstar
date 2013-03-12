@@ -6,14 +6,14 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/city"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/city"
+	xmlns:tns="http://p.opulo.us/soap/city"
+	targetNamespace="http://p.opulo.us/soap/city"
 	name="CityPortService"
 >	
 
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/city" schemaLocation="../xsd/soap/CityTypes.xsd" />
+			<xs:import namespace="http://p.opulo.us/soap/city" schemaLocation="../xsd/soap/CityTypes.xsd" />
 		</xs:schema>
 	</types>
 	
@@ -44,18 +44,18 @@
 	
 	<portType name="CityService">
 		<operation name="getCityById">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByIdRequest" message="tns:getCityById"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCityByIdResponse" message="tns:getCityByIdResponse"/>
+			<input wsam:Action="http://p.opulo.us/CityService/getCityByIdRequest" message="tns:getCityById"/>
+			<output wsam:Action="http://p.opulo.us/CityService/getCityByIdResponse" message="tns:getCityByIdResponse"/>
 		</operation>
 	
 		<operation name="getCitiesByName">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCitiesByNameRequest" message="tns:getCitiesByName"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCitiesByNameResponse" message="tns:getCitiesByNameResponse"/>
+			<input wsam:Action="http://p.opulo.us/CityService/getCitiesByNameRequest" message="tns:getCitiesByName"/>
+			<output wsam:Action="http://p.opulo.us/CityService/getCitiesByNameResponse" message="tns:getCitiesByNameResponse"/>
 		</operation>
 	
 		<operation name="getCitiesByCountry">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CitySer113vice/getCitiesByCountryRequest" message="tns:getCitiesByCountry"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getCitiesByCountryResponse" message="tns:getCitiesByCountryResponse"/>
+			<input wsam:Action="http://p.opulo.us/CitySer113vice/getCitiesByCountryRequest" message="tns:getCitiesByCountry"/>
+			<output wsam:Action="http://p.opulo.us/CityService/getCitiesByCountryResponse" message="tns:getCitiesByCountryResponse"/>
 		</operation>
 	</portType>
 	

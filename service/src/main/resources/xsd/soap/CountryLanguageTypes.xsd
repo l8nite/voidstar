@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/countrylanguage"
-	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/countrylanguage"
+	xmlns:tns="http://p.opulo.us/soap/countrylanguage"
+	xmlns:dao="http://p.opulo.us/dao"
+	targetNamespace="http://p.opulo.us/soap/countrylanguage"
 	>
-		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd" />
+		<xs:import namespace="http://p.opulo.us/dao" schemaLocation="../dao/Dao.xsd" />
 		 
 		<xs:element name="getCountryLanguagesByCountry" type="tns:getCountryLanguagesByCountry" />
 		<xs:element name="getCountryLanguagesByCountryResponse" type="tns:getCountryLanguagesByCountryResponse" />

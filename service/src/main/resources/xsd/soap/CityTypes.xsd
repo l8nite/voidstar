@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/city"
-	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/city">
+	xmlns:tns="http://p.opulo.us/soap/city"
+	xmlns:dao="http://p.opulo.us/dao"
+	targetNamespace="http://p.opulo.us/soap/city">
 
-    <xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd"/>
+    <xs:import namespace="http://p.opulo.us/dao" schemaLocation="../dao/Dao.xsd"/>
 
 	<xs:element name="getCityById" type="tns:getCityById" />
 	<xs:element name="getCityByIdResponse" type="tns:getCityByIdResponse" />

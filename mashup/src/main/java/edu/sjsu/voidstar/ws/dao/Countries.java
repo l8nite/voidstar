@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Country" type="{http://ws.voidstar.sjsu.edu/dao}Country" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="Country" type="{http://p.opulo.us/dao}Country" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>

@@ -24,12 +24,12 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetLanguageByName_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageByName");
-    private final static QName _GetLanguageByNameResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageByNameResponse");
-    private final static QName _GetLanguageById_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageById");
-    private final static QName _GetLanguagesByCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguagesByCountry");
-    private final static QName _GetLanguagesByCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguagesByCountryResponse");
-    private final static QName _GetLanguageByIdResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/soap/language", "getLanguageByIdResponse");
+    private final static QName _GetLanguageByName_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageByName");
+    private final static QName _GetLanguageByNameResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageByNameResponse");
+    private final static QName _GetLanguageById_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageById");
+    private final static QName _GetLanguagesByCountry_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesByCountry");
+    private final static QName _GetLanguagesByCountryResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesByCountryResponse");
+    private final static QName _GetLanguageByIdResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageByIdResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: edu.sjsu.voidstar.ws.soap.language
@@ -90,7 +90,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguageByName }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguageByName")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguageByName")
     public JAXBElement<GetLanguageByName> createGetLanguageByName(GetLanguageByName value) {
         return new JAXBElement<GetLanguageByName>(_GetLanguageByName_QNAME, GetLanguageByName.class, null, value);
     }
@@ -99,7 +99,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguageByNameResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguageByNameResponse")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguageByNameResponse")
     public JAXBElement<GetLanguageByNameResponse> createGetLanguageByNameResponse(GetLanguageByNameResponse value) {
         return new JAXBElement<GetLanguageByNameResponse>(_GetLanguageByNameResponse_QNAME, GetLanguageByNameResponse.class, null, value);
     }
@@ -108,7 +108,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguageById }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguageById")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguageById")
     public JAXBElement<GetLanguageById> createGetLanguageById(GetLanguageById value) {
         return new JAXBElement<GetLanguageById>(_GetLanguageById_QNAME, GetLanguageById.class, null, value);
     }
@@ -117,7 +117,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesByCountry }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguagesByCountry")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesByCountry")
     public JAXBElement<GetLanguagesByCountry> createGetLanguagesByCountry(GetLanguagesByCountry value) {
         return new JAXBElement<GetLanguagesByCountry>(_GetLanguagesByCountry_QNAME, GetLanguagesByCountry.class, null, value);
     }
@@ -126,7 +126,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesByCountryResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguagesByCountryResponse")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesByCountryResponse")
     public JAXBElement<GetLanguagesByCountryResponse> createGetLanguagesByCountryResponse(GetLanguagesByCountryResponse value) {
         return new JAXBElement<GetLanguagesByCountryResponse>(_GetLanguagesByCountryResponse_QNAME, GetLanguagesByCountryResponse.class, null, value);
     }
@@ -135,7 +135,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguageByIdResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/soap/language", name = "getLanguageByIdResponse")
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguageByIdResponse")
     public JAXBElement<GetLanguageByIdResponse> createGetLanguageByIdResponse(GetLanguageByIdResponse value) {
         return new JAXBElement<GetLanguageByIdResponse>(_GetLanguageByIdResponse_QNAME, GetLanguageByIdResponse.class, null, value);
     }

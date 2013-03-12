@@ -17,7 +17,7 @@ import edu.sjsu.voidstar.ws.soap.language.LanguageService;
 
 import javax.xml.ws.WebServiceRef;
 
-@WebService(targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", serviceName = "MashupPortService", name = "MashupService")
+@WebService(targetNamespace = "http://p.opulo.us/mashup", serviceName = "MashupPortService", name = "MashupService")
 public class MashupService {
 	@WebServiceRef(wsdlLocation = "http://localhost:8123/country?wsdl")
 	static CountryPortService countryPortService = new CountryPortService();

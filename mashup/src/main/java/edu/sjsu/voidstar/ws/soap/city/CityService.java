@@ -20,7 +20,7 @@ import edu.sjsu.voidstar.ws.dao.Country;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "CityService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city")
+@WebService(name = "CityService", targetNamespace = "http://p.opulo.us/soap/city")
 @XmlSeeAlso({
     edu.sjsu.voidstar.ws.dao.ObjectFactory.class,
     edu.sjsu.voidstar.ws.soap.city.ObjectFactory.class
@@ -35,10 +35,10 @@ public interface CityService {
      *     returns edu.sjsu.voidstar.ws.dao.City
      */
     @WebMethod
-    @WebResult(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getCityById", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityById")
-    @ResponseWrapper(localName = "getCityByIdResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityByIdResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/CityService/getCityByIdRequest", output = "http://ws.voidstar.sjsu.edu/CityService/getCityByIdResponse")
+    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCityById", targetNamespace = "http://p.opulo.us/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityById")
+    @ResponseWrapper(localName = "getCityByIdResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCityByIdResponse")
+    @Action(input = "http://p.opulo.us/CityService/getCityByIdRequest", output = "http://p.opulo.us/CityService/getCityByIdResponse")
     public City getCityById(
         @WebParam(name = "id", targetNamespace = "")
         Integer id);
@@ -50,10 +50,10 @@ public interface CityService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.City>
      */
     @WebMethod
-    @WebResult(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getCitiesByName", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByName")
-    @ResponseWrapper(localName = "getCitiesByNameResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByNameResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/CityService/getCitiesByNameRequest", output = "http://ws.voidstar.sjsu.edu/CityService/getCitiesByNameResponse")
+    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCitiesByName", targetNamespace = "http://p.opulo.us/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByName")
+    @ResponseWrapper(localName = "getCitiesByNameResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByNameResponse")
+    @Action(input = "http://p.opulo.us/CityService/getCitiesByNameRequest", output = "http://p.opulo.us/CityService/getCitiesByNameResponse")
     public List<City> getCitiesByName(
         @WebParam(name = "name", targetNamespace = "")
         String name);
@@ -65,12 +65,12 @@ public interface CityService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.City>
      */
     @WebMethod
-    @WebResult(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getCitiesByCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByCountry")
-    @ResponseWrapper(localName = "getCitiesByCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByCountryResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/CitySer113vice/getCitiesByCountryRequest", output = "http://ws.voidstar.sjsu.edu/CityService/getCitiesByCountryResponse")
+    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCitiesByCountry", targetNamespace = "http://p.opulo.us/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByCountry")
+    @ResponseWrapper(localName = "getCitiesByCountryResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "edu.sjsu.voidstar.ws.soap.city.GetCitiesByCountryResponse")
+    @Action(input = "http://p.opulo.us/CitySer113vice/getCitiesByCountryRequest", output = "http://p.opulo.us/CityService/getCitiesByCountryResponse")
     public List<City> getCitiesByCountry(
-        @WebParam(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
 
 }

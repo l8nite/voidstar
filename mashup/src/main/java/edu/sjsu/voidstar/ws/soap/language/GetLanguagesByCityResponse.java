@@ -20,7 +20,7 @@ import edu.sjsu.voidstar.ws.dao.Language;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}Language" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{http://p.opulo.us/dao}Language" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +35,7 @@ import edu.sjsu.voidstar.ws.dao.Language;
 })
 public class GetLanguagesByCityResponse {
 
-    @XmlElement(name = "Language", namespace = "http://ws.voidstar.sjsu.edu/dao")
+    @XmlElement(name = "Language", namespace = "http://p.opulo.us/dao")
     protected List<Language> language;
 
     /**

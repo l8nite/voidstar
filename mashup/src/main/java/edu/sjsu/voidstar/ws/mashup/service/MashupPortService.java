@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "MashupPortService", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup/service", wsdlLocation = "http://localhost:8124/mashup?wsdl")
+@WebServiceClient(name = "MashupPortService", targetNamespace = "http://p.opulo.us/mashup/service", wsdlLocation = "http://localhost:8124/mashup?wsdl")
 public class MashupPortService
     extends Service
 {
 
     private final static URL MASHUPPORTSERVICE_WSDL_LOCATION;
     private final static WebServiceException MASHUPPORTSERVICE_EXCEPTION;
-    private final static QName MASHUPPORTSERVICE_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup/service", "MashupPortService");
+    private final static QName MASHUPPORTSERVICE_QNAME = new QName("http://p.opulo.us/mashup/service", "MashupPortService");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class MashupPortService
      */
     @WebEndpoint(name = "MashupServicePort")
     public MashupService getMashupServicePort() {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/mashup/service", "MashupServicePort"), MashupService.class);
+        return super.getPort(new QName("http://p.opulo.us/mashup/service", "MashupServicePort"), MashupService.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class MashupPortService
      */
     @WebEndpoint(name = "MashupServicePort")
     public MashupService getMashupServicePort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/mashup/service", "MashupServicePort"), MashupService.class, features);
+        return super.getPort(new QName("http://p.opulo.us/mashup/service", "MashupServicePort"), MashupService.class, features);
     }
 
     private static URL __getWsdlLocation() {

@@ -20,7 +20,7 @@ import edu.sjsu.voidstar.ws.dao.Infection;
  * Generated source version: 2.1
  * 
  */
-@WebService(name = "InfectionService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection")
+@WebService(name = "InfectionService", targetNamespace = "http://p.opulo.us/soap/infection")
 @XmlSeeAlso({
     edu.sjsu.voidstar.ws.dao.ObjectFactory.class,
     edu.sjsu.voidstar.ws.soap.infection.ObjectFactory.class
@@ -35,11 +35,11 @@ public interface InfectionService {
      *     returns edu.sjsu.voidstar.ws.dao.Infection
      */
     @WebMethod
-    @WebResult(name = "Infection", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getInfectionByCity", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionByCity")
-    @ResponseWrapper(localName = "getInfectionByCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionByCityResponse")
+    @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getInfectionByCity", targetNamespace = "http://p.opulo.us/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionByCity")
+    @ResponseWrapper(localName = "getInfectionByCityResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionByCityResponse")
     public Infection getInfectionByCity(
-        @WebParam(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
+        @WebParam(name = "City", targetNamespace = "http://p.opulo.us/dao")
         City city);
 
     /**
@@ -49,11 +49,11 @@ public interface InfectionService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.Infection>
      */
     @WebMethod
-    @WebResult(name = "Infection", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getInfectionsByCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionsByCountry")
-    @ResponseWrapper(localName = "getInfectionsByCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionsByCountryResponse")
+    @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getInfectionsByCountry", targetNamespace = "http://p.opulo.us/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionsByCountry")
+    @ResponseWrapper(localName = "getInfectionsByCountryResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "edu.sjsu.voidstar.ws.soap.infection.GetInfectionsByCountryResponse")
     public List<Infection> getInfectionsByCountry(
-        @WebParam(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
 
 }

@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}Infection" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{http://p.opulo.us/dao}Infection" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Infections {
 
-    @XmlElement(name = "Infection", namespace = "http://ws.voidstar.sjsu.edu/dao")
+    @XmlElement(name = "Infection", namespace = "http://p.opulo.us/dao")
     protected List<Infection> infection;
 
     /**

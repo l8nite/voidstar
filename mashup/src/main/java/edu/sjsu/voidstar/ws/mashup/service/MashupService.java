@@ -17,7 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "MashupService", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup/service")
+@WebService(name = "MashupService", targetNamespace = "http://p.opulo.us/mashup/service")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -32,9 +32,9 @@ public interface MashupService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMostSpokenLanguageInCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup/service", className = "edu.sjsu.voidstar.ws.mashup.service.GetMostSpokenLanguageInCountry")
-    @ResponseWrapper(localName = "getMostSpokenLanguageInCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup/service", className = "edu.sjsu.voidstar.ws.mashup.service.GetMostSpokenLanguageInCountryResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/service/MashupService/getMostSpokenLanguageInCountryRequest", output = "http://ws.voidstar.sjsu.edu/mashup/service/MashupService/getMostSpokenLanguageInCountryResponse")
+    @RequestWrapper(localName = "getMostSpokenLanguageInCountry", targetNamespace = "http://p.opulo.us/mashup/service", className = "edu.sjsu.voidstar.ws.mashup.service.GetMostSpokenLanguageInCountry")
+    @ResponseWrapper(localName = "getMostSpokenLanguageInCountryResponse", targetNamespace = "http://p.opulo.us/mashup/service", className = "edu.sjsu.voidstar.ws.mashup.service.GetMostSpokenLanguageInCountryResponse")
+    @Action(input = "http://p.opulo.us/mashup/service/MashupService/getMostSpokenLanguageInCountryRequest", output = "http://p.opulo.us/mashup/service/MashupService/getMostSpokenLanguageInCountryResponse")
     public String getMostSpokenLanguageInCountry(
         @WebParam(name = "countryCode", targetNamespace = "")
         String countryCode);

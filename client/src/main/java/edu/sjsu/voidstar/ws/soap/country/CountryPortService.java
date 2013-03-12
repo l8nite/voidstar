@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "CountryPortService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/country", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/CountrySoapService.wsdl")
+@WebServiceClient(name = "CountryPortService", targetNamespace = "http://p.opulo.us/soap/country", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/CountrySoapService.wsdl")
 public class CountryPortService
     extends Service
 {
@@ -43,7 +43,7 @@ public class CountryPortService
     }
 
     public CountryPortService() {
-        super(COUNTRYPORTSERVICE_WSDL_LOCATION, new QName("http://ws.voidstar.sjsu.edu/soap/country", "CountryPortService"));
+        super(COUNTRYPORTSERVICE_WSDL_LOCATION, new QName("http://p.opulo.us/soap/country", "CountryPortService"));
     }
 
     /**
@@ -53,7 +53,7 @@ public class CountryPortService
      */
     @WebEndpoint(name = "CountryServicePort")
     public CountryService getCountryServicePort() {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/country", "CountryServicePort"), CountryService.class);
+        return super.getPort(new QName("http://p.opulo.us/soap/country", "CountryServicePort"), CountryService.class);
     }
 
     /**
@@ -65,7 +65,7 @@ public class CountryPortService
      */
     @WebEndpoint(name = "CountryServicePort")
     public CountryService getCountryServicePort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/country", "CountryServicePort"), CountryService.class, features);
+        return super.getPort(new QName("http://p.opulo.us/soap/country", "CountryServicePort"), CountryService.class, features);
     }
 
 }

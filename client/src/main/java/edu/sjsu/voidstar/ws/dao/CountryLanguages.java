@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}CountryLanguage" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element ref="{http://p.opulo.us/dao}CountryLanguage" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class CountryLanguages {
 
-    @XmlElement(name = "CountryLanguage", namespace = "http://ws.voidstar.sjsu.edu/dao")
+    @XmlElement(name = "CountryLanguage", namespace = "http://p.opulo.us/dao")
     protected List<CountryLanguage> countryLanguage;
 
     /**

@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetMostSpokenLanguageInCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup/service", "getMostSpokenLanguageInCountry");
-    private final static QName _GetMostSpokenLanguageInCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup/service", "getMostSpokenLanguageInCountryResponse");
+    private final static QName _GetMostSpokenLanguageInCountry_QNAME = new QName("http://p.opulo.us/mashup/service", "getMostSpokenLanguageInCountry");
+    private final static QName _GetMostSpokenLanguageInCountryResponse_QNAME = new QName("http://p.opulo.us/mashup/service", "getMostSpokenLanguageInCountryResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: edu.sjsu.voidstar.ws.mashup.service
@@ -54,7 +54,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetMostSpokenLanguageInCountry }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup/service", name = "getMostSpokenLanguageInCountry")
+    @XmlElementDecl(namespace = "http://p.opulo.us/mashup/service", name = "getMostSpokenLanguageInCountry")
     public JAXBElement<GetMostSpokenLanguageInCountry> createGetMostSpokenLanguageInCountry(GetMostSpokenLanguageInCountry value) {
         return new JAXBElement<GetMostSpokenLanguageInCountry>(_GetMostSpokenLanguageInCountry_QNAME, GetMostSpokenLanguageInCountry.class, null, value);
     }
@@ -63,7 +63,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetMostSpokenLanguageInCountryResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup/service", name = "getMostSpokenLanguageInCountryResponse")
+    @XmlElementDecl(namespace = "http://p.opulo.us/mashup/service", name = "getMostSpokenLanguageInCountryResponse")
     public JAXBElement<GetMostSpokenLanguageInCountryResponse> createGetMostSpokenLanguageInCountryResponse(GetMostSpokenLanguageInCountryResponse value) {
         return new JAXBElement<GetMostSpokenLanguageInCountryResponse>(_GetMostSpokenLanguageInCountryResponse_QNAME, GetMostSpokenLanguageInCountryResponse.class, null, value);
     }

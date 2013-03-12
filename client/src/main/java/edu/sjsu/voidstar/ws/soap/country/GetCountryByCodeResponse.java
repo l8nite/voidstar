@@ -18,7 +18,7 @@ import edu.sjsu.voidstar.ws.dao.Country;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://ws.voidstar.sjsu.edu/dao}Country" minOccurs="0"/>
+ *         &lt;element ref="{http://p.opulo.us/dao}Country" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,7 +33,7 @@ import edu.sjsu.voidstar.ws.dao.Country;
 })
 public class GetCountryByCodeResponse {
 
-    @XmlElement(name = "Country", namespace = "http://ws.voidstar.sjsu.edu/dao")
+    @XmlElement(name = "Country", namespace = "http://p.opulo.us/dao")
     protected Country country;
 
     /**

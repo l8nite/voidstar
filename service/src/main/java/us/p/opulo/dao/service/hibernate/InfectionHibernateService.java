@@ -1,0 +1,39 @@
+package us.p.opulo.dao.service.hibernate;
+
+import java.util.List;
+
+import javax.inject.Singleton;
+
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Subqueries;
+
+import us.p.opulo.dao.City;
+import us.p.opulo.dao.Country;
+import us.p.opulo.dao.Infection;
+import us.p.opulo.dao.service.InfectionService;
+import us.p.opulo.hibernate.HibernateSession;
+
+@Singleton
+public class InfectionHibernateService implements InfectionService {
+	
+	@Override
+	public Infection getInfectionByCity (City city) {
+		return (Infection) HibernateSession.get().createCriteria(Infection.class)
+				.add(Restrictions.eq("city.id", city.getId()))
+				.uniqueResult();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Infection> getInfectionsByCountry(Country country) {
+		return (List<Infection>) HibernateSession.get().createCriteria(Infection.class)
+				.add(Subqueries.in("city", 
+						DetachedCriteria.forClass(City.class)
+							.add(Restrictions.eq("country", country))
+						)
+				)
+				.list();
+				
+	}
+}

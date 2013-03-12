@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "LanguagePortService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/LanguageSoapService.wsdl")
+@WebServiceClient(name = "LanguagePortService", targetNamespace = "http://p.opulo.us/soap/language", wsdlLocation = "file:/home/jason/Dropbox/Jason/Dev/Workspaces/School/CS157B/voidstar/voidstar/service/src/main/resources/wsdl/LanguageSoapService.wsdl")
 public class LanguagePortService
     extends Service
 {
@@ -43,7 +43,7 @@ public class LanguagePortService
     }
 
     public LanguagePortService() {
-        super(LANGUAGEPORTSERVICE_WSDL_LOCATION, new QName("http://ws.voidstar.sjsu.edu/soap/language", "LanguagePortService"));
+        super(LANGUAGEPORTSERVICE_WSDL_LOCATION, new QName("http://p.opulo.us/soap/language", "LanguagePortService"));
     }
 
     /**
@@ -53,7 +53,7 @@ public class LanguagePortService
      */
     @WebEndpoint(name = "LanguageServicePort")
     public LanguageService getLanguageServicePort() {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/language", "LanguageServicePort"), LanguageService.class);
+        return super.getPort(new QName("http://p.opulo.us/soap/language", "LanguageServicePort"), LanguageService.class);
     }
 
     /**
@@ -65,7 +65,7 @@ public class LanguagePortService
      */
     @WebEndpoint(name = "LanguageServicePort")
     public LanguageService getLanguageServicePort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://ws.voidstar.sjsu.edu/soap/language", "LanguageServicePort"), LanguageService.class, features);
+        return super.getPort(new QName("http://p.opulo.us/soap/language", "LanguageServicePort"), LanguageService.class, features);
     }
 
 }

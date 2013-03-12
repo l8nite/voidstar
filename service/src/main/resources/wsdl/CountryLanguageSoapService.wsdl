@@ -6,13 +6,13 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/countrylanguage"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/countrylanguage"
+	xmlns:tns="http://p.opulo.us/soap/countrylanguage"
+	targetNamespace="http://p.opulo.us/soap/countrylanguage"
 	name="CountryLanguagePortService"
 >	
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/countrylanguage" schemaLocation="../xsd/soap/CountryLanguageTypes.xsd" />
+			<xs:import namespace="http://p.opulo.us/soap/countrylanguage" schemaLocation="../xsd/soap/CountryLanguageTypes.xsd" />
 		</xs:schema>
 	</types>
 	
@@ -34,13 +34,13 @@
 
 	<portType name="CountryLanguageService">
 		<operation name="getCountryLanguagesByCountry">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CountryLanguageService/getCountryLanguagesByCodeRequest" message="tns:getCountryLanguagesByCountry"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CountryLanguageService/getCountryLanguagesByCodeResponse" message="tns:getCountryLanguagesByCountryResponse"/>
+			<input wsam:Action="http://p.opulo.us/CountryLanguageService/getCountryLanguagesByCodeRequest" message="tns:getCountryLanguagesByCountry"/>
+			<output wsam:Action="http://p.opulo.us/CountryLanguageService/getCountryLanguagesByCodeResponse" message="tns:getCountryLanguagesByCountryResponse"/>
 		</operation>
 		
 		<operation name="getCountryLanguagesByLanguage">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CountryLanguageService/getCountryLanguagesByLanguageRequest" message="tns:getCountryLanguagesByLanguage"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CountryLanguageService/getCountryLanguagesByLanguageResponse" message="tns:getCountryLanguagesByLanguageResponse"/>
+			<input wsam:Action="http://p.opulo.us/CountryLanguageService/getCountryLanguagesByLanguageRequest" message="tns:getCountryLanguagesByLanguage"/>
+			<output wsam:Action="http://p.opulo.us/CountryLanguageService/getCountryLanguagesByLanguageResponse" message="tns:getCountryLanguagesByLanguageResponse"/>
 		</operation>
 	</portType>
 	

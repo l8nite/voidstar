@@ -6,12 +6,12 @@
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	xmlns="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/infection"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/infection"
+	xmlns:tns="http://p.opulo.us/soap/infection"
+	targetNamespace="http://p.opulo.us/soap/infection"
 	name="InfectionPortService">	
 	<types>
 		<xs:schema>
-			<xs:import namespace="http://ws.voidstar.sjsu.edu/soap/infection" schemaLocation="../xsd/soap/InfectionTypes.xsd" />
+			<xs:import namespace="http://p.opulo.us/soap/infection" schemaLocation="../xsd/soap/InfectionTypes.xsd" />
 		</xs:schema>
 	</types>
 	
@@ -34,13 +34,13 @@
 	
 	<portType name="InfectionService">
 		<operation name="getInfectionByCity">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/InfectionService/getInfectionByCityRequest" message="tns:getInfectionByCity"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/InfectionService/getInfectionByCityResponse" message="tns:getInfectionByCityResponse"/>
+			<input wsam:Action="http://p.opulo.us/InfectionService/getInfectionByCityRequest" message="tns:getInfectionByCity"/>
+			<output wsam:Action="http://p.opulo.us/InfectionService/getInfectionByCityResponse" message="tns:getInfectionByCityResponse"/>
 		</operation>
 	
 		<operation name="getInfectionsByCountry">
-			<input wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getInfectionsByCountryRequest" message="tns:getInfectionsByCountry"/>
-			<output wsam:Action="http://ws.voidstar.sjsu.edu/CityService/getInfectionsByCountryResponse" message="tns:getInfectionsByCountryResponse"/>
+			<input wsam:Action="http://p.opulo.us/CityService/getInfectionsByCountryRequest" message="tns:getInfectionsByCountry"/>
+			<output wsam:Action="http://p.opulo.us/CityService/getInfectionsByCountryResponse" message="tns:getInfectionsByCountryResponse"/>
 		</operation>
 	</portType>
 	

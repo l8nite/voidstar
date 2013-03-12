@@ -21,7 +21,7 @@ import edu.sjsu.voidstar.ws.dao.Language;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "LanguageService", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language")
+@WebService(name = "LanguageService", targetNamespace = "http://p.opulo.us/soap/language")
 @XmlSeeAlso({
     edu.sjsu.voidstar.ws.dao.ObjectFactory.class,
     edu.sjsu.voidstar.ws.soap.language.ObjectFactory.class
@@ -36,10 +36,10 @@ public interface LanguageService {
      *     returns edu.sjsu.voidstar.ws.dao.Language
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguageById", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageById")
-    @ResponseWrapper(localName = "getLanguageByIdResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByIdResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByIdRequest", output = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByIdResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguageById", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageById")
+    @ResponseWrapper(localName = "getLanguageByIdResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByIdResponse")
+    @Action(input = "http://p.opulo.us/LanguageService/getLanguageByIdRequest", output = "http://p.opulo.us/LanguageService/getLanguageByIdResponse")
     public Language getLanguageById(
         @WebParam(name = "id", targetNamespace = "")
         Integer id);
@@ -51,10 +51,10 @@ public interface LanguageService {
      *     returns edu.sjsu.voidstar.ws.dao.Language
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguageByName", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByName")
-    @ResponseWrapper(localName = "getLanguageByNameResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByNameResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByNameRequest", output = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguageByNameResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguageByName", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByName")
+    @ResponseWrapper(localName = "getLanguageByNameResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguageByNameResponse")
+    @Action(input = "http://p.opulo.us/LanguageService/getLanguageByNameRequest", output = "http://p.opulo.us/LanguageService/getLanguageByNameResponse")
     public Language getLanguageByName(
         @WebParam(name = "name", targetNamespace = "")
         String name);
@@ -66,12 +66,12 @@ public interface LanguageService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.Language>
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguagesByCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountry")
-    @ResponseWrapper(localName = "getLanguagesByCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountryResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCountryRequest", output = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCountryResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguagesByCountry", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountry")
+    @ResponseWrapper(localName = "getLanguagesByCountryResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCountryResponse")
+    @Action(input = "http://p.opulo.us/LanguageService/getLanguagesByCountryRequest", output = "http://p.opulo.us/LanguageService/getLanguagesByCountryResponse")
     public List<Language> getLanguagesByCountry(
-        @WebParam(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
 
     /**
@@ -81,12 +81,12 @@ public interface LanguageService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.Language>
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getSortedLanguagesByCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetSortedLanguagesByCountry")
-    @ResponseWrapper(localName = "getSortedLanguagesByCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetSortedLanguagesByCountryResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/LanguageService/getSortedLanguagesByCountryRequest", output = "http://ws.voidstar.sjsu.edu/LanguageService/getSortedLanguagesByCountryResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getSortedLanguagesByCountry", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetSortedLanguagesByCountry")
+    @ResponseWrapper(localName = "getSortedLanguagesByCountryResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetSortedLanguagesByCountryResponse")
+    @Action(input = "http://p.opulo.us/LanguageService/getSortedLanguagesByCountryRequest", output = "http://p.opulo.us/LanguageService/getSortedLanguagesByCountryResponse")
     public List<Language> getSortedLanguagesByCountry(
-        @WebParam(name = "Country", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
 
     /**
@@ -96,12 +96,12 @@ public interface LanguageService {
      *     returns java.util.List<edu.sjsu.voidstar.ws.dao.Language>
      */
     @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
-    @RequestWrapper(localName = "getLanguagesByCity", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCity")
-    @ResponseWrapper(localName = "getLanguagesByCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCityResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCityRequest", output = "http://ws.voidstar.sjsu.edu/LanguageService/getLanguagesByCityResponse")
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguagesByCity", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCity")
+    @ResponseWrapper(localName = "getLanguagesByCityResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "edu.sjsu.voidstar.ws.soap.language.GetLanguagesByCityResponse")
+    @Action(input = "http://p.opulo.us/LanguageService/getLanguagesByCityRequest", output = "http://p.opulo.us/LanguageService/getLanguagesByCityResponse")
     public List<Language> getLanguagesByCity(
-        @WebParam(name = "City", targetNamespace = "http://ws.voidstar.sjsu.edu/dao")
+        @WebParam(name = "City", targetNamespace = "http://p.opulo.us/dao")
         City city);
 
 }

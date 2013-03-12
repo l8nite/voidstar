@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" 
-	xmlns="http://ws.voidstar.sjsu.edu"
+	xmlns="http://p.opulo.us"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:tns="http://ws.voidstar.sjsu.edu/soap/language"
-	xmlns:dao="http://ws.voidstar.sjsu.edu/dao"
-	targetNamespace="http://ws.voidstar.sjsu.edu/soap/language"
+	xmlns:tns="http://p.opulo.us/soap/language"
+	xmlns:dao="http://p.opulo.us/dao"
+	targetNamespace="http://p.opulo.us/soap/language"
 	>
-		<xs:import namespace="http://ws.voidstar.sjsu.edu/dao" schemaLocation="../dao/Dao.xsd" />
+		<xs:import namespace="http://p.opulo.us/dao" schemaLocation="../dao/Dao.xsd" />
 		 
 		<xs:element name="getLanguageById" type="tns:getLanguageById" />
 		<xs:element name="getLanguageByIdResponse" type="tns:getLanguageByIdResponse" />

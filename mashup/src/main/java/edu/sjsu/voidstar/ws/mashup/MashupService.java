@@ -17,7 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "MashupService", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup")
+@WebService(name = "MashupService", targetNamespace = "http://p.opulo.us/mashup")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -32,9 +32,9 @@ public interface MashupService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getCountriesWhichSpeakLanguage", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWhichSpeakLanguage")
-    @ResponseWrapper(localName = "getCountriesWhichSpeakLanguageResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWhichSpeakLanguageResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageResponse")
+    @RequestWrapper(localName = "getCountriesWhichSpeakLanguage", targetNamespace = "http://p.opulo.us/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWhichSpeakLanguage")
+    @ResponseWrapper(localName = "getCountriesWhichSpeakLanguageResponse", targetNamespace = "http://p.opulo.us/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWhichSpeakLanguageResponse")
+    @Action(input = "http://p.opulo.us/mashup/MashupService/getCountriesWhichSpeakLanguageRequest", output = "http://p.opulo.us/mashup/MashupService/getCountriesWhichSpeakLanguageResponse")
     public String getCountriesWhichSpeakLanguage(
         @WebParam(name = "languageName", targetNamespace = "")
         String languageName);
@@ -47,9 +47,9 @@ public interface MashupService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLanguagesSpokenInCountry", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetLanguagesSpokenInCountry")
-    @ResponseWrapper(localName = "getLanguagesSpokenInCountryResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetLanguagesSpokenInCountryResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getLanguagesSpokenInCountryRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getLanguagesSpokenInCountryResponse")
+    @RequestWrapper(localName = "getLanguagesSpokenInCountry", targetNamespace = "http://p.opulo.us/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetLanguagesSpokenInCountry")
+    @ResponseWrapper(localName = "getLanguagesSpokenInCountryResponse", targetNamespace = "http://p.opulo.us/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetLanguagesSpokenInCountryResponse")
+    @Action(input = "http://p.opulo.us/mashup/MashupService/getLanguagesSpokenInCountryRequest", output = "http://p.opulo.us/mashup/MashupService/getLanguagesSpokenInCountryResponse")
     public String getLanguagesSpokenInCountry(
         @WebParam(name = "countryCode", targetNamespace = "")
         String countryCode);
@@ -62,9 +62,9 @@ public interface MashupService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getNumberOfZombiesInCity", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCity")
-    @ResponseWrapper(localName = "getNumberOfZombiesInCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCityResponse")
-    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getNumberOfZombiesInCityRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getNumberOfZombiesInCityResponse")
+    @RequestWrapper(localName = "getNumberOfZombiesInCity", targetNamespace = "http://p.opulo.us/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCity")
+    @ResponseWrapper(localName = "getNumberOfZombiesInCityResponse", targetNamespace = "http://p.opulo.us/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCityResponse")
+    @Action(input = "http://p.opulo.us/mashup/MashupService/getNumberOfZombiesInCityRequest", output = "http://p.opulo.us/mashup/MashupService/getNumberOfZombiesInCityResponse")
     public String getNumberOfZombiesInCity(
         @WebParam(name = "cityName", targetNamespace = "")
         String cityName);
