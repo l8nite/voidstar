@@ -36,16 +36,20 @@ public class Infection extends HEntity {
 	private Integer id;
 
 	@OneToOne
-	@JoinColumn(name = "CityId", insertable=false)
+	@JoinColumn(name = "CityID", insertable=false)
 	@XmlTransient
 	private City city;
     
 	@XmlElement(name = "CityID")
-    private String cityID;
+    private Integer cityID;
     
 	@XmlElement(name = "Zombies")
 	private Integer zombies = 0;
 
+	public Infection (City city) {
+		setCity(city);
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -60,6 +64,7 @@ public class Infection extends HEntity {
 
 	public void setCity(City city) {
 		this.city = city;
+		this.cityID = city.getId();
 	}
 
 	public Integer getZombies() {
