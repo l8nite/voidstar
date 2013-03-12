@@ -46,6 +46,9 @@ public class Infection extends HEntity {
 	@XmlElement(name = "Zombies")
 	private Integer zombies = 0;
 
+	@SuppressWarnings("unused")
+	private Infection () { }
+	
 	public Infection (City city) {
 		setCity(city);
 	}
