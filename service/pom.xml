@@ -134,6 +134,21 @@
 			<artifactId>guice-assistedinject</artifactId>
 			<version>3.0</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.xml.ws</groupId>
+			<artifactId>jaxws-api</artifactId>
+			<version>2.2.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>2.2.8-promoted-b131</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-tools</artifactId>
+			<version>2.2.8-promoted-b131</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>

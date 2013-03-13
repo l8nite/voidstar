@@ -68,7 +68,7 @@
 	
 	<service name="CountryLanguagePortService">
 		<port name="CountryLanguageServicePort" binding="tns:CountryLanguageServicePortBinding">
-			<soap:address location="http://localhost:8123/country"/>
+			<soap:address location="http://localhost:8123/countrylanguage"/>
 		</port>
 	</service>
 </definitions>

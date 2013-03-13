@@ -2,15 +2,15 @@ package edu.sjsu.voidstar.client;
 
 import javax.xml.ws.WebServiceRef;
 
-import edu.sjsu.voidstar.ws.dao.Country;
-import edu.sjsu.voidstar.ws.dao.City;
-import edu.sjsu.voidstar.ws.dao.Infection;
-import edu.sjsu.voidstar.ws.soap.city.CityPortService;
-import edu.sjsu.voidstar.ws.soap.city.CityService;
-import edu.sjsu.voidstar.ws.soap.country.CountryPortService;
-import edu.sjsu.voidstar.ws.soap.country.CountryService;
-import edu.sjsu.voidstar.ws.soap.infection.InfectionPortService;
-import edu.sjsu.voidstar.ws.soap.infection.InfectionService;
+import us.opulo.p.dao.City;
+import us.opulo.p.dao.Country;
+import us.opulo.p.dao.Infection;
+import us.opulo.p.soap.city.CityPortService;
+import us.opulo.p.soap.city.CityService;
+import us.opulo.p.soap.country.CountryPortService;
+import us.opulo.p.soap.country.CountryService;
+import us.opulo.p.soap.infection.InfectionPortService;
+import us.opulo.p.soap.infection.InfectionService;
 
 
 public class TestClass {
