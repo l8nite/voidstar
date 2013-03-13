@@ -76,7 +76,7 @@ public class CityServiceSoap implements CityService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
-	public List<City> getCitiesByCountry(@WebParam(name="country", targetNamespace=Namespaces.DAO) Country country) {
+	public List<City> getCitiesByCountry(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Country country) {
 		log.info("getCityByCountry(): country = " + country);
 		return hibernateService.getCitiesByCountry(country);
 	}

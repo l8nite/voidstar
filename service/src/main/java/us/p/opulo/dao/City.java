@@ -174,6 +174,7 @@ public class City extends HEntity {
 	
 	@Override
 	public String toString() {
-		return this.getName() + ", " + this.getCountry().getName();
+		// TODO: #24 - Country fails to be initialized when sent via Soap
+		return this.getName()  + (country != null ? ", " + this.getCountry().getName() : "");
 	}
 }

@@ -59,7 +59,7 @@ public class InfectionServiceSoap implements InfectionService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
-	public Infection getInfectionByCity(@WebParam(name="city", targetNamespace=Namespaces.DAO) City city) {
+	public Infection getInfectionByCity(@WebParam(name="City", targetNamespace=Namespaces.DAO) City city) {
 		log.info("getInfectionByCity(): city = " + city);
 		return hibernateService.getInfectionByCity(city);
 	}
@@ -67,7 +67,7 @@ public class InfectionServiceSoap implements InfectionService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
-	public List<Infection> getInfectionsByCountry(@WebParam(name="country", targetNamespace=Namespaces.DAO) Country country) {
+	public List<Infection> getInfectionsByCountry(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Country country) {
 		log.info("getInfectionByCountry(): country = " + country);
 		return hibernateService.getInfectionsByCountry(country);
 	}
