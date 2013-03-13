@@ -34,8 +34,6 @@ import us.p.opulo.dao.service.soap.LanguageServiceSoap;
 import us.p.opulo.guice.annotations.SoapService;
 import us.p.opulo.hibernate.HibernateConfig;
 import us.p.opulo.hibernate.HibernateConfigImpl;
-import us.p.opulo.hibernate.HibernateService;
-import us.p.opulo.hibernate.HibernateServiceImpl;
 import us.p.opulo.hibernate.HibernateSession;
 import us.p.opulo.hibernate.HibernateSessionImpl;
 
@@ -48,7 +46,6 @@ public class CoreModule extends AbstractModule {
 		// DB Connection
 		bind(HibernateConfig.class).to(HibernateConfigImpl.class);
 		bind(HibernateSession.class).to(HibernateSessionImpl.class);
-		bind(HibernateService.class).to(HibernateServiceImpl.class);
 		
 		// Hibernate Services
 		bind(CityService.class).annotatedWith(us.p.opulo.guice.annotations.HibernateService.class).to(CityServiceHibernate.class);

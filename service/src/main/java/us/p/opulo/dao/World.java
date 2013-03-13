@@ -18,17 +18,17 @@ package us.p.opulo.dao;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import us.p.opulo.dao.library.Cities;
+import us.p.opulo.dao.library.DAOLibrary;
 
 @Singleton
 public class World {
 
 	@Inject
-	Cities cities;
+	DAOLibrary library;
 	
 	public long getPopulation() {
 		long worldPopulation = 0;
-		for(City city: cities.getAll()) {
+		for(City city: library.getCityLibrary().getAll()) {
 			worldPopulation += city.getPopulation();
 		}
 		return worldPopulation;

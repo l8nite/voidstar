@@ -30,8 +30,8 @@ import us.p.opulo.dao.Country;
 import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Infection;
 import us.p.opulo.dao.Language;
+import us.p.opulo.dao.library.DAOLibrary;
 import us.p.opulo.guice.CoreModule;
-import us.p.opulo.hibernate.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 import us.p.opulo.jaxb.marshallers.EntityUnmarshaller;
 
@@ -76,7 +76,7 @@ public class Populate {
 		
 		Injector injector = Guice.createInjector(new CoreModule());
 		HibernateSession session = injector.getInstance(HibernateSession.class);
-		HibernateService service = injector.getInstance(HibernateService.class);
+		DAOLibrary library = injector.getInstance(DAOLibrary.class);
 		
 		// populate tables
 		session.get();
@@ -86,7 +86,7 @@ public class Populate {
 		log.warn("About to drop all table data... press ENTER to continue, ^C to quit.");
 		System.in.read();
 		
-		service.resetDatabase();
+		library.resetDatabase();
 
 		try {
 			// Save the entities

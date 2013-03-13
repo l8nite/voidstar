@@ -38,7 +38,7 @@ import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Infection;
 import us.p.opulo.dao.Language;
 import us.p.opulo.dao.World;
-import us.p.opulo.dao.library.Cities;
+import us.p.opulo.dao.library.DAOLibrary;
 import us.p.opulo.dao.service.CountryLanguageService;
 import us.p.opulo.dao.service.InfectionService;
 import us.p.opulo.guice.annotations.HibernateService;
@@ -64,7 +64,7 @@ public class ZombieInfection {
 	private HibernateSession session;
 	
 	@Inject 
-	Cities cities;
+	DAOLibrary library;
 	
 	@Inject World world;
 	
@@ -79,7 +79,7 @@ public class ZombieInfection {
 
 	private void initializeGenesis() {
 		System.out.println("Choosing random city for virulent strain genesis");
-		genesis = cities.getRandomCity();
+		genesis = library.getCityLibrary().getRandomCity();
 		System.out.println("City chosen: " + genesis + "\n");
 	}
 	

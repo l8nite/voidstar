@@ -46,4 +46,9 @@ public interface HibernateSession {
 	 * Rolls back a databse transaction.
 	 */
 	public void rollbackTransaction();
+	
+	/**
+	 * @return The <code>HibernateConfig</code> used for this session.
+	 */
+	public HibernateConfig getConfig();
 }

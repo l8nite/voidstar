@@ -36,12 +36,12 @@ import us.p.opulo.dao.HEntity;
 public class HibernateSessionImpl implements HibernateSession {
 	
 	private Session session;
-	private HibernateConfig module;
+	private HibernateConfig config;
 	private Transaction transaction;
 
 	@Inject
-	public HibernateSessionImpl(HibernateConfig module) {
-		this.module = module;
+	public HibernateSessionImpl(HibernateConfig config) {
+		this.config = config;
 		initialize();
 		assertInitialized();
 	}
@@ -109,14 +109,14 @@ public class HibernateSessionImpl implements HibernateSession {
 	 * Returns a Configuration object initialized using the settings from the argument HibernateModule.
 	 */
 	private Configuration loadConfiguration() {
-		Configuration config = new Configuration();
-		config.setProperties(module.getProperties());
+		Configuration conf = new Configuration();
+		conf.setProperties(config.getProperties());
 
-		for (Class<? extends HEntity> entityClass : module.getClasses()) {
-			config.addAnnotatedClass(entityClass);
+		for (Class<? extends HEntity> entityClass : config.getClasses()) {
+			conf.addAnnotatedClass(entityClass);
 		}
 		
-		return config;
+		return conf;
 	}
 	
 	/*
@@ -148,5 +148,10 @@ public class HibernateSessionImpl implements HibernateSession {
 			rollbackTransaction();
 			throw new HibernateException("A Transaction is already active.");
 		}
+	}
+
+	@Override
+	public HibernateConfig getConfig() {
+		return config;
 	}
 }

@@ -28,8 +28,8 @@ import us.p.opulo.dao.Country;
 import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Infection;
 import us.p.opulo.dao.Language;
+import us.p.opulo.dao.library.DAOLibrary;
 import us.p.opulo.guice.CoreModule;
-import us.p.opulo.hibernate.HibernateService;
 import us.p.opulo.jaxb.marshallers.EntityMarshaller;
 
 import com.google.inject.Guice;
@@ -44,7 +44,7 @@ public class GenerateXml {
 	
 	public static void main(String... args) throws IOException, InstantiationException, IllegalAccessException {
 		Injector injector = Guice.createInjector(new CoreModule());
-		HibernateService service = injector.getInstance(HibernateService.class);
+		DAOLibrary library = injector.getInstance(DAOLibrary.class);
 		
 		// Initialize all the marshallers
 		log.info("Intializing marshallers...");
@@ -56,11 +56,11 @@ public class GenerateXml {
 		
 		// Populate marshal objects
 		log.info("Populating marshallers...");
-		cities.addAll(service.fetchAll(City.class));
-		countries.addAll(service.fetchAll(Country.class));
-		countryLanguages.addAll(service.fetchAll(CountryLanguage.class));
-		infections.addAll(service.fetchAll(Infection.class));
-		languages.addAll(service.fetchAll(Language.class));
+		cities.addAll(library.fetchAll(City.class));
+		countries.addAll(library.fetchAll(Country.class));
+		countryLanguages.addAll(library.fetchAll(CountryLanguage.class));
+		infections.addAll(library.fetchAll(Infection.class));
+		languages.addAll(library.fetchAll(Language.class));
 		
 		// Setup output files
 		log.info("Initializing XML files...");

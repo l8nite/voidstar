@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
@@ -12,9 +11,8 @@ import us.p.opulo.dao.service.CityService;
 import us.p.opulo.guice.annotations.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 
-@Singleton
-public class Cities implements CityService {
-
+public class CityLibrary implements CityService {
+	
 	@Inject
 	@HibernateService
 	private CityService service;
