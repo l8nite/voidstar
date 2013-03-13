@@ -11,6 +11,9 @@ import us.p.opulo.dao.service.CityService;
 import us.p.opulo.guice.annotations.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 
+import com.google.inject.Singleton;
+
+@Singleton
 public class CityLibrary implements CityService {
 	
 	@Inject
