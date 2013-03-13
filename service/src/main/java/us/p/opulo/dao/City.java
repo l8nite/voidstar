@@ -15,10 +15,6 @@
  */
 package us.p.opulo.dao;
 
-import java.util.List;
-
-import java.util.Random;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -34,7 +30,6 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import us.p.opulo.constants.Constants.Resources.XSD;
-import us.p.opulo.hibernate.HibernateSession;
 import us.p.opulo.jaxb.annotations.SchemaLocation;
 import us.p.opulo.jaxb.annotations.XmlGroup;
 import us.p.opulo.jaxb.tables.Cities;
@@ -142,24 +137,6 @@ public class City extends HEntity {
 		this.countryCode = country != null ? country.getCode() : null;
 	}
 	
-	public String getFullCityName() {
-		return this.getName() + ", " + this.getCountry().getName();
-	}
-	
-	// TODO Move to library 
-	@SuppressWarnings("unchecked")
-	public static List<City> getCities() {
-		return HibernateSession.get()
-				.createCriteria(City.class)
-				.list();
-	}
-	
-	//TODO: Move to library
-	public static City getRandomCity() {
-		List<City> allCities = City.getCities();
-		return allCities.get(new Random().nextInt(allCities.size()));
-	}
-	
 	@Override
 	public int hashCode() {
 		// returned cached hashCode if its initialized. Otherwise, calculate
@@ -197,6 +174,6 @@ public class City extends HEntity {
 	
 	@Override
 	public String toString() {
-		return name;
+		return this.getName() + ", " + this.getCountry().getName();
 	}
 }

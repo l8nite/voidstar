@@ -15,11 +15,13 @@
  */
 package us.p.opulo.dao;
 
+import us.p.opulo.dao.library.Cities;
+
 public class World {
 
 	public static long getPopulation() {
 		long worldPopulation = 0;
-		for(City city: City.getCities()) {
+		for(City city: Cities.getAll()) {
 			worldPopulation += city.getPopulation();
 		}
 		return worldPopulation;

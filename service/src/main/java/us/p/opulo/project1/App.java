@@ -20,12 +20,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
 import us.p.opulo.dao.City;
 import us.p.opulo.dao.World;
+import us.p.opulo.dao.library.Cities;
 import us.p.opulo.guice.CoreModule;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 
 public class App {
@@ -39,7 +40,7 @@ public class App {
 		System.out.println("World population: " + NumberFormat.getNumberInstance(Locale.US).format(World.getPopulation()));
 		System.out.println("Panic! The virus is spreading!");
 		Thread.sleep(5000);
-		List<City> allCities = City.getCities();
+		List<City> allCities = Cities.getAll();
 		Random r = new Random();
 		for (int i = 1; i <= 1000; ++i) {
 			z.infect(allCities.get(r.nextInt(allCities.size())));

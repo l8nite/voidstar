@@ -32,18 +32,19 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
-import com.google.common.base.Joiner;
-
 import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
 import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Infection;
 import us.p.opulo.dao.Language;
 import us.p.opulo.dao.World;
+import us.p.opulo.dao.library.Cities;
 import us.p.opulo.dao.service.CountryLanguageService;
 import us.p.opulo.dao.service.InfectionService;
 import us.p.opulo.guice.annotations.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
+
+import com.google.common.base.Joiner;
 
 public class ZombieInfection {
 	private City genesis;
@@ -70,8 +71,8 @@ public class ZombieInfection {
 
 	private void initializeGenesis() {
 		System.out.println("Choosing random city for virulent strain genesis");
-		genesis = City.getRandomCity();
-		System.out.println("City chosen: " + genesis.getFullCityName() + "\n");
+		genesis = Cities.getRandomCity();
+		System.out.println("City chosen: " + genesis + "\n");
 	}
 	
 	public Set<City> getInfectedCities() {
@@ -109,7 +110,7 @@ public class ZombieInfection {
 
 		String peoplePerson = newInfections == 1 ? "person" : "people";
 		
-		System.out.println("The infection spreads " + inOrTo + " " + city.getFullCityName() + "!");
+		System.out.println("The infection spreads " + inOrTo + " " + city + "!");
 		System.out.println("The virus has infected " + newInfections + " new " + peoplePerson + ".");
 
 		infected += newInfections;
