@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao;
 
+import javax.inject.Inject;
 import javax.xml.bind.annotation.XmlTransient;
 
 import us.p.opulo.hibernate.HibernateSession;
@@ -22,16 +23,19 @@ import us.p.opulo.hibernate.HibernateSession;
 @XmlTransient
 public class HEntity {
 	
+	@Inject
+	protected static HibernateSession session;
+	
 	public void save() {
-		HibernateSession.get().save(this);
+		session.get().save(this);
 	}
 	
 	public void update() { 
-		HibernateSession.get().update(this);
+		session.get().update(this);
 	}
 	
 	public void delete() {
-		HibernateSession.get().delete(this);
+		session.get().delete(this);
 	}
 	
 	@Override

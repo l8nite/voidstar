@@ -34,13 +34,15 @@ public class App {
 	public static void main(String[] args) throws InterruptedException {
 		Injector injector = Guice.createInjector(new CoreModule());
 		ZombieInfection z = injector.getInstance(ZombieInfection.class);
+		Cities cities = injector.getInstance(Cities.class);
+		World world = injector.getInstance(World.class);
 		
 		// z.reportInfectionProgress();
 		z.startInfection();
-		System.out.println("World population: " + NumberFormat.getNumberInstance(Locale.US).format(World.getPopulation()));
+		System.out.println("World population: " + NumberFormat.getNumberInstance(Locale.US).format(world.getPopulation()));
 		System.out.println("Panic! The virus is spreading!");
 		Thread.sleep(5000);
-		List<City> allCities = Cities.getAll();
+		List<City> allCities = cities.getAll();
 		Random r = new Random();
 		for (int i = 1; i <= 1000; ++i) {
 			z.infect(allCities.get(r.nextInt(allCities.size())));

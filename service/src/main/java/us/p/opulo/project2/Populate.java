@@ -30,9 +30,13 @@ import us.p.opulo.dao.Country;
 import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Infection;
 import us.p.opulo.dao.Language;
+import us.p.opulo.guice.CoreModule;
 import us.p.opulo.hibernate.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 import us.p.opulo.jaxb.marshallers.EntityUnmarshaller;
+
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 /**
  * Populates the database with the objects unmarshalled from the XML files.
@@ -70,15 +74,19 @@ public class Populate {
 
 		log.info("Establishing connection...");
 		
+		Injector injector = Guice.createInjector(new CoreModule());
+		HibernateSession session = injector.getInstance(HibernateSession.class);
+		HibernateService service = injector.getInstance(HibernateService.class);
 		
 		// populate tables
-		HibernateSession.get();
-		HibernateSession.beginTransaction();
+		session.get();
+		session.beginTransaction();
 
 		// Delete existing table data to avoid constraint violations
 		log.warn("About to drop all table data... press ENTER to continue, ^C to quit.");
 		System.in.read();
-		HibernateService.resetDatabase();
+		
+		service.resetDatabase();
 
 		try {
 			// Save the entities
@@ -112,10 +120,10 @@ public class Populate {
 			}
 
 			log.info("Committing transaction...");
-			HibernateSession.commitTransaction();
+			session.commitTransaction();
 			log.info("Complete!");
 		} catch (Exception e) {
-			HibernateSession.rollbackTransaction();
+			session.rollbackTransaction();
 			log.error(e.getMessage(), e);
 		}
 	}

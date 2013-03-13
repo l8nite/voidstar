@@ -33,11 +33,10 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
-import us.p.opulo.hibernate.HibernateSession;
+import us.p.opulo.constants.Constants.Resources.XSD;
 import us.p.opulo.jaxb.annotations.SchemaLocation;
 import us.p.opulo.jaxb.annotations.XmlGroup;
 import us.p.opulo.jaxb.tables.Countries;
-import us.p.opulo.constants.Constants.Resources.XSD;
 
 @Entity
 @XmlRootElement(name="Country")
@@ -280,7 +279,7 @@ public class Country extends HEntity {
 	//TODO: Move to library
 	@SuppressWarnings("unchecked")
 	public List<Language> getMostPopularLanguages() {
-		return (List<Language>)HibernateSession.get().createCriteria(CountryLanguage.class, "countryLanguage")
+		return (List<Language>) session.get().createCriteria(CountryLanguage.class, "countryLanguage")
 		.add(Restrictions.eq("countryCode", this.code))
 		.setProjection(Projections.property("language"))
 		.addOrder(Order.desc("percentage"))

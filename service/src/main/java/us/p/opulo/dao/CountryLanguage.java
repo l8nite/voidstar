@@ -16,7 +16,6 @@
 package us.p.opulo.dao;
 
 import javax.persistence.Entity;
-
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -29,10 +28,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import us.p.opulo.constants.Constants.Resources.XSD;
 import us.p.opulo.jaxb.annotations.SchemaLocation;
 import us.p.opulo.jaxb.annotations.XmlGroup;
 import us.p.opulo.jaxb.tables.CountryLanguages;
-import us.p.opulo.constants.Constants.Resources.XSD;
 
 @Entity
 @IdClass(CountryLanguageId.class)

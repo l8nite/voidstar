@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
@@ -11,11 +12,15 @@ import us.p.opulo.dao.service.CityService;
 import us.p.opulo.guice.annotations.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 
+@Singleton
 public class Cities implements CityService {
 
 	@Inject
 	@HibernateService
 	private CityService service;
+	
+	@Inject
+	private HibernateSession session;
 	
 	@Override
 	public City getCityById(Integer cityId) {
@@ -34,14 +39,14 @@ public class Cities implements CityService {
 	
 	/* ADDITIONAL NON-INTERFACE METHODS */
 	
-	public static City getRandomCity() {
+	public City getRandomCity() {
 		List<City> allCities = getAll();
 		return allCities.get(new Random().nextInt(allCities.size()));
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<City> getAll() {
-		return HibernateSession.get()
+	public List<City> getAll() {
+		return session.get()
 				.createCriteria(City.class)
 				.list();
 	}

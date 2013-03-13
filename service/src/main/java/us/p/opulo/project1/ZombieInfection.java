@@ -60,6 +60,14 @@ public class ZombieInfection {
 	@HibernateService
 	CountryLanguageService countryLanguageService;
 	
+	@Inject
+	private HibernateSession session;
+	
+	@Inject 
+	Cities cities;
+	
+	@Inject World world;
+	
 	public ZombieInfection() {
 	}
 	
@@ -71,13 +79,13 @@ public class ZombieInfection {
 
 	private void initializeGenesis() {
 		System.out.println("Choosing random city for virulent strain genesis");
-		genesis = Cities.getRandomCity();
+		genesis = cities.getRandomCity();
 		System.out.println("City chosen: " + genesis + "\n");
 	}
 	
 	public Set<City> getInfectedCities() {
 		@SuppressWarnings("unchecked")
-		List<City> infectedCities = (List<City>) HibernateSession.get()
+		List<City> infectedCities = (List<City>) session.get()
 				.createCriteria(Infection.class)
 				.add(Restrictions.gt("zombies", 0))
 				.list();		
@@ -124,9 +132,9 @@ public class ZombieInfection {
 		System.out.println(String.format("In this city: %d/%d (%.2f%%) of the population is infected!%n", infected, population, percentInfected));
 		
 		// save the infected city data back into the database
-		HibernateSession.beginTransaction();
+		session.beginTransaction();
 		infectedCity.save();
-		HibernateSession.commitTransaction();
+		session.commitTransaction();
 	}
 
 	public void reportInfectionProgress() {
@@ -138,7 +146,7 @@ public class ZombieInfection {
 	}
 
 	private void reportPopulationInfected() {
-		double percentInfected = (infectedWorldPopulation * 100f) / World.getPopulation();
+		double percentInfected = (infectedWorldPopulation * 100f) / world.getPopulation();
 		String citiesOrCity = infectedCities.size() == 1 ? "city has" : "cities have";
 		System.out.println(infectedCities.size() + " " + citiesOrCity + " been infected!");
 		System.out.println(String.format("The world population is %.2f%% infected %n", percentInfected));
@@ -171,7 +179,7 @@ public class ZombieInfection {
 	private TreeMap<Country,Float> getSortedInfectionsByCountry() {
 		@SuppressWarnings("unchecked")
 		// get all countries and their associated populations (infected, total)
-		List<Object[]> rawCountryInfections = (List<Object[]>) HibernateSession.get()
+		List<Object[]> rawCountryInfections = (List<Object[]>) session.get()
 				.createCriteria(City.class, "city")
 				.createAlias("country",  "country", Criteria.LEFT_JOIN)
 				.createAlias("city.infection", "infection", Criteria.LEFT_JOIN)
@@ -258,7 +266,7 @@ public class ZombieInfection {
 	}
 
 	private long getNumberInfected(Country country) {
-		Long infections = (Long) HibernateSession.get()
+		Long infections = (Long) session.get()
 				.createCriteria(Infection.class)
 				.createAlias("city", "city")
 				.createAlias("city.country", "country")
@@ -269,9 +277,9 @@ public class ZombieInfection {
 		return infections != null ? infections : 0L;
 	}
 
-	private static void sanitize() {
+	private void sanitize() {
 		System.out.println("Sanitizing infected cities");
-		HibernateSession.get().createQuery("delete from Infection")
+		session.get().createQuery("delete from Infection")
 				.executeUpdate();
 	}
 	
@@ -291,7 +299,7 @@ public class ZombieInfection {
 	
 	public TreeMap<Language,Long> getSortedMostSpoken() {
 		@SuppressWarnings("unchecked")
-		List<CountryLanguage> countryLanguages = (List<CountryLanguage>) HibernateSession.get()
+		List<CountryLanguage> countryLanguages = (List<CountryLanguage>) session.get()
 				.createCriteria(CountryLanguage.class)
 				.list();
 		

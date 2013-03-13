@@ -15,13 +15,20 @@
  */
 package us.p.opulo.dao;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import us.p.opulo.dao.library.Cities;
 
+@Singleton
 public class World {
 
-	public static long getPopulation() {
+	@Inject
+	Cities cities;
+	
+	public long getPopulation() {
 		long worldPopulation = 0;
-		for(City city: Cities.getAll()) {
+		for(City city: cities.getAll()) {
 			worldPopulation += city.getPopulation();
 		}
 		return worldPopulation;

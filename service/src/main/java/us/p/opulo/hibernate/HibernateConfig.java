@@ -15,35 +15,26 @@
  */
 package us.p.opulo.hibernate;
 
-import org.hibernate.Session;
+import java.util.List;
+import java.util.Properties;
+
+import us.p.opulo.dao.HEntity;
 
 import com.google.inject.ImplementedBy;
 
 /**
- * This class is responsible for maintaining a persistent Session for the life of the program 
- * and for managing transactions.  
- * 
- * @author Jason Campos
+ * Contains configuration data for the Hibernate connection. 
  */
-@ImplementedBy(HibernateSessionImpl.class)
-public interface HibernateSession {
-	/**
-	 * @return The Session object on which Criteria and/or queries may be executed
-	 */
-	public Session get();
+@ImplementedBy(HibernateConfigImpl.class)
+public interface HibernateConfig {
 	
 	/**
-	 * Starts a new database Transaction.
+	 * @return A list of classes that map to Hibernate entitities
 	 */
-	public void beginTransaction();
+	List<Class<? extends HEntity>> getClasses();
 	
 	/**
-	 * Commits a database transaction. 
+	 * @return Configuration properties for Hibernate.
 	 */
-	public void commitTransaction();
-	
-	/**
-	 * Rolls back a databse transaction.
-	 */
-	public void rollbackTransaction();
+	Properties getProperties();
 }

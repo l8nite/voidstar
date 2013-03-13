@@ -17,33 +17,56 @@ package us.p.opulo.hibernate;
 
 import java.util.List;
 
-import us.p.opulo.dao.HEntity;
+import javax.inject.Inject;
+import javax.persistence.Table;
 
-import com.google.inject.ImplementedBy;
+import us.p.opulo.dao.HEntity;
+import us.p.opulo.util.Assertions;
 
 /**
  * Service class for any common Hibernate queries.
  * @author Jason Campos
  */
-@ImplementedBy(HibernateServiceImpl.class)
-public interface HibernateService {
-
+public class HibernateServiceImpl implements HibernateService {
+	
+	@Inject
+	HibernateSession session;
+	
+	@Inject
+	HibernateConfig config;
+	
 	/**
 	 * Fetches all entities from the database for the argument entityClass.
 	 * @param entityClass
 	 * @return A list of all persisted objects matching the argument entityClass.
 	 */
-	public <T extends HEntity> List<T> fetchAll(Class<T> entityClass);
+	@SuppressWarnings("unchecked")
+	public <T extends HEntity> List<T> fetchAll(Class<T> entityClass) {
+		return session.get()
+				.createCriteria(entityClass)
+				.list();
+	}
 	
 	/**
 	 * Deletes all entities in the database for the argument class.
 	 * @param entityClass The entity class which should have all entries from the database removed.
 	 * @return The number of deleted entries
 	 */
-	public <T extends HEntity> int deleteAll(Class<T> entityClass);
-	
+	public <T extends HEntity> int deleteAll(Class<T> entityClass) {
+		Assertions.assertAnnotationPresent(entityClass,Table.class);
+		
+		String tableName = entityClass.getAnnotation(Table.class).name();
+		return session.get()
+				.createQuery("delete from " + tableName)
+				.executeUpdate();
+	}
+
 	/**
 	 * Deletes all rows from the database for every entity class loaded from the configuration.
 	 */
-	public void resetDatabase();
+	public void resetDatabase() {
+		for(Class<? extends HEntity> c : config.getClasses()) {
+			deleteAll(c);
+		}
+	}
 }
