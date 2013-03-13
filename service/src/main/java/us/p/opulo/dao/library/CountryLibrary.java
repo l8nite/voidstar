@@ -4,11 +4,14 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.google.inject.Singleton;
+
 import us.p.opulo.dao.Country;
 import us.p.opulo.dao.service.CountryService;
 import us.p.opulo.guice.annotations.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 
+@Singleton
 public class CountryLibrary implements CountryService {
 	
 	@Inject

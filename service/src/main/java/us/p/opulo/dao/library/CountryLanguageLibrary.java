@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.google.inject.Singleton;
+
 import us.p.opulo.dao.Country;
 import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Language;
@@ -11,6 +13,7 @@ import us.p.opulo.dao.service.CountryLanguageService;
 import us.p.opulo.guice.annotations.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 
+@Singleton
 public class CountryLanguageLibrary implements CountryLanguageService {
 	
 	@Inject

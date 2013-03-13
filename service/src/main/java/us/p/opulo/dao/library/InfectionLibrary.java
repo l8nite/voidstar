@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.google.inject.Singleton;
+
 import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
 import us.p.opulo.dao.Infection;
@@ -11,6 +13,7 @@ import us.p.opulo.dao.service.InfectionService;
 import us.p.opulo.guice.annotations.HibernateService;
 import us.p.opulo.hibernate.HibernateSession;
 
+@Singleton
 public class InfectionLibrary implements InfectionService {
 	
 	@Inject
