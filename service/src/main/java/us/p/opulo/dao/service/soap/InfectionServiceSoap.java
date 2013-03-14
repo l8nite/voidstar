@@ -30,6 +30,7 @@ import us.p.opulo.dao.Country;
 import us.p.opulo.dao.Infection;
 import us.p.opulo.dao.service.InfectionService;
 import us.p.opulo.guice.annotations.HibernateService;
+import us.p.opulo.util.StringUtil;
 
 @WebService(
 		 targetNamespace=Namespaces.Soap.INFECTION_SERVICE,
@@ -61,7 +62,7 @@ public class InfectionServiceSoap implements InfectionService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
 	public List<Infection> getInfectionForCities(@WebParam(name="City", targetNamespace=Namespaces.DAO) List<City> cities) {
-		log.info("getInfectionForCities(): size = " + cities.size());
+		log.info("getInfectionForCities(): cities = " + StringUtil.joinCollection(cities, ','));
 		return hibernateService.getInfectionForCities(cities);
 	}
 	
@@ -77,7 +78,7 @@ public class InfectionServiceSoap implements InfectionService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
 	public List<Infection> getInfectionsForCountries(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Collection<Country> countries) {
-		log.info("getInfectionsForCountries(): size = " + countries.size());
+		log.info("getInfectionsForCountries(): countries = " + StringUtil.joinCollection(countries, ','));
 		return hibernateService.getInfectionsForCountries(countries);
 	}
 }

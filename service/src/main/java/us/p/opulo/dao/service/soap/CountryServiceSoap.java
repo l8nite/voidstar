@@ -28,6 +28,7 @@ import us.p.opulo.constants.Constants.XML.Namespaces;
 import us.p.opulo.dao.Country;
 import us.p.opulo.dao.service.CountryService;
 import us.p.opulo.guice.annotations.HibernateService;
+import us.p.opulo.util.StringUtil;
 
 @WebService(
 		targetNamespace = Namespaces.Soap.COUNTRY_SERVICE,
@@ -59,7 +60,7 @@ public class CountryServiceSoap implements CountryService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
 	public List<Country> getCountriesWithCodes(@WebParam(name="countryCodes") Collection<String> countryCodes) {
-		log.info("getCountriesWithCodes: size = " + countryCodes.size());
+		log.info("getCountriesWithCodes: countryCodes = " + StringUtil.joinCollection(countryCodes, ','));
 		return hibernateService.getCountriesWithCodes(countryCodes);
 	}
 	
@@ -75,7 +76,7 @@ public class CountryServiceSoap implements CountryService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
 	public List<Country> getCountriesOnContinents(@WebParam(name="continents") Collection<String> continents) {
-		log.info("getCountriesOnContinents(): size = " + continents.size());
+		log.info("getCountriesOnContinents(): continents = " + StringUtil.joinCollection(continents, ','));
 		return hibernateService.getCountriesOnContinents(continents);
 	}
 }
