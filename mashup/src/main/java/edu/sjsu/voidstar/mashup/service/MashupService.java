@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -150,14 +152,32 @@ public class MashupService {
 		}
 		
 		InfectionService infectionService = infectionPortService.getInfectionServicePort();
-		CountryService countryService = countryPortService.getCountryServicePort();
-		StringBuilder sb = new StringBuilder();
+		List<Infection> infections = infectionService.getInfectionForCities(cities);
+		
+		HashMap<Integer, Infection> infectionForCityId = new HashMap<Integer, Infection>();
+		for (Infection infection : infections) {
+			infectionForCityId.put(infection.getCityID(), infection);
+		}
 
+		ArrayList<String> countryCodes = new ArrayList<String>();
 		for (City city : cities) {
-			Infection infection = infectionService.getInfectionForCity(city);
-			Country country = countryService.getCountryWithCode(city.getCountryCode());
+			countryCodes.add(city.getCountryCode());
+		}
+		
+		CountryService countryService = countryPortService.getCountryServicePort();
+		List<Country> countries = countryService.getCountriesWithCodes(countryCodes);
+		
+		HashMap<String, Country> countryForCode = new HashMap<String, Country>();
+		for (Country country : countries) {
+			countryForCode.put(country.getCode(), country);
+		}
 
+		StringBuilder sb = new StringBuilder();
+		for (City city : cities) {
+			Country country = countryForCode.get(city.getCountryCode());
 			sb.append(city.getName() + ", " + city.getDistrict() + " " + country.getName() + " - ");
+
+			Infection infection = infectionForCityId.get(city.getID());
 			if (infection != null) {
 				 sb.append(infection.getZombies() + " infected\n");
 			}
