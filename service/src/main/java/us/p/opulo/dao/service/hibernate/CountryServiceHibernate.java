@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.service.hibernate;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -33,17 +34,33 @@ public class CountryServiceHibernate implements CountryService {
 	HibernateSession session;
 	
 	@Override
-	public Country getCountryByCode(String countryCode) {
+	public Country getCountryWithCode(String countryCode) {
 		return (Country) session.get().createCriteria(Country.class)
-				.add(Restrictions.eq("code", countryCode))
-				.uniqueResult();
+			.add(Restrictions.eq("code", countryCode))
+			.uniqueResult();
 	}
 	
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Country> getCountriesByContinent(String continent) {
-		return (List<Country>) session.get().createCriteria(Country.class)
-				.add(Restrictions.eq("continent", continent))
-				.list();
+	public List<Country> getCountriesWithCodes(Collection<String> countryCodes) {
+		return session.get().createCriteria(Country.class)
+			.add(Restrictions.in("code", countryCodes))
+			.list();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Country> getCountriesOnContinent(String continent) {
+		return session.get().createCriteria(Country.class)
+			.add(Restrictions.eq("continent", continent))
+			.list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Country> getCountriesOnContinents(Collection<String> continents) {
+		return session.get().createCriteria(Country.class)
+			.add(Restrictions.in("continent", continents))
+			.list();
 	}
 }

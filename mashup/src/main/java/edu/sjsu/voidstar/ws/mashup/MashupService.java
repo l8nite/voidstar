@@ -89,6 +89,17 @@ public interface MashupService {
 
     /**
      * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "testCountryMethods", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.TestCountryMethods")
+    @ResponseWrapper(localName = "testCountryMethodsResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.TestCountryMethodsResponse")
+    public String testCountryMethods();
+
+    /**
+     * 
      * @param languageName
      * @return
      *     returns java.lang.String

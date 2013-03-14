@@ -20,8 +20,8 @@ import us.opulo.p.dao.Country;
  */
 @WebService(name = "CountryService", targetNamespace = "http://p.opulo.us/soap/country")
 @XmlSeeAlso({
-    us.opulo.p.dao.ObjectFactory.class,
-    us.opulo.p.soap.country.ObjectFactory.class
+    us.opulo.p.soap.country.ObjectFactory.class,
+    us.opulo.p.dao.ObjectFactory.class
 })
 public interface CountryService {
 
@@ -34,11 +34,25 @@ public interface CountryService {
      */
     @WebMethod
     @WebResult(name = "Country", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getCountryByCode", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountryByCode")
-    @ResponseWrapper(localName = "getCountryByCodeResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountryByCodeResponse")
-    public Country getCountryByCode(
+    @RequestWrapper(localName = "getCountryWithCode", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountryWithCode")
+    @ResponseWrapper(localName = "getCountryWithCodeResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountryWithCodeResponse")
+    public Country getCountryWithCode(
         @WebParam(name = "code", targetNamespace = "")
         String code);
+
+    /**
+     * 
+     * @param countryCodes
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.Country>
+     */
+    @WebMethod
+    @WebResult(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCountriesWithCodes", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesWithCodes")
+    @ResponseWrapper(localName = "getCountriesWithCodesResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesWithCodesResponse")
+    public List<Country> getCountriesWithCodes(
+        @WebParam(name = "countryCodes", targetNamespace = "")
+        List<String> countryCodes);
 
     /**
      * 
@@ -48,10 +62,24 @@ public interface CountryService {
      */
     @WebMethod
     @WebResult(name = "Country", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getCountriesByContinent", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesByContinent")
-    @ResponseWrapper(localName = "getCountriesByContinentResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesByContinentResponse")
-    public List<Country> getCountriesByContinent(
+    @RequestWrapper(localName = "getCountriesOnContinent", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesOnContinent")
+    @ResponseWrapper(localName = "getCountriesOnContinentResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesOnContinentResponse")
+    public List<Country> getCountriesOnContinent(
         @WebParam(name = "continent", targetNamespace = "")
         String continent);
+
+    /**
+     * 
+     * @param continents
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.Country>
+     */
+    @WebMethod
+    @WebResult(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCountriesOnContinents", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesOnContinents")
+    @ResponseWrapper(localName = "getCountriesOnContinentsResponse", targetNamespace = "http://p.opulo.us/soap/country", className = "us.opulo.p.soap.country.GetCountriesOnContinentsResponse")
+    public List<Country> getCountriesOnContinents(
+        @WebParam(name = "continents", targetNamespace = "")
+        List<String> continents);
 
 }

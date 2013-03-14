@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.library;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -37,13 +38,23 @@ public class CountryLibrary implements CountryService {
 	private HibernateSession session;
 
 	@Override
-	public Country getCountryByCode(String countryCode) {
-		return service.getCountryByCode(countryCode);
+	public Country getCountryWithCode(String countryCode) {
+		return service.getCountryWithCode(countryCode);
+	}
+	
+	@Override
+	public List<Country> getCountriesWithCodes(Collection<String> countryCodes) {
+		return service.getCountriesWithCodes(countryCodes);
 	}
 
 	@Override
-	public List<Country> getCountriesByContinent(String continent) {
-		return service.getCountriesByContinent(continent);
+	public List<Country> getCountriesOnContinent(String continent) {
+		return service.getCountriesOnContinent(continent);
+	}
+
+	@Override
+	public List<Country> getCountriesOnContinents(Collection<String> continents) {
+		return service.getCountriesOnContinents(continents);
 	}
 
 	/* ADDITIONAL LIBRARY METHODS */

@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.service.soap;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -55,16 +56,32 @@ public class CountryServiceSoap implements CountryService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
-	public Country getCountryByCode(@WebParam(name="code") String countryCode) {
-		log.info("getCountryByCode(): countryCode = " + countryCode);
-		return hibernateService.getCountryByCode(countryCode);
+	public Country getCountryWithCode(@WebParam(name="code") String countryCode) {
+		log.info("getCountryWithCode(): countryCode = " + countryCode);
+		return hibernateService.getCountryWithCode(countryCode);
 	}
 	
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
-	public List<Country> getCountriesByContinent(@WebParam(name="continent") String continent) {
+	public List<Country> getCountriesWithCodes(@WebParam(name="countryCodes") Collection<String> countryCodes) {
+		log.info("getCountriesWithCodes: size = " + countryCodes.size());
+		return hibernateService.getCountriesWithCodes(countryCodes);
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
+	public List<Country> getCountriesOnContinent(@WebParam(name="continent") String continent) {
 		log.info("getCountriesByContinent(): continent = " + continent);
-		return hibernateService.getCountriesByContinent(continent);
+		return hibernateService.getCountriesOnContinent(continent);
+	}
+
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
+	public List<Country> getCountriesOnContinents(@WebParam(name="continents") Collection<String> continents) {
+		log.info("getCountriesOnContinents(): size = " + continents.size());
+		return hibernateService.getCountriesOnContinents(continents);
 	}
 }

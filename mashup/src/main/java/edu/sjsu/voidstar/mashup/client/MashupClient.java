@@ -26,5 +26,6 @@ public class MashupClient {
 		
 		System.out.println("City services are working... " + service.testCityMethods());
 		System.out.println("CountryLanguage services are working... " + service.testCountryLanguageMethods());
+		System.out.println("Country services are working... " + service.testCountryMethods());
 	}
 }

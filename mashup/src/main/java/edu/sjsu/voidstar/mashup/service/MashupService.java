@@ -55,7 +55,7 @@ public class MashupService {
 		log.info("getLanguagesSpokenInCountry(" + countryCode + ")");
 
 		CountryService countryService = countryPortService.getCountryServicePort();
-		Country country = countryService.getCountryByCode(countryCode);
+		Country country = countryService.getCountryWithCode(countryCode);
 		
 		StringBuilder result = new StringBuilder();
 		
@@ -102,7 +102,7 @@ public class MashupService {
 		List<Country> countries = new ArrayList<Country>();
 		
 		for(CountryLanguage cl : countryLanguages) {
-			Country country = cs.getCountryByCode(cl.getCountryCode());
+			Country country = cs.getCountryWithCode(cl.getCountryCode());
 			if (country != null) {
 				countries.add(country);
 			}
@@ -133,7 +133,7 @@ public class MashupService {
 		String nothing = "No zombies found on continent " + continent;
 		
 		CountryService countryService = countryPortService.getCountryServicePort();
-		List<Country> countriesOnContinent = countryService.getCountriesByContinent(continent);
+		List<Country> countriesOnContinent = countryService.getCountriesOnContinent(continent);
 		
 		if(countriesOnContinent.isEmpty()) {
 			return nothing;
@@ -183,7 +183,7 @@ public class MashupService {
 		System.out.println("getCitiesWithNames returned " + citiesByName.size() + " results");
 		
 		CountryService cs = countryPortService.getCountryServicePort();
-		List<Country> countries = cs.getCountriesByContinent("North America");
+		List<Country> countries = cs.getCountriesOnContinent("North America");
 		
 		List<City> citiesByCountry = service.getCitiesInCountry(countries.get(0));
 		System.out.println("getCitiesInCountry returned " + citiesByCountry.size() + " results");
@@ -200,7 +200,7 @@ public class MashupService {
 		CountryService countryService = countryPortService.getCountryServicePort();
 		CountryLanguageService clService = countryLanguagePortService.getCountryLanguageServicePort();
 		
-		List<Country> countries = countryService.getCountriesByContinent("North America");
+		List<Country> countries = countryService.getCountriesOnContinent("North America");
 		List<Language> languages = languageService.getLanguagesByCountry(countries.get(0));
 		
 		List<CountryLanguage> countryLanguages = clService.getCountryLanguagesForLanguage(languages.get(0));
@@ -214,6 +214,25 @@ public class MashupService {
 		
 		countryLanguages = clService.getCountryLanguagesForCountries(countries);
 		System.out.println("getCountryLanguagesForCountries() returned " + countryLanguages.size() + " result");
+		
+		return "woot";
+	}
+	
+	@WebMethod
+	public String testCountryMethods() {
+		CountryService countryService = countryPortService.getCountryServicePort();
+		
+		Country country = countryService.getCountryWithCode("usa");
+		System.out.println("getCountryWithCode() returned " + country);
+		
+		List<Country> countries = countryService.getCountriesWithCodes(Arrays.asList("usa", "mex"));
+		System.out.println("getCountryWithCodes() returned " + countries.size() + " results");
+		
+		countries = countryService.getCountriesOnContinent("North America");
+		System.out.println("getCountryWithCodes() returned " + countries.size() + " results");
+		
+		countries = countryService.getCountriesOnContinents(Arrays.asList("North America", "South America"));
+		System.out.println("getCountryOnContinents() returned " + countries.size() + " results");
 		
 		return "woot";
 	}

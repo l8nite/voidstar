@@ -15,11 +15,15 @@
  */
 package us.p.opulo.dao.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import us.p.opulo.dao.Country;
 
 public interface CountryService {
-	Country getCountryByCode(String countryCode);
-	List<Country> getCountriesByContinent(String continent);
+	Country getCountryWithCode(String countryCode);
+	List<Country> getCountriesWithCodes(Collection<String> countryCodes);
+	
+	List<Country> getCountriesOnContinent(String continent);
+	List<Country> getCountriesOnContinents(Collection<String> continents);
 }

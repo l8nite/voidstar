@@ -24,10 +24,14 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetCountryByCode_QNAME = new QName("http://p.opulo.us/soap/country", "getCountryByCode");
-    private final static QName _GetCountriesByContinent_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesByContinent");
-    private final static QName _GetCountryByCodeResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountryByCodeResponse");
-    private final static QName _GetCountriesByContinentResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesByContinentResponse");
+    private final static QName _GetCountriesOnContinentResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesOnContinentResponse");
+    private final static QName _GetCountriesOnContinentsResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesOnContinentsResponse");
+    private final static QName _GetCountryWithCodeResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountryWithCodeResponse");
+    private final static QName _GetCountriesWithCodesResponse_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesWithCodesResponse");
+    private final static QName _GetCountriesOnContinent_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesOnContinent");
+    private final static QName _GetCountriesOnContinents_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesOnContinents");
+    private final static QName _GetCountriesWithCodes_QNAME = new QName("http://p.opulo.us/soap/country", "getCountriesWithCodes");
+    private final static QName _GetCountryWithCode_QNAME = new QName("http://p.opulo.us/soap/country", "getCountryWithCode");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: us.opulo.p.soap.country
@@ -37,71 +41,139 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCountriesByContinent }
+     * Create an instance of {@link GetCountriesWithCodes }
      * 
      */
-    public GetCountriesByContinent createGetCountriesByContinent() {
-        return new GetCountriesByContinent();
+    public GetCountriesWithCodes createGetCountriesWithCodes() {
+        return new GetCountriesWithCodes();
     }
 
     /**
-     * Create an instance of {@link GetCountryByCodeResponse }
+     * Create an instance of {@link GetCountryWithCode }
      * 
      */
-    public GetCountryByCodeResponse createGetCountryByCodeResponse() {
-        return new GetCountryByCodeResponse();
+    public GetCountryWithCode createGetCountryWithCode() {
+        return new GetCountryWithCode();
     }
 
     /**
-     * Create an instance of {@link GetCountryByCode }
+     * Create an instance of {@link GetCountriesWithCodesResponse }
      * 
      */
-    public GetCountryByCode createGetCountryByCode() {
-        return new GetCountryByCode();
+    public GetCountriesWithCodesResponse createGetCountriesWithCodesResponse() {
+        return new GetCountriesWithCodesResponse();
     }
 
     /**
-     * Create an instance of {@link GetCountriesByContinentResponse }
+     * Create an instance of {@link GetCountriesOnContinent }
      * 
      */
-    public GetCountriesByContinentResponse createGetCountriesByContinentResponse() {
-        return new GetCountriesByContinentResponse();
+    public GetCountriesOnContinent createGetCountriesOnContinent() {
+        return new GetCountriesOnContinent();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryByCode }{@code >}}
+     * Create an instance of {@link GetCountriesOnContinentsResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountryByCode")
-    public JAXBElement<GetCountryByCode> createGetCountryByCode(GetCountryByCode value) {
-        return new JAXBElement<GetCountryByCode>(_GetCountryByCode_QNAME, GetCountryByCode.class, null, value);
+    public GetCountriesOnContinentsResponse createGetCountriesOnContinentsResponse() {
+        return new GetCountriesOnContinentsResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesByContinent }{@code >}}
+     * Create an instance of {@link GetCountriesOnContinents }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesByContinent")
-    public JAXBElement<GetCountriesByContinent> createGetCountriesByContinent(GetCountriesByContinent value) {
-        return new JAXBElement<GetCountriesByContinent>(_GetCountriesByContinent_QNAME, GetCountriesByContinent.class, null, value);
+    public GetCountriesOnContinents createGetCountriesOnContinents() {
+        return new GetCountriesOnContinents();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryByCodeResponse }{@code >}}
+     * Create an instance of {@link GetCountriesOnContinentResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountryByCodeResponse")
-    public JAXBElement<GetCountryByCodeResponse> createGetCountryByCodeResponse(GetCountryByCodeResponse value) {
-        return new JAXBElement<GetCountryByCodeResponse>(_GetCountryByCodeResponse_QNAME, GetCountryByCodeResponse.class, null, value);
+    public GetCountriesOnContinentResponse createGetCountriesOnContinentResponse() {
+        return new GetCountriesOnContinentResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesByContinentResponse }{@code >}}
+     * Create an instance of {@link GetCountryWithCodeResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesByContinentResponse")
-    public JAXBElement<GetCountriesByContinentResponse> createGetCountriesByContinentResponse(GetCountriesByContinentResponse value) {
-        return new JAXBElement<GetCountriesByContinentResponse>(_GetCountriesByContinentResponse_QNAME, GetCountriesByContinentResponse.class, null, value);
+    public GetCountryWithCodeResponse createGetCountryWithCodeResponse() {
+        return new GetCountryWithCodeResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesOnContinentResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesOnContinentResponse")
+    public JAXBElement<GetCountriesOnContinentResponse> createGetCountriesOnContinentResponse(GetCountriesOnContinentResponse value) {
+        return new JAXBElement<GetCountriesOnContinentResponse>(_GetCountriesOnContinentResponse_QNAME, GetCountriesOnContinentResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesOnContinentsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesOnContinentsResponse")
+    public JAXBElement<GetCountriesOnContinentsResponse> createGetCountriesOnContinentsResponse(GetCountriesOnContinentsResponse value) {
+        return new JAXBElement<GetCountriesOnContinentsResponse>(_GetCountriesOnContinentsResponse_QNAME, GetCountriesOnContinentsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryWithCodeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountryWithCodeResponse")
+    public JAXBElement<GetCountryWithCodeResponse> createGetCountryWithCodeResponse(GetCountryWithCodeResponse value) {
+        return new JAXBElement<GetCountryWithCodeResponse>(_GetCountryWithCodeResponse_QNAME, GetCountryWithCodeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWithCodesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesWithCodesResponse")
+    public JAXBElement<GetCountriesWithCodesResponse> createGetCountriesWithCodesResponse(GetCountriesWithCodesResponse value) {
+        return new JAXBElement<GetCountriesWithCodesResponse>(_GetCountriesWithCodesResponse_QNAME, GetCountriesWithCodesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesOnContinent }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesOnContinent")
+    public JAXBElement<GetCountriesOnContinent> createGetCountriesOnContinent(GetCountriesOnContinent value) {
+        return new JAXBElement<GetCountriesOnContinent>(_GetCountriesOnContinent_QNAME, GetCountriesOnContinent.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesOnContinents }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesOnContinents")
+    public JAXBElement<GetCountriesOnContinents> createGetCountriesOnContinents(GetCountriesOnContinents value) {
+        return new JAXBElement<GetCountriesOnContinents>(_GetCountriesOnContinents_QNAME, GetCountriesOnContinents.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWithCodes }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountriesWithCodes")
+    public JAXBElement<GetCountriesWithCodes> createGetCountriesWithCodes(GetCountriesWithCodes value) {
+        return new JAXBElement<GetCountriesWithCodes>(_GetCountriesWithCodes_QNAME, GetCountriesWithCodes.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryWithCode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/country", name = "getCountryWithCode")
+    public JAXBElement<GetCountryWithCode> createGetCountryWithCode(GetCountryWithCode value) {
+        return new JAXBElement<GetCountryWithCode>(_GetCountryWithCode_QNAME, GetCountryWithCode.class, null, value);
     }
 
 }
