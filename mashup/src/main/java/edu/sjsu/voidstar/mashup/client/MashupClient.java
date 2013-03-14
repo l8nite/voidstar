@@ -7,7 +7,7 @@ import edu.sjsu.voidstar.ws.mashup.MashupService;
 
 public class MashupClient {
 
-	@WebServiceRef(wsdlLocation = "http://localhost:8123/mashup?wsdl")
+	@WebServiceRef(wsdlLocation = "http://localhost:8124/mashup?wsdl")
 	static MashupPortService mashupPortService = new MashupPortService();
 
 	public static void main(String[] args) {
@@ -18,14 +18,17 @@ public class MashupClient {
 	public void runMashupQueries() {
 		MashupService service = mashupPortService.getMashupServicePort();
 
-//		System.out.println(service.getLanguagesSpokenInCountry("USA"));
-//		
-//		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
-//		
-//		System.out.println(service.getZombiesOnContinent("North America"));
+		System.out.println(service.getLanguagesSpokenInCountry("USA"));
 		
-		System.out.println("City services are working... " + service.testCityMethods());
-		System.out.println("CountryLanguage services are working... " + service.testCountryLanguageMethods());
-		System.out.println("Country services are working... " + service.testCountryMethods());
+		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
+		
+		System.out.println(service.getZombiesOnContinent("North America"));
+		
+//		System.out.println("City services are working... " + service.testCityMethods());
+//		System.out.println("CountryLanguage services are working... " + service.testCountryLanguageMethods());
+//		System.out.println("Country services are working... " + service.testCountryMethods());
+		
+		System.out.println(service.getZombiesInCity("San Francisco"));
+		System.out.println(service.getZombiesInCity("San Jose"));
 	}
 }

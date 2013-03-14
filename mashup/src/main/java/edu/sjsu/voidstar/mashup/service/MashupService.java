@@ -127,6 +127,7 @@ public class MashupService {
 				
 	}
 	
+	// 3
 	@WebMethod
 	public String getZombiesOnContinent(String continent) {
 		log.info("getZombiesOnContinent(" + continent + ")");
@@ -158,13 +159,38 @@ public class MashupService {
 		return "There are " + zombieCount + " zombies in " + continent;
 	}
 
+	// 4
 	@WebMethod
-	public String getNumberOfZombiesInCity(@WebParam(name = "cityName") String cityName) {
-		// CityService.getCityByName(cityName)
-		// InfectionService.getInfectionByCity(city)
-		log.info("getNumberOfZombiesInCity(" + cityName + ")");
-		return cityName;
+	public String getZombiesInCity(@WebParam(name = "cityName") String cityName) {
+		CityService cityService = cityPortService.getCityServicePort();
+		List<City> cities = cityService.getCitiesWithName(cityName);
+		
+		if (cities.isEmpty()) {
+			return "no cities found with that name";
+		}
+		
+		InfectionService infectionService = infectionPortService.getInfectionServicePort();
+		CountryService countryService = countryPortService.getCountryServicePort();
+		StringBuilder sb = new StringBuilder();
+
+		for (City city : cities) {
+			Infection infection = infectionService.getInfectionByCity(city);
+			Country country = countryService.getCountryWithCode(city.getCountryCode());
+			
+			sb.append(city.getName() + ", " + city.getDistrict() + " " + country.getName() + " - ");
+			if (infection != null) {
+				 sb.append(infection.getZombies() + " infected\n");
+			}
+			else {
+				sb.append("not infected\n");
+			}
+		}
+		
+		return sb.toString();
 	}
+	
+	// 5
+	// ???????
 	
 	@WebMethod
 	public String testCityMethods() {
