@@ -39,27 +39,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLanguagesByCountryResponse }
+     * 
+     */
+    public GetLanguagesByCountryResponse createGetLanguagesByCountryResponse() {
+        return new GetLanguagesByCountryResponse();
+    }
+
+    /**
      * Create an instance of {@link GetLanguageByIdResponse }
      * 
      */
     public GetLanguageByIdResponse createGetLanguageByIdResponse() {
         return new GetLanguageByIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesByCountry }
-     * 
-     */
-    public GetLanguagesByCountry createGetLanguagesByCountry() {
-        return new GetLanguagesByCountry();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguageByName }
-     * 
-     */
-    public GetLanguageByName createGetLanguageByName() {
-        return new GetLanguageByName();
     }
 
     /**
@@ -71,19 +63,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLanguageByName }
+     * 
+     */
+    public GetLanguageByName createGetLanguageByName() {
+        return new GetLanguageByName();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesByCountry }
+     * 
+     */
+    public GetLanguagesByCountry createGetLanguagesByCountry() {
+        return new GetLanguagesByCountry();
+    }
+
+    /**
      * Create an instance of {@link GetLanguageByNameResponse }
      * 
      */
     public GetLanguageByNameResponse createGetLanguageByNameResponse() {
         return new GetLanguageByNameResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesByCountryResponse }
-     * 
-     */
-    public GetLanguagesByCountryResponse createGetLanguagesByCountryResponse() {
-        return new GetLanguagesByCountryResponse();
     }
 
     /**

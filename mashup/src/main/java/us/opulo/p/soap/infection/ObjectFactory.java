@@ -37,6 +37,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetInfectionByCityResponse }
+     * 
+     */
+    public GetInfectionByCityResponse createGetInfectionByCityResponse() {
+        return new GetInfectionByCityResponse();
+    }
+
+    /**
      * Create an instance of {@link GetInfectionsByCountry }
      * 
      */
@@ -58,14 +66,6 @@ public class ObjectFactory {
      */
     public GetInfectionByCity createGetInfectionByCity() {
         return new GetInfectionByCity();
-    }
-
-    /**
-     * Create an instance of {@link GetInfectionByCityResponse }
-     * 
-     */
-    public GetInfectionByCityResponse createGetInfectionByCityResponse() {
-        return new GetInfectionByCityResponse();
     }
 
     /**

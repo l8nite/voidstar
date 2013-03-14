@@ -15,15 +15,19 @@ import org.slf4j.LoggerFactory;
 
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
+import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.Language;
+import us.opulo.p.soap.city.CityPortService;
 import us.opulo.p.soap.country.CountryPortService;
 import us.opulo.p.soap.country.CountryService;
 import us.opulo.p.soap.countrylanguage.CountryLanguagePortService;
 import us.opulo.p.soap.countrylanguage.CountryLanguageService;
+import us.opulo.p.soap.infection.InfectionPortService;
+import us.opulo.p.soap.infection.InfectionService;
 import us.opulo.p.soap.language.LanguagePortService;
 import us.opulo.p.soap.language.LanguageService;
 
-@WebService(targetNamespace = "http://p.opulo.us/mashup", serviceName = "MashupPortService", name = "MashupService")
+@WebService(targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", serviceName = "MashupPortService", name = "MashupService")
 public class MashupService {
 	@WebServiceRef(wsdlLocation = "http://localhost:8123/country?wsdl")
 	static CountryPortService countryPortService = new CountryPortService();
@@ -33,6 +37,12 @@ public class MashupService {
 
 	@WebServiceRef(wsdlLocation = "http://localhost:8123/countrylanguage?wsdl")
 	static CountryLanguagePortService countryLanguagePortService = new CountryLanguagePortService();
+
+	@WebServiceRef(wsdlLocation = "http://localhost:8123/city?wsdl")
+	static CityPortService cityPortService = new CityPortService();
+
+	@WebServiceRef(wsdlLocation = "http://localhost:8123/infection?wsdl")
+	static InfectionPortService infectionPortService = new InfectionPortService();
 
 	private static final Logger log = LoggerFactory.getLogger(MashupService.class);
 
@@ -60,6 +70,7 @@ public class MashupService {
 		return result.length() > 0 ? result.substring(0, result.length() - 2) : "";
 	}
 
+	//2
 	@WebMethod
 	public String getCountriesWhichSpeakLanguage(@WebParam(name = "languageName") String languageName) {
 		log.info("getCountriesWhichSpeakLanguage(" + languageName + ")");
@@ -101,12 +112,41 @@ public class MashupService {
 	}
 	
 	@WebMethod
+	public String getZombiesOnContinent(String continent) {
+		log.info("getZombiesOnContinent(" + continent + ")");
+		String nothing = "No zombies found on continent " + continent;
+		
+		CountryService countryService = countryPortService.getCountryServicePort();
+		List<Country> countriesOnContinent = countryService.getCountriesByContinent(continent);
+		
+		if(countriesOnContinent.isEmpty()) {
+			return nothing;
+		}
+		
+		InfectionService infectionService = infectionPortService.getInfectionServicePort();
+		List<Infection> zombieInfections = new ArrayList<Infection>();
+		for(Country country: countriesOnContinent) {
+			zombieInfections.addAll(infectionService.getInfectionsByCountry(country));
+		}
+		
+		if(zombieInfections.isEmpty()) {
+			return nothing;
+		}
+		
+		Long zombieCount = 0L;
+		for(Infection infection : zombieInfections) {
+			zombieCount += infection.getZombies();
+		}
+		
+		return "There are " + zombieCount + " zombies in " + continent;
+	}
+
+	@WebMethod
 	public String getNumberOfZombiesInCity(@WebParam(name = "cityName") String cityName) {
 		// CityService.getCityByName(cityName)
 		// InfectionService.getInfectionByCity(city)
 		log.info("getNumberOfZombiesInCity(" + cityName + ")");
 		return cityName;
 	}
-
 }
  

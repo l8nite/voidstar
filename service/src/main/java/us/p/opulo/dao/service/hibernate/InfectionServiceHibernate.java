@@ -47,14 +47,13 @@ public class InfectionServiceHibernate implements InfectionService {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Infection> getInfectionsByCountry(Country country) {
-		return (List<Infection>) session.get().createCriteria(Infection.class)
-				.add(Subqueries.in("cityID", 
-						DetachedCriteria.forClass(City.class)
-							.add(Restrictions.eq("country", country))
-							.setProjection(Projections.property("id"))
-						)
-				)
+		DetachedCriteria citiesInCountry = DetachedCriteria.forClass(City.class)
+				.add(Restrictions.eq("country", country))
+				.setProjection(Projections.property("id"));
+		
+		return (List<Infection>) session.get()
+				.createCriteria(Infection.class)
+				.add(Subqueries.propertyIn("cityID", citiesInCountry))
 				.list();
-				
 	}
 }

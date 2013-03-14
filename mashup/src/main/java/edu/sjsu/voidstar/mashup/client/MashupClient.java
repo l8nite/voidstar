@@ -17,10 +17,11 @@ public class MashupClient {
 
 	public void runMashupQueries() {
 		MashupService service = mashupPortService.getMashupServicePort();
-		String mostSpoken = service.getLanguagesSpokenInCountry("USA");
-		System.out.println(mostSpoken);
+
+//		System.out.println(service.getLanguagesSpokenInCountry("USA"));
+//		
+//		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
 		
-		String countries = service.getCountriesWhichSpeakLanguage("English");
-		System.out.println(countries);
+		System.out.println(service.getZombiesOnContinent("North America"));
 	}
 }

@@ -37,11 +37,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCountryLanguagesByCountryResponse }
+     * Create an instance of {@link GetCountryLanguagesByCountry }
      * 
      */
-    public GetCountryLanguagesByCountryResponse createGetCountryLanguagesByCountryResponse() {
-        return new GetCountryLanguagesByCountryResponse();
+    public GetCountryLanguagesByCountry createGetCountryLanguagesByCountry() {
+        return new GetCountryLanguagesByCountry();
     }
 
     /**
@@ -61,11 +61,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCountryLanguagesByCountry }
+     * Create an instance of {@link GetCountryLanguagesByCountryResponse }
      * 
      */
-    public GetCountryLanguagesByCountry createGetCountryLanguagesByCountry() {
-        return new GetCountryLanguagesByCountry();
+    public GetCountryLanguagesByCountryResponse createGetCountryLanguagesByCountryResponse() {
+        return new GetCountryLanguagesByCountryResponse();
     }
 
     /**

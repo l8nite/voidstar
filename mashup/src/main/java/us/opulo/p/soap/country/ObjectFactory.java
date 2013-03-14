@@ -37,19 +37,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCountriesByContinent }
+     * Create an instance of {@link GetCountryByCode }
      * 
      */
-    public GetCountriesByContinent createGetCountriesByContinent() {
-        return new GetCountriesByContinent();
-    }
-
-    /**
-     * Create an instance of {@link GetCountryByCodeResponse }
-     * 
-     */
-    public GetCountryByCodeResponse createGetCountryByCodeResponse() {
-        return new GetCountryByCodeResponse();
+    public GetCountryByCode createGetCountryByCode() {
+        return new GetCountryByCode();
     }
 
     /**
@@ -61,11 +53,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCountryByCode }
+     * Create an instance of {@link GetCountryByCodeResponse }
      * 
      */
-    public GetCountryByCode createGetCountryByCode() {
-        return new GetCountryByCode();
+    public GetCountryByCodeResponse createGetCountryByCodeResponse() {
+        return new GetCountryByCodeResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesByContinent }
+     * 
+     */
+    public GetCountriesByContinent createGetCountriesByContinent() {
+        return new GetCountriesByContinent();
     }
 
     /**

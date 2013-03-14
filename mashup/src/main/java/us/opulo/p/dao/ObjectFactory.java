@@ -43,54 +43,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CountryLanguage }
-     * 
-     */
-    public CountryLanguage createCountryLanguage() {
-        return new CountryLanguage();
-    }
-
-    /**
-     * Create an instance of {@link Infections }
-     * 
-     */
-    public Infections createInfections() {
-        return new Infections();
-    }
-
-    /**
-     * Create an instance of {@link Cities }
-     * 
-     */
-    public Cities createCities() {
-        return new Cities();
-    }
-
-    /**
-     * Create an instance of {@link Languages }
-     * 
-     */
-    public Languages createLanguages() {
-        return new Languages();
-    }
-
-    /**
-     * Create an instance of {@link City }
-     * 
-     */
-    public City createCity() {
-        return new City();
-    }
-
-    /**
-     * Create an instance of {@link Language }
-     * 
-     */
-    public Language createLanguage() {
-        return new Language();
-    }
-
-    /**
      * Create an instance of {@link Country }
      * 
      */
@@ -107,6 +59,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CountryLanguage }
+     * 
+     */
+    public CountryLanguage createCountryLanguage() {
+        return new CountryLanguage();
+    }
+
+    /**
+     * Create an instance of {@link Language }
+     * 
+     */
+    public Language createLanguage() {
+        return new Language();
+    }
+
+    /**
+     * Create an instance of {@link Languages }
+     * 
+     */
+    public Languages createLanguages() {
+        return new Languages();
+    }
+
+    /**
+     * Create an instance of {@link Infections }
+     * 
+     */
+    public Infections createInfections() {
+        return new Infections();
+    }
+
+    /**
      * Create an instance of {@link CountryLanguages }
      * 
      */
@@ -120,6 +104,22 @@ public class ObjectFactory {
      */
     public Infection createInfection() {
         return new Infection();
+    }
+
+    /**
+     * Create an instance of {@link City }
+     * 
+     */
+    public City createCity() {
+        return new City();
+    }
+
+    /**
+     * Create an instance of {@link Cities }
+     * 
+     */
+    public Cities createCities() {
+        return new Cities();
     }
 
     /**

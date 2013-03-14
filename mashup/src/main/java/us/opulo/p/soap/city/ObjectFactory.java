@@ -39,22 +39,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCityByIdResponse }
-     * 
-     */
-    public GetCityByIdResponse createGetCityByIdResponse() {
-        return new GetCityByIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCitiesByName }
-     * 
-     */
-    public GetCitiesByName createGetCitiesByName() {
-        return new GetCitiesByName();
-    }
-
-    /**
      * Create an instance of {@link GetCitiesByNameResponse }
      * 
      */
@@ -71,11 +55,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCitiesByCountryResponse }
+     * Create an instance of {@link GetCityByIdResponse }
      * 
      */
-    public GetCitiesByCountryResponse createGetCitiesByCountryResponse() {
-        return new GetCitiesByCountryResponse();
+    public GetCityByIdResponse createGetCityByIdResponse() {
+        return new GetCityByIdResponse();
     }
 
     /**
@@ -84,6 +68,22 @@ public class ObjectFactory {
      */
     public GetCityById createGetCityById() {
         return new GetCityById();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesByName }
+     * 
+     */
+    public GetCitiesByName createGetCitiesByName() {
+        return new GetCitiesByName();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesByCountryResponse }
+     * 
+     */
+    public GetCitiesByCountryResponse createGetCitiesByCountryResponse() {
+        return new GetCitiesByCountryResponse();
     }
 
     /**

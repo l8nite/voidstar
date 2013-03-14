@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="CityID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="CityID" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="Zombies" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -39,7 +39,7 @@ public class Infection {
     @XmlElement(name = "ID")
     protected Integer id;
     @XmlElement(name = "CityID")
-    protected String cityID;
+    protected Integer cityID;
     @XmlElement(name = "Zombies")
     protected Integer zombies;
 
@@ -72,10 +72,10 @@ public class Infection {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public String getCityID() {
+    public Integer getCityID() {
         return cityID;
     }
 
@@ -84,10 +84,10 @@ public class Infection {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public void setCityID(String value) {
+    public void setCityID(Integer value) {
         this.cityID = value;
     }
 
