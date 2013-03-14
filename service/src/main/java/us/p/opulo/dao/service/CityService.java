@@ -15,13 +15,19 @@
  */
 package us.p.opulo.dao.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
 
 public interface CityService {
-	City getCityById(Integer cityId);
-	List<City> getCitiesByName(String cityName);
-	List<City> getCitiesByCountry(Country country);
+	City getCityWithId(Integer cityId);
+	List<City> getCitiesWithIds(Collection<Integer> cityIds);
+	
+	List<City> getCitiesWithName(String cityName);
+	List<City> getCitiesWithNames(Collection<String> cityNames);
+	
+	List<City> getCitiesInCountry(Country country);
+	List<City> getCitiesInCountries(Collection<Country> countries);
 }

@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.library;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -39,18 +40,33 @@ public class CityLibrary implements CityService {
 	private HibernateSession session;
 	
 	@Override
-	public City getCityById(Integer cityId) {
-		return service.getCityById(cityId);
+	public City getCityWithId(Integer cityId) {
+		return service.getCityWithId(cityId);
 	}
 
 	@Override
-	public List<City> getCitiesByName(String cityName) {
-		return service.getCitiesByName(cityName);
+	public List<City> getCitiesWithIds(Collection<Integer> cityIds) {
+		return service.getCitiesWithIds(cityIds);
 	}
 
 	@Override
-	public List<City> getCitiesByCountry(Country country) {
-		return service.getCitiesByCountry(country);
+	public List<City> getCitiesWithName(String cityName) {
+		return service.getCitiesWithName(cityName);
+	}
+
+	@Override
+	public List<City> getCitiesWithNames(Collection<String> cityNames) {
+		return service.getCitiesWithNames(cityNames);
+	}
+
+	@Override
+	public List<City> getCitiesInCountry(Country country) {
+		return service.getCitiesInCountry(country);
+	}
+
+	@Override
+	public List<City> getCitiesInCountries(Collection<Country> countries) {
+		return service.getCitiesInCountries(countries);
 	}
 	
 	/* ADDITIONAL NON-INTERFACE METHODS */

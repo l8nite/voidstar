@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.service.soap;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -58,26 +59,49 @@ public class CityServiceSoap implements CityService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
-	public City getCityById(@WebParam(name="id") Integer id) {
+	public City getCityWithId(@WebParam(name="id") Integer id) {
 		log.info("getCityById(): cityId = " + id);
-		City city = hibernateService.getCityById(id);
-		log.info("getCityById(): result = " + city);
-		return city;
+		return hibernateService.getCityWithId(id);
 	}
+
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="City")
+	public List<City> getCitiesWithIds(@WebParam(name="ids") Collection<Integer> cityIds) {
+		log.info("getCitiesById(): size = " + cityIds.size());
+		return hibernateService.getCitiesWithIds(cityIds);
+	}
+
 	
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
-	public List<City> getCitiesByName(@WebParam(name="name") String cityName) {
+	public List<City> getCitiesWithName(@WebParam(name="name") String cityName) {
 		log.info("getCityByName(): cityName = " + cityName);
-		return hibernateService.getCitiesByName(cityName);
+		return hibernateService.getCitiesWithName(cityName);
 	}
 	
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
-	public List<City> getCitiesByCountry(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Country country) {
+	public List<City> getCitiesWithNames(@WebParam(name="names") Collection<String> cityNames) {
+		log.info("getCitiesByName(): size = " + cityNames.size());
+		return hibernateService.getCitiesWithNames(cityNames);
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="City")
+	public List<City> getCitiesInCountry(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Country country) {
 		log.info("getCityByCountry(): country = " + country);
-		return hibernateService.getCitiesByCountry(country);
+		return hibernateService.getCitiesInCountry(country);
+	}
+
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="City")
+	public List<City> getCitiesInCountries(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Collection<Country> countries) {
+		log.info("getCitiesByCountry: size = " + countries.size());
+		return hibernateService.getCitiesInCountries(countries);
 	}
 }

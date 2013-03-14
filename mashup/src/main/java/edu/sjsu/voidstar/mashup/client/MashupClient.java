@@ -21,7 +21,9 @@ public class MashupClient {
 //		System.out.println(service.getLanguagesSpokenInCountry("USA"));
 //		
 //		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
+//		
+//		System.out.println(service.getZombiesOnContinent("North America"));
 		
-		System.out.println(service.getZombiesOnContinent("North America"));
+		service.testCityMethods();
 	}
 }

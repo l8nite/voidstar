@@ -1,6 +1,7 @@
 package edu.sjsu.voidstar.mashup.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -13,11 +14,13 @@ import javax.xml.ws.WebServiceRef;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.Language;
 import us.opulo.p.soap.city.CityPortService;
+import us.opulo.p.soap.city.CityService;
 import us.opulo.p.soap.country.CountryPortService;
 import us.opulo.p.soap.country.CountryService;
 import us.opulo.p.soap.countrylanguage.CountryLanguagePortService;
@@ -130,6 +133,7 @@ public class MashupService {
 		}
 		
 		if(zombieInfections.isEmpty()) {
+			
 			return nothing;
 		}
 		
@@ -147,6 +151,34 @@ public class MashupService {
 		// InfectionService.getInfectionByCity(city)
 		log.info("getNumberOfZombiesInCity(" + cityName + ")");
 		return cityName;
+	}
+	
+	@WebMethod
+	public String testCityMethods() {
+		CityService service = cityPortService.getCityServicePort();
+		
+		City city = service.getCityWithId(3877);
+		System.out.println("getCitiesWithId return " + city);		
+		
+		List<City> citiesById = service.getCitiesWithIds(Arrays.asList(1, 2, 3, 4, 5));
+		System.out.println("getCitiesWithIds returned " + citiesById.size() + " results");
+		
+		List<City> citiesByName = service.getCitiesWithName("San Jose");
+		System.out.println("getCitiesWithName returned " + citiesByName.size() + "results");
+		
+		citiesByName = service.getCitiesWithNames(Arrays.asList("Sunnyvale", "Santa Clara", "San Jose"));
+		System.out.println("getCitiesWithNames returned " + citiesByName.size() + " results");
+		
+		CountryService cs = countryPortService.getCountryServicePort();
+		List<Country> countries = cs.getCountriesByContinent("North America");
+		
+		List<City> citiesByCountry = service.getCitiesInCountry(countries.get(0));
+		System.out.println("getCitiesInCountry returned " + citiesByCountry.size() + " results");
+		
+		citiesByCountry = service.getCitiesInCountries(countries);
+		System.out.println("getCitiesInCountries returned " + citiesByCountry.size() + " results");
+
+ 		return "woot";
 	}
 }
  

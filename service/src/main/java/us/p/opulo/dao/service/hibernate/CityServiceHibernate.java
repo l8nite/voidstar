@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.service.hibernate;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -32,24 +33,48 @@ public class CityServiceHibernate implements CityService {
 	
 	@Inject
 	private HibernateSession session;
-	
+
 	@Override
-	@SuppressWarnings("unchecked")
-	public List<City> getCitiesByCountry(Country country) {
-		return (List<City>) session.get().createCriteria(City.class)
-				.add(Restrictions.eq("country", country)).list();
-	}
-	
-	@Override
-	@SuppressWarnings("unchecked")
-	public List<City> getCitiesByName(String name) {
-		return (List<City>) session.get().createCriteria(City.class)
-				.add(Restrictions.eq("name", name)).list();
-	}
-	
-	@Override
-	public City getCityById(Integer id) {
+	public City getCityWithId(Integer id) {
 		return (City) session.get().createCriteria(City.class)
 				.add(Restrictions.eq("id", id)).uniqueResult();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<City> getCitiesWithIds(Collection<Integer> cityIds) {
+		return session.get().createCriteria(City.class)
+				.add(Restrictions.in("id", cityIds))
+				.list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<City> getCitiesWithName(String name) {
+		return session.get().createCriteria(City.class)
+				.add(Restrictions.eq("name", name)).list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<City> getCitiesWithNames(Collection<String> cityNames) {
+		return session.get().createCriteria(City.class)
+				.add(Restrictions.in("name", cityNames))
+				.list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<City> getCitiesInCountry(Country country) {
+		return session.get().createCriteria(City.class)
+				.add(Restrictions.eq("country", country)).list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<City> getCitiesInCountries(Collection<Country> countries) {
+		return session.get().createCriteria(City.class)
+				.add(Restrictions.in("country", countries))
+				.list();
 	}
 }

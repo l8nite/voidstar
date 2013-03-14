@@ -27,8 +27,8 @@ public class ObjectFactory {
     private final static QName _CountryLanguages_QNAME = new QName("http://p.opulo.us/dao", "CountryLanguages");
     private final static QName _Languages_QNAME = new QName("http://p.opulo.us/dao", "Languages");
     private final static QName _City_QNAME = new QName("http://p.opulo.us/dao", "City");
-    private final static QName _Infection_QNAME = new QName("http://p.opulo.us/dao", "Infection");
     private final static QName _Country_QNAME = new QName("http://p.opulo.us/dao", "Country");
+    private final static QName _Infection_QNAME = new QName("http://p.opulo.us/dao", "Infection");
     private final static QName _Cities_QNAME = new QName("http://p.opulo.us/dao", "Cities");
     private final static QName _Countries_QNAME = new QName("http://p.opulo.us/dao", "Countries");
     private final static QName _CountryLanguage_QNAME = new QName("http://p.opulo.us/dao", "CountryLanguage");
@@ -43,11 +43,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Country }
+     * Create an instance of {@link Infection }
      * 
      */
-    public Country createCountry() {
-        return new Country();
+    public Infection createInfection() {
+        return new Infection();
+    }
+
+    /**
+     * Create an instance of {@link CountryLanguages }
+     * 
+     */
+    public CountryLanguages createCountryLanguages() {
+        return new CountryLanguages();
     }
 
     /**
@@ -56,6 +64,14 @@ public class ObjectFactory {
      */
     public Countries createCountries() {
         return new Countries();
+    }
+
+    /**
+     * Create an instance of {@link Cities }
+     * 
+     */
+    public Cities createCities() {
+        return new Cities();
     }
 
     /**
@@ -83,30 +99,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Infections }
-     * 
-     */
-    public Infections createInfections() {
-        return new Infections();
-    }
-
-    /**
-     * Create an instance of {@link CountryLanguages }
-     * 
-     */
-    public CountryLanguages createCountryLanguages() {
-        return new CountryLanguages();
-    }
-
-    /**
-     * Create an instance of {@link Infection }
-     * 
-     */
-    public Infection createInfection() {
-        return new Infection();
-    }
-
-    /**
      * Create an instance of {@link City }
      * 
      */
@@ -115,11 +107,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Cities }
+     * Create an instance of {@link Infections }
      * 
      */
-    public Cities createCities() {
-        return new Cities();
+    public Infections createInfections() {
+        return new Infections();
+    }
+
+    /**
+     * Create an instance of {@link Country }
+     * 
+     */
+    public Country createCountry() {
+        return new Country();
     }
 
     /**
@@ -150,21 +150,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Infection }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "Infection")
-    public JAXBElement<Infection> createInfection(Infection value) {
-        return new JAXBElement<Infection>(_Infection_QNAME, Infection.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Country }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "Country")
     public JAXBElement<Country> createCountry(Country value) {
         return new JAXBElement<Country>(_Country_QNAME, Country.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Infection }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "Infection")
+    public JAXBElement<Infection> createInfection(Infection value) {
+        return new JAXBElement<Infection>(_Infection_QNAME, Infection.class, null, value);
     }
 
     /**

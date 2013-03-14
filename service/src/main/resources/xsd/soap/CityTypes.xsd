@@ -23,46 +23,91 @@
 
     <xs:import namespace="http://p.opulo.us/dao" schemaLocation="../dao/Dao.xsd"/>
 
-	<xs:element name="getCityById" type="tns:getCityById" />
-	<xs:element name="getCityByIdResponse" type="tns:getCityByIdResponse" />
+	<xs:element name="getCityWithId" type="tns:getCityWithId" />
+	<xs:element name="getCityWithIdResponse" type="tns:getCityWithIdResponse" />
 
-	<xs:element name="getCitiesByCountry" type="tns:getCitiesByCountry" />
-	<xs:element name="getCitiesByCountryResponse" type="tns:getCitiesByCountryResponse" />
+	<xs:element name="getCitiesWithIds" type="tns:getCitiesWithIds" />
+	<xs:element name="getCitiesWithIdsResponse" type="tns:getCitiesWithIdsResponse" />
 
-	<xs:element name="getCitiesByName" type="tns:getCitiesByName" />
-	<xs:element name="getCitiesByNameResponse" type="tns:getCitiesByNameResponse" />
+	<xs:element name="getCitiesInCountry" type="tns:getCitiesInCountry" />
+	<xs:element name="getCitiesInCountryResponse" type="tns:getCitiesInCountryResponse" />
+
+	<xs:element name="getCitiesInCountries" type="tns:getCitiesInCountries" />
+	<xs:element name="getCitiesInCountriesResponse" type="tns:getCitiesInCountriesResponse" />
+
+	<xs:element name="getCitiesWithName" type="tns:getCitiesWithName" />
+	<xs:element name="getCitiesWithNameResponse" type="tns:getCitiesWithNameResponse" />
 	
-	<xs:complexType name="getCityById">
+	<xs:element name="getCitiesWithNames" type="tns:getCitiesWithNames" />
+	<xs:element name="getCitiesWithNamesResponse" type="tns:getCitiesWithNamesResponse" />
+	
+	<xs:complexType name="getCityWithId">
 		<xs:sequence>
 			<xs:element name="id" type="xs:int" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getCityByIdResponse">
+	<xs:complexType name="getCityWithIdResponse">
 		<xs:sequence>
 			<xs:element ref="dao:City" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getCitiesByCountry">
+	<xs:complexType name="getCitiesWithIds">
+		<xs:sequence>
+			<xs:element name="ids" type="xs:int" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getCitiesWithIdsResponse">
+		<xs:sequence>
+			<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getCitiesInCountry">
 		<xs:sequence>
 			<xs:element ref="dao:Country" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getCitiesByCountryResponse">
+	<xs:complexType name="getCitiesInCountryResponse">
 		<xs:sequence>
 			<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="getCitiesByName">
+	<xs:complexType name="getCitiesInCountries">
+		<xs:sequence>
+			<xs:element ref="dao:Country" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getCitiesInCountriesResponse">
+		<xs:sequence>
+			<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getCitiesWithName">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	
-		<xs:complexType name="getCitiesByNameResponse">
+	<xs:complexType name="getCitiesWithNameResponse">
+		<xs:sequence>
+			<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getCitiesWithNames">
+		<xs:sequence>
+			<xs:element name="names" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="getCitiesWithNamesResponse">
 		<xs:sequence>
 			<xs:element ref="dao:City" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
