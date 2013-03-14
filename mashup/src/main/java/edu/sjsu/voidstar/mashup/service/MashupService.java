@@ -174,7 +174,7 @@ public class MashupService {
 		StringBuilder sb = new StringBuilder();
 
 		for (City city : cities) {
-			Infection infection = infectionService.getInfectionByCity(city);
+			Infection infection = infectionService.getInfectionForCity(city);
 			Country country = countryService.getCountryWithCode(city.getCountryCode());
 			
 			sb.append(city.getName() + ", " + city.getDistrict() + " " + country.getName() + " - ");

@@ -26,11 +26,13 @@ public class ObjectFactory {
 
     private final static QName _GetLanguagesSpokenInCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getLanguagesSpokenInCountryResponse");
     private final static QName _TestCountryMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCountryMethods");
+    private final static QName _TestInfectionMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testInfectionMethods");
     private final static QName _TestCityMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCityMethodsResponse");
     private final static QName _TestCountryLanguageMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCountryLanguageMethodsResponse");
     private final static QName _GetZombiesOnContinentResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesOnContinentResponse");
     private final static QName _TestCityMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCityMethods");
     private final static QName _GetZombiesInCity_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesInCity");
+    private final static QName _TestInfectionMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testInfectionMethodsResponse");
     private final static QName _GetCountriesWhichSpeakLanguageResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguageResponse");
     private final static QName _GetLanguagesSpokenInCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getLanguagesSpokenInCountry");
     private final static QName _GetZombiesOnContinent_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesOnContinent");
@@ -52,6 +54,14 @@ public class ObjectFactory {
      */
     public GetLanguagesSpokenInCountry createGetLanguagesSpokenInCountry() {
         return new GetLanguagesSpokenInCountry();
+    }
+
+    /**
+     * Create an instance of {@link TestInfectionMethodsResponse }
+     * 
+     */
+    public TestInfectionMethodsResponse createTestInfectionMethodsResponse() {
+        return new TestInfectionMethodsResponse();
     }
 
     /**
@@ -84,6 +94,14 @@ public class ObjectFactory {
      */
     public TestCountryMethods createTestCountryMethods() {
         return new TestCountryMethods();
+    }
+
+    /**
+     * Create an instance of {@link TestInfectionMethods }
+     * 
+     */
+    public TestInfectionMethods createTestInfectionMethods() {
+        return new TestInfectionMethods();
     }
 
     /**
@@ -177,6 +195,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestInfectionMethods }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "testInfectionMethods")
+    public JAXBElement<TestInfectionMethods> createTestInfectionMethods(TestInfectionMethods value) {
+        return new JAXBElement<TestInfectionMethods>(_TestInfectionMethods_QNAME, TestInfectionMethods.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TestCityMethodsResponse }{@code >}}
      * 
      */
@@ -219,6 +246,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getZombiesInCity")
     public JAXBElement<GetZombiesInCity> createGetZombiesInCity(GetZombiesInCity value) {
         return new JAXBElement<GetZombiesInCity>(_GetZombiesInCity_QNAME, GetZombiesInCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestInfectionMethodsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "testInfectionMethodsResponse")
+    public JAXBElement<TestInfectionMethodsResponse> createTestInfectionMethodsResponse(TestInfectionMethodsResponse value) {
+        return new JAXBElement<TestInfectionMethodsResponse>(_TestInfectionMethodsResponse_QNAME, TestInfectionMethodsResponse.class, null, value);
     }
 
     /**

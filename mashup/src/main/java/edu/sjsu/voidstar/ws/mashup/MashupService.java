@@ -120,4 +120,16 @@ public interface MashupService {
     @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/testCountryMethodsRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/testCountryMethodsResponse")
     public String testCountryMethods();
 
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "testInfectionMethods", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.TestInfectionMethods")
+    @ResponseWrapper(localName = "testInfectionMethodsResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.TestInfectionMethodsResponse")
+    @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/testInfectionMethodsRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/testInfectionMethodsResponse")
+    public String testInfectionMethods();
+
 }

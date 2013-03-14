@@ -17,25 +17,20 @@ public class MashupClient {
 
 	public void runMashupQueries() {
 		MashupService service = mashupPortService.getMashupServicePort();
-
-		System.out.println(service.getLanguagesSpokenInCountry("USA"));
 		
-<<<<<<< HEAD
-		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
-		
-		System.out.println(service.getZombiesOnContinent("North America"));
-		
-//		System.out.println("City services are working... " + service.testCityMethods());
-//		System.out.println("CountryLanguage services are working... " + service.testCountryLanguageMethods());
-//		System.out.println("Country services are working... " + service.testCountryMethods());
-		
-		System.out.println(service.getZombiesInCity("San Francisco"));
-		System.out.println(service.getZombiesInCity("San Jose"));
-=======
 		System.out.println("City services are working... " + service.testCityMethods());
 		System.out.println("CountryLanguage services are working... " + service.testCountryLanguageMethods());
 		System.out.println("Country services are working... " + service.testCountryMethods());
 		System.out.println("Infection services are working..." + service.testInfectionMethods());
->>>>>>> 9a2d6c87b2ba2568d2cfee63fe709ab3412db1f2
+
+		System.out.println(service.getLanguagesSpokenInCountry("USA"));
+		
+		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
+		
+		System.out.println(service.getZombiesOnContinent("North America"));
+		
+		System.out.println(service.getZombiesInCity("San Francisco"));
+		
+		System.out.println(service.getZombiesInCity("San Jose"));
 	}
 }
