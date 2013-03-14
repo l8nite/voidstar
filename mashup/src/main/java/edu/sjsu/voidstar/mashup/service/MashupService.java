@@ -6,12 +6,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
+import javax.annotation.Resource;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceRef;
+import javax.xml.ws.handler.MessageContext;
+
+import net.webservicex.GeoIPService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +38,9 @@ import us.opulo.p.soap.language.LanguageService;
 
 @WebService(targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", serviceName = "MashupPortService", name = "MashupService")
 public class MashupService {
+	@Resource
+	WebServiceContext webServiceContext;
+	
 	@WebServiceRef(wsdlLocation = "http://localhost:8123/country?wsdl")
 	static CountryPortService countryPortService = new CountryPortService();
 
@@ -48,6 +55,11 @@ public class MashupService {
 
 	@WebServiceRef(wsdlLocation = "http://localhost:8123/infection?wsdl")
 	static InfectionPortService infectionPortService = new InfectionPortService();
+	
+	@WebServiceRef(wsdlLocation = "http://www.webservicex.net/geoipservice.asmx?WSDL")
+	static GeoIPService geoIPService = new GeoIPService();
+	
+	
 
 	private static final Logger log = LoggerFactory.getLogger(MashupService.class);
 
@@ -230,6 +242,16 @@ public class MashupService {
 
 		// Strip trailing comma
 		return result.substring(0, result.length() - 2) + ")";
+	}
+	
+	// 6
+	@WebMethod
+	public String getZombiesBasedOnGeoIPLookup()
+	{
+		MessageContext messageContext = webServiceContext.getMessageContext();
+		HttpServletRequest request = (HttpServletRequest)messageContext.get(MessageContext.SERVLET_REQUEST);
+		return "Client IP: " + request.getRemoteAddr();
+		// GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();		
 	}
 	
 	// helper methods 
