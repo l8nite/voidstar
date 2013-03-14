@@ -29,8 +29,8 @@ public class MashupClient {
 		
 		System.out.println(service.getZombiesOnContinent("North America"));
 		
-		System.out.println(service.getNumberOfZombiesInCity("San Francisco"));
+		System.out.println(service.getZombiesInCity("San Francisco"));
 		
-		System.out.println(service.getNumberOfZombiesInCity("San Jose"));
+		System.out.println(service.getZombiesInCity("San Jose"));
 	}
 }

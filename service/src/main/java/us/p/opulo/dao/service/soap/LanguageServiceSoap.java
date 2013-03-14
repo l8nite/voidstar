@@ -29,6 +29,7 @@ import us.p.opulo.dao.Country;
 import us.p.opulo.dao.Language;
 import us.p.opulo.dao.service.LanguageService;
 import us.p.opulo.guice.annotations.HibernateService;
+import us.p.opulo.util.StringUtil;
 
 @WebService(
 		 targetNamespace= Namespaces.Soap.LANGUAGE_SERVICE,
@@ -60,7 +61,7 @@ public class LanguageServiceSoap implements LanguageService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
 	public List<Language> getLanguagesWithIds(@WebParam(name="ids") Collection<Integer> ids) {
-		log.info("getLanguagesWithIds(): size = " + ids.size());
+		log.info("getLanguagesWithIds(): ids = " + StringUtil.joinCollection(ids, ','));
 		return hibernateService.getLanguagesWithIds(ids);
 	}
 	
@@ -76,7 +77,7 @@ public class LanguageServiceSoap implements LanguageService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
 	public List<Language> getLanguagesWithNames(@WebParam(name="names") Collection<String> names) {
-		log.info("getLanguagesWithNames(): size = " + names.size());
+		log.info("getLanguagesWithNames(): names = " + StringUtil.joinCollection(names, ','));
 		return hibernateService.getLanguagesWithNames(names);
 	}
 	
@@ -93,7 +94,7 @@ public class LanguageServiceSoap implements LanguageService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
 	public List<Language> getLanguagesInCountries(@WebParam(targetNamespace=Namespaces.DAO, name="Country") Collection<Country> countries) {
-		log.info("getLanguagesInCountries(): size = " + countries.size());
+		log.info("getLanguagesInCountries(): countries = " + StringUtil.joinCollection(countries, ','));
 		return hibernateService.getLanguagesInCountries(countries);
 	}
 }

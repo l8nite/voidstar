@@ -51,14 +51,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TestCityMethodsResponse }
-     * 
-     */
-    public TestCityMethodsResponse createTestCityMethodsResponse() {
-        return new TestCityMethodsResponse();
-    }
-
-    /**
      * Create an instance of {@link TestLanguageMethods }
      * 
      */
@@ -67,35 +59,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TestInfectionMethodsResponse }
+     * Create an instance of {@link TestCityMethodsResponse }
      * 
      */
-    public TestInfectionMethodsResponse createTestInfectionMethodsResponse() {
-        return new TestInfectionMethodsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetZombiesOnContinent }
-     * 
-     */
-    public GetZombiesOnContinent createGetZombiesOnContinent() {
-        return new GetZombiesOnContinent();
-    }
-
-    /**
-     * Create an instance of {@link GetZombiesInCity }
-     * 
-     */
-    public GetZombiesInCity createGetZombiesInCity() {
-        return new GetZombiesInCity();
-    }
-
-    /**
-     * Create an instance of {@link GetZombiesInCityResponse }
-     * 
-     */
-    public GetZombiesInCityResponse createGetZombiesInCityResponse() {
-        return new GetZombiesInCityResponse();
+    public TestCityMethodsResponse createTestCityMethodsResponse() {
+        return new TestCityMethodsResponse();
     }
 
     /**
@@ -115,11 +83,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TestCountryMethodsResponse }
+     * Create an instance of {@link TestInfectionMethods }
      * 
      */
-    public TestCountryMethodsResponse createTestCountryMethodsResponse() {
-        return new TestCountryMethodsResponse();
+    public TestInfectionMethods createTestInfectionMethods() {
+        return new TestInfectionMethods();
     }
 
     /**
@@ -131,35 +99,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TestCountryLanguageMethods }
+     * Create an instance of {@link TestLanguageMethodsResponse }
      * 
      */
-    public TestCountryLanguageMethods createTestCountryLanguageMethods() {
-        return new TestCountryLanguageMethods();
+    public TestLanguageMethodsResponse createTestLanguageMethodsResponse() {
+        return new TestLanguageMethodsResponse();
     }
 
     /**
-     * Create an instance of {@link TestCityMethods }
+     * Create an instance of {@link GetZombiesOnContinent }
      * 
      */
-    public TestCityMethods createTestCityMethods() {
-        return new TestCityMethods();
-    }
-
-    /**
-     * Create an instance of {@link TestInfectionMethods }
-     * 
-     */
-    public TestInfectionMethods createTestInfectionMethods() {
-        return new TestInfectionMethods();
-    }
-
-    /**
-     * Create an instance of {@link GetZombiesOnContinentResponse }
-     * 
-     */
-    public GetZombiesOnContinentResponse createGetZombiesOnContinentResponse() {
-        return new GetZombiesOnContinentResponse();
+    public GetZombiesOnContinent createGetZombiesOnContinent() {
+        return new GetZombiesOnContinent();
     }
 
     /**
@@ -171,6 +123,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TestCityMethods }
+     * 
+     */
+    public TestCityMethods createTestCityMethods() {
+        return new TestCityMethods();
+    }
+
+    /**
+     * Create an instance of {@link TestCountryMethodsResponse }
+     * 
+     */
+    public TestCountryMethodsResponse createTestCountryMethodsResponse() {
+        return new TestCountryMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetZombiesInCityResponse }
+     * 
+     */
+    public GetZombiesInCityResponse createGetZombiesInCityResponse() {
+        return new GetZombiesInCityResponse();
+    }
+
+    /**
      * Create an instance of {@link GetCountriesWhichSpeakLanguageResponse }
      * 
      */
@@ -179,11 +155,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TestLanguageMethodsResponse }
+     * Create an instance of {@link TestCountryLanguageMethods }
      * 
      */
-    public TestLanguageMethodsResponse createTestLanguageMethodsResponse() {
-        return new TestLanguageMethodsResponse();
+    public TestCountryLanguageMethods createTestCountryLanguageMethods() {
+        return new TestCountryLanguageMethods();
     }
 
     /**
@@ -192,6 +168,30 @@ public class ObjectFactory {
      */
     public GetCountriesWhichSpeakLanguage createGetCountriesWhichSpeakLanguage() {
         return new GetCountriesWhichSpeakLanguage();
+    }
+
+    /**
+     * Create an instance of {@link TestInfectionMethodsResponse }
+     * 
+     */
+    public TestInfectionMethodsResponse createTestInfectionMethodsResponse() {
+        return new TestInfectionMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetZombiesInCity }
+     * 
+     */
+    public GetZombiesInCity createGetZombiesInCity() {
+        return new GetZombiesInCity();
+    }
+
+    /**
+     * Create an instance of {@link GetZombiesOnContinentResponse }
+     * 
+     */
+    public GetZombiesOnContinentResponse createGetZombiesOnContinentResponse() {
+        return new GetZombiesOnContinentResponse();
     }
 
     /**

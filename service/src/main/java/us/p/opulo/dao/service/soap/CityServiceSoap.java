@@ -29,6 +29,7 @@ import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
 import us.p.opulo.dao.service.CityService;
 import us.p.opulo.guice.annotations.HibernateService;
+import us.p.opulo.util.StringUtil;
 
 @WebService(
 		targetNamespace = Namespaces.Soap.CITY_SERVICE,
@@ -60,7 +61,7 @@ public class CityServiceSoap implements CityService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
 	public List<City> getCitiesWithIds(@WebParam(name="ids") Collection<Integer> cityIds) {
-		log.info("getCitiesById(): size = " + cityIds.size());
+		log.info("getCitiesById(): ids = " + StringUtil.joinCollection(cityIds, ','));
 		return hibernateService.getCitiesWithIds(cityIds);
 	}
 
@@ -77,7 +78,7 @@ public class CityServiceSoap implements CityService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
 	public List<City> getCitiesWithNames(@WebParam(name="names") Collection<String> cityNames) {
-		log.info("getCitiesByName(): size = " + cityNames.size());
+		log.info("getCitiesByName(): cityNames = " + StringUtil.joinCollection(cityNames, ','));
 		return hibernateService.getCitiesWithNames(cityNames);
 	}
 	
@@ -93,7 +94,7 @@ public class CityServiceSoap implements CityService {
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
 	public List<City> getCitiesInCountries(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Collection<Country> countries) {
-		log.info("getCitiesByCountry: size = " + countries.size());
+		log.info("getCitiesByCountry: countries = " + StringUtil.joinCollection(countries, ','));
 		return hibernateService.getCitiesInCountries(countries);
 	}
 }
