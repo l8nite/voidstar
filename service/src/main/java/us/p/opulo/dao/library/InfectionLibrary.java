@@ -1,11 +1,5 @@
 /**
- *                               .__
- * ______      ____ ______  __ __|  |   ____      __ __  ______
- * \____ \    /  _ \\____ \|  |  \  |  /  _ \    |  |  \/  ___/
- * |  |_> >  (  <_> )  |_> >  |  /  |_(  <_> )   |  |  /\___ \
- * |   __/ /\ \____/|   __/|____/|____/\____/ /\ |____//____  >
- * |__|    \/       |__|                      \/            \/
- *
+ * This file is a component of the p.opulo.us project.
  *
  * Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
  * All Rights Reserved.
@@ -15,6 +9,7 @@
  */
 package us.p.opulo.dao.library;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -39,13 +34,23 @@ public class InfectionLibrary implements InfectionService {
 	private HibernateSession session;
 
 	@Override
-	public Infection getInfectionByCity(City city) {
-		return service.getInfectionByCity(city);
+	public Infection getInfectionForCity(City city) {
+		return service.getInfectionForCity(city);
+	}
+	
+	@Override
+	public List<Infection> getInfectionForCities(List<City> cities) {
+		return service.getInfectionForCities(cities);
 	}
 
 	@Override
-	public List<Infection> getInfectionsByCountry(Country country) {
-		return service.getInfectionsByCountry(country);
+	public List<Infection> getInfectionsForCountry(Country country) {
+		return service.getInfectionsForCountry(country);
+	}
+
+	@Override
+	public List<Infection> getInfectionsForCountries(Collection<Country> countries) {
+		return service.getInfectionsForCountries(countries);
 	}
 	
 	/* ADDITIONAL LIBRARY METHODS */

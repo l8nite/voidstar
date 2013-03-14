@@ -20,6 +20,7 @@ public class MashupClient {
 
 		System.out.println(service.getLanguagesSpokenInCountry("USA"));
 		
+<<<<<<< HEAD
 		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
 		
 		System.out.println(service.getZombiesOnContinent("North America"));
@@ -30,5 +31,11 @@ public class MashupClient {
 		
 		System.out.println(service.getZombiesInCity("San Francisco"));
 		System.out.println(service.getZombiesInCity("San Jose"));
+=======
+		System.out.println("City services are working... " + service.testCityMethods());
+		System.out.println("CountryLanguage services are working... " + service.testCountryLanguageMethods());
+		System.out.println("Country services are working... " + service.testCountryMethods());
+		System.out.println("Infection services are working..." + service.testInfectionMethods());
+>>>>>>> 9a2d6c87b2ba2568d2cfee63fe709ab3412db1f2
 	}
 }
