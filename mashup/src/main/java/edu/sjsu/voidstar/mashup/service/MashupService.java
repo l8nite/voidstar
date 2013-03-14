@@ -91,22 +91,20 @@ public class MashupService {
 		}
 		
 		
-		CountryLanguageService cls = countryLanguagePortService.getCountryLanguageServicePort();
-		List<CountryLanguage> countryLanguages = cls.getCountryLanguagesForLanguage(language);
+		CountryLanguageService countryLanguageService = countryLanguagePortService.getCountryLanguageServicePort();
+		List<CountryLanguage> countryLanguages = countryLanguageService.getCountryLanguagesForLanguage(language);
 		
 		if (countryLanguages.isEmpty()) {
 			return language + " is not spoken in any countries";
 		}
 		
-		CountryService cs = countryPortService.getCountryServicePort();
-		List<Country> countries = new ArrayList<Country>();
-		
-		for(CountryLanguage cl : countryLanguages) {
-			Country country = cs.getCountryWithCode(cl.getCountryCode());
-			if (country != null) {
-				countries.add(country);
-			}
+		List<String> countryCodes = new ArrayList<String>();
+		for(CountryLanguage countryLanguage : countryLanguages) {
+			countryCodes.add(countryLanguage.getCountryCode());
 		}
+		
+		CountryService countryService = countryPortService.getCountryServicePort();
+		List<Country> countries = countryService.getCountriesWithCodes(countryCodes);
 		
 		if(countries.isEmpty()) {
 			return "Could not find the countries in which " + language + " is spoken";
@@ -141,18 +139,14 @@ public class MashupService {
 		}
 		
 		InfectionService infectionService = infectionPortService.getInfectionServicePort();
-		List<Infection> zombieInfections = new ArrayList<Infection>();
-		for(Country country: countriesOnContinent) {
-			zombieInfections.addAll(infectionService.getInfectionsForCountry(country));
-		}
-		
-		if(zombieInfections.isEmpty()) {
+		List<Infection> infections = infectionService.getInfectionsForCountries(countriesOnContinent);
 			
+		if(infections.isEmpty()) {
 			return nothing;
 		}
 		
 		Long zombieCount = 0L;
-		for(Infection infection : zombieInfections) {
+		for(Infection infection : infections) {
 			zombieCount += infection.getZombies();
 		}
 		
@@ -176,7 +170,7 @@ public class MashupService {
 		for (City city : cities) {
 			Infection infection = infectionService.getInfectionForCity(city);
 			Country country = countryService.getCountryWithCode(city.getCountryCode());
-			
+
 			sb.append(city.getName() + ", " + city.getDistrict() + " " + country.getName() + " - ");
 			if (infection != null) {
 				 sb.append(infection.getZombies() + " infected\n");
@@ -190,7 +184,10 @@ public class MashupService {
 	}
 	
 	// 5
-	// ???????
+	public String getZombiesInCountriesWhereLanguageIsSpoken(@WebParam(name = "language") String language)
+	{
+		return null;
+	}
 	
 	@WebMethod
 	public String testCityMethods() {

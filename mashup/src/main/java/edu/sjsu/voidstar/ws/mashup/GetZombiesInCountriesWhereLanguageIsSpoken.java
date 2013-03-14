@@ -3,21 +3,20 @@ package edu.sjsu.voidstar.ws.mashup;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for testLanguageMethodsResponse complex type.
+ * <p>Java class for getZombiesInCountriesWhereLanguageIsSpoken complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="testLanguageMethodsResponse">
+ * &lt;complexType name="getZombiesInCountriesWhereLanguageIsSpoken">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="language" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,36 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "testLanguageMethodsResponse", propOrder = {
-    "_return"
+@XmlType(name = "getZombiesInCountriesWhereLanguageIsSpoken", propOrder = {
+    "language"
 })
-public class TestLanguageMethodsResponse {
+public class GetZombiesInCountriesWhereLanguageIsSpoken {
 
-    @XmlElement(name = "return")
-    protected String _return;
+    protected String language;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the language property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getReturn() {
-        return _return;
+    public String getLanguage() {
+        return language;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the language property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setReturn(String value) {
-        this._return = value;
+    public void setLanguage(String value) {
+        this.language = value;
     }
 
 }
