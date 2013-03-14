@@ -9,6 +9,7 @@
  */
 package us.p.opulo.dao.service.soap;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -50,24 +51,49 @@ public class LanguageServiceSoap implements LanguageService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
-	public Language getLanguageById(@WebParam(name="id") Integer id) {
-		log.info("getLanguageById(): id = " + id);
-		return hibernateService.getLanguageById(id);
+	public Language getLanguageWithId(@WebParam(name="id") Integer id) {
+		log.info("getLanguageWithId(): id = " + id);
+		return hibernateService.getLanguageWithId(id);
 	}
 	
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
-	public Language getLanguageByName(@WebParam(name="name") String name) {
-		log.info("getLanguageByName(): name = " + name);
-		return hibernateService.getLanguageByName(name);
+	public List<Language> getLanguagesWithIds(@WebParam(name="ids") Collection<Integer> ids) {
+		log.info("getLanguagesWithIds(): size = " + ids.size());
+		return hibernateService.getLanguagesWithIds(ids);
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
+	public Language getLanguageWithName(@WebParam(name="name") String name) {
+		log.info("getLanguageWithName(): name = " + name);
+		return hibernateService.getLanguageWithName(name);
 	}
 
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
-	public List<Language> getLanguagesByCountry(@WebParam(targetNamespace=Namespaces.DAO, name="Country") Country country) {
-		log.info("getLanguagesByCountry(): country = " + country);
-		return hibernateService.getLanguagesByCountry(country);
+	public List<Language> getLanguagesWithNames(@WebParam(name="names") Collection<String> names) {
+		log.info("getLanguagesWithNames(): size = " + names.size());
+		return hibernateService.getLanguagesWithNames(names);
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
+	public List<Language> getLanguagesInCountry(@WebParam(targetNamespace=Namespaces.DAO, name="Country") Country country) {
+		log.info("getLanguagesInCountry(): country = " + country);
+		return hibernateService.getLanguagesInCountry(country);
+	}
+
+
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
+	public List<Language> getLanguagesInCountries(@WebParam(targetNamespace=Namespaces.DAO, name="Country") Collection<Country> countries) {
+		log.info("getLanguagesInCountries(): size = " + countries.size());
+		return hibernateService.getLanguagesInCountries(countries);
 	}
 }

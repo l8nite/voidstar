@@ -9,7 +9,10 @@
  */
 package us.p.opulo.dao.service.hibernate;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -33,27 +36,57 @@ public class LanguageServiceHibernate implements LanguageService {
 	HibernateSession session;
 	
 	@Override
-	public Language getLanguageById(Integer languageId) {
+	public Language getLanguageWithId(Integer languageId) {
 		return (Language) session.get()
-				.createCriteria(Language.class)
-				.add(Restrictions.eq("id", languageId))
-				.uniqueResult();
+			.createCriteria(Language.class)
+			.add(Restrictions.eq("id", languageId))
+			.uniqueResult();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Language> getLanguagesWithIds(Collection<Integer> ids) {
+		return session.get().createCriteria(Language.class)
+			.add(Restrictions.in("id", ids))
+			.list();
 	}
 
 	@Override
-	public Language getLanguageByName(String languageName) {
+	public Language getLanguageWithName(String languageName) {
 		return (Language) session.get()
-				.createCriteria(Language.class)
-				.add(Restrictions.eq("language", languageName))
-				.uniqueResult();
+			.createCriteria(Language.class)
+			.add(Restrictions.eq("language", languageName))
+			.uniqueResult();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Language> getLanguagesWithNames(Collection<String> names) {
+		return session.get().createCriteria(Language.class)
+			.add(Restrictions.in("language", names))
+			.list();
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Language> getLanguagesByCountry(Country country) {
+	public List<Language> getLanguagesInCountry(Country country) {
 		return session.get().createCriteria(Language.class, "l")
-				.createAlias("countries", "cl")
-				.add(Restrictions.eq("cl.countryCode", country.getCode()))
-				.list();
+			.createAlias("countries", "cl")
+			.add(Restrictions.eq("cl.countryCode", country.getCode()))
+			.list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Language> getLanguagesInCountries(Collection<Country> countries) {
+		Set<String> countryCodes = new HashSet<>();
+		for(Country country: countries) {
+			countryCodes.add(country.getCode());
+		}
+		
+		return session.get().createCriteria(Language.class)
+			.createAlias("countries", "cl")
+			.add(Restrictions.in("cl.countryCode", countryCodes))
+			.list();
 	}
 }

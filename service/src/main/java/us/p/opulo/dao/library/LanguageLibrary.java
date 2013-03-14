@@ -9,6 +9,7 @@
  */
 package us.p.opulo.dao.library;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -31,18 +32,32 @@ public class LanguageLibrary implements LanguageService {
 	private HibernateSession session;
 
 	@Override
-	public Language getLanguageById(Integer id) {
-		return service.getLanguageById(id);
+	public Language getLanguageWithId(Integer id) {
+		return service.getLanguageWithId(id);
+	}
+	
+	@Override
+	public List<Language> getLanguagesWithIds(Collection<Integer> ids) {
+		return service.getLanguagesWithIds(ids);
 	}
 
 	@Override
-	public Language getLanguageByName(String name) {
-		return service.getLanguageByName(name);
+	public Language getLanguageWithName(String name) {
+		return service.getLanguageWithName(name);
+	}
+	@Override
+	public List<Language> getLanguagesWithNames(Collection<String> names) {
+		return service.getLanguagesWithNames(names);
 	}
 
 	@Override
-	public List<Language> getLanguagesByCountry(Country country) {
-		return service.getLanguagesByCountry(country);
+	public List<Language> getLanguagesInCountry(Country country) {
+		return service.getLanguagesInCountry(country);
+	}
+
+	@Override
+	public List<Language> getLanguagesInCountries(Collection<Country> countries) {
+		return service.getLanguagesInCountries(countries);
 	}
 	
 	/* ADDITIONAL LIBRARY METHODS */

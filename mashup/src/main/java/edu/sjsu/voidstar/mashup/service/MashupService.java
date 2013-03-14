@@ -64,7 +64,7 @@ public class MashupService {
 		}
 		
 		LanguageService languageService = languagePortService.getLanguageServicePort();
-		List<Language> languages = languageService.getLanguagesByCountry(country);
+		List<Language> languages = languageService.getLanguagesInCountry(country);
 
 		for(Language l : languages) {
 			result.append(l.getLanguage() + ", ");
@@ -82,7 +82,7 @@ public class MashupService {
 		log.info("getCountriesWhichSpeakLanguage(" + languageName + ")");
 		
 		LanguageService languageService = languagePortService.getLanguageServicePort();
-		Language language = languageService.getLanguageByName(languageName);
+		Language language = languageService.getLanguageWithName(languageName);
 		
 		StringBuilder result = new StringBuilder();
 		
@@ -201,7 +201,7 @@ public class MashupService {
 		CountryLanguageService clService = countryLanguagePortService.getCountryLanguageServicePort();
 		
 		List<Country> countries = countryService.getCountriesOnContinent("North America");
-		List<Language> languages = languageService.getLanguagesByCountry(countries.get(0));
+		List<Language> languages = languageService.getLanguagesInCountry(countries.get(0));
 		
 		List<CountryLanguage> countryLanguages = clService.getCountryLanguagesForLanguage(languages.get(0));
 		System.out.println("getCountryLanguagesForLanguage() returned " + countryLanguages.size() + " result");
@@ -261,6 +261,35 @@ public class MashupService {
 		infections = infectionService.getInfectionsForCountries(countries);
 		System.out.println("getInfectionsForCountries() returned " + infections.size() + " results");
 		return "woot";
+	}
+	
+	@WebMethod
+	public String testLanguageMethods() {
+		CountryService countryService = countryPortService.getCountryServicePort();
+		LanguageService languageService = languagePortService.getLanguageServicePort();
+		
+		Country country = countryService.getCountryWithCode("usa");
+		List<Country> countries = countryService.getCountriesOnContinent("Asia");
+		
+		Language language = languageService.getLanguageWithId(1);
+		System.out.println("getLanguageWithId returned " + language);
+		
+		List<Language> languages = languageService.getLanguagesWithIds(Arrays.asList(1, 2, 3));
+		System.out.println("getLanguagesWithIds returned " + languages.size() + " results");
+		
+		language = languageService.getLanguageWithName("Cantonese");
+		System.out.println("getLanguageWithName() returned " + language);
+		
+		languages = languageService.getLanguagesWithNames(Arrays.asList("Cantonese", "Vietnamese"));
+		System.out.println("getLanguagesWithNames() returned " + languages.size() + " results");
+		
+		languages = languageService.getLanguagesInCountry(country);
+		System.out.println("getLanguagesInCountry() returned " + languages.size() + " results");
+		
+		languages = languageService.getLanguagesInCountries(countries);
+		System.out.println("getLanguagesInCountries() returned " + languages.size() + " results");
+		return "woot";
+		
 	}
 }
  
