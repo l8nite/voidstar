@@ -7,7 +7,7 @@ import edu.sjsu.voidstar.ws.mashup.MashupService;
 
 public class MashupClient {
 
-	@WebServiceRef(wsdlLocation = "http://localhost:8123/mashup?wsdl")
+	@WebServiceRef(wsdlLocation = "http://localhost:8124/mashup?wsdl")
 	static MashupPortService mashupPortService = new MashupPortService();
 
 	public static void main(String[] args) {
@@ -22,5 +22,15 @@ public class MashupClient {
 		System.out.println("Country services are working... " + service.testCountryMethods());
 		System.out.println("Infection services are working..." + service.testInfectionMethods());
 		System.out.println("Language services are working..." + service.testLanguageMethods());
+
+		System.out.println(service.getLanguagesSpokenInCountry("USA"));
+		
+		System.out.println(service.getCountriesWhichSpeakLanguage("English"));
+		
+		System.out.println(service.getZombiesOnContinent("North America"));
+		
+		System.out.println(service.getNumberOfZombiesInCity("San Francisco"));
+		
+		System.out.println(service.getNumberOfZombiesInCity("San Jose"));
 	}
 }

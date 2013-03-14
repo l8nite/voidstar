@@ -59,9 +59,9 @@ public interface MashupService {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getNumberOfZombiesInCity", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCity")
-    @ResponseWrapper(localName = "getNumberOfZombiesInCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetNumberOfZombiesInCityResponse")
-    public String getNumberOfZombiesInCity(
+    @RequestWrapper(localName = "getZombiesInCity", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetZombiesInCity")
+    @ResponseWrapper(localName = "getZombiesInCityResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetZombiesInCityResponse")
+    public String getZombiesInCity(
         @WebParam(name = "cityName", targetNamespace = "")
         String cityName);
 
