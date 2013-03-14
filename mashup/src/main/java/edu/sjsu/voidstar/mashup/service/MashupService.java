@@ -170,7 +170,7 @@ public class MashupService {
 		for (City city : cities) {
 			Infection infection = infectionService.getInfectionForCity(city);
 			Country country = countryService.getCountryWithCode(city.getCountryCode());
-			
+
 			sb.append(city.getName() + ", " + city.getDistrict() + " " + country.getName() + " - ");
 			if (infection != null) {
 				 sb.append(infection.getZombies() + " infected\n");
