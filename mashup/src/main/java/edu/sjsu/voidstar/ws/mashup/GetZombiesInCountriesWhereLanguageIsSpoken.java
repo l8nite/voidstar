@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="language" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="languageName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getZombiesInCountriesWhereLanguageIsSpoken", propOrder = {
-    "language"
+    "languageName"
 })
 public class GetZombiesInCountriesWhereLanguageIsSpoken {
 
-    protected String language;
+    protected String languageName;
 
     /**
-     * Gets the value of the language property.
+     * Gets the value of the languageName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLanguage() {
-        return language;
+    public String getLanguageName() {
+        return languageName;
     }
 
     /**
-     * Sets the value of the language property.
+     * Sets the value of the languageName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLanguage(String value) {
-        this.language = value;
+    public void setLanguageName(String value) {
+        this.languageName = value;
     }
 
 }

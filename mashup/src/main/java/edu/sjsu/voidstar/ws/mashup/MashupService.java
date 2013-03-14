@@ -26,7 +26,7 @@ public interface MashupService {
 
     /**
      * 
-     * @param language
+     * @param languageName
      * @return
      *     returns java.lang.String
      */
@@ -36,8 +36,8 @@ public interface MashupService {
     @ResponseWrapper(localName = "getZombiesInCountriesWhereLanguageIsSpokenResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetZombiesInCountriesWhereLanguageIsSpokenResponse")
     @Action(input = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getZombiesInCountriesWhereLanguageIsSpokenRequest", output = "http://ws.voidstar.sjsu.edu/mashup/MashupService/getZombiesInCountriesWhereLanguageIsSpokenResponse")
     public String getZombiesInCountriesWhereLanguageIsSpoken(
-        @WebParam(name = "language", targetNamespace = "")
-        String language);
+        @WebParam(name = "languageName", targetNamespace = "")
+        String languageName);
 
     /**
      * 
