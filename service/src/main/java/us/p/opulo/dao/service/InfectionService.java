@@ -9,6 +9,7 @@
  */
 package us.p.opulo.dao.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import us.p.opulo.dao.City;
@@ -16,6 +17,9 @@ import us.p.opulo.dao.Country;
 import us.p.opulo.dao.Infection;
 
 public interface InfectionService {
-	Infection getInfectionByCity(City city);
-	List<Infection> getInfectionsByCountry(Country country);
+	Infection getInfectionForCity(City city);
+	List<Infection> getInfectionForCities(List<City> cities);
+	
+	List<Infection> getInfectionsForCountry(Country country);
+	List<Infection> getInfectionsForCountries(Collection<Country> countries);
 }

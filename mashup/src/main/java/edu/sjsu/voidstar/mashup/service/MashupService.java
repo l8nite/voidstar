@@ -142,7 +142,7 @@ public class MashupService {
 		InfectionService infectionService = infectionPortService.getInfectionServicePort();
 		List<Infection> zombieInfections = new ArrayList<Infection>();
 		for(Country country: countriesOnContinent) {
-			zombieInfections.addAll(infectionService.getInfectionsByCountry(country));
+			zombieInfections.addAll(infectionService.getInfectionsForCountry(country));
 		}
 		
 		if(zombieInfections.isEmpty()) {
@@ -234,6 +234,32 @@ public class MashupService {
 		countries = countryService.getCountriesOnContinents(Arrays.asList("North America", "South America"));
 		System.out.println("getCountryOnContinents() returned " + countries.size() + " results");
 		
+		return "woot";
+	}
+	
+	@WebMethod
+	public String testInfectionMethods() {
+		CountryService countryService = countryPortService.getCountryServicePort();
+		CityService cityService = cityPortService.getCityServicePort();
+		InfectionService infectionService = infectionPortService.getInfectionServicePort();
+		
+		Country country = countryService.getCountryWithCode("usa");
+		List<Country> countries = countryService.getCountriesOnContinent("North America");
+		
+		City city = cityService.getCityWithId(3877);
+		List<City> cities = cityService.getCitiesInCountry(country);
+		
+		Infection infection = infectionService.getInfectionForCity(city);
+		System.out.println("getInfectionForCity returned " + infection);
+		
+		List<Infection> infections = infectionService.getInfectionForCities(cities);
+		System.out.println("getInfectionsForCities returned " + infections.size() + " results");
+		
+		infections = infectionService.getInfectionsForCountry(country);
+		System.out.println("getInfectionsForCountry() returned " + infections.size() + " results");
+		
+		infections = infectionService.getInfectionsForCountries(countries);
+		System.out.println("getInfectionsForCountries() returned " + infections.size() + " results");
 		return "woot";
 	}
 }

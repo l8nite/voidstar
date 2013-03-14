@@ -90,7 +90,7 @@ public class ZombieInfection {
 	}
 
 	public void infect(City city) {
-		Infection infectedCity = infectionService.getInfectionByCity(city);
+		Infection infectedCity = infectionService.getInfectionForCity(city);
 		
 		if (infectedCity == null) {
 			infectedCity = new Infection(city);

@@ -22,8 +22,8 @@ import us.opulo.p.dao.Infection;
  */
 @WebService(name = "InfectionService", targetNamespace = "http://p.opulo.us/soap/infection")
 @XmlSeeAlso({
-    us.opulo.p.dao.ObjectFactory.class,
-    us.opulo.p.soap.infection.ObjectFactory.class
+    us.opulo.p.soap.infection.ObjectFactory.class,
+    us.opulo.p.dao.ObjectFactory.class
 })
 public interface InfectionService {
 
@@ -36,11 +36,25 @@ public interface InfectionService {
      */
     @WebMethod
     @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getInfectionByCity", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionByCity")
-    @ResponseWrapper(localName = "getInfectionByCityResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionByCityResponse")
-    public Infection getInfectionByCity(
+    @RequestWrapper(localName = "getInfectionForCity", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCity")
+    @ResponseWrapper(localName = "getInfectionForCityResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCityResponse")
+    public Infection getInfectionForCity(
         @WebParam(name = "City", targetNamespace = "http://p.opulo.us/dao")
         City city);
+
+    /**
+     * 
+     * @param city
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.Infection>
+     */
+    @WebMethod
+    @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getInfectionForCities", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCities")
+    @ResponseWrapper(localName = "getInfectionForCitiesResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCitiesResponse")
+    public List<Infection> getInfectionForCities(
+        @WebParam(name = "City", targetNamespace = "http://p.opulo.us/dao")
+        List<City> city);
 
     /**
      * 
@@ -50,10 +64,24 @@ public interface InfectionService {
      */
     @WebMethod
     @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getInfectionsByCountry", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsByCountry")
-    @ResponseWrapper(localName = "getInfectionsByCountryResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsByCountryResponse")
-    public List<Infection> getInfectionsByCountry(
+    @RequestWrapper(localName = "getInfectionsForCountry", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountry")
+    @ResponseWrapper(localName = "getInfectionsForCountryResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountryResponse")
+    public List<Infection> getInfectionsForCountry(
         @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
+
+    /**
+     * 
+     * @param country
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.Infection>
+     */
+    @WebMethod
+    @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getInfectionsForCountries", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountries")
+    @ResponseWrapper(localName = "getInfectionsForCountriesResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountriesResponse")
+    public List<Infection> getInfectionsForCountries(
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+        List<Country> country);
 
 }

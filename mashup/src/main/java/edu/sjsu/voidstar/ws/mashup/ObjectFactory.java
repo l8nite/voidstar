@@ -26,104 +26,26 @@ public class ObjectFactory {
 
     private final static QName _GetLanguagesSpokenInCountryResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getLanguagesSpokenInCountryResponse");
     private final static QName _TestCountryMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCountryMethods");
+    private final static QName _TestInfectionMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testInfectionMethods");
     private final static QName _TestCityMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCityMethodsResponse");
     private final static QName _TestCountryLanguageMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCountryLanguageMethodsResponse");
     private final static QName _GetZombiesOnContinentResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesOnContinentResponse");
     private final static QName _TestCityMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCityMethods");
+    private final static QName _TestInfectionMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testInfectionMethodsResponse");
     private final static QName _GetCountriesWhichSpeakLanguageResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguageResponse");
     private final static QName _GetLanguagesSpokenInCountry_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getLanguagesSpokenInCountry");
     private final static QName _GetZombiesOnContinent_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesOnContinent");
     private final static QName _TestCountryLanguageMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCountryLanguageMethods");
     private final static QName _GetNumberOfZombiesInCityResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getNumberOfZombiesInCityResponse");
     private final static QName _TestCountryMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCountryMethodsResponse");
-    private final static QName _GetCountriesWhichSpeakLanguage_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguage");
     private final static QName _GetNumberOfZombiesInCity_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getNumberOfZombiesInCity");
+    private final static QName _GetCountriesWhichSpeakLanguage_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguage");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: edu.sjsu.voidstar.ws.mashup
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link TestCountryLanguageMethods }
-     * 
-     */
-    public TestCountryLanguageMethods createTestCountryLanguageMethods() {
-        return new TestCountryLanguageMethods();
-    }
-
-    /**
-     * Create an instance of {@link TestCountryMethods }
-     * 
-     */
-    public TestCountryMethods createTestCountryMethods() {
-        return new TestCountryMethods();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesSpokenInCountryResponse }
-     * 
-     */
-    public GetLanguagesSpokenInCountryResponse createGetLanguagesSpokenInCountryResponse() {
-        return new GetLanguagesSpokenInCountryResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetNumberOfZombiesInCity }
-     * 
-     */
-    public GetNumberOfZombiesInCity createGetNumberOfZombiesInCity() {
-        return new GetNumberOfZombiesInCity();
-    }
-
-    /**
-     * Create an instance of {@link GetNumberOfZombiesInCityResponse }
-     * 
-     */
-    public GetNumberOfZombiesInCityResponse createGetNumberOfZombiesInCityResponse() {
-        return new GetNumberOfZombiesInCityResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetZombiesOnContinent }
-     * 
-     */
-    public GetZombiesOnContinent createGetZombiesOnContinent() {
-        return new GetZombiesOnContinent();
-    }
-
-    /**
-     * Create an instance of {@link GetCountriesWhichSpeakLanguage }
-     * 
-     */
-    public GetCountriesWhichSpeakLanguage createGetCountriesWhichSpeakLanguage() {
-        return new GetCountriesWhichSpeakLanguage();
-    }
-
-    /**
-     * Create an instance of {@link TestCountryMethodsResponse }
-     * 
-     */
-    public TestCountryMethodsResponse createTestCountryMethodsResponse() {
-        return new TestCountryMethodsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesSpokenInCountry }
-     * 
-     */
-    public GetLanguagesSpokenInCountry createGetLanguagesSpokenInCountry() {
-        return new GetLanguagesSpokenInCountry();
-    }
-
-    /**
-     * Create an instance of {@link TestCityMethods }
-     * 
-     */
-    public TestCityMethods createTestCityMethods() {
-        return new TestCityMethods();
     }
 
     /**
@@ -135,11 +57,83 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLanguagesSpokenInCountryResponse }
+     * 
+     */
+    public GetLanguagesSpokenInCountryResponse createGetLanguagesSpokenInCountryResponse() {
+        return new GetLanguagesSpokenInCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link TestInfectionMethods }
+     * 
+     */
+    public TestInfectionMethods createTestInfectionMethods() {
+        return new TestInfectionMethods();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesSpokenInCountry }
+     * 
+     */
+    public GetLanguagesSpokenInCountry createGetLanguagesSpokenInCountry() {
+        return new GetLanguagesSpokenInCountry();
+    }
+
+    /**
      * Create an instance of {@link TestCountryLanguageMethodsResponse }
      * 
      */
     public TestCountryLanguageMethodsResponse createTestCountryLanguageMethodsResponse() {
         return new TestCountryLanguageMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesWhichSpeakLanguage }
+     * 
+     */
+    public GetCountriesWhichSpeakLanguage createGetCountriesWhichSpeakLanguage() {
+        return new GetCountriesWhichSpeakLanguage();
+    }
+
+    /**
+     * Create an instance of {@link TestCityMethods }
+     * 
+     */
+    public TestCityMethods createTestCityMethods() {
+        return new TestCityMethods();
+    }
+
+    /**
+     * Create an instance of {@link TestCountryMethods }
+     * 
+     */
+    public TestCountryMethods createTestCountryMethods() {
+        return new TestCountryMethods();
+    }
+
+    /**
+     * Create an instance of {@link TestCityMethodsResponse }
+     * 
+     */
+    public TestCityMethodsResponse createTestCityMethodsResponse() {
+        return new TestCityMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link TestCountryLanguageMethods }
+     * 
+     */
+    public TestCountryLanguageMethods createTestCountryLanguageMethods() {
+        return new TestCountryLanguageMethods();
+    }
+
+    /**
+     * Create an instance of {@link TestCountryMethodsResponse }
+     * 
+     */
+    public TestCountryMethodsResponse createTestCountryMethodsResponse() {
+        return new TestCountryMethodsResponse();
     }
 
     /**
@@ -151,11 +145,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TestCityMethodsResponse }
+     * Create an instance of {@link GetNumberOfZombiesInCityResponse }
      * 
      */
-    public TestCityMethodsResponse createTestCityMethodsResponse() {
-        return new TestCityMethodsResponse();
+    public GetNumberOfZombiesInCityResponse createGetNumberOfZombiesInCityResponse() {
+        return new GetNumberOfZombiesInCityResponse();
+    }
+
+    /**
+     * Create an instance of {@link TestInfectionMethodsResponse }
+     * 
+     */
+    public TestInfectionMethodsResponse createTestInfectionMethodsResponse() {
+        return new TestInfectionMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetZombiesOnContinent }
+     * 
+     */
+    public GetZombiesOnContinent createGetZombiesOnContinent() {
+        return new GetZombiesOnContinent();
+    }
+
+    /**
+     * Create an instance of {@link GetNumberOfZombiesInCity }
+     * 
+     */
+    public GetNumberOfZombiesInCity createGetNumberOfZombiesInCity() {
+        return new GetNumberOfZombiesInCity();
     }
 
     /**
@@ -174,6 +192,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "testCountryMethods")
     public JAXBElement<TestCountryMethods> createTestCountryMethods(TestCountryMethods value) {
         return new JAXBElement<TestCountryMethods>(_TestCountryMethods_QNAME, TestCountryMethods.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestInfectionMethods }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "testInfectionMethods")
+    public JAXBElement<TestInfectionMethods> createTestInfectionMethods(TestInfectionMethods value) {
+        return new JAXBElement<TestInfectionMethods>(_TestInfectionMethods_QNAME, TestInfectionMethods.class, null, value);
     }
 
     /**
@@ -210,6 +237,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "testCityMethods")
     public JAXBElement<TestCityMethods> createTestCityMethods(TestCityMethods value) {
         return new JAXBElement<TestCityMethods>(_TestCityMethods_QNAME, TestCityMethods.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestInfectionMethodsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "testInfectionMethodsResponse")
+    public JAXBElement<TestInfectionMethodsResponse> createTestInfectionMethodsResponse(TestInfectionMethodsResponse value) {
+        return new JAXBElement<TestInfectionMethodsResponse>(_TestInfectionMethodsResponse_QNAME, TestInfectionMethodsResponse.class, null, value);
     }
 
     /**
@@ -267,21 +303,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWhichSpeakLanguage }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCountriesWhichSpeakLanguage")
-    public JAXBElement<GetCountriesWhichSpeakLanguage> createGetCountriesWhichSpeakLanguage(GetCountriesWhichSpeakLanguage value) {
-        return new JAXBElement<GetCountriesWhichSpeakLanguage>(_GetCountriesWhichSpeakLanguage_QNAME, GetCountriesWhichSpeakLanguage.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetNumberOfZombiesInCity }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getNumberOfZombiesInCity")
     public JAXBElement<GetNumberOfZombiesInCity> createGetNumberOfZombiesInCity(GetNumberOfZombiesInCity value) {
         return new JAXBElement<GetNumberOfZombiesInCity>(_GetNumberOfZombiesInCity_QNAME, GetNumberOfZombiesInCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWhichSpeakLanguage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCountriesWhichSpeakLanguage")
+    public JAXBElement<GetCountriesWhichSpeakLanguage> createGetCountriesWhichSpeakLanguage(GetCountriesWhichSpeakLanguage value) {
+        return new JAXBElement<GetCountriesWhichSpeakLanguage>(_GetCountriesWhichSpeakLanguage_QNAME, GetCountriesWhichSpeakLanguage.class, null, value);
     }
 
 }

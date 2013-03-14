@@ -9,6 +9,7 @@
  */
 package us.p.opulo.dao.service.hibernate;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -32,22 +33,41 @@ public class InfectionServiceHibernate implements InfectionService {
 	HibernateSession session;
 	
 	@Override
-	public Infection getInfectionByCity (City city) {
+	public Infection getInfectionForCity (City city) {
 		return (Infection) session.get().createCriteria(Infection.class)
 				.add(Restrictions.eq("city.id", city.getId()))
 				.uniqueResult();
 	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Infection> getInfectionForCities(List<City> cities) {
+		return session.get().createCriteria(Infection.class)
+			.add(Restrictions.in("city", cities))
+			.list();
+	}
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Infection> getInfectionsByCountry(Country country) {
+	public List<Infection> getInfectionsForCountry(Country country) {
 		DetachedCriteria citiesInCountry = DetachedCriteria.forClass(City.class)
 				.add(Restrictions.eq("country", country))
 				.setProjection(Projections.property("id"));
 		
-		return (List<Infection>) session.get()
-				.createCriteria(Infection.class)
+		return session.get().createCriteria(Infection.class)
 				.add(Subqueries.propertyIn("cityID", citiesInCountry))
+				.list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Infection> getInfectionsForCountries(Collection<Country> countries) {
+		DetachedCriteria citiesInCountries = DetachedCriteria.forClass(City.class)
+				.add(Restrictions.in("country", countries))
+				.setProjection(Projections.property("id"));
+		
+		return session.get().createCriteria(Infection.class)
+				.add(Subqueries.propertyIn("cityID", citiesInCountries))
 				.list();
 	}
 }

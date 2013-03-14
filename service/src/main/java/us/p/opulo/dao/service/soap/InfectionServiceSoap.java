@@ -9,6 +9,7 @@
  */
 package us.p.opulo.dao.service.soap;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -51,16 +52,32 @@ public class InfectionServiceSoap implements InfectionService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
-	public Infection getInfectionByCity(@WebParam(name="City", targetNamespace=Namespaces.DAO) City city) {
-		log.info("getInfectionByCity(): city = " + city);
-		return hibernateService.getInfectionByCity(city);
+	public Infection getInfectionForCity(@WebParam(name="City", targetNamespace=Namespaces.DAO) City city) {
+		log.info("getInfectionForCity(): city = " + city);
+		return hibernateService.getInfectionForCity(city);
 	}
 	
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
-	public List<Infection> getInfectionsByCountry(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Country country) {
-		log.info("getInfectionByCountry(): country = " + country);
-		return hibernateService.getInfectionsByCountry(country);
+	public List<Infection> getInfectionForCities(@WebParam(name="City", targetNamespace=Namespaces.DAO) List<City> cities) {
+		log.info("getInfectionForCities(): size = " + cities.size());
+		return hibernateService.getInfectionForCities(cities);
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
+	public List<Infection> getInfectionsForCountry(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Country country) {
+		log.info("getInfectionForCountry(): country = " + country);
+		return hibernateService.getInfectionsForCountry(country);
+	}
+
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
+	public List<Infection> getInfectionsForCountries(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Collection<Country> countries) {
+		log.info("getInfectionsForCountries(): size = " + countries.size());
+		return hibernateService.getInfectionsForCountries(countries);
 	}
 }
