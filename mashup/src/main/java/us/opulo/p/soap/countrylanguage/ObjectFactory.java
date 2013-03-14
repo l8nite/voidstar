@@ -24,10 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetCountryLanguagesByLanguageResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByLanguageResponse");
-    private final static QName _GetCountryLanguagesByCountry_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByCountry");
     private final static QName _GetCountryLanguagesByCountryResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByCountryResponse");
     private final static QName _GetCountryLanguagesByLanguage_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByLanguage");
+    private final static QName _GetCountryLanguagesByLanguageResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByLanguageResponse");
+    private final static QName _GetCountryLanguagesByCountry_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByCountry");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: us.opulo.p.soap.countrylanguage
@@ -69,24 +69,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByLanguageResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByLanguageResponse")
-    public JAXBElement<GetCountryLanguagesByLanguageResponse> createGetCountryLanguagesByLanguageResponse(GetCountryLanguagesByLanguageResponse value) {
-        return new JAXBElement<GetCountryLanguagesByLanguageResponse>(_GetCountryLanguagesByLanguageResponse_QNAME, GetCountryLanguagesByLanguageResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByCountry }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByCountry")
-    public JAXBElement<GetCountryLanguagesByCountry> createGetCountryLanguagesByCountry(GetCountryLanguagesByCountry value) {
-        return new JAXBElement<GetCountryLanguagesByCountry>(_GetCountryLanguagesByCountry_QNAME, GetCountryLanguagesByCountry.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByCountryResponse }{@code >}}
      * 
      */
@@ -102,6 +84,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByLanguage")
     public JAXBElement<GetCountryLanguagesByLanguage> createGetCountryLanguagesByLanguage(GetCountryLanguagesByLanguage value) {
         return new JAXBElement<GetCountryLanguagesByLanguage>(_GetCountryLanguagesByLanguage_QNAME, GetCountryLanguagesByLanguage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByLanguageResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByLanguageResponse")
+    public JAXBElement<GetCountryLanguagesByLanguageResponse> createGetCountryLanguagesByLanguageResponse(GetCountryLanguagesByLanguageResponse value) {
+        return new JAXBElement<GetCountryLanguagesByLanguageResponse>(_GetCountryLanguagesByLanguageResponse_QNAME, GetCountryLanguagesByLanguageResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByCountry }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByCountry")
+    public JAXBElement<GetCountryLanguagesByCountry> createGetCountryLanguagesByCountry(GetCountryLanguagesByCountry value) {
+        return new JAXBElement<GetCountryLanguagesByCountry>(_GetCountryLanguagesByCountry_QNAME, GetCountryLanguagesByCountry.class, null, value);
     }
 
 }

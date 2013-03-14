@@ -25,9 +25,9 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetInfectionByCityResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionByCityResponse");
-    private final static QName _GetInfectionsByCountry_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsByCountry");
     private final static QName _GetInfectionsByCountryResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsByCountryResponse");
     private final static QName _GetInfectionByCity_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionByCity");
+    private final static QName _GetInfectionsByCountry_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsByCountry");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: us.opulo.p.soap.infection
@@ -45,19 +45,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetInfectionsByCountry }
-     * 
-     */
-    public GetInfectionsByCountry createGetInfectionsByCountry() {
-        return new GetInfectionsByCountry();
-    }
-
-    /**
      * Create an instance of {@link GetInfectionsByCountryResponse }
      * 
      */
     public GetInfectionsByCountryResponse createGetInfectionsByCountryResponse() {
         return new GetInfectionsByCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInfectionsByCountry }
+     * 
+     */
+    public GetInfectionsByCountry createGetInfectionsByCountry() {
+        return new GetInfectionsByCountry();
     }
 
     /**
@@ -78,15 +78,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionsByCountry }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionsByCountry")
-    public JAXBElement<GetInfectionsByCountry> createGetInfectionsByCountry(GetInfectionsByCountry value) {
-        return new JAXBElement<GetInfectionsByCountry>(_GetInfectionsByCountry_QNAME, GetInfectionsByCountry.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionsByCountryResponse }{@code >}}
      * 
      */
@@ -102,6 +93,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionByCity")
     public JAXBElement<GetInfectionByCity> createGetInfectionByCity(GetInfectionByCity value) {
         return new JAXBElement<GetInfectionByCity>(_GetInfectionByCity_QNAME, GetInfectionByCity.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionsByCountry }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionsByCountry")
+    public JAXBElement<GetInfectionsByCountry> createGetInfectionsByCountry(GetInfectionsByCountry value) {
+        return new JAXBElement<GetInfectionsByCountry>(_GetInfectionsByCountry_QNAME, GetInfectionsByCountry.class, null, value);
     }
 
 }

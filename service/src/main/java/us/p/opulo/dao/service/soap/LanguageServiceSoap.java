@@ -28,8 +28,7 @@ import javax.jws.soap.SOAPBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import us.p.opulo.constants.Constants.Names;
-import us.p.opulo.constants.Constants.Resources.WSDL;
+import us.p.opulo.constants.Constants.WebService.Soap.*;
 import us.p.opulo.constants.Constants.XML.Namespaces;
 import us.p.opulo.dao.Country;
 import us.p.opulo.dao.Language;
@@ -38,9 +37,8 @@ import us.p.opulo.guice.annotations.HibernateService;
 
 @WebService(
 		 targetNamespace= Namespaces.Soap.LANGUAGE_SERVICE,
-		 wsdlLocation = WSDL.LANGUAGE_SERVICE,
-		 serviceName = Names.Service.LANGUAGE_PORT_SERVICE,
-		 name = Names.Service.LANGUAGE_SERVICE
+		 serviceName = ServiceName.LANGUAGE_PORT_SERVICE,
+		 name = ServiceName.LANGUAGE_SERVICE
 )
 @SOAPBinding(
 		style=SOAPBinding.Style.DOCUMENT, 

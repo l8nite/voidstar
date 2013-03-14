@@ -59,6 +59,53 @@ public class Constants {
 	}
 	
 	/*
+	 * Web Service Constants
+	 */
+	public static class WebService {
+		private static final String CITY_EXT = "/city";
+		private static final String COUNTRY_EXT = "/country";
+		private static final String COUNTRY_LANGUAGE_EXT = "/countrylanguage";
+		private static final String INFECTION_EXT = "/infection";
+		private static final String LANGUAGE_EXT = "/language";
+	
+	
+		public static class Soap {
+			public static final String ADDRESS = "http://localhost:8123";
+			
+			public static class Service {
+				public static final String CITY = ADDRESS + CITY_EXT;
+				public static final String COUNTRY = ADDRESS + COUNTRY_EXT;
+				public static final String COUNTRY_LANGUAGE = ADDRESS + COUNTRY_LANGUAGE_EXT;
+				public static final String INFECTION = ADDRESS + INFECTION_EXT;
+				public static final String LANGUAGE = ADDRESS + LANGUAGE_EXT;
+				
+			}
+			
+			public static class WSDL {
+				private static final String WSDL= "?wsdl";
+				public static final String CITY = Service.CITY + WSDL;
+				public static final String COUNTRY = Service.COUNTRY + WSDL;
+				public static final String COUNTRY_LANGUAGE = Service.COUNTRY_LANGUAGE + WSDL;
+				public static final String INFECTION = Service.INFECTION + WSDL;
+				public static final String LANGUAGE = Service.LANGUAGE + WSDL;
+				
+			}
+			
+			public static class ServiceName {
+				public static final String CITY_PORT_SERVICE = "CityPortService";
+				public static final String CITY_SERVICE = "CityService";
+				public static final String COUNTRY_PORT_SERVICE = "CountryPortService";
+				public static final String COUNTRY_SERVICE = "CountryService";
+				public static final String COUNTRY_LANGUAGE_PORT_SERVICE = "CountryLanguagePortService";
+				public static final String COUNTRY_LANGUAGE_SERVICE = "CountryLanguageService";
+				public static final String INFECTION_PORT_SERVICE = "InfectionPortService";
+				public static final String INFECTION_SERVICE = "InfectionService";
+				public static final String LANGUAGE_PORT_SERVICE = "LanguagePortService";
+				public static final String LANGUAGE_SERVICE = "LanguageService";
+			}
+		}
+	}
+	/*
 	 * Xml Constants
 	 */
 	public static class XML {		
@@ -74,21 +121,6 @@ public class Constants {
 				public static final String INFECTION_SERVICE = SOAP_NS + "/infection";
 				public static final String LANGUAGE_SERVICE = SOAP_NS + "/language";
 			}		
-		}
-	}
-	
-	public static class Names {
-		public static class Service {
-			public static final String CITY_PORT_SERVICE = "CityPortService";
-			public static final String CITY_SERVICE = "CityService";
-			public static final String COUNTRY_PORT_SERVICE = "CountryPortService";
-			public static final String COUNTRY_SERVICE = "CountryService";
-			public static final String COUNTRY_LANGUAGE_PORT_SERVICE = "CountryLanguagePortService";
-			public static final String COUNTRY_LANGUAGE_SERVICE = "CountryLanguageService";
-			public static final String INFECTION_PORT_SERVICE = "InfectionPortService";
-			public static final String INFECTION_SERVICE = "InfectionService";
-			public static final String LANGUAGE_PORT_SERVICE = "LanguagePortService";
-			public static final String LANGUAGE_SERVICE = "LanguageService";
 		}
 	}
 }

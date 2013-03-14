@@ -43,22 +43,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLanguagesSpokenInCountry }
-     * 
-     */
-    public GetLanguagesSpokenInCountry createGetLanguagesSpokenInCountry() {
-        return new GetLanguagesSpokenInCountry();
-    }
-
-    /**
-     * Create an instance of {@link GetNumberOfZombiesInCity }
-     * 
-     */
-    public GetNumberOfZombiesInCity createGetNumberOfZombiesInCity() {
-        return new GetNumberOfZombiesInCity();
-    }
-
-    /**
      * Create an instance of {@link GetZombiesOnContinentResponse }
      * 
      */
@@ -67,19 +51,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetNumberOfZombiesInCityResponse }
+     * Create an instance of {@link TestCityMethods }
      * 
      */
-    public GetNumberOfZombiesInCityResponse createGetNumberOfZombiesInCityResponse() {
-        return new GetNumberOfZombiesInCityResponse();
+    public TestCityMethods createTestCityMethods() {
+        return new TestCityMethods();
     }
 
     /**
-     * Create an instance of {@link GetCountriesWhichSpeakLanguageResponse }
+     * Create an instance of {@link GetNumberOfZombiesInCity }
      * 
      */
-    public GetCountriesWhichSpeakLanguageResponse createGetCountriesWhichSpeakLanguageResponse() {
-        return new GetCountriesWhichSpeakLanguageResponse();
+    public GetNumberOfZombiesInCity createGetNumberOfZombiesInCity() {
+        return new GetNumberOfZombiesInCity();
     }
 
     /**
@@ -99,14 +83,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TestCityMethods }
-     * 
-     */
-    public TestCityMethods createTestCityMethods() {
-        return new TestCityMethods();
-    }
-
-    /**
      * Create an instance of {@link GetCountriesWhichSpeakLanguage }
      * 
      */
@@ -115,11 +91,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLanguagesSpokenInCountry }
+     * 
+     */
+    public GetLanguagesSpokenInCountry createGetLanguagesSpokenInCountry() {
+        return new GetLanguagesSpokenInCountry();
+    }
+
+    /**
+     * Create an instance of {@link GetNumberOfZombiesInCityResponse }
+     * 
+     */
+    public GetNumberOfZombiesInCityResponse createGetNumberOfZombiesInCityResponse() {
+        return new GetNumberOfZombiesInCityResponse();
+    }
+
+    /**
      * Create an instance of {@link TestCityMethodsResponse }
      * 
      */
     public TestCityMethodsResponse createTestCityMethodsResponse() {
         return new TestCityMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesWhichSpeakLanguageResponse }
+     * 
+     */
+    public GetCountriesWhichSpeakLanguageResponse createGetCountriesWhichSpeakLanguageResponse() {
+        return new GetCountriesWhichSpeakLanguageResponse();
     }
 
     /**

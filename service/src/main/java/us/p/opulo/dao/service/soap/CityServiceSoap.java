@@ -29,8 +29,7 @@ import javax.jws.soap.SOAPBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import us.p.opulo.constants.Constants.Names.Service;
-import us.p.opulo.constants.Constants.Resources.WSDL;
+import us.p.opulo.constants.Constants.WebService.Soap.*;
 import us.p.opulo.constants.Constants.XML.Namespaces;
 import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
@@ -39,9 +38,8 @@ import us.p.opulo.guice.annotations.HibernateService;
 
 @WebService(
 		targetNamespace = Namespaces.Soap.CITY_SERVICE,
-		wsdlLocation = WSDL.CITY_SERVICE,
-		serviceName = Service.CITY_PORT_SERVICE,
-		name = Service.CITY_SERVICE
+		serviceName = ServiceName.CITY_PORT_SERVICE,
+		name = ServiceName.CITY_SERVICE
 )
 @SOAPBinding(
 		style = SOAPBinding.Style.DOCUMENT, 
