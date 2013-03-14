@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.service.hibernate;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -36,19 +37,37 @@ public class CountryLanguageServiceHibernate implements CountryLanguageService {
 	
 	@Override
 	@SuppressWarnings("unchecked")	
-	public List<CountryLanguage> getCountryLanguagesByLanguage(Language language){
+	public List<CountryLanguage> getCountryLanguagesForLanguage(Language language){
 		return session.get()
 			.createCriteria(CountryLanguage.class)
 			.add(Restrictions.eq("languageId", language.getId()))
 			.list();
 	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<CountryLanguage> getCountryLanguagesForLanguages(Collection<Language> languages) {
+		return session.get()
+			.createCriteria(CountryLanguage.class)
+			.add(Restrictions.in("language", languages))
+			.list();
+	}
 
 	@Override
 	@SuppressWarnings("unchecked")	
-	public List<CountryLanguage> getCountryLanguagesByCountry(Country country) {
+	public List<CountryLanguage> getCountryLanguagesForCountry(Country country) {
 		return session.get()
 				.createCriteria(CountryLanguage.class)
 				.add(Restrictions.eq("countryCode", country.getCode()))
 				.list();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<CountryLanguage> getCountryLanguagesForCountries(Collection<Country> countries) {
+		return session.get()
+			.createCriteria(CountryLanguage.class)
+			.add(Restrictions.in("country", countries))
+			.list();
 	}
 }

@@ -24,10 +24,14 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetCountryLanguagesByCountryResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByCountryResponse");
-    private final static QName _GetCountryLanguagesByLanguage_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByLanguage");
-    private final static QName _GetCountryLanguagesByLanguageResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByLanguageResponse");
-    private final static QName _GetCountryLanguagesByCountry_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesByCountry");
+    private final static QName _GetCountryLanguagesForLanguages_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForLanguages");
+    private final static QName _GetCountryLanguagesForLanguageResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForLanguageResponse");
+    private final static QName _GetCountryLanguagesForLanguagesResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForLanguagesResponse");
+    private final static QName _GetCountryLanguagesForLanguage_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForLanguage");
+    private final static QName _GetCountryLanguagesForCountryResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForCountryResponse");
+    private final static QName _GetCountryLanguagesForCountry_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForCountry");
+    private final static QName _GetCountryLanguagesForCountriesResponse_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForCountriesResponse");
+    private final static QName _GetCountryLanguagesForCountries_QNAME = new QName("http://p.opulo.us/soap/countrylanguage", "getCountryLanguagesForCountries");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: us.opulo.p.soap.countrylanguage
@@ -37,71 +41,139 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCountryLanguagesByCountry }
+     * Create an instance of {@link GetCountryLanguagesForCountryResponse }
      * 
      */
-    public GetCountryLanguagesByCountry createGetCountryLanguagesByCountry() {
-        return new GetCountryLanguagesByCountry();
+    public GetCountryLanguagesForCountryResponse createGetCountryLanguagesForCountryResponse() {
+        return new GetCountryLanguagesForCountryResponse();
     }
 
     /**
-     * Create an instance of {@link GetCountryLanguagesByLanguageResponse }
+     * Create an instance of {@link GetCountryLanguagesForLanguageResponse }
      * 
      */
-    public GetCountryLanguagesByLanguageResponse createGetCountryLanguagesByLanguageResponse() {
-        return new GetCountryLanguagesByLanguageResponse();
+    public GetCountryLanguagesForLanguageResponse createGetCountryLanguagesForLanguageResponse() {
+        return new GetCountryLanguagesForLanguageResponse();
     }
 
     /**
-     * Create an instance of {@link GetCountryLanguagesByLanguage }
+     * Create an instance of {@link GetCountryLanguagesForLanguage }
      * 
      */
-    public GetCountryLanguagesByLanguage createGetCountryLanguagesByLanguage() {
-        return new GetCountryLanguagesByLanguage();
+    public GetCountryLanguagesForLanguage createGetCountryLanguagesForLanguage() {
+        return new GetCountryLanguagesForLanguage();
     }
 
     /**
-     * Create an instance of {@link GetCountryLanguagesByCountryResponse }
+     * Create an instance of {@link GetCountryLanguagesForLanguages }
      * 
      */
-    public GetCountryLanguagesByCountryResponse createGetCountryLanguagesByCountryResponse() {
-        return new GetCountryLanguagesByCountryResponse();
+    public GetCountryLanguagesForLanguages createGetCountryLanguagesForLanguages() {
+        return new GetCountryLanguagesForLanguages();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByCountryResponse }{@code >}}
+     * Create an instance of {@link GetCountryLanguagesForCountries }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByCountryResponse")
-    public JAXBElement<GetCountryLanguagesByCountryResponse> createGetCountryLanguagesByCountryResponse(GetCountryLanguagesByCountryResponse value) {
-        return new JAXBElement<GetCountryLanguagesByCountryResponse>(_GetCountryLanguagesByCountryResponse_QNAME, GetCountryLanguagesByCountryResponse.class, null, value);
+    public GetCountryLanguagesForCountries createGetCountryLanguagesForCountries() {
+        return new GetCountryLanguagesForCountries();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByLanguage }{@code >}}
+     * Create an instance of {@link GetCountryLanguagesForCountry }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByLanguage")
-    public JAXBElement<GetCountryLanguagesByLanguage> createGetCountryLanguagesByLanguage(GetCountryLanguagesByLanguage value) {
-        return new JAXBElement<GetCountryLanguagesByLanguage>(_GetCountryLanguagesByLanguage_QNAME, GetCountryLanguagesByLanguage.class, null, value);
+    public GetCountryLanguagesForCountry createGetCountryLanguagesForCountry() {
+        return new GetCountryLanguagesForCountry();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByLanguageResponse }{@code >}}
+     * Create an instance of {@link GetCountryLanguagesForLanguagesResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByLanguageResponse")
-    public JAXBElement<GetCountryLanguagesByLanguageResponse> createGetCountryLanguagesByLanguageResponse(GetCountryLanguagesByLanguageResponse value) {
-        return new JAXBElement<GetCountryLanguagesByLanguageResponse>(_GetCountryLanguagesByLanguageResponse_QNAME, GetCountryLanguagesByLanguageResponse.class, null, value);
+    public GetCountryLanguagesForLanguagesResponse createGetCountryLanguagesForLanguagesResponse() {
+        return new GetCountryLanguagesForLanguagesResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesByCountry }{@code >}}
+     * Create an instance of {@link GetCountryLanguagesForCountriesResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesByCountry")
-    public JAXBElement<GetCountryLanguagesByCountry> createGetCountryLanguagesByCountry(GetCountryLanguagesByCountry value) {
-        return new JAXBElement<GetCountryLanguagesByCountry>(_GetCountryLanguagesByCountry_QNAME, GetCountryLanguagesByCountry.class, null, value);
+    public GetCountryLanguagesForCountriesResponse createGetCountryLanguagesForCountriesResponse() {
+        return new GetCountryLanguagesForCountriesResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForLanguages }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForLanguages")
+    public JAXBElement<GetCountryLanguagesForLanguages> createGetCountryLanguagesForLanguages(GetCountryLanguagesForLanguages value) {
+        return new JAXBElement<GetCountryLanguagesForLanguages>(_GetCountryLanguagesForLanguages_QNAME, GetCountryLanguagesForLanguages.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForLanguageResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForLanguageResponse")
+    public JAXBElement<GetCountryLanguagesForLanguageResponse> createGetCountryLanguagesForLanguageResponse(GetCountryLanguagesForLanguageResponse value) {
+        return new JAXBElement<GetCountryLanguagesForLanguageResponse>(_GetCountryLanguagesForLanguageResponse_QNAME, GetCountryLanguagesForLanguageResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForLanguagesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForLanguagesResponse")
+    public JAXBElement<GetCountryLanguagesForLanguagesResponse> createGetCountryLanguagesForLanguagesResponse(GetCountryLanguagesForLanguagesResponse value) {
+        return new JAXBElement<GetCountryLanguagesForLanguagesResponse>(_GetCountryLanguagesForLanguagesResponse_QNAME, GetCountryLanguagesForLanguagesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForLanguage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForLanguage")
+    public JAXBElement<GetCountryLanguagesForLanguage> createGetCountryLanguagesForLanguage(GetCountryLanguagesForLanguage value) {
+        return new JAXBElement<GetCountryLanguagesForLanguage>(_GetCountryLanguagesForLanguage_QNAME, GetCountryLanguagesForLanguage.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForCountryResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForCountryResponse")
+    public JAXBElement<GetCountryLanguagesForCountryResponse> createGetCountryLanguagesForCountryResponse(GetCountryLanguagesForCountryResponse value) {
+        return new JAXBElement<GetCountryLanguagesForCountryResponse>(_GetCountryLanguagesForCountryResponse_QNAME, GetCountryLanguagesForCountryResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForCountry }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForCountry")
+    public JAXBElement<GetCountryLanguagesForCountry> createGetCountryLanguagesForCountry(GetCountryLanguagesForCountry value) {
+        return new JAXBElement<GetCountryLanguagesForCountry>(_GetCountryLanguagesForCountry_QNAME, GetCountryLanguagesForCountry.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForCountriesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForCountriesResponse")
+    public JAXBElement<GetCountryLanguagesForCountriesResponse> createGetCountryLanguagesForCountriesResponse(GetCountryLanguagesForCountriesResponse value) {
+        return new JAXBElement<GetCountryLanguagesForCountriesResponse>(_GetCountryLanguagesForCountriesResponse_QNAME, GetCountryLanguagesForCountriesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountryLanguagesForCountries }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/countrylanguage", name = "getCountryLanguagesForCountries")
+    public JAXBElement<GetCountryLanguagesForCountries> createGetCountryLanguagesForCountries(GetCountryLanguagesForCountries value) {
+        return new JAXBElement<GetCountryLanguagesForCountries>(_GetCountryLanguagesForCountries_QNAME, GetCountryLanguagesForCountries.class, null, value);
     }
 
 }

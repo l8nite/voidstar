@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.library;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -39,13 +40,23 @@ public class CountryLanguageLibrary implements CountryLanguageService {
 	private HibernateSession session;
 
 	@Override
-	public List<CountryLanguage> getCountryLanguagesByLanguage(Language language) {
-		return service.getCountryLanguagesByLanguage(language);
+	public List<CountryLanguage> getCountryLanguagesForLanguage(Language language) {
+		return service.getCountryLanguagesForLanguage(language);
+	}
+	
+	@Override
+	public List<CountryLanguage> getCountryLanguagesForLanguages(Collection<Language> languages) {
+		return service.getCountryLanguagesForLanguages(languages);
 	}
 
 	@Override
-	public List<CountryLanguage> getCountryLanguagesByCountry(Country country) {
-		return service.getCountryLanguagesByCountry(country);
+	public List<CountryLanguage> getCountryLanguagesForCountry(Country country) {
+		return service.getCountryLanguagesForCountry(country);
+	}
+
+	@Override
+	public List<CountryLanguage> getCountryLanguagesForCountries(Collection<Country> countries) {
+		return service.getCountryLanguagesForCountries(countries);
 	}
 	
 	/* ADDITIONAL LIBRARY METHODS */

@@ -15,6 +15,7 @@
  */
 package us.p.opulo.dao.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import us.p.opulo.dao.Country;
@@ -22,6 +23,9 @@ import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Language;
 
 public interface CountryLanguageService {
-	List<CountryLanguage> getCountryLanguagesByLanguage(Language language);
-	List<CountryLanguage> getCountryLanguagesByCountry(Country country);
+	List<CountryLanguage> getCountryLanguagesForLanguage(Language language);
+	List<CountryLanguage> getCountryLanguagesForLanguages(Collection<Language> languages);
+	
+	List<CountryLanguage> getCountryLanguagesForCountry(Country country);
+	List<CountryLanguage> getCountryLanguagesForCountries(Collection<Country> countries);
 }

@@ -223,7 +223,7 @@ public class ZombieInfection {
 			long infectedSpeakersWorldwide = 0L;
 			
 			// Calculate an estimated number of speakers remaining in the world
-			List<CountryLanguage> countryLanguages = countryLanguageService.getCountryLanguagesByLanguage(language);
+			List<CountryLanguage> countryLanguages = countryLanguageService.getCountryLanguagesForLanguage(language);
 			Map<Country,Double> speakersInfectedByCountry = new HashMap<>();
 			
 			for(CountryLanguage cl : countryLanguages) {

@@ -9,7 +9,9 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
+import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
+import us.opulo.p.dao.Language;
 
 
 /**
@@ -34,11 +36,11 @@ public interface CountryLanguageService {
      */
     @WebMethod
     @WebResult(name = "CountryLanguage", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getCountryLanguagesByLanguage", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesByLanguage")
-    @ResponseWrapper(localName = "getCountryLanguagesByLanguageResponse", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesByLanguageResponse")
-    public List<CountryLanguage> getCountryLanguagesByLanguage(
+    @RequestWrapper(localName = "getCountryLanguagesForLanguage", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForLanguage")
+    @ResponseWrapper(localName = "getCountryLanguagesForLanguageResponse", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForLanguageResponse")
+    public List<CountryLanguage> getCountryLanguagesForLanguage(
         @WebParam(name = "Language", targetNamespace = "http://p.opulo.us/dao")
-        Object language);
+        Language language);
 
     /**
      * 
@@ -48,10 +50,38 @@ public interface CountryLanguageService {
      */
     @WebMethod
     @WebResult(name = "CountryLanguage", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getCountryLanguagesByCountry", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesByCountry")
-    @ResponseWrapper(localName = "getCountryLanguagesByCountryResponse", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesByCountryResponse")
-    public List<CountryLanguage> getCountryLanguagesByCountry(
+    @RequestWrapper(localName = "getCountryLanguagesForLanguages", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForLanguages")
+    @ResponseWrapper(localName = "getCountryLanguagesForLanguagesResponse", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForLanguagesResponse")
+    public List<CountryLanguage> getCountryLanguagesForLanguages(
         @WebParam(name = "Language", targetNamespace = "http://p.opulo.us/dao")
-        Object language);
+        List<Language> language);
+
+    /**
+     * 
+     * @param country
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.CountryLanguage>
+     */
+    @WebMethod
+    @WebResult(name = "CountryLanguage", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCountryLanguagesForCountry", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForCountry")
+    @ResponseWrapper(localName = "getCountryLanguagesForCountryResponse", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForCountryResponse")
+    public List<CountryLanguage> getCountryLanguagesForCountry(
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+        Country country);
+
+    /**
+     * 
+     * @param country
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.CountryLanguage>
+     */
+    @WebMethod
+    @WebResult(name = "CountryLanguage", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCountryLanguagesForCountries", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForCountries")
+    @ResponseWrapper(localName = "getCountryLanguagesForCountriesResponse", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetCountryLanguagesForCountriesResponse")
+    public List<CountryLanguage> getCountryLanguagesForCountries(
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+        List<Country> country);
 
 }

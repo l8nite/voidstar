@@ -24,6 +24,7 @@ public class MashupClient {
 //		
 //		System.out.println(service.getZombiesOnContinent("North America"));
 		
-		service.testCityMethods();
+		System.out.println("City services are working... " + service.testCityMethods());
+		System.out.println("CountryLanguage services are working... " + service.testCountryLanguageMethods());
 	}
 }

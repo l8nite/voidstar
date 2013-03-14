@@ -24,6 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _CountryLanguage_QNAME = new QName("http://p.opulo.us/dao", "CountryLanguage");
     private final static QName _Language_QNAME = new QName("http://p.opulo.us/dao", "Language");
     private final static QName _Country_QNAME = new QName("http://p.opulo.us/dao", "Country");
 
@@ -48,6 +49,23 @@ public class ObjectFactory {
      */
     public Country createCountry() {
         return new Country();
+    }
+
+    /**
+     * Create an instance of {@link CountryLanguage }
+     * 
+     */
+    public CountryLanguage createCountryLanguage() {
+        return new CountryLanguage();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CountryLanguage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "CountryLanguage")
+    public JAXBElement<CountryLanguage> createCountryLanguage(CountryLanguage value) {
+        return new JAXBElement<CountryLanguage>(_CountryLanguage_QNAME, CountryLanguage.class, null, value);
     }
 
     /**

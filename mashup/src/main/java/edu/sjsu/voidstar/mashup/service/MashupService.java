@@ -92,7 +92,7 @@ public class MashupService {
 		
 		
 		CountryLanguageService cls = countryLanguagePortService.getCountryLanguageServicePort();
-		List<CountryLanguage> countryLanguages = cls.getCountryLanguagesByLanguage(language);
+		List<CountryLanguage> countryLanguages = cls.getCountryLanguagesForLanguage(language);
 		
 		if (countryLanguages.isEmpty()) {
 			return language + " is not spoken in any countries";
@@ -192,6 +192,30 @@ public class MashupService {
 		System.out.println("getCitiesInCountries returned " + citiesByCountry.size() + " results");
 
  		return "woot";
+	}
+	
+	@WebMethod
+	public String testCountryLanguageMethods() {
+		LanguageService languageService = languagePortService.getLanguageServicePort();
+		CountryService countryService = countryPortService.getCountryServicePort();
+		CountryLanguageService clService = countryLanguagePortService.getCountryLanguageServicePort();
+		
+		List<Country> countries = countryService.getCountriesByContinent("North America");
+		List<Language> languages = languageService.getLanguagesByCountry(countries.get(0));
+		
+		List<CountryLanguage> countryLanguages = clService.getCountryLanguagesForLanguage(languages.get(0));
+		System.out.println("getCountryLanguagesForLanguage() returned " + countryLanguages.size() + " result");
+			
+		countryLanguages = clService.getCountryLanguagesForLanguages(languages);
+		System.out.println("getCountryLanguagesForLanguages() returned " + countryLanguages.size() + " result");
+		
+		countryLanguages = clService.getCountryLanguagesForCountry(countries.get(0));
+		System.out.println("getCountryLanguagesForCountry() returned " + countryLanguages.size() + " result");
+		
+		countryLanguages = clService.getCountryLanguagesForCountries(countries);
+		System.out.println("getCountryLanguagesForCountries() returned " + countryLanguages.size() + " result");
+		
+		return "woot";
 	}
 }
  
