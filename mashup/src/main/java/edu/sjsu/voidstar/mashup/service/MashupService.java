@@ -81,26 +81,34 @@ public class MashupService {
 	public String getCountriesWhichSpeakLanguage(@WebParam(name = "languageName") String languageName) {
 		log.info("getCountriesWhichSpeakLanguage(" + languageName + ")");
 
-		try {
-			List<Country> countries = _getCountriesWhichSpeakLanguage(languageName);
+		Language language = _getLanguageNamed(languageName);
+		
+		if (language == null) {
+			return "No language found named '" + languageName + "'";
+		}
+		
+		List<CountryLanguage> countryLanguages = _getCountryLanguagesForLanguage(language);
+		
+		if (countryLanguages.isEmpty()) {
+			return "No countries found where " + languageName + " is spoken";
+		}
 
-			Collections.sort(countries, new Comparator<Country>(){
-				public int compare(Country arg0, Country arg1) {
-					return (arg0.getName().compareTo(arg1.getName()));
-				}
-			});
+		List<Country> countriesWhereLanguageIsSpoken;
+		countriesWhereLanguageIsSpoken = _getCountriesForCountryLanguages(countryLanguages);
 
-			StringBuilder result = new StringBuilder();
-			for (Country c : countries) {
-				result.append(c.getName() + ", ");
+		Collections.sort(countriesWhereLanguageIsSpoken, new Comparator<Country>(){
+			public int compare(Country arg0, Country arg1) {
+				return (arg0.getName().compareTo(arg1.getName()));
 			}
+		});
 
-			// Strip trailing comma
-			return result.substring(0, result.length() - 2);
+		StringBuilder result = new StringBuilder();
+		for (Country c : countriesWhereLanguageIsSpoken) {
+			result.append(c.getName() + ", ");
 		}
-		catch (Exception e) {
-			return e.getMessage();
-		}
+
+		// Strip trailing comma
+		return result.substring(0, result.length() - 2);
 	}
 	
 	// 3
@@ -166,15 +174,21 @@ public class MashupService {
 	public String getZombiesInCountriesWhereLanguageIsSpoken(@WebParam(name = "languageName") String languageName)
 	{
 		log.info("getZombiesInCountriesWhereLanguageIsSpoken(" + languageName + ")");
+		
+		Language language = _getLanguageNamed(languageName);
+		
+		if (language == null) {
+			return "No language found named '" + languageName + "'";
+		}
+		
+		List<CountryLanguage> countryLanguages = _getCountryLanguagesForLanguage(language);
+		
+		if (countryLanguages.isEmpty()) {
+			return "No countries found where " + languageName + " is spoken";
+		}
 
 		List<Country> countriesWhereLanguageIsSpoken;
-	
-		try {
-			countriesWhereLanguageIsSpoken = _getCountriesWhichSpeakLanguage(languageName);
-		}
-		catch (Exception e) {
-			return e.getMessage();
-		}
+		countriesWhereLanguageIsSpoken = _getCountriesForCountryLanguages(countryLanguages);
 			
 		InfectionService infectionService = infectionPortService.getInfectionServicePort();		
 		List<Infection> infections = infectionService.getInfectionsForCountries(countriesWhereLanguageIsSpoken);
@@ -188,44 +202,33 @@ public class MashupService {
 			zombieCount += infection.getZombies();
 		}
 		
-		StringBuilder result = new StringBuilder(zombieCount + " zombies total in countries which speak " + languageName + ":");
+		StringBuilder result = new StringBuilder(zombieCount + " zombies total in countries which speak " + languageName + ": (");
 		
 		for (Country c : countriesWhereLanguageIsSpoken) {
 			result.append(c.getName() + ", ");
 		}
 
 		// Strip trailing comma
-		return result.substring(0, result.length() - 2);
+		return result.substring(0, result.length() - 2) + ")";
 	}
 	
 	// helper methods 
 
-	private Language _getLanguageNamed(String languageName) throws Exception {
+	private Language _getLanguageNamed(String languageName) {
 		LanguageService languageService = languagePortService.getLanguageServicePort();
 		Language language = languageService.getLanguageWithName(languageName);
-		
-		if (language == null) {
-			throw new Exception("A language named " + languageName + " was not found");
-		}
-		
+
 		return language;
 	}
 	
-	private List<CountryLanguage> _getCountryLanguagesForLanguage(Language language) throws Exception {
+	private List<CountryLanguage> _getCountryLanguagesForLanguage(Language language) {
 		CountryLanguageService countryLanguageService = countryLanguagePortService.getCountryLanguageServicePort();
 		List<CountryLanguage> countryLanguages = countryLanguageService.getCountryLanguagesForLanguage(language);
-		
-		if (countryLanguages.isEmpty()) {
-			throw new Exception("No countries found where " + language + " is spoken");
-		}
-		
+
 		return countryLanguages;
 	}
 	
-	private List<Country> _getCountriesWhichSpeakLanguage(String languageName) throws Exception {
-		Language language = _getLanguageNamed(languageName);
-		List<CountryLanguage> countryLanguages = _getCountryLanguagesForLanguage(language);
-		
+	private List<Country> _getCountriesForCountryLanguages(List<CountryLanguage> countryLanguages) {	
 		List<String> countryCodes = new ArrayList<String>();
 
 		for(CountryLanguage countryLanguage : countryLanguages) {
