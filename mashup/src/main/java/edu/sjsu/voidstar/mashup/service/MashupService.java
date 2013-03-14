@@ -59,18 +59,22 @@ public class MashupService {
 		
 		StringBuilder result = new StringBuilder();
 		
-		if(country != null ) {
-			LanguageService languageService = languagePortService.getLanguageServicePort();
-			List<Language> languages = languageService.getLanguagesByCountry(country);
-	
-			
-			for(Language l : languages) {
-				result.append(l.getLanguage() + ", ");
-			}
+		if(country == null ) {
+			return "Could not find country with code '" + countryCode + "'";
+		}
+		
+		LanguageService languageService = languagePortService.getLanguageServicePort();
+		List<Language> languages = languageService.getLanguagesByCountry(country);
+
+		
+		for(Language l : languages) {
+			result.append(l.getLanguage() + ", ");
 		}
 		
 		// Strip trailing comma
-		return result.length() > 0 ? result.substring(0, result.length() - 2) : "";
+		return result.length() == 0
+				? "No languages spoken in " + country
+				: result.substring(0, result.length() - 2);
 	}
 
 	//2
