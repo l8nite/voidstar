@@ -66,7 +66,6 @@ public class MashupService {
 		LanguageService languageService = languagePortService.getLanguageServicePort();
 		List<Language> languages = languageService.getLanguagesByCountry(country);
 
-		
 		for(Language l : languages) {
 			result.append(l.getLanguage() + ", ");
 		}
@@ -87,35 +86,45 @@ public class MashupService {
 		
 		StringBuilder result = new StringBuilder();
 		
-		if(language != null) {
-			CountryLanguageService cls = countryLanguagePortService.getCountryLanguageServicePort();
-			List<CountryLanguage> countryLanguages = cls.getCountryLanguagesByLanguage(language);
-			
-			if (!countryLanguages.isEmpty()) {
-				CountryService cs = countryPortService.getCountryServicePort();
-				List<Country> countries = new ArrayList<Country>();
-				
-				for(CountryLanguage cl : countryLanguages) {
-					Country country = cs.getCountryByCode(cl.getCountryCode());
-					if (country != null) {
-						countries.add(country);
-					}
-				}
-				
-				if(!countries.isEmpty()) {
-					Collections.sort(countries, new Comparator<Country>(){
-						public int compare(Country arg0, Country arg1) {
-							return (arg0.getName().compareTo(arg1.getName()));
-						}
-					});
-					for (Country c : countries) {
-						result.append(c.getName() + ", ");
-					}
-				}
+		if(language == null) {
+			return "Could not find language '" + languageName + "'";
+		}
+		
+		
+		CountryLanguageService cls = countryLanguagePortService.getCountryLanguageServicePort();
+		List<CountryLanguage> countryLanguages = cls.getCountryLanguagesByLanguage(language);
+		
+		if (countryLanguages.isEmpty()) {
+			return language + " is not spoken in any countries";
+		}
+		
+		CountryService cs = countryPortService.getCountryServicePort();
+		List<Country> countries = new ArrayList<Country>();
+		
+		for(CountryLanguage cl : countryLanguages) {
+			Country country = cs.getCountryByCode(cl.getCountryCode());
+			if (country != null) {
+				countries.add(country);
 			}
 		}
+		
+		if(countries.isEmpty()) {
+			return "Could not find the countries in which " + language + " is spoken";
+		}
+		
+		Collections.sort(countries, new Comparator<Country>(){
+			public int compare(Country arg0, Country arg1) {
+				return (arg0.getName().compareTo(arg1.getName()));
+			}
+		});
+		
+		for (Country c : countries) {
+			result.append(c.getName() + ", ");
+		}
+		
 		// Strip trailing comma
-		return result.length() > 0 ? result.substring(0, result.length() - 2) : "";	
+		return result.substring(0, result.length() - 2);	
+				
 	}
 	
 	@WebMethod
