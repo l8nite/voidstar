@@ -6,6 +6,6 @@ import edu.sjsu.voidstar.mashup.service.MashupService;
 
 public class PublishMashupService {
 	public static void main (String[] args) {
-		Endpoint.publish("http://localhost:8124/mashup", new MashupService());	
+		Endpoint.publish("http://localhost:8080/mashup", new MashupService());	
 	}
 }

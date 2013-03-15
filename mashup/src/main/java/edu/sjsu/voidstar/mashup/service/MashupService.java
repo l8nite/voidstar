@@ -257,9 +257,20 @@ public class MashupService {
 
 		GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();
 		GeoIP geoIP = geoService.getGeoIP(request.getRemoteAddr());
-		String countryName = geoIP.getCountryName();
+		String countryCode = geoIP.getCountryCode();
 		
-		return "Your country: " + countryName + " is infected with " + zombieCount + " zombies!";
+		CountryService countryService = countryPortService.getCountryServicePort();
+		Country country = countryService.getCountryWithCode(countryCode);
+		
+		InfectionService infectionService = infectionPortService.getInfectionServicePort();
+		List<Infection> infections = infectionService.getInfectionsForCountry(country);
+		
+		Long zombieCount = 0L;
+		for(Infection infection : infections) {
+			zombieCount += infection.getZombies();
+		}
+		
+		return country.getName() + " is infected with " + zombieCount + " zombies!";
 	}
 	
 	// helper methods 
