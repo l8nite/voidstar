@@ -13,6 +13,7 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.LanguageService;
 import us.opulo.p.guice.annotations.HibernateService;
+import us.opulo.p.util.StringUtil;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -28,43 +29,43 @@ public class LanguageServiceGwt extends RemoteServiceServlet implements Language
 
 	@Override
 	public List<Language> getAllLanguages() {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getAllLanguages()");
+		return hibernateService.getAllLanguages();
 	}
 
 	@Override
 	public Language getLanguageWithId(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getLanguageWithId(): id = " + id);
+		return hibernateService.getLanguageWithId(id);
 	}
 
 	@Override
 	public List<Language> getLanguagesWithIds(Collection<Integer> ids) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getLanguagesWithIds(): ids = " + StringUtil.joinCollection(ids, ','));
+		return hibernateService.getLanguagesWithIds(ids);
 	}
 
 	@Override
 	public Language getLanguageWithName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getLanguageWithName(): name = " + name);
+		return hibernateService.getLanguageWithName(name);
 	}
 
 	@Override
 	public List<Language> getLanguagesWithNames(Collection<String> names) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getLanguagesWithNames(): names = " + StringUtil.joinCollection(names, ','));
+		return hibernateService.getLanguagesWithNames(names);
 	}
 
 	@Override
 	public List<Language> getLanguagesInCountry(Country country) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getLanguagesInCountry(): country = " + country);
+		return hibernateService.getLanguagesInCountry(country);
 	}
 
 	@Override
 	public List<Language> getLanguagesInCountries(Collection<Country> countries) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getLanguagesInCountries(): countries = " + StringUtil.joinCollection(countries, ','));
+		return hibernateService.getLanguagesInCountries(countries);
 	}
 }
