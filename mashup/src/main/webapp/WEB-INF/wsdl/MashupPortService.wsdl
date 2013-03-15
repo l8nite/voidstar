@@ -6,11 +6,11 @@
       <xsd:import namespace="http://ws.voidstar.sjsu.edu/mashup" schemaLocation="MashupPortService_schema1.xsd"/>
     </xsd:schema>
   </types>
-  <message name="getCountriesWhichSpeakLanguage">
-    <part name="parameters" element="tns:getCountriesWhichSpeakLanguage"/>
+  <message name="getZombiesInCountriesWhereLanguageIsSpoken">
+    <part name="parameters" element="tns:getZombiesInCountriesWhereLanguageIsSpoken"/>
   </message>
-  <message name="getCountriesWhichSpeakLanguageResponse">
-    <part name="parameters" element="tns:getCountriesWhichSpeakLanguageResponse"/>
+  <message name="getZombiesInCountriesWhereLanguageIsSpokenResponse">
+    <part name="parameters" element="tns:getZombiesInCountriesWhereLanguageIsSpokenResponse"/>
   </message>
   <message name="getLanguagesSpokenInCountry">
     <part name="parameters" element="tns:getLanguagesSpokenInCountry"/>
@@ -35,6 +35,12 @@
   </message>
   <message name="testCountryLanguageMethodsResponse">
     <part name="parameters" element="tns:testCountryLanguageMethodsResponse"/>
+  </message>
+  <message name="getCountriesWhichSpeakLanguage">
+    <part name="parameters" element="tns:getCountriesWhichSpeakLanguage"/>
+  </message>
+  <message name="getCountriesWhichSpeakLanguageResponse">
+    <part name="parameters" element="tns:getCountriesWhichSpeakLanguageResponse"/>
   </message>
   <message name="getZombiesInCity">
     <part name="parameters" element="tns:getZombiesInCity"/>
@@ -66,16 +72,10 @@
   <message name="testLanguageMethodsResponse">
     <part name="parameters" element="tns:testLanguageMethodsResponse"/>
   </message>
-  <message name="getZombiesInCountriesWhereLanguageIsSpoken">
-    <part name="parameters" element="tns:getZombiesInCountriesWhereLanguageIsSpoken"/>
-  </message>
-  <message name="getZombiesInCountriesWhereLanguageIsSpokenResponse">
-    <part name="parameters" element="tns:getZombiesInCountriesWhereLanguageIsSpokenResponse"/>
-  </message>
   <portType name="MashupService">
-    <operation name="getCountriesWhichSpeakLanguage">
-      <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageRequest" message="tns:getCountriesWhichSpeakLanguage"/>
-      <output wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageResponse" message="tns:getCountriesWhichSpeakLanguageResponse"/>
+    <operation name="getZombiesInCountriesWhereLanguageIsSpoken">
+      <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getZombiesInCountriesWhereLanguageIsSpokenRequest" message="tns:getZombiesInCountriesWhereLanguageIsSpoken"/>
+      <output wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getZombiesInCountriesWhereLanguageIsSpokenResponse" message="tns:getZombiesInCountriesWhereLanguageIsSpokenResponse"/>
     </operation>
     <operation name="getLanguagesSpokenInCountry">
       <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getLanguagesSpokenInCountryRequest" message="tns:getLanguagesSpokenInCountry"/>
@@ -92,6 +92,10 @@
     <operation name="testCountryLanguageMethods">
       <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/testCountryLanguageMethodsRequest" message="tns:testCountryLanguageMethods"/>
       <output wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/testCountryLanguageMethodsResponse" message="tns:testCountryLanguageMethodsResponse"/>
+    </operation>
+    <operation name="getCountriesWhichSpeakLanguage">
+      <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageRequest" message="tns:getCountriesWhichSpeakLanguage"/>
+      <output wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getCountriesWhichSpeakLanguageResponse" message="tns:getCountriesWhichSpeakLanguageResponse"/>
     </operation>
     <operation name="getZombiesInCity">
       <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getZombiesInCityRequest" message="tns:getZombiesInCity"/>
@@ -113,14 +117,10 @@
       <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/testLanguageMethodsRequest" message="tns:testLanguageMethods"/>
       <output wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/testLanguageMethodsResponse" message="tns:testLanguageMethodsResponse"/>
     </operation>
-    <operation name="getZombiesInCountriesWhereLanguageIsSpoken">
-      <input wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getZombiesInCountriesWhereLanguageIsSpokenRequest" message="tns:getZombiesInCountriesWhereLanguageIsSpoken"/>
-      <output wsam:Action="http://ws.voidstar.sjsu.edu/mashup/MashupService/getZombiesInCountriesWhereLanguageIsSpokenResponse" message="tns:getZombiesInCountriesWhereLanguageIsSpokenResponse"/>
-    </operation>
   </portType>
   <binding name="MashupServicePortBinding" type="tns:MashupService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="getCountriesWhichSpeakLanguage">
+    <operation name="getZombiesInCountriesWhereLanguageIsSpoken">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -157,6 +157,15 @@
       </output>
     </operation>
     <operation name="testCountryLanguageMethods">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCountriesWhichSpeakLanguage">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -202,15 +211,6 @@
       </output>
     </operation>
     <operation name="testLanguageMethods">
-      <soap:operation soapAction=""/>
-      <input>
-        <soap:body use="literal"/>
-      </input>
-      <output>
-        <soap:body use="literal"/>
-      </output>
-    </operation>
-    <operation name="getZombiesInCountriesWhereLanguageIsSpoken">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
