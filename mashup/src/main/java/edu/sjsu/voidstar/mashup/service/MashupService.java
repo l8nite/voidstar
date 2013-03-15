@@ -6,11 +6,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
-<<<<<<< HEAD
-import javax.annotation.Resource;
-=======
 
->>>>>>> master
+import javax.annotation.Resource;
+
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
