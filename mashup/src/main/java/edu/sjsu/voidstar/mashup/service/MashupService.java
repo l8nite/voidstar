@@ -48,22 +48,22 @@ public class MashupService {
 	@Resource
 	WebServiceContext webServiceContext;
 	
-	@WebServiceRef(wsdlLocation = "http://localhost:8123/country?wsdl")
+	@WebServiceRef
 	static CountryPortService countryPortService = new CountryPortService();
 
-	@WebServiceRef(wsdlLocation = "http://localhost:8123/language?wsdl")
+	@WebServiceRef
 	static LanguagePortService languagePortService = new LanguagePortService();
 
-	@WebServiceRef(wsdlLocation = "http://localhost:8123/countrylanguage?wsdl")
+	@WebServiceRef
 	static CountryLanguagePortService countryLanguagePortService = new CountryLanguagePortService();
 
-	@WebServiceRef(wsdlLocation = "http://localhost:8123/city?wsdl")
+	@WebServiceRef
 	static CityPortService cityPortService = new CityPortService();
 
-	@WebServiceRef(wsdlLocation = "http://localhost:8123/infection?wsdl")
+	@WebServiceRef
 	static InfectionPortService infectionPortService = new InfectionPortService();
 	
-	@WebServiceRef(wsdlLocation = "http://www.webservicex.net/geoipservice.asmx?WSDL")
+	@WebServiceRef
 	static GeoIPService geoIPService = new GeoIPService();
 	
 	
