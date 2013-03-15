@@ -21,11 +21,22 @@ import us.opulo.p.dao.Language;
  */
 @WebService(name = "LanguageService", targetNamespace = "http://p.opulo.us/soap/language")
 @XmlSeeAlso({
-    us.opulo.p.soap.language.ObjectFactory.class,
-    us.opulo.p.dao.ObjectFactory.class
+    us.opulo.p.dao.ObjectFactory.class,
+    us.opulo.p.soap.language.ObjectFactory.class
 })
 public interface LanguageService {
 
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.Language>
+     */
+    @WebMethod
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getAllLanguages", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetAllLanguages")
+    @ResponseWrapper(localName = "getAllLanguagesResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetAllLanguagesResponse")
+    public List<Language> getAllLanguages();
 
     /**
      * 

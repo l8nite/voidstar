@@ -22,11 +22,22 @@ import us.opulo.p.dao.Infection;
  */
 @WebService(name = "InfectionService", targetNamespace = "http://p.opulo.us/soap/infection")
 @XmlSeeAlso({
-    us.opulo.p.soap.infection.ObjectFactory.class,
-    us.opulo.p.dao.ObjectFactory.class
+    us.opulo.p.dao.ObjectFactory.class,
+    us.opulo.p.soap.infection.ObjectFactory.class
 })
 public interface InfectionService {
 
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.Infection>
+     */
+    @WebMethod
+    @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getAllInfections", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetAllInfections")
+    @ResponseWrapper(localName = "getAllInfectionsResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetAllInfectionsResponse")
+    public List<Infection> getAllInfections();
 
     /**
      * 

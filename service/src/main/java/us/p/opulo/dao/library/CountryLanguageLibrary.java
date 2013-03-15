@@ -34,6 +34,11 @@ public class CountryLanguageLibrary implements CountryLanguageService {
 	private HibernateSession session;
 
 	@Override
+	public List<CountryLanguage> getAllCountryLanguages() {
+		return service.getAllCountryLanguages();
+	}
+	
+	@Override
 	public List<CountryLanguage> getCountryLanguagesForLanguage(Language language) {
 		return service.getCountryLanguagesForLanguage(language);
 	}

@@ -52,6 +52,14 @@ public class CityServiceSoap implements CityService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
+	public List<City> getAllCities() {
+		log.info("getAllCities()");
+		return hibernateService.getAllCities();
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="City")
 	public City getCityWithId(@WebParam(name="id") Integer id) {
 		log.info("getCityById(): cityId = " + id);
 		return hibernateService.getCityWithId(id);

@@ -30,6 +30,12 @@ public class CountryLanguageServiceHibernate implements CountryLanguageService {
 	private HibernateSession session;
 	
 	@Override
+	@SuppressWarnings("unchecked")
+	public List<CountryLanguage> getAllCountryLanguages() {
+		return session.get().createCriteria(CountryLanguage.class).list();
+	}
+	
+	@Override
 	@SuppressWarnings("unchecked")	
 	public List<CountryLanguage> getCountryLanguagesForLanguage(Language language){
 		return session.get()

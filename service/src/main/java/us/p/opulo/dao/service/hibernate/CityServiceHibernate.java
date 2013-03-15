@@ -29,6 +29,12 @@ public class CityServiceHibernate implements CityService {
 	private HibernateSession session;
 
 	@Override
+	@SuppressWarnings("unchecked")
+	public List<City> getAllCities() {
+		return session.get().createCriteria(City.class).list();
+	}
+	
+	@Override
 	public City getCityWithId(Integer id) {
 		return (City) session.get().createCriteria(City.class)
 				.add(Restrictions.eq("id", id)).uniqueResult();

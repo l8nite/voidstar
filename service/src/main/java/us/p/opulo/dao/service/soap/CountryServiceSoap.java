@@ -51,6 +51,14 @@ public class CountryServiceSoap implements CountryService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
+	public List<Country> getAllCountries() {
+		log.info("getAllCountries()");
+		return hibernateService.getAllCountries();
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Country")
 	public Country getCountryWithCode(@WebParam(name="code") String countryCode) {
 		log.info("getCountryWithCode(): countryCode = " + countryCode);
 		return hibernateService.getCountryWithCode(countryCode);

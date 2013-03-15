@@ -25,103 +25,25 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetLanguagesWithIds_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesWithIds");
+    private final static QName _GetAllLanguagesResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getAllLanguagesResponse");
     private final static QName _GetLanguageWithName_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageWithName");
     private final static QName _GetLanguageWithId_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageWithId");
     private final static QName _GetLanguagesInCountryResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesInCountryResponse");
     private final static QName _GetLanguageWithIdResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageWithIdResponse");
     private final static QName _GetLanguagesWithNamesResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesWithNamesResponse");
-    private final static QName _GetLanguagesInCountry_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesInCountry");
     private final static QName _GetLanguagesInCountries_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesInCountries");
+    private final static QName _GetLanguagesInCountry_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesInCountry");
     private final static QName _GetLanguageWithNameResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguageWithNameResponse");
-    private final static QName _GetLanguagesWithIdsResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesWithIdsResponse");
     private final static QName _GetLanguagesInCountriesResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesInCountriesResponse");
+    private final static QName _GetLanguagesWithIdsResponse_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesWithIdsResponse");
     private final static QName _GetLanguagesWithNames_QNAME = new QName("http://p.opulo.us/soap/language", "getLanguagesWithNames");
+    private final static QName _GetAllLanguages_QNAME = new QName("http://p.opulo.us/soap/language", "getAllLanguages");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: us.opulo.p.soap.language
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesInCountries }
-     * 
-     */
-    public GetLanguagesInCountries createGetLanguagesInCountries() {
-        return new GetLanguagesInCountries();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesInCountryResponse }
-     * 
-     */
-    public GetLanguagesInCountryResponse createGetLanguagesInCountryResponse() {
-        return new GetLanguagesInCountryResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesWithIds }
-     * 
-     */
-    public GetLanguagesWithIds createGetLanguagesWithIds() {
-        return new GetLanguagesWithIds();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesInCountry }
-     * 
-     */
-    public GetLanguagesInCountry createGetLanguagesInCountry() {
-        return new GetLanguagesInCountry();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesWithIdsResponse }
-     * 
-     */
-    public GetLanguagesWithIdsResponse createGetLanguagesWithIdsResponse() {
-        return new GetLanguagesWithIdsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguageWithId }
-     * 
-     */
-    public GetLanguageWithId createGetLanguageWithId() {
-        return new GetLanguageWithId();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguageWithIdResponse }
-     * 
-     */
-    public GetLanguageWithIdResponse createGetLanguageWithIdResponse() {
-        return new GetLanguageWithIdResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguageWithName }
-     * 
-     */
-    public GetLanguageWithName createGetLanguageWithName() {
-        return new GetLanguageWithName();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesWithNamesResponse }
-     * 
-     */
-    public GetLanguagesWithNamesResponse createGetLanguagesWithNamesResponse() {
-        return new GetLanguagesWithNamesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesWithNames }
-     * 
-     */
-    public GetLanguagesWithNames createGetLanguagesWithNames() {
-        return new GetLanguagesWithNames();
     }
 
     /**
@@ -141,12 +63,117 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLanguagesWithNamesResponse }
+     * 
+     */
+    public GetLanguagesWithNamesResponse createGetLanguagesWithNamesResponse() {
+        return new GetLanguagesWithNamesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguageWithId }
+     * 
+     */
+    public GetLanguageWithId createGetLanguageWithId() {
+        return new GetLanguageWithId();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesInCountry }
+     * 
+     */
+    public GetLanguagesInCountry createGetLanguagesInCountry() {
+        return new GetLanguagesInCountry();
+    }
+
+    /**
+     * Create an instance of {@link GetAllLanguages }
+     * 
+     */
+    public GetAllLanguages createGetAllLanguages() {
+        return new GetAllLanguages();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesWithIdsResponse }
+     * 
+     */
+    public GetLanguagesWithIdsResponse createGetLanguagesWithIdsResponse() {
+        return new GetLanguagesWithIdsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllLanguagesResponse }
+     * 
+     */
+    public GetAllLanguagesResponse createGetAllLanguagesResponse() {
+        return new GetAllLanguagesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesInCountries }
+     * 
+     */
+    public GetLanguagesInCountries createGetLanguagesInCountries() {
+        return new GetLanguagesInCountries();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguageWithName }
+     * 
+     */
+    public GetLanguageWithName createGetLanguageWithName() {
+        return new GetLanguageWithName();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesWithNames }
+     * 
+     */
+    public GetLanguagesWithNames createGetLanguagesWithNames() {
+        return new GetLanguagesWithNames();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesInCountryResponse }
+     * 
+     */
+    public GetLanguagesInCountryResponse createGetLanguagesInCountryResponse() {
+        return new GetLanguagesInCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesWithIds }
+     * 
+     */
+    public GetLanguagesWithIds createGetLanguagesWithIds() {
+        return new GetLanguagesWithIds();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguageWithIdResponse }
+     * 
+     */
+    public GetLanguageWithIdResponse createGetLanguageWithIdResponse() {
+        return new GetLanguageWithIdResponse();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesWithIds }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesWithIds")
     public JAXBElement<GetLanguagesWithIds> createGetLanguagesWithIds(GetLanguagesWithIds value) {
         return new JAXBElement<GetLanguagesWithIds>(_GetLanguagesWithIds_QNAME, GetLanguagesWithIds.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllLanguagesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getAllLanguagesResponse")
+    public JAXBElement<GetAllLanguagesResponse> createGetAllLanguagesResponse(GetAllLanguagesResponse value) {
+        return new JAXBElement<GetAllLanguagesResponse>(_GetAllLanguagesResponse_QNAME, GetAllLanguagesResponse.class, null, value);
     }
 
     /**
@@ -195,21 +222,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesInCountry }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesInCountry")
-    public JAXBElement<GetLanguagesInCountry> createGetLanguagesInCountry(GetLanguagesInCountry value) {
-        return new JAXBElement<GetLanguagesInCountry>(_GetLanguagesInCountry_QNAME, GetLanguagesInCountry.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesInCountries }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesInCountries")
     public JAXBElement<GetLanguagesInCountries> createGetLanguagesInCountries(GetLanguagesInCountries value) {
         return new JAXBElement<GetLanguagesInCountries>(_GetLanguagesInCountries_QNAME, GetLanguagesInCountries.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesInCountry }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesInCountry")
+    public JAXBElement<GetLanguagesInCountry> createGetLanguagesInCountry(GetLanguagesInCountry value) {
+        return new JAXBElement<GetLanguagesInCountry>(_GetLanguagesInCountry_QNAME, GetLanguagesInCountry.class, null, value);
     }
 
     /**
@@ -222,15 +249,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesWithIdsResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesWithIdsResponse")
-    public JAXBElement<GetLanguagesWithIdsResponse> createGetLanguagesWithIdsResponse(GetLanguagesWithIdsResponse value) {
-        return new JAXBElement<GetLanguagesWithIdsResponse>(_GetLanguagesWithIdsResponse_QNAME, GetLanguagesWithIdsResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesInCountriesResponse }{@code >}}
      * 
      */
@@ -240,12 +258,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesWithIdsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesWithIdsResponse")
+    public JAXBElement<GetLanguagesWithIdsResponse> createGetLanguagesWithIdsResponse(GetLanguagesWithIdsResponse value) {
+        return new JAXBElement<GetLanguagesWithIdsResponse>(_GetLanguagesWithIdsResponse_QNAME, GetLanguagesWithIdsResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetLanguagesWithNames }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getLanguagesWithNames")
     public JAXBElement<GetLanguagesWithNames> createGetLanguagesWithNames(GetLanguagesWithNames value) {
         return new JAXBElement<GetLanguagesWithNames>(_GetLanguagesWithNames_QNAME, GetLanguagesWithNames.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllLanguages }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/language", name = "getAllLanguages")
+    public JAXBElement<GetAllLanguages> createGetAllLanguages(GetAllLanguages value) {
+        return new JAXBElement<GetAllLanguages>(_GetAllLanguages_QNAME, GetAllLanguages.class, null, value);
     }
 
 }

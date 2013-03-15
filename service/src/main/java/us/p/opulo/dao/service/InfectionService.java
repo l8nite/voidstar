@@ -17,6 +17,8 @@ import us.p.opulo.dao.Country;
 import us.p.opulo.dao.Infection;
 
 public interface InfectionService {
+	List<Infection> getAllInfections();
+	
 	Infection getInfectionForCity(City city);
 	List<Infection> getInfectionForCities(List<City> cities);
 	

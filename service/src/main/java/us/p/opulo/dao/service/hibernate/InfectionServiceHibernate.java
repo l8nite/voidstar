@@ -33,6 +33,12 @@ public class InfectionServiceHibernate implements InfectionService {
 	HibernateSession session;
 	
 	@Override
+	@SuppressWarnings("unchecked")
+	public List<Infection> getAllInfections() {
+		return session.get().createCriteria(Infection.class).list();
+	}
+	
+	@Override
 	public Infection getInfectionForCity (City city) {
 		return (Infection) session.get().createCriteria(Infection.class)
 				.add(Restrictions.eq("city.id", city.getId()))

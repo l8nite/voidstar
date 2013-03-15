@@ -52,6 +52,14 @@ public class LanguageServiceSoap implements LanguageService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
+	public List<Language> getAllLanguages() {
+		log.info("getAllLanguages()");
+		return hibernateService.getAllLanguages();
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Language")
 	public Language getLanguageWithId(@WebParam(name="id") Integer id) {
 		log.info("getLanguageWithId(): id = " + id);
 		return hibernateService.getLanguageWithId(id);

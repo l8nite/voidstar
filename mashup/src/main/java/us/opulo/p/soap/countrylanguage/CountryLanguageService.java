@@ -22,8 +22,8 @@ import us.opulo.p.dao.Language;
  */
 @WebService(name = "CountryLanguageService", targetNamespace = "http://p.opulo.us/soap/countrylanguage")
 @XmlSeeAlso({
-    us.opulo.p.soap.countrylanguage.ObjectFactory.class,
-    us.opulo.p.dao.ObjectFactory.class
+    us.opulo.p.dao.ObjectFactory.class,
+    us.opulo.p.soap.countrylanguage.ObjectFactory.class
 })
 public interface CountryLanguageService {
 
@@ -83,5 +83,16 @@ public interface CountryLanguageService {
     public List<CountryLanguage> getCountryLanguagesForCountries(
         @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         List<Country> country);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.CountryLanguage>
+     */
+    @WebMethod
+    @WebResult(name = "CountryLanguage", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getAllCountryLanguages", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetAllCountryLanguages")
+    @ResponseWrapper(localName = "getAllCountryLanguagesResponse", targetNamespace = "http://p.opulo.us/soap/countrylanguage", className = "us.opulo.p.soap.countrylanguage.GetAllCountryLanguagesResponse")
+    public List<CountryLanguage> getAllCountryLanguages();
 
 }

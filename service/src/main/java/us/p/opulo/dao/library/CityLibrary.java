@@ -34,6 +34,11 @@ public class CityLibrary implements CityService {
 	private HibernateSession session;
 	
 	@Override
+	public List<City> getAllCities() {
+		return service.getAllCities();
+	}
+	
+	@Override
 	public City getCityWithId(Integer cityId) {
 		return service.getCityWithId(cityId);
 	}
@@ -66,14 +71,7 @@ public class CityLibrary implements CityService {
 	/* ADDITIONAL NON-INTERFACE METHODS */
 	
 	public City getRandomCity() {
-		List<City> allCities = getAll();
+		List<City> allCities = getAllCities();
 		return allCities.get(new Random().nextInt(allCities.size()));
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<City> getAll() {
-		return session.get()
-				.createCriteria(City.class)
-				.list();
 	}
 }

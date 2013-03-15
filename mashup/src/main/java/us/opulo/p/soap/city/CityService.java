@@ -21,11 +21,22 @@ import us.opulo.p.dao.Country;
  */
 @WebService(name = "CityService", targetNamespace = "http://p.opulo.us/soap/city")
 @XmlSeeAlso({
-    us.opulo.p.soap.city.ObjectFactory.class,
-    us.opulo.p.dao.ObjectFactory.class
+    us.opulo.p.dao.ObjectFactory.class,
+    us.opulo.p.soap.city.ObjectFactory.class
 })
 public interface CityService {
 
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.City>
+     */
+    @WebMethod
+    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getAllCities", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetAllCities")
+    @ResponseWrapper(localName = "getAllCitiesResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetAllCitiesResponse")
+    public List<City> getAllCities();
 
     /**
      * 

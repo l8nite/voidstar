@@ -16,6 +16,8 @@ import us.p.opulo.dao.City;
 import us.p.opulo.dao.Country;
 
 public interface CityService {
+	List<City> getAllCities();
+	
 	City getCityWithId(Integer cityId);
 	List<City> getCitiesWithIds(Collection<Integer> cityIds);
 	

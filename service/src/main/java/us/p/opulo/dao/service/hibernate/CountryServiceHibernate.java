@@ -28,6 +28,12 @@ public class CountryServiceHibernate implements CountryService {
 	HibernateSession session;
 	
 	@Override
+	@SuppressWarnings("unchecked")
+	public List<Country> getAllCountries() {
+		return session.get().createCriteria(Country.class).list();
+	}
+	
+	@Override
 	public Country getCountryWithCode(String countryCode) {
 		return (Country) session.get().createCriteria(Country.class)
 			.add(Restrictions.eq("code", countryCode))

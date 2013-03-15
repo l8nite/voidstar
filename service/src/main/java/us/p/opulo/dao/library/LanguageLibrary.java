@@ -32,6 +32,11 @@ public class LanguageLibrary implements LanguageService {
 	private HibernateSession session;
 
 	@Override
+	public List<Language> getAllLanguages() {
+		return service.getAllLanguages();
+	}
+	
+	@Override
 	public Language getLanguageWithId(Integer id) {
 		return service.getLanguageWithId(id);
 	}

@@ -6,7 +6,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+<<<<<<< HEAD
 import javax.annotation.Resource;
+=======
+
+>>>>>>> master
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -309,6 +313,9 @@ public class MashupService {
 		citiesByCountry = service.getCitiesInCountries(countries);
 		System.out.println("getCitiesInCountries returned " + citiesByCountry.size() + " results");
 
+		List<City> allCities = service.getAllCities();
+		System.out.println("getAllCities returned " + allCities.size() + " results");
+		
  		return "woot";
 	}
 	
@@ -333,6 +340,9 @@ public class MashupService {
 		countryLanguages = clService.getCountryLanguagesForCountries(countries);
 		System.out.println("getCountryLanguagesForCountries() returned " + countryLanguages.size() + " result");
 		
+		countryLanguages = clService.getAllCountryLanguages();
+		System.out.println("getAllCountryLanguages() returned " + countryLanguages.size() + " result");
+		
 		return "woot";
 	}
 	
@@ -351,6 +361,9 @@ public class MashupService {
 		
 		countries = countryService.getCountriesOnContinents(Arrays.asList("North America", "South America"));
 		System.out.println("getCountryOnContinents() returned " + countries.size() + " results");
+		
+		countries = countryService.getAllCountries();
+		System.out.println("getAlLCountries() returned " + countries.size() + " results");
 		
 		return "woot";
 	}
@@ -378,6 +391,10 @@ public class MashupService {
 		
 		infections = infectionService.getInfectionsForCountries(countries);
 		System.out.println("getInfectionsForCountries() returned " + infections.size() + " results");
+		
+		infections = infectionService.getAllInfections();
+		System.out.println("getAllInfections() returned " + infections.size() + " results");
+		
 		return "woot";
 	}
 	
@@ -395,7 +412,7 @@ public class MashupService {
 		List<Language> languages = languageService.getLanguagesWithIds(Arrays.asList(1, 2, 3));
 		System.out.println("getLanguagesWithIds returned " + languages.size() + " results");
 		
-		language = languageService.getLanguageWithName("Cantonese");
+		language = languageService.getLanguageWithName("English");
 		System.out.println("getLanguageWithName() returned " + language);
 		
 		languages = languageService.getLanguagesWithNames(Arrays.asList("Cantonese", "Vietnamese"));
@@ -406,6 +423,10 @@ public class MashupService {
 		
 		languages = languageService.getLanguagesInCountries(countries);
 		System.out.println("getLanguagesInCountries() returned " + languages.size() + " results");
+		
+		languages = languageService.getAllLanguages();
+		System.out.println("getAllLanguages() returned " + languages.size() + " results");
+		
 		return "woot";
 		
 	}

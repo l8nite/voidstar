@@ -32,6 +32,11 @@ public class CountryLibrary implements CountryService {
 	private HibernateSession session;
 
 	@Override
+	public List<Country> getAllCountries() {
+		return service.getAllCountries();
+	}
+	
+	@Override
 	public Country getCountryWithCode(String countryCode) {
 		return service.getCountryWithCode(countryCode);
 	}
