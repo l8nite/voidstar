@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "MashupPortService", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", wsdlLocation = "http://localhost:8080/mashup/mashup?wsdl")
+@WebServiceClient(name = "MashupPortService", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", wsdlLocation = "http://triton.idlemonkeys.net:8080/mashup-0.0.1-SNAPSHOT/mashup?wsdl")
 public class MashupPortService
     extends Service
 {
@@ -30,7 +30,7 @@ public class MashupPortService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/mashup/mashup?wsdl");
+            url = new URL("http://triton.idlemonkeys.net:8080/mashup-0.0.1-SNAPSHOT/mashup?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
