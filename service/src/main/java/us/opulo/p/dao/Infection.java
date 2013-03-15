@@ -27,6 +27,13 @@ import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
 import us.opulo.p.jaxb.tables.Infections;
 
+/**
+ * Infection data access object. Objects of this class are persisted in the 'Infection' database table. 
+ * An Infection is associated with a city and provides a representation of the zombie infection for the 
+ * <code>City</code>.
+ * 
+ * @author Jason Campos, Shaun Guth
+ */
 @Entity
 @XmlRootElement(name="Infection")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -38,7 +45,7 @@ import us.opulo.p.jaxb.tables.Infections;
 @XmlGroup(Infections.class)
 @Table(name = "Infection")
 @SchemaLocation(XSD.INFECTION)
-public class Infection extends HEntity {
+public final class Infection extends HEntity {
 	@Id
 	@GeneratedValue
 	@XmlElement(name = "ID")
@@ -90,7 +97,8 @@ public class Infection extends HEntity {
 	@SuppressWarnings("unused")
 	private void setCityID(Integer cityID) {
 		this.cityID = cityID;
-	}
+	}//TODO: Move to library
+	
 	
 	public City getCity() {
 		return city;

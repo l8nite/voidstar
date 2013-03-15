@@ -14,33 +14,36 @@ import javax.xml.bind.annotation.XmlTransient;
 
 import us.opulo.p.hibernate.HibernateSession;
 
+/**
+ * Base class for all DAO objects being persisted using Hibernate. This class provides shortcuts for
+ * saving, updating, and deleting objects in persistent storage.
+ * 
+ * @author Jason Campos
+ */
 @XmlTransient
 public class HEntity {
 	
 	@Inject
 	protected static HibernateSession session;
 	
+	/**
+	 * Persists the entity.
+	 */
 	public void save() {
 		session.get().save(this);
 	}
 	
+	/**
+	 * Updates the persistent entity.
+	 */
 	public void update() { 
 		session.get().update(this);
 	}
 	
+	/**
+	 * Deletes the persistent entity.
+	 */
 	public void delete() {
 		session.get().delete(this);
-	}
-	
-	@Override
-	public int hashCode() {
-		// TODO
-		return super.hashCode(); 
-	}
-	
-	@Override
-	public boolean equals(Object o) {
-		// TODO
-		return super.equals(o);
 	}
 }

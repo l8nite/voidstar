@@ -14,12 +14,21 @@ import javax.inject.Singleton;
 
 import us.opulo.p.dao.library.DAOLibrary;
 
+/**
+ * Representation of all cities and countries in the world. This class is not persistent but rather 
+ * provides convenience aggregation methods for all cities and/or countries.
+ * 
+ * @author Jason Campos, Shaun Guth
+ */
 @Singleton
 public class World {
 
 	@Inject
-	DAOLibrary library;
+	private DAOLibrary library;
 	
+	/**
+	 * @return The total number of people in the world.
+	 */
 	public long getPopulation() {
 		long worldPopulation = 0;
 		for(City city: library.getCityLibrary().getAllCities()) {

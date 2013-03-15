@@ -32,6 +32,11 @@ import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
 import us.opulo.p.jaxb.tables.Countries;
 
+/**
+ * Country data access object. Objects of this class are persisted in the 'Country' database table. 
+ * 
+ * @author Jason Campos, Shaun Guth
+ */
 @Entity
 @XmlRootElement(name="Country")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -55,7 +60,7 @@ import us.opulo.p.jaxb.tables.Countries;
 @XmlGroup(Countries.class)
 @Table(name = "Country")
 @SchemaLocation(XSD.COUNTRY)
-public class Country extends HEntity {
+public final class Country extends HEntity {
 	@Id
 	@XmlElement(name = "Code")
 	private String code;
@@ -270,7 +275,9 @@ public class Country extends HEntity {
 		return name;
 	}
 	
-	//TODO: Move to library
+	/**
+	 * @return The 3 most spoken languages in this country
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Language> getMostPopularLanguages() {
 		return (List<Language>) session.get().createCriteria(CountryLanguage.class, "countryLanguage")
