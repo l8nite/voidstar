@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CountryPortService", targetNamespace = "http://p.opulo.us/soap/country", wsdlLocation = "http://localhost:8123/countryLanguage?wsdl")
+@WebServiceClient(name = "CountryPortService", targetNamespace = "http://p.opulo.us/soap/country", wsdlLocation = "http://triton.idlemonkeys.net:8080/service-1.0-SNAPSHOT/country?wsdl")
 public class CountryPortService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CountryPortService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8123/countryLanguage?wsdl");
+            url = new URL("http://triton.idlemonkeys.net:8080/service-1.0-SNAPSHOT/country?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

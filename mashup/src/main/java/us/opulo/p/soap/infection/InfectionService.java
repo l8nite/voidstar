@@ -31,18 +31,18 @@ public interface InfectionService {
 
     /**
      * 
-     * @param city
+     * @param country
      * @return
-     *     returns us.opulo.p.dao.Infection
+     *     returns java.util.List<us.opulo.p.dao.Infection>
      */
     @WebMethod
     @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getInfectionForCity", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCity")
-    @ResponseWrapper(localName = "getInfectionForCityResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCityResponse")
-    @Action(input = "http://p.opulo.us/soap/infection/InfectionService/getInfectionForCityRequest", output = "http://p.opulo.us/soap/infection/InfectionService/getInfectionForCityResponse")
-    public Infection getInfectionForCity(
-        @WebParam(name = "City", targetNamespace = "http://p.opulo.us/dao")
-        City city);
+    @RequestWrapper(localName = "getInfectionsForCountries", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountries")
+    @ResponseWrapper(localName = "getInfectionsForCountriesResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountriesResponse")
+    @Action(input = "http://p.opulo.us/soap/infection/InfectionService/getInfectionsForCountriesRequest", output = "http://p.opulo.us/soap/infection/InfectionService/getInfectionsForCountriesResponse")
+    public List<Infection> getInfectionsForCountries(
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+        List<Country> country);
 
     /**
      * 
@@ -55,6 +55,21 @@ public interface InfectionService {
     @ResponseWrapper(localName = "getAllInfectionsResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetAllInfectionsResponse")
     @Action(input = "http://p.opulo.us/soap/infection/InfectionService/getAllInfectionsRequest", output = "http://p.opulo.us/soap/infection/InfectionService/getAllInfectionsResponse")
     public List<Infection> getAllInfections();
+
+    /**
+     * 
+     * @param city
+     * @return
+     *     returns us.opulo.p.dao.Infection
+     */
+    @WebMethod
+    @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getInfectionForCity", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCity")
+    @ResponseWrapper(localName = "getInfectionForCityResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionForCityResponse")
+    @Action(input = "http://p.opulo.us/soap/infection/InfectionService/getInfectionForCityRequest", output = "http://p.opulo.us/soap/infection/InfectionService/getInfectionForCityResponse")
+    public Infection getInfectionForCity(
+        @WebParam(name = "City", targetNamespace = "http://p.opulo.us/dao")
+        City city);
 
     /**
      * 
@@ -85,20 +100,5 @@ public interface InfectionService {
     public List<Infection> getInfectionsForCountry(
         @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
-
-    /**
-     * 
-     * @param country
-     * @return
-     *     returns java.util.List<us.opulo.p.dao.Infection>
-     */
-    @WebMethod
-    @WebResult(name = "Infection", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getInfectionsForCountries", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountries")
-    @ResponseWrapper(localName = "getInfectionsForCountriesResponse", targetNamespace = "http://p.opulo.us/soap/infection", className = "us.opulo.p.soap.infection.GetInfectionsForCountriesResponse")
-    @Action(input = "http://p.opulo.us/soap/infection/InfectionService/getInfectionsForCountriesRequest", output = "http://p.opulo.us/soap/infection/InfectionService/getInfectionsForCountriesResponse")
-    public List<Infection> getInfectionsForCountries(
-        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
-        List<Country> country);
 
 }

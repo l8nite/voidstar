@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CityPortService", targetNamespace = "http://p.opulo.us/soap/city", wsdlLocation = "http://localhost:8123/city?wsdl")
+@WebServiceClient(name = "CityPortService", targetNamespace = "http://p.opulo.us/soap/city", wsdlLocation = "http://triton.idlemonkeys.net:8080/service-1.0-SNAPSHOT/city?wsdl")
 public class CityPortService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CityPortService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8123/city?wsdl");
+            url = new URL("http://triton.idlemonkeys.net:8080/service-1.0-SNAPSHOT/city?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

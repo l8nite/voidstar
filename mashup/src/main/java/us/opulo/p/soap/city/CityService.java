@@ -30,6 +30,33 @@ public interface CityService {
 
     /**
      * 
+     * @param country
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.City>
+     */
+    @WebMethod
+    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getCitiesInCountries", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetCitiesInCountries")
+    @ResponseWrapper(localName = "getCitiesInCountriesResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetCitiesInCountriesResponse")
+    @Action(input = "http://p.opulo.us/soap/city/CityService/getCitiesInCountriesRequest", output = "http://p.opulo.us/soap/city/CityService/getCitiesInCountriesResponse")
+    public List<City> getCitiesInCountries(
+        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
+        List<Country> country);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.City>
+     */
+    @WebMethod
+    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getAllCities", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetAllCities")
+    @ResponseWrapper(localName = "getAllCitiesResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetAllCitiesResponse")
+    @Action(input = "http://p.opulo.us/soap/city/CityService/getAllCitiesRequest", output = "http://p.opulo.us/soap/city/CityService/getAllCitiesResponse")
+    public List<City> getAllCities();
+
+    /**
+     * 
      * @param id
      * @return
      *     returns us.opulo.p.dao.City
@@ -102,32 +129,5 @@ public interface CityService {
     public List<City> getCitiesInCountry(
         @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         Country country);
-
-    /**
-     * 
-     * @param country
-     * @return
-     *     returns java.util.List<us.opulo.p.dao.City>
-     */
-    @WebMethod
-    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getCitiesInCountries", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetCitiesInCountries")
-    @ResponseWrapper(localName = "getCitiesInCountriesResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetCitiesInCountriesResponse")
-    @Action(input = "http://p.opulo.us/soap/city/CityService/getCitiesInCountriesRequest", output = "http://p.opulo.us/soap/city/CityService/getCitiesInCountriesResponse")
-    public List<City> getCitiesInCountries(
-        @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
-        List<Country> country);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<us.opulo.p.dao.City>
-     */
-    @WebMethod
-    @WebResult(name = "City", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getAllCities", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetAllCities")
-    @ResponseWrapper(localName = "getAllCitiesResponse", targetNamespace = "http://p.opulo.us/soap/city", className = "us.opulo.p.soap.city.GetAllCitiesResponse")
-    @Action(input = "http://p.opulo.us/soap/city/CityService/getAllCitiesRequest", output = "http://p.opulo.us/soap/city/CityService/getAllCitiesResponse")
-    public List<City> getAllCities();
 
 }

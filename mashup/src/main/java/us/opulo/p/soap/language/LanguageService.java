@@ -30,33 +30,6 @@ public interface LanguageService {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<us.opulo.p.dao.Language>
-     */
-    @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getAllLanguages", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetAllLanguages")
-    @ResponseWrapper(localName = "getAllLanguagesResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetAllLanguagesResponse")
-    @Action(input = "http://p.opulo.us/soap/language/LanguageService/getAllLanguagesRequest", output = "http://p.opulo.us/soap/language/LanguageService/getAllLanguagesResponse")
-    public List<Language> getAllLanguages();
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns us.opulo.p.dao.Language
-     */
-    @WebMethod
-    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
-    @RequestWrapper(localName = "getLanguageWithId", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetLanguageWithId")
-    @ResponseWrapper(localName = "getLanguageWithIdResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetLanguageWithIdResponse")
-    @Action(input = "http://p.opulo.us/soap/language/LanguageService/getLanguageWithIdRequest", output = "http://p.opulo.us/soap/language/LanguageService/getLanguageWithIdResponse")
-    public Language getLanguageWithId(
-        @WebParam(name = "id", targetNamespace = "")
-        Integer id);
-
-    /**
-     * 
      * @param ids
      * @return
      *     returns java.util.List<us.opulo.p.dao.Language>
@@ -129,5 +102,32 @@ public interface LanguageService {
     public List<Language> getLanguagesInCountries(
         @WebParam(name = "Country", targetNamespace = "http://p.opulo.us/dao")
         List<Country> country);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<us.opulo.p.dao.Language>
+     */
+    @WebMethod
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getAllLanguages", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetAllLanguages")
+    @ResponseWrapper(localName = "getAllLanguagesResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetAllLanguagesResponse")
+    @Action(input = "http://p.opulo.us/soap/language/LanguageService/getAllLanguagesRequest", output = "http://p.opulo.us/soap/language/LanguageService/getAllLanguagesResponse")
+    public List<Language> getAllLanguages();
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns us.opulo.p.dao.Language
+     */
+    @WebMethod
+    @WebResult(name = "Language", targetNamespace = "http://p.opulo.us/dao")
+    @RequestWrapper(localName = "getLanguageWithId", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetLanguageWithId")
+    @ResponseWrapper(localName = "getLanguageWithIdResponse", targetNamespace = "http://p.opulo.us/soap/language", className = "us.opulo.p.soap.language.GetLanguageWithIdResponse")
+    @Action(input = "http://p.opulo.us/soap/language/LanguageService/getLanguageWithIdRequest", output = "http://p.opulo.us/soap/language/LanguageService/getLanguageWithIdResponse")
+    public Language getLanguageWithId(
+        @WebParam(name = "id", targetNamespace = "")
+        Integer id);
 
 }
