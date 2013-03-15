@@ -11,6 +11,10 @@ package us.opulo.p.dao;
 
 import java.io.Serializable;
 
+/**
+ * Key generator for <code>CountryLanguage</code>.
+ * @author Shaun Guth
+ */
 public class CountryLanguageId implements Serializable {
 	private static final long serialVersionUID = 1L;
 

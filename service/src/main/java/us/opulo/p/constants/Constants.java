@@ -9,13 +9,20 @@
  */
 package us.opulo.p.constants;
 
+/**
+ * Collection of application wide constants.
+ * @author Jason Campos
+ */
 public class Constants {
 
-	/*
-	 * Filenames
+	/**
+	 * Resource file names and locations.
 	 */
 	public static class Resources {
 				
+		/**
+		 * XML file names and locations.
+		 */
 		public static class XML {
 			public static final String PATH = "src/main/resources/xml";
 			
@@ -26,6 +33,9 @@ public class Constants {
 			public static final String LANGUAGES = PATH + "/Languages.xml";
 		}
 		
+		/**
+		 * XSD file names and locations
+		 */
 		public static class XSD {
 			public static final String PATH = "src/main/resources/xsd/dao/";
 			
@@ -40,19 +50,9 @@ public class Constants {
 			public static final String LANGUAGES = PATH + "/Languages.xsd";
 			public static final String LANGUAGE = PATH + "/Language.xsd";
 		}
-		
-		public static class WSDL {
-			public static final String PATH = "wsdl/";
-					
-			public static final String CITY_SERVICE = PATH + "CitySoapService.wsdl";
-			public static final String COUNTRY_SERVICE = PATH + "CountrySoapService.wsdl";
-			public static final String COUNTRY_LANGUAGE_SERVICE = PATH + "CountryLanguageSoapService.wsdl";
-			public static final String INFECTION_SERVICE = PATH + "InfectionSoapService.wsdl";
-			public static final String LANGUAGE_SERVICE = PATH + "LanguageSoapService.wsdl";
-		}
 	}
 	
-	/*
+	/**
 	 * Web Service Constants
 	 */
 	public static class WebService {
@@ -62,10 +62,15 @@ public class Constants {
 		private static final String INFECTION_EXT = "/infection";
 		private static final String LANGUAGE_EXT = "/language";
 	
-	
+		/**
+		 * Soap service names and server settings
+		 */
 		public static class Soap {
 			public static final String ADDRESS = "http://localhost:8123";
 			
+			/**
+			 * Soap service names
+			 */
 			public static class Service {
 				public static final String CITY = ADDRESS + CITY_EXT;
 				public static final String COUNTRY = ADDRESS + COUNTRY_EXT;
@@ -75,16 +80,21 @@ public class Constants {
 				
 			}
 			
+			/**
+			 * Soap WSDL URLs
+			 */
 			public static class WSDL {
 				private static final String WSDL= "?wsdl";
 				public static final String CITY = Service.CITY + WSDL;
 				public static final String COUNTRY = Service.COUNTRY + WSDL;
 				public static final String COUNTRY_LANGUAGE = Service.COUNTRY_LANGUAGE + WSDL;
 				public static final String INFECTION = Service.INFECTION + WSDL;
-				public static final String LANGUAGE = Service.LANGUAGE + WSDL;
-				
+				public static final String LANGUAGE = Service.LANGUAGE + WSDL;	
 			}
 			
+			/**
+			 * Soap service names
+			 */
 			public static class ServiceName {
 				public static final String CITY_PORT_SERVICE = "CityPortService";
 				public static final String CITY_SERVICE = "CityService";
@@ -99,14 +109,21 @@ public class Constants {
 			}
 		}
 	}
-	/*
-	 * Xml Constants
+	
+	/**
+	 * XML constants
 	 */
-	public static class XML {		
+	public static class XML {
+		/**
+		 * XML namespaces
+		 */
 		public static class Namespaces {
 			public static final String NS = "http://p.opulo.us/";
 			public static final String DAO = NS + "dao";
 			
+			/**
+			 * Soap namespaces
+			 */
 			public static class Soap {
 				public static final String SOAP_NS = NS + "soap";
 				public static final String CITY_SERVICE = SOAP_NS + "/city";

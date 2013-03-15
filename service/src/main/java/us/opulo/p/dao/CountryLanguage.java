@@ -27,6 +27,12 @@ import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
 import us.opulo.p.jaxb.tables.CountryLanguages;
 
+/**
+ * CountryLanguage data access object. Objects of this class are persisted in the 'CountryLanguage' database table. 
+ * Contains information about the usage of the <code>Language</code> in a particular <code>Country</code>.
+ * 
+ * @author Jason Campos, Shaun Guth 
+ */
 @Entity
 @IdClass(CountryLanguageId.class)
 @XmlRootElement(name="CountryLanguage")
@@ -40,7 +46,7 @@ import us.opulo.p.jaxb.tables.CountryLanguages;
 @XmlGroup(CountryLanguages.class)
 @Table(name = "CountryLanguage")
 @SchemaLocation(XSD.COUNTRY_LANGUAGE)
-public class CountryLanguage extends HEntity {
+public final class CountryLanguage extends HEntity {
 	@Id
 	@XmlElement(name = "CountryCode")
 	private String countryCode;

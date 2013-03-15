@@ -28,6 +28,11 @@ import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
 import us.opulo.p.jaxb.tables.Cities;
 
+/**
+ * City data access object. Objects of this class are persisted in the 'City' database table. 
+ * 
+ * @author Jason Campos, Shaun Guth 
+ */
 @XmlRootElement(name = "City")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name="City", propOrder = {
@@ -41,7 +46,7 @@ import us.opulo.p.jaxb.tables.Cities;
 @XmlGroup(Cities.class)
 @Table(name = "City")
 @SchemaLocation(XSD.CITY)
-public class City extends HEntity {
+public final class City extends HEntity {
 	
 	@Id
 	@XmlElement(name = "ID")

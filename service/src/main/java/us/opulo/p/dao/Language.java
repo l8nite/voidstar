@@ -27,6 +27,11 @@ import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
 import us.opulo.p.jaxb.tables.Languages;
 
+/**
+ * Language data access object. Objects of this class are persisted in the 'Language' database table. 
+ * 
+ * @author Jason Campos, Shaun Guth
+ */
 @Entity
 @XmlRootElement(name="Language")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -37,7 +42,7 @@ import us.opulo.p.jaxb.tables.Languages;
 @XmlGroup(Languages.class)
 @Table(name = "Language")
 @SchemaLocation(XSD.LANGUAGE)
-public class Language extends HEntity {
+public final class Language extends HEntity {
 	
 	@Id
 	@XmlElement(name = "ID")
