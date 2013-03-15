@@ -7,7 +7,7 @@ import edu.sjsu.voidstar.ws.mashup.MashupService;
 
 public class MashupClient {
 
-	@WebServiceRef(wsdlLocation = "http://localhost:8124/mashup?wsdl")
+	@WebServiceRef
 	static MashupPortService mashupPortService = new MashupPortService();
 
 	public static void main(String[] args) {
