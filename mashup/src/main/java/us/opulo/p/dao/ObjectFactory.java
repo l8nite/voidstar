@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _City_QNAME = new QName("http://p.opulo.us/dao", "City");
-    private final static QName _Infection_QNAME = new QName("http://p.opulo.us/dao", "Infection");
+    private final static QName _CountryLanguage_QNAME = new QName("http://p.opulo.us/dao", "CountryLanguage");
+    private final static QName _Language_QNAME = new QName("http://p.opulo.us/dao", "Language");
     private final static QName _Country_QNAME = new QName("http://p.opulo.us/dao", "Country");
 
     /**
@@ -36,11 +36,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Infection }
+     * Create an instance of {@link CountryLanguage }
      * 
      */
-    public Infection createInfection() {
-        return new Infection();
+    public CountryLanguage createCountryLanguage() {
+        return new CountryLanguage();
+    }
+
+    /**
+     * Create an instance of {@link Language }
+     * 
+     */
+    public Language createLanguage() {
+        return new Language();
     }
 
     /**
@@ -52,29 +60,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link City }
+     * Create an instance of {@link JAXBElement }{@code <}{@link CountryLanguage }{@code >}}
      * 
      */
-    public City createCity() {
-        return new City();
+    @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "CountryLanguage")
+    public JAXBElement<CountryLanguage> createCountryLanguage(CountryLanguage value) {
+        return new JAXBElement<CountryLanguage>(_CountryLanguage_QNAME, CountryLanguage.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link City }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Language }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "City")
-    public JAXBElement<City> createCity(City value) {
-        return new JAXBElement<City>(_City_QNAME, City.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Infection }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "Infection")
-    public JAXBElement<Infection> createInfection(Infection value) {
-        return new JAXBElement<Infection>(_Infection_QNAME, Infection.class, null, value);
+    @XmlElementDecl(namespace = "http://p.opulo.us/dao", name = "Language")
+    public JAXBElement<Language> createLanguage(Language value) {
+        return new JAXBElement<Language>(_Language_QNAME, Language.class, null, value);
     }
 
     /**

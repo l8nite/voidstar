@@ -68,6 +68,17 @@ public interface MashupService {
 
     /**
      * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getZombiesBasedOnGeoIPLookup", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetZombiesBasedOnGeoIPLookup")
+    @ResponseWrapper(localName = "getZombiesBasedOnGeoIPLookupResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetZombiesBasedOnGeoIPLookupResponse")
+    public String getZombiesBasedOnGeoIPLookup();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.util.List<java.lang.String>

@@ -47,6 +47,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetCitiesInCountries }
+     * 
+     */
+    public GetCitiesInCountries createGetCitiesInCountries() {
+        return new GetCitiesInCountries();
+    }
+
+    /**
      * Create an instance of {@link GetCitiesInCountryResponse }
      * 
      */
@@ -55,67 +63,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCityWithId }
+     * Create an instance of {@link GetCitiesWithNamesResponse }
      * 
      */
-    public GetCityWithId createGetCityWithId() {
-        return new GetCityWithId();
-    }
-
-    /**
-     * Create an instance of {@link GetCitiesWithName }
-     * 
-     */
-    public GetCitiesWithName createGetCitiesWithName() {
-        return new GetCitiesWithName();
-    }
-
-    /**
-     * Create an instance of {@link GetCitiesWithNameResponse }
-     * 
-     */
-    public GetCitiesWithNameResponse createGetCitiesWithNameResponse() {
-        return new GetCitiesWithNameResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCitiesWithNames }
-     * 
-     */
-    public GetCitiesWithNames createGetCitiesWithNames() {
-        return new GetCitiesWithNames();
-    }
-
-    /**
-     * Create an instance of {@link GetCitiesInCountriesResponse }
-     * 
-     */
-    public GetCitiesInCountriesResponse createGetCitiesInCountriesResponse() {
-        return new GetCitiesInCountriesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCitiesWithIdsResponse }
-     * 
-     */
-    public GetCitiesWithIdsResponse createGetCitiesWithIdsResponse() {
-        return new GetCitiesWithIdsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAllCitiesResponse }
-     * 
-     */
-    public GetAllCitiesResponse createGetAllCitiesResponse() {
-        return new GetAllCitiesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCitiesInCountries }
-     * 
-     */
-    public GetCitiesInCountries createGetCitiesInCountries() {
-        return new GetCitiesInCountries();
+    public GetCitiesWithNamesResponse createGetCitiesWithNamesResponse() {
+        return new GetCitiesWithNamesResponse();
     }
 
     /**
@@ -135,11 +87,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCitiesWithNamesResponse }
+     * Create an instance of {@link GetCitiesInCountriesResponse }
      * 
      */
-    public GetCitiesWithNamesResponse createGetCitiesWithNamesResponse() {
-        return new GetCitiesWithNamesResponse();
+    public GetCitiesInCountriesResponse createGetCitiesInCountriesResponse() {
+        return new GetCitiesInCountriesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesWithName }
+     * 
+     */
+    public GetCitiesWithName createGetCitiesWithName() {
+        return new GetCitiesWithName();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesWithNames }
+     * 
+     */
+    public GetCitiesWithNames createGetCitiesWithNames() {
+        return new GetCitiesWithNames();
+    }
+
+    /**
+     * Create an instance of {@link GetCityWithId }
+     * 
+     */
+    public GetCityWithId createGetCityWithId() {
+        return new GetCityWithId();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesWithIdsResponse }
+     * 
+     */
+    public GetCitiesWithIdsResponse createGetCitiesWithIdsResponse() {
+        return new GetCitiesWithIdsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesWithNameResponse }
+     * 
+     */
+    public GetCitiesWithNameResponse createGetCitiesWithNameResponse() {
+        return new GetCitiesWithNameResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllCitiesResponse }
+     * 
+     */
+    public GetAllCitiesResponse createGetAllCitiesResponse() {
+        return new GetAllCitiesResponse();
     }
 
     /**

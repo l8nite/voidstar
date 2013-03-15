@@ -43,62 +43,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllCountries }
-     * 
-     */
-    public GetAllCountries createGetAllCountries() {
-        return new GetAllCountries();
-    }
-
-    /**
-     * Create an instance of {@link GetCountriesOnContinentResponse }
-     * 
-     */
-    public GetCountriesOnContinentResponse createGetCountriesOnContinentResponse() {
-        return new GetCountriesOnContinentResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCountriesOnContinents }
-     * 
-     */
-    public GetCountriesOnContinents createGetCountriesOnContinents() {
-        return new GetCountriesOnContinents();
-    }
-
-    /**
-     * Create an instance of {@link GetCountriesWithCodes }
-     * 
-     */
-    public GetCountriesWithCodes createGetCountriesWithCodes() {
-        return new GetCountriesWithCodes();
-    }
-
-    /**
-     * Create an instance of {@link GetCountryWithCode }
-     * 
-     */
-    public GetCountryWithCode createGetCountryWithCode() {
-        return new GetCountryWithCode();
-    }
-
-    /**
-     * Create an instance of {@link GetAllCountriesResponse }
-     * 
-     */
-    public GetAllCountriesResponse createGetAllCountriesResponse() {
-        return new GetAllCountriesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetCountriesOnContinentsResponse }
-     * 
-     */
-    public GetCountriesOnContinentsResponse createGetCountriesOnContinentsResponse() {
-        return new GetCountriesOnContinentsResponse();
-    }
-
-    /**
      * Create an instance of {@link GetCountriesWithCodesResponse }
      * 
      */
@@ -115,11 +59,67 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetCountriesOnContinentsResponse }
+     * 
+     */
+    public GetCountriesOnContinentsResponse createGetCountriesOnContinentsResponse() {
+        return new GetCountriesOnContinentsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesOnContinentResponse }
+     * 
+     */
+    public GetCountriesOnContinentResponse createGetCountriesOnContinentResponse() {
+        return new GetCountriesOnContinentResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllCountriesResponse }
+     * 
+     */
+    public GetAllCountriesResponse createGetAllCountriesResponse() {
+        return new GetAllCountriesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllCountries }
+     * 
+     */
+    public GetAllCountries createGetAllCountries() {
+        return new GetAllCountries();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesOnContinents }
+     * 
+     */
+    public GetCountriesOnContinents createGetCountriesOnContinents() {
+        return new GetCountriesOnContinents();
+    }
+
+    /**
      * Create an instance of {@link GetCountriesOnContinent }
      * 
      */
     public GetCountriesOnContinent createGetCountriesOnContinent() {
         return new GetCountriesOnContinent();
+    }
+
+    /**
+     * Create an instance of {@link GetCountryWithCode }
+     * 
+     */
+    public GetCountryWithCode createGetCountryWithCode() {
+        return new GetCountryWithCode();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesWithCodes }
+     * 
+     */
+    public GetCountriesWithCodes createGetCountriesWithCodes() {
+        return new GetCountriesWithCodes();
     }
 
     /**

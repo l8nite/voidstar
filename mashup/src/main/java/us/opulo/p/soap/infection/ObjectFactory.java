@@ -24,15 +24,15 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetAllInfections_QNAME = new QName("http://p.opulo.us/soap/infection", "getAllInfections");
     private final static QName _GetInfectionForCities_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionForCities");
+    private final static QName _GetInfectionForCity_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionForCity");
     private final static QName _GetInfectionsForCountry_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsForCountry");
     private final static QName _GetAllInfectionsResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getAllInfectionsResponse");
     private final static QName _GetInfectionForCityResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionForCityResponse");
-    private final static QName _GetInfectionForCitiesResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionForCitiesResponse");
-    private final static QName _GetAllInfections_QNAME = new QName("http://p.opulo.us/soap/infection", "getAllInfections");
-    private final static QName _GetInfectionForCity_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionForCity");
-    private final static QName _GetInfectionsForCountriesResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsForCountriesResponse");
     private final static QName _GetInfectionsForCountries_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsForCountries");
+    private final static QName _GetInfectionsForCountriesResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsForCountriesResponse");
+    private final static QName _GetInfectionForCitiesResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionForCitiesResponse");
     private final static QName _GetInfectionsForCountryResponse_QNAME = new QName("http://p.opulo.us/soap/infection", "getInfectionsForCountryResponse");
 
     /**
@@ -40,62 +40,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link GetInfectionsForCountriesResponse }
-     * 
-     */
-    public GetInfectionsForCountriesResponse createGetInfectionsForCountriesResponse() {
-        return new GetInfectionsForCountriesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetInfectionForCities }
-     * 
-     */
-    public GetInfectionForCities createGetInfectionForCities() {
-        return new GetInfectionForCities();
-    }
-
-    /**
-     * Create an instance of {@link GetInfectionForCityResponse }
-     * 
-     */
-    public GetInfectionForCityResponse createGetInfectionForCityResponse() {
-        return new GetInfectionForCityResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetInfectionForCitiesResponse }
-     * 
-     */
-    public GetInfectionForCitiesResponse createGetInfectionForCitiesResponse() {
-        return new GetInfectionForCitiesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetInfectionForCity }
-     * 
-     */
-    public GetInfectionForCity createGetInfectionForCity() {
-        return new GetInfectionForCity();
-    }
-
-    /**
-     * Create an instance of {@link GetAllInfections }
-     * 
-     */
-    public GetAllInfections createGetAllInfections() {
-        return new GetAllInfections();
-    }
-
-    /**
-     * Create an instance of {@link GetAllInfectionsResponse }
-     * 
-     */
-    public GetAllInfectionsResponse createGetAllInfectionsResponse() {
-        return new GetAllInfectionsResponse();
     }
 
     /**
@@ -107,11 +51,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetInfectionsForCountry }
+     * Create an instance of {@link GetInfectionForCitiesResponse }
      * 
      */
-    public GetInfectionsForCountry createGetInfectionsForCountry() {
-        return new GetInfectionsForCountry();
+    public GetInfectionForCitiesResponse createGetInfectionForCitiesResponse() {
+        return new GetInfectionForCitiesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllInfectionsResponse }
+     * 
+     */
+    public GetAllInfectionsResponse createGetAllInfectionsResponse() {
+        return new GetAllInfectionsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInfectionsForCountriesResponse }
+     * 
+     */
+    public GetInfectionsForCountriesResponse createGetInfectionsForCountriesResponse() {
+        return new GetInfectionsForCountriesResponse();
     }
 
     /**
@@ -123,12 +83,70 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetInfectionForCityResponse }
+     * 
+     */
+    public GetInfectionForCityResponse createGetInfectionForCityResponse() {
+        return new GetInfectionForCityResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInfectionsForCountry }
+     * 
+     */
+    public GetInfectionsForCountry createGetInfectionsForCountry() {
+        return new GetInfectionsForCountry();
+    }
+
+    /**
+     * Create an instance of {@link GetInfectionForCity }
+     * 
+     */
+    public GetInfectionForCity createGetInfectionForCity() {
+        return new GetInfectionForCity();
+    }
+
+    /**
+     * Create an instance of {@link GetInfectionForCities }
+     * 
+     */
+    public GetInfectionForCities createGetInfectionForCities() {
+        return new GetInfectionForCities();
+    }
+
+    /**
+     * Create an instance of {@link GetAllInfections }
+     * 
+     */
+    public GetAllInfections createGetAllInfections() {
+        return new GetAllInfections();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllInfections }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getAllInfections")
+    public JAXBElement<GetAllInfections> createGetAllInfections(GetAllInfections value) {
+        return new JAXBElement<GetAllInfections>(_GetAllInfections_QNAME, GetAllInfections.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionForCities }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionForCities")
     public JAXBElement<GetInfectionForCities> createGetInfectionForCities(GetInfectionForCities value) {
         return new JAXBElement<GetInfectionForCities>(_GetInfectionForCities_QNAME, GetInfectionForCities.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionForCity }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionForCity")
+    public JAXBElement<GetInfectionForCity> createGetInfectionForCity(GetInfectionForCity value) {
+        return new JAXBElement<GetInfectionForCity>(_GetInfectionForCity_QNAME, GetInfectionForCity.class, null, value);
     }
 
     /**
@@ -159,30 +177,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionForCitiesResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionsForCountries }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionForCitiesResponse")
-    public JAXBElement<GetInfectionForCitiesResponse> createGetInfectionForCitiesResponse(GetInfectionForCitiesResponse value) {
-        return new JAXBElement<GetInfectionForCitiesResponse>(_GetInfectionForCitiesResponse_QNAME, GetInfectionForCitiesResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllInfections }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getAllInfections")
-    public JAXBElement<GetAllInfections> createGetAllInfections(GetAllInfections value) {
-        return new JAXBElement<GetAllInfections>(_GetAllInfections_QNAME, GetAllInfections.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionForCity }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionForCity")
-    public JAXBElement<GetInfectionForCity> createGetInfectionForCity(GetInfectionForCity value) {
-        return new JAXBElement<GetInfectionForCity>(_GetInfectionForCity_QNAME, GetInfectionForCity.class, null, value);
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionsForCountries")
+    public JAXBElement<GetInfectionsForCountries> createGetInfectionsForCountries(GetInfectionsForCountries value) {
+        return new JAXBElement<GetInfectionsForCountries>(_GetInfectionsForCountries_QNAME, GetInfectionsForCountries.class, null, value);
     }
 
     /**
@@ -195,12 +195,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionsForCountries }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInfectionForCitiesResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionsForCountries")
-    public JAXBElement<GetInfectionsForCountries> createGetInfectionsForCountries(GetInfectionsForCountries value) {
-        return new JAXBElement<GetInfectionsForCountries>(_GetInfectionsForCountries_QNAME, GetInfectionsForCountries.class, null, value);
+    @XmlElementDecl(namespace = "http://p.opulo.us/soap/infection", name = "getInfectionForCitiesResponse")
+    public JAXBElement<GetInfectionForCitiesResponse> createGetInfectionForCitiesResponse(GetInfectionForCitiesResponse value) {
+        return new JAXBElement<GetInfectionForCitiesResponse>(_GetInfectionForCitiesResponse_QNAME, GetInfectionForCitiesResponse.class, null, value);
     }
 
     /**

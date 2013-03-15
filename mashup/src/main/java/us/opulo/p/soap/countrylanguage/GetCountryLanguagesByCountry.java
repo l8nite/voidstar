@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import us.opulo.p.dao.Country;
 
 
 /**
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://p.opulo.us/dao}Language" minOccurs="0"/>
+ *         &lt;element ref="{http://p.opulo.us/dao}Country" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +29,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getCountryLanguagesByCountry", propOrder = {
-    "language"
+    "country"
 })
 public class GetCountryLanguagesByCountry {
 
-    @XmlElement(name = "Language", namespace = "http://p.opulo.us/dao", nillable = true)
-    protected Object language;
+    @XmlElement(name = "Country", namespace = "http://p.opulo.us/dao")
+    protected Country country;
 
     /**
-     * Gets the value of the language property.
+     * Gets the value of the country property.
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link Country }
      *     
      */
-    public Object getLanguage() {
-        return language;
+    public Country getCountry() {
+        return country;
     }
 
     /**
-     * Sets the value of the language property.
+     * Sets the value of the country property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link Country }
      *     
      */
-    public void setLanguage(Object value) {
-        this.language = value;
+    public void setCountry(Country value) {
+        this.country = value;
     }
 
 }

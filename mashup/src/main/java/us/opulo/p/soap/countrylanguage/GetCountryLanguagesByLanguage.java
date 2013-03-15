@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import us.opulo.p.dao.Language;
 
 
 /**
@@ -32,18 +33,18 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class GetCountryLanguagesByLanguage {
 
-    @XmlElement(name = "Language", namespace = "http://p.opulo.us/dao", nillable = true)
-    protected Object language;
+    @XmlElement(name = "Language", namespace = "http://p.opulo.us/dao")
+    protected Language language;
 
     /**
      * Gets the value of the language property.
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link Language }
      *     
      */
-    public Object getLanguage() {
+    public Language getLanguage() {
         return language;
     }
 
@@ -52,10 +53,10 @@ public class GetCountryLanguagesByLanguage {
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link Language }
      *     
      */
-    public void setLanguage(Object value) {
+    public void setLanguage(Language value) {
         this.language = value;
     }
 

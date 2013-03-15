@@ -10,10 +10,19 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
+import javax.annotation.Resource;
+
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.servlet.http.HttpServletRequest;
+import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceRef;
+import javax.xml.ws.handler.MessageContext;
+
+import net.webservicex.GeoIP;
+import net.webservicex.GeoIPService;
+import net.webservicex.GeoIPServiceHttpGet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +45,9 @@ import us.opulo.p.soap.language.LanguageService;
 
 @WebService(targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", serviceName = "MashupPortService", name = "MashupService")
 public class MashupService {
+	@Resource
+	WebServiceContext webServiceContext;
+	
 	@WebServiceRef(wsdlLocation = "http://localhost:8123/country?wsdl")
 	static CountryPortService countryPortService = new CountryPortService();
 
@@ -50,6 +62,11 @@ public class MashupService {
 
 	@WebServiceRef(wsdlLocation = "http://localhost:8123/infection?wsdl")
 	static InfectionPortService infectionPortService = new InfectionPortService();
+	
+	@WebServiceRef(wsdlLocation = "http://www.webservicex.net/geoipservice.asmx?WSDL")
+	static GeoIPService geoIPService = new GeoIPService();
+	
+	
 
 	private static final Logger log = LoggerFactory.getLogger(MashupService.class);
 
@@ -234,7 +251,32 @@ public class MashupService {
 		return result.substring(0, result.length() - 2) + ")";
 	}
 	
-	// #6 
+	// 6
+	@WebMethod
+	public String getZombiesBasedOnGeoIPLookup()
+	{
+		MessageContext messageContext = webServiceContext.getMessageContext();
+		HttpServletRequest request = (HttpServletRequest)messageContext.get(MessageContext.SERVLET_REQUEST);
+
+		GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();
+		GeoIP geoIP = geoService.getGeoIP(request.getRemoteAddr());
+		String countryCode = geoIP.getCountryCode();
+		
+		CountryService countryService = countryPortService.getCountryServicePort();
+		Country country = countryService.getCountryWithCode(countryCode);
+		
+		InfectionService infectionService = infectionPortService.getInfectionServicePort();
+		List<Infection> infections = infectionService.getInfectionsForCountry(country);
+		
+		Long zombieCount = 0L;
+		for(Infection infection : infections) {
+			zombieCount += infection.getZombies();
+		}
+		
+		return country.getName() + " is infected with " + zombieCount + " zombies!";
+	}
+
+	// #7 
 	@WebMethod 
 	public List<String> getCountriesWithTheMostZombies(Integer maxResults) {
 		CountryService countryService = countryPortService.getCountryServicePort();
@@ -272,7 +314,7 @@ public class MashupService {
 		return result;
 	}
 	
-	// #7
+	// #8
 	@WebMethod
 	public List<String> getCitiesWithTheMostZombies(Integer maxResults) {
 		CityService cityService = cityPortService.getCityServicePort();

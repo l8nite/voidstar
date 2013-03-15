@@ -47,14 +47,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLanguagesInCountriesResponse }
-     * 
-     */
-    public GetLanguagesInCountriesResponse createGetLanguagesInCountriesResponse() {
-        return new GetLanguagesInCountriesResponse();
-    }
-
-    /**
      * Create an instance of {@link GetLanguageWithNameResponse }
      * 
      */
@@ -71,11 +63,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLanguageWithId }
+     * Create an instance of {@link GetLanguagesInCountries }
      * 
      */
-    public GetLanguageWithId createGetLanguageWithId() {
-        return new GetLanguageWithId();
+    public GetLanguagesInCountries createGetLanguagesInCountries() {
+        return new GetLanguagesInCountries();
     }
 
     /**
@@ -87,11 +79,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllLanguages }
+     * Create an instance of {@link GetLanguagesInCountriesResponse }
      * 
      */
-    public GetAllLanguages createGetAllLanguages() {
-        return new GetAllLanguages();
+    public GetLanguagesInCountriesResponse createGetLanguagesInCountriesResponse() {
+        return new GetLanguagesInCountriesResponse();
     }
 
     /**
@@ -103,35 +95,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllLanguagesResponse }
-     * 
-     */
-    public GetAllLanguagesResponse createGetAllLanguagesResponse() {
-        return new GetAllLanguagesResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguagesInCountries }
-     * 
-     */
-    public GetLanguagesInCountries createGetLanguagesInCountries() {
-        return new GetLanguagesInCountries();
-    }
-
-    /**
-     * Create an instance of {@link GetLanguageWithName }
-     * 
-     */
-    public GetLanguageWithName createGetLanguageWithName() {
-        return new GetLanguageWithName();
-    }
-
-    /**
      * Create an instance of {@link GetLanguagesWithNames }
      * 
      */
     public GetLanguagesWithNames createGetLanguagesWithNames() {
         return new GetLanguagesWithNames();
+    }
+
+    /**
+     * Create an instance of {@link GetAllLanguages }
+     * 
+     */
+    public GetAllLanguages createGetAllLanguages() {
+        return new GetAllLanguages();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguageWithIdResponse }
+     * 
+     */
+    public GetLanguageWithIdResponse createGetLanguageWithIdResponse() {
+        return new GetLanguageWithIdResponse();
     }
 
     /**
@@ -151,11 +135,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLanguageWithIdResponse }
+     * Create an instance of {@link GetAllLanguagesResponse }
      * 
      */
-    public GetLanguageWithIdResponse createGetLanguageWithIdResponse() {
-        return new GetLanguageWithIdResponse();
+    public GetAllLanguagesResponse createGetAllLanguagesResponse() {
+        return new GetAllLanguagesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguageWithId }
+     * 
+     */
+    public GetLanguageWithId createGetLanguageWithId() {
+        return new GetLanguageWithId();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguageWithName }
+     * 
+     */
+    public GetLanguageWithName createGetLanguageWithName() {
+        return new GetLanguageWithName();
     }
 
     /**
