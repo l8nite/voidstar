@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CountryService;
 import us.opulo.p.guice.annotations.HibernateService;
+import us.opulo.p.util.StringUtil;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -27,31 +28,31 @@ public class CountryServiceGwt extends RemoteServiceServlet implements CountrySe
 
 	@Override
 	public List<Country> getAllCountries() {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getAllCountries()");
+		return hibernateService.getAllCountries();
 	}
 
 	@Override
 	public Country getCountryWithCode(String countryCode) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getCountryWithCode(): countryCode = " + countryCode);
+		return hibernateService.getCountryWithCode(countryCode);
 	}
 
 	@Override
 	public List<Country> getCountriesWithCodes(Collection<String> countryCodes) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getCountriesWithCodes(): countryCodes = " + StringUtil.joinCollection(countryCodes, ','));
+		return hibernateService.getCountriesWithCodes(countryCodes);
 	}
 
 	@Override
 	public List<Country> getCountriesOnContinent(String continent) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getCountriesOnContinent(): continent = " + continent);
+		return hibernateService.getCountriesOnContinent(continent);
 	}
 
 	@Override
 	public List<Country> getCountriesOnContinents(Collection<String> continents) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getCountriesOnContinent(): continent = " + StringUtil.joinCollection(continents,  ','));
+		return hibernateService.getCountriesOnContinents(continents);
 	}
 }
