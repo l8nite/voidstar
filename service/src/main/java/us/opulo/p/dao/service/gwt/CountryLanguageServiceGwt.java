@@ -9,11 +9,9 @@ import javax.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.Language;
-import us.opulo.p.dao.service.CityService;
 import us.opulo.p.dao.service.CountryLanguageService;
 import us.opulo.p.guice.annotations.HibernateService;
 import us.opulo.p.util.StringUtil;
@@ -32,34 +30,31 @@ public class CountryLanguageServiceGwt extends RemoteServiceServlet implements C
 
 	@Override
 	public List<CountryLanguage> getAllCountryLanguages() {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getAllCountryLanguages()");
+		return hibernateService.getAllCountryLanguages();
 	}
 
 	@Override
-	public List<CountryLanguage> getCountryLanguagesForLanguage(
-			Language language) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CountryLanguage> getCountryLanguagesForLanguage(Language language) {
+		log.info("getCountryLanguagesForLanguage(): language = " + language);
+		return hibernateService.getCountryLanguagesForLanguage(language);
 	}
 
 	@Override
-	public List<CountryLanguage> getCountryLanguagesForLanguages(
-			Collection<Language> languages) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CountryLanguage> getCountryLanguagesForLanguages(Collection<Language> languages) {
+		log.info("getCountryLanguagesForLanguages(): languages = " + StringUtil.joinCollection(languages, ','));
+		return hibernateService.getCountryLanguagesForLanguages(languages);
 	}
 
 	@Override
 	public List<CountryLanguage> getCountryLanguagesForCountry(Country country) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getCountryLanguagesForCountry(): country = " + country);
+		return hibernateService.getCountryLanguagesForCountry(country);
 	}
 
 	@Override
-	public List<CountryLanguage> getCountryLanguagesForCountries(
-			Collection<Country> countries) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CountryLanguage> getCountryLanguagesForCountries(Collection<Country> countries) {
+		log.info("getCountryLanguagesForCountries(): countries = " + StringUtil.joinCollection(countries, ','));
+		return hibernateService.getCountryLanguagesForCountries(countries);
 	}
 }
