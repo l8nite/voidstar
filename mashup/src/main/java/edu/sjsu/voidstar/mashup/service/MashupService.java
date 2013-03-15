@@ -17,7 +17,9 @@ import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.handler.MessageContext;
 
+import net.webservicex.GeoIP;
 import net.webservicex.GeoIPService;
+import net.webservicex.GeoIPServiceHttpGet;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -252,9 +254,12 @@ public class MashupService {
 	{
 		MessageContext messageContext = webServiceContext.getMessageContext();
 		HttpServletRequest request = (HttpServletRequest)messageContext.get(MessageContext.SERVLET_REQUEST);
-		return "Client IP: " + request.getRemoteAddr();
-		// GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();
-		// return null;
+
+		GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();
+		GeoIP geoIP = geoService.getGeoIP(request.getRemoteAddr());
+		String countryName = geoIP.getCountryName();
+		
+		return "Your country: " + countryName + " is infected with " + zombieCount + " zombies!";
 	}
 	
 	// helper methods 
