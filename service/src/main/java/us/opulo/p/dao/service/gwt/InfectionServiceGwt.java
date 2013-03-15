@@ -14,6 +14,7 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.service.InfectionService;
 import us.opulo.p.guice.annotations.HibernateService;
+import us.opulo.p.util.StringUtil;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -29,32 +30,31 @@ public class InfectionServiceGwt extends RemoteServiceServlet implements Infecti
 
 	@Override
 	public List<Infection> getAllInfections() {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getAllInfections()");
+		return hibernateService.getAllInfections();
 	}
 
 	@Override
 	public Infection getInfectionForCity(City city) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getInfectionForCity(): city = " + city);
+		return hibernateService.getInfectionForCity(city);
 	}
 
 	@Override
 	public List<Infection> getInfectionForCities(List<City> cities) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getInfectionForCities(): cities = " + StringUtil.joinCollection(cities, ','));
+		return hibernateService.getInfectionForCities(cities);
 	}
 
 	@Override
 	public List<Infection> getInfectionsForCountry(Country country) {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("getInfectionsForCountry(): country = " + country);
+		return hibernateService.getInfectionsForCountry(country);
 	}
 
 	@Override
-	public List<Infection> getInfectionsForCountries(
-			Collection<Country> countries) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Infection> getInfectionsForCountries(Collection<Country> countries) {
+		log.info("getInfectionsForCountries(): countries = " + StringUtil.joinCollection(countries, ','));
+		return hibernateService.getInfectionsForCountries(countries);
 	}
 }
