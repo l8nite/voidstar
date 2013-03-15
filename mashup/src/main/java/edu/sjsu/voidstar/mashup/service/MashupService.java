@@ -251,7 +251,8 @@ public class MashupService {
 		MessageContext messageContext = webServiceContext.getMessageContext();
 		HttpServletRequest request = (HttpServletRequest)messageContext.get(MessageContext.SERVLET_REQUEST);
 		return "Client IP: " + request.getRemoteAddr();
-		// GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();		
+		// GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();
+		// return null;
 	}
 	
 	// helper methods 

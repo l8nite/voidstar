@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.voidstar.sjsu.edu/mashup" xmlns:tns="http://ws.voidstar.sjsu.edu/mashup" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getCountriesWhichSpeakLanguage" type="tns:getCountriesWhichSpeakLanguage"/>
+
+  <xs:element name="getCountriesWhichSpeakLanguageResponse" type="tns:getCountriesWhichSpeakLanguageResponse"/>
+
+  <xs:element name="getLanguagesSpokenInCountry" type="tns:getLanguagesSpokenInCountry"/>
+
+  <xs:element name="getLanguagesSpokenInCountryResponse" type="tns:getLanguagesSpokenInCountryResponse"/>
+
+  <xs:element name="getZombiesBasedOnGeoIPLookup" type="tns:getZombiesBasedOnGeoIPLookup"/>
+
+  <xs:element name="getZombiesBasedOnGeoIPLookupResponse" type="tns:getZombiesBasedOnGeoIPLookupResponse"/>
+
+  <xs:element name="getZombiesInCity" type="tns:getZombiesInCity"/>
+
+  <xs:element name="getZombiesInCityResponse" type="tns:getZombiesInCityResponse"/>
+
+  <xs:element name="getZombiesInCountriesWhereLanguageIsSpoken" type="tns:getZombiesInCountriesWhereLanguageIsSpoken"/>
+
+  <xs:element name="getZombiesInCountriesWhereLanguageIsSpokenResponse" type="tns:getZombiesInCountriesWhereLanguageIsSpokenResponse"/>
+
+  <xs:element name="getZombiesOnContinent" type="tns:getZombiesOnContinent"/>
+
+  <xs:element name="getZombiesOnContinentResponse" type="tns:getZombiesOnContinentResponse"/>
+
+  <xs:element name="testCityMethods" type="tns:testCityMethods"/>
+
+  <xs:element name="testCityMethodsResponse" type="tns:testCityMethodsResponse"/>
+
+  <xs:element name="testCountryLanguageMethods" type="tns:testCountryLanguageMethods"/>
+
+  <xs:element name="testCountryLanguageMethodsResponse" type="tns:testCountryLanguageMethodsResponse"/>
+
+  <xs:element name="testCountryMethods" type="tns:testCountryMethods"/>
+
+  <xs:element name="testCountryMethodsResponse" type="tns:testCountryMethodsResponse"/>
+
+  <xs:element name="testInfectionMethods" type="tns:testInfectionMethods"/>
+
+  <xs:element name="testInfectionMethodsResponse" type="tns:testInfectionMethodsResponse"/>
+
+  <xs:element name="testLanguageMethods" type="tns:testLanguageMethods"/>
+
+  <xs:element name="testLanguageMethodsResponse" type="tns:testLanguageMethodsResponse"/>
+
+  <xs:complexType name="getCountriesWhichSpeakLanguage">
+    <xs:sequence>
+      <xs:element name="languageName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCountriesWhichSpeakLanguageResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLanguagesSpokenInCountry">
+    <xs:sequence>
+      <xs:element name="countryCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLanguagesSpokenInCountryResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesInCountriesWhereLanguageIsSpoken">
+    <xs:sequence>
+      <xs:element name="languageName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesInCountriesWhereLanguageIsSpokenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testCountryLanguageMethods">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="testCountryLanguageMethodsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesOnContinent">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesOnContinentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testInfectionMethods">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="testInfectionMethodsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesBasedOnGeoIPLookup">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesBasedOnGeoIPLookupResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testCountryMethods">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="testCountryMethodsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesInCity">
+    <xs:sequence>
+      <xs:element name="cityName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getZombiesInCityResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testCityMethods">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="testCityMethodsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testLanguageMethods">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="testLanguageMethodsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
