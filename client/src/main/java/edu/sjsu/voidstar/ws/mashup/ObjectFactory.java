@@ -33,6 +33,10 @@ public class ObjectFactory {
     private final static QName _TestLanguageMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testLanguageMethods");
     private final static QName _GetZombiesInCountriesWhereLanguageIsSpokenResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesInCountriesWhereLanguageIsSpokenResponse");
     private final static QName _TestCityMethods_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCityMethods");
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+    private final static QName _GetCitiesWithTheMostZombiesResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCitiesWithTheMostZombiesResponse");
+=======
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
     private final static QName _GetZombiesInCity_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesInCity");
     private final static QName _TestInfectionMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testInfectionMethodsResponse");
     private final static QName _GetCountriesWhichSpeakLanguageResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguageResponse");
@@ -43,7 +47,13 @@ public class ObjectFactory {
     private final static QName _GetZombiesBasedOnGeoIPLookup_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesBasedOnGeoIPLookup");
     private final static QName _TestCountryMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testCountryMethodsResponse");
     private final static QName _GetZombiesInCityResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesInCityResponse");
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+    private final static QName _GetCountriesWithTheMostZombiesResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWithTheMostZombiesResponse");
+    private final static QName _GetCitiesWithTheMostZombies_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCitiesWithTheMostZombies");
+    private final static QName _GetCountriesWithTheMostZombies_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWithTheMostZombies");
+=======
     private final static QName _GetZombiesBasedOnGeoIPLookupResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getZombiesBasedOnGeoIPLookupResponse");
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
     private final static QName _GetCountriesWhichSpeakLanguage_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "getCountriesWhichSpeakLanguage");
     private final static QName _TestLanguageMethodsResponse_QNAME = new QName("http://ws.voidstar.sjsu.edu/mashup", "testLanguageMethodsResponse");
 
@@ -55,6 +65,61 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+     * Create an instance of {@link TestLanguageMethodsResponse }
+     * 
+     */
+    public TestLanguageMethodsResponse createTestLanguageMethodsResponse() {
+        return new TestLanguageMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetZombiesInCityResponse }
+     * 
+     */
+    public GetZombiesInCityResponse createGetZombiesInCityResponse() {
+        return new GetZombiesInCityResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetZombiesOnContinentResponse }
+     * 
+     */
+    public GetZombiesOnContinentResponse createGetZombiesOnContinentResponse() {
+        return new GetZombiesOnContinentResponse();
+    }
+
+    /**
+     * Create an instance of {@link TestCountryLanguageMethodsResponse }
+     * 
+     */
+    public TestCountryLanguageMethodsResponse createTestCountryLanguageMethodsResponse() {
+        return new TestCountryLanguageMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link TestCityMethods }
+     * 
+     */
+    public TestCityMethods createTestCityMethods() {
+        return new TestCityMethods();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesWithTheMostZombies }
+     * 
+     */
+    public GetCountriesWithTheMostZombies createGetCountriesWithTheMostZombies() {
+        return new GetCountriesWithTheMostZombies();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesWithTheMostZombiesResponse }
+     * 
+     */
+    public GetCountriesWithTheMostZombiesResponse createGetCountriesWithTheMostZombiesResponse() {
+        return new GetCountriesWithTheMostZombiesResponse();
+=======
      * Create an instance of {@link GetLanguagesSpokenInCountry }
      * 
      */
@@ -100,6 +165,7 @@ public class ObjectFactory {
      */
     public GetZombiesOnContinent createGetZombiesOnContinent() {
         return new GetZombiesOnContinent();
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
     }
 
     /**
@@ -111,6 +177,77 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+     * Create an instance of {@link GetZombiesOnContinent }
+     * 
+     */
+    public GetZombiesOnContinent createGetZombiesOnContinent() {
+        return new GetZombiesOnContinent();
+    }
+
+    /**
+     * Create an instance of {@link TestCityMethodsResponse }
+     * 
+     */
+    public TestCityMethodsResponse createTestCityMethodsResponse() {
+        return new TestCityMethodsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesSpokenInCountry }
+     * 
+     */
+    public GetLanguagesSpokenInCountry createGetLanguagesSpokenInCountry() {
+        return new GetLanguagesSpokenInCountry();
+    }
+
+    /**
+     * Create an instance of {@link TestInfectionMethods }
+     * 
+     */
+    public TestInfectionMethods createTestInfectionMethods() {
+        return new TestInfectionMethods();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesWhichSpeakLanguage }
+     * 
+     */
+    public GetCountriesWhichSpeakLanguage createGetCountriesWhichSpeakLanguage() {
+        return new GetCountriesWhichSpeakLanguage();
+    }
+
+    /**
+     * Create an instance of {@link TestLanguageMethods }
+     * 
+     */
+    public TestLanguageMethods createTestLanguageMethods() {
+        return new TestLanguageMethods();
+    }
+
+    /**
+     * Create an instance of {@link GetCountriesWhichSpeakLanguageResponse }
+     * 
+     */
+    public GetCountriesWhichSpeakLanguageResponse createGetCountriesWhichSpeakLanguageResponse() {
+        return new GetCountriesWhichSpeakLanguageResponse();
+    }
+
+    /**
+     * Create an instance of {@link TestCountryLanguageMethods }
+     * 
+     */
+    public TestCountryLanguageMethods createTestCountryLanguageMethods() {
+        return new TestCountryLanguageMethods();
+    }
+
+    /**
+     * Create an instance of {@link TestInfectionMethodsResponse }
+     * 
+     */
+    public TestInfectionMethodsResponse createTestInfectionMethodsResponse() {
+        return new TestInfectionMethodsResponse();
+=======
      * Create an instance of {@link TestInfectionMethods }
      * 
      */
@@ -172,6 +309,7 @@ public class ObjectFactory {
      */
     public GetZombiesOnContinentResponse createGetZombiesOnContinentResponse() {
         return new GetZombiesOnContinentResponse();
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
     }
 
     /**
@@ -183,6 +321,53 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+     * Create an instance of {@link GetZombiesInCountriesWhereLanguageIsSpokenResponse }
+     * 
+     */
+    public GetZombiesInCountriesWhereLanguageIsSpokenResponse createGetZombiesInCountriesWhereLanguageIsSpokenResponse() {
+        return new GetZombiesInCountriesWhereLanguageIsSpokenResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLanguagesSpokenInCountryResponse }
+     * 
+     */
+    public GetLanguagesSpokenInCountryResponse createGetLanguagesSpokenInCountryResponse() {
+        return new GetLanguagesSpokenInCountryResponse();
+    }
+
+    /**
+     * Create an instance of {@link TestCountryMethods }
+     * 
+     */
+    public TestCountryMethods createTestCountryMethods() {
+        return new TestCountryMethods();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesWithTheMostZombies }
+     * 
+     */
+    public GetCitiesWithTheMostZombies createGetCitiesWithTheMostZombies() {
+        return new GetCitiesWithTheMostZombies();
+    }
+
+    /**
+     * Create an instance of {@link GetZombiesInCountriesWhereLanguageIsSpoken }
+     * 
+     */
+    public GetZombiesInCountriesWhereLanguageIsSpoken createGetZombiesInCountriesWhereLanguageIsSpoken() {
+        return new GetZombiesInCountriesWhereLanguageIsSpoken();
+    }
+
+    /**
+     * Create an instance of {@link GetCitiesWithTheMostZombiesResponse }
+     * 
+     */
+    public GetCitiesWithTheMostZombiesResponse createGetCitiesWithTheMostZombiesResponse() {
+        return new GetCitiesWithTheMostZombiesResponse();
+=======
      * Create an instance of {@link GetZombiesBasedOnGeoIPLookupResponse }
      * 
      */
@@ -228,6 +413,7 @@ public class ObjectFactory {
      */
     public GetZombiesInCityResponse createGetZombiesInCityResponse() {
         return new GetZombiesInCityResponse();
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
     }
 
     /**
@@ -295,6 +481,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetZombiesInCountriesWhereLanguageIsSpokenResponse }{@code >}}
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
      * 
      */
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getZombiesInCountriesWhereLanguageIsSpokenResponse")
@@ -304,11 +491,31 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TestCityMethods }{@code >}}
+=======
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getZombiesInCountriesWhereLanguageIsSpokenResponse")
+    public JAXBElement<GetZombiesInCountriesWhereLanguageIsSpokenResponse> createGetZombiesInCountriesWhereLanguageIsSpokenResponse(GetZombiesInCountriesWhereLanguageIsSpokenResponse value) {
+        return new JAXBElement<GetZombiesInCountriesWhereLanguageIsSpokenResponse>(_GetZombiesInCountriesWhereLanguageIsSpokenResponse_QNAME, GetZombiesInCountriesWhereLanguageIsSpokenResponse.class, null, value);
+    }
+
+    /**
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCitiesWithTheMostZombiesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCitiesWithTheMostZombiesResponse")
+    public JAXBElement<GetCitiesWithTheMostZombiesResponse> createGetCitiesWithTheMostZombiesResponse(GetCitiesWithTheMostZombiesResponse value) {
+        return new JAXBElement<GetCitiesWithTheMostZombiesResponse>(_GetCitiesWithTheMostZombiesResponse_QNAME, GetCitiesWithTheMostZombiesResponse.class, null, value);
+=======
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestCityMethods }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "testCityMethods")
     public JAXBElement<TestCityMethods> createTestCityMethods(TestCityMethods value) {
         return new JAXBElement<TestCityMethods>(_TestCityMethods_QNAME, TestCityMethods.class, null, value);
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
     }
 
     /**
@@ -402,12 +609,39 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD:mashup/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWithTheMostZombiesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCountriesWithTheMostZombiesResponse")
+    public JAXBElement<GetCountriesWithTheMostZombiesResponse> createGetCountriesWithTheMostZombiesResponse(GetCountriesWithTheMostZombiesResponse value) {
+        return new JAXBElement<GetCountriesWithTheMostZombiesResponse>(_GetCountriesWithTheMostZombiesResponse_QNAME, GetCountriesWithTheMostZombiesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCitiesWithTheMostZombies }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCitiesWithTheMostZombies")
+    public JAXBElement<GetCitiesWithTheMostZombies> createGetCitiesWithTheMostZombies(GetCitiesWithTheMostZombies value) {
+        return new JAXBElement<GetCitiesWithTheMostZombies>(_GetCitiesWithTheMostZombies_QNAME, GetCitiesWithTheMostZombies.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCountriesWithTheMostZombies }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getCountriesWithTheMostZombies")
+    public JAXBElement<GetCountriesWithTheMostZombies> createGetCountriesWithTheMostZombies(GetCountriesWithTheMostZombies value) {
+        return new JAXBElement<GetCountriesWithTheMostZombies>(_GetCountriesWithTheMostZombies_QNAME, GetCountriesWithTheMostZombies.class, null, value);
+=======
      * Create an instance of {@link JAXBElement }{@code <}{@link GetZombiesBasedOnGeoIPLookupResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.voidstar.sjsu.edu/mashup", name = "getZombiesBasedOnGeoIPLookupResponse")
     public JAXBElement<GetZombiesBasedOnGeoIPLookupResponse> createGetZombiesBasedOnGeoIPLookupResponse(GetZombiesBasedOnGeoIPLookupResponse value) {
         return new JAXBElement<GetZombiesBasedOnGeoIPLookupResponse>(_GetZombiesBasedOnGeoIPLookupResponse_QNAME, GetZombiesBasedOnGeoIPLookupResponse.class, null, value);
+>>>>>>> 4c62dd95907c517e9a9f81e38fe398c1374c0963:client/src/main/java/edu/sjsu/voidstar/ws/mashup/ObjectFactory.java
     }
 
     /**

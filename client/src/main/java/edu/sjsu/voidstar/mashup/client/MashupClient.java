@@ -12,7 +12,7 @@ public class MashupClient {
 
 	public static void main(String[] args) {
 		MashupClient client = new MashupClient();
-		client.runTestQueries();
+		client.runMostZombies();
 	}
 
 	public void runTestQueries() {
@@ -36,5 +36,20 @@ public class MashupClient {
 		System.out.println(service.getZombiesInCountriesWhereLanguageIsSpoken("Yucatec"));
 		
 		System.out.println(service.getZombiesBasedOnGeoIPLookup());
+	}
+	
+	public void runMostZombies() {
+		MashupService service = mashupPortService.getMashupServicePort();
+		
+		System.out.println("CITIES WITH THE MOST ZOMBIES");
+		for(String s : service.getCitiesWithTheMostZombies(5)) {
+			System.out.println(s);
+		}
+		
+		System.out.println();
+		System.out.println("COUNTRIES WITH THE MOST ZOMBIES");
+		for(String s : service.getCountriesWithTheMostZombies(5)){
+			System.out.println(s);
+		}
 	}
 }
