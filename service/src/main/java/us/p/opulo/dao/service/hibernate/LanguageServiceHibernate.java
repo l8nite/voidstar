@@ -36,6 +36,12 @@ public class LanguageServiceHibernate implements LanguageService {
 	HibernateSession session;
 	
 	@Override
+	@SuppressWarnings("unchecked")
+	public List<Language> getAllLanguages() {
+		return session.get().createCriteria(Language.class).list();
+	}
+	
+	@Override
 	public Language getLanguageWithId(Integer languageId) {
 		return (Language) session.get()
 			.createCriteria(Language.class)

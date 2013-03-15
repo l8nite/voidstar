@@ -15,6 +15,8 @@ import java.util.List;
 import us.p.opulo.dao.Country;
 
 public interface CountryService {
+	List<Country> getAllCountries();
+	
 	Country getCountryWithCode(String countryCode);
 	List<Country> getCountriesWithCodes(Collection<String> countryCodes);
 	

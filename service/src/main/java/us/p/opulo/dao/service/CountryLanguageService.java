@@ -17,6 +17,8 @@ import us.p.opulo.dao.CountryLanguage;
 import us.p.opulo.dao.Language;
 
 public interface CountryLanguageService {
+	List<CountryLanguage> getAllCountryLanguages();
+	
 	List<CountryLanguage> getCountryLanguagesForLanguage(Language language);
 	List<CountryLanguage> getCountryLanguagesForLanguages(Collection<Language> languages);
 	

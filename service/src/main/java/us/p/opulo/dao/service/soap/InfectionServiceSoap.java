@@ -53,6 +53,14 @@ public class InfectionServiceSoap implements InfectionService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
+	public List<Infection> getAllInfections() {
+		log.info("getAllInfections()");
+		return hibernateService.getAllInfections();
+	}
+	
+	@Override
+	@WebMethod
+	@WebResult(targetNamespace=Namespaces.DAO, name="Infection")
 	public Infection getInfectionForCity(@WebParam(name="City", targetNamespace=Namespaces.DAO) City city) {
 		log.info("getInfectionForCity(): city = " + city);
 		return hibernateService.getInfectionForCity(city);

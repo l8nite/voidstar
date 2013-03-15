@@ -22,7 +22,7 @@ public class World {
 	
 	public long getPopulation() {
 		long worldPopulation = 0;
-		for(City city: library.getCityLibrary().getAll()) {
+		for(City city: library.getCityLibrary().getAllCities()) {
 			worldPopulation += city.getPopulation();
 		}
 		return worldPopulation;

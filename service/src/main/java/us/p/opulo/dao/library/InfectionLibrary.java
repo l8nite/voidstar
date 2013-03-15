@@ -34,6 +34,11 @@ public class InfectionLibrary implements InfectionService {
 	private HibernateSession session;
 
 	@Override
+	public List<Infection> getAllInfections() {
+		return service.getAllInfections();
+	}
+	
+	@Override
 	public Infection getInfectionForCity(City city) {
 		return service.getInfectionForCity(city);
 	}
