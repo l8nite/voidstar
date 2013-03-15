@@ -1,6 +1,7 @@
 
 package edu.sjsu.voidstar.ws.mashup;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -69,13 +70,13 @@ public interface MashupService {
      * 
      * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns java.util.List<java.lang.String>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getZombiesFavoriteLanguages", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetZombiesFavoriteLanguages")
-    @ResponseWrapper(localName = "getZombiesFavoriteLanguagesResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetZombiesFavoriteLanguagesResponse")
-    public String getZombiesFavoriteLanguages(
+    @RequestWrapper(localName = "getCitiesWithTheMostZombies", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCitiesWithTheMostZombies")
+    @ResponseWrapper(localName = "getCitiesWithTheMostZombiesResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCitiesWithTheMostZombiesResponse")
+    public List<String> getCitiesWithTheMostZombies(
         @WebParam(name = "arg0", targetNamespace = "")
         Integer arg0);
 
@@ -161,5 +162,19 @@ public interface MashupService {
     public String getZombiesInCountriesWhereLanguageIsSpoken(
         @WebParam(name = "languageName", targetNamespace = "")
         String languageName);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<java.lang.String>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCountriesWithTheMostZombies", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWithTheMostZombies")
+    @ResponseWrapper(localName = "getCountriesWithTheMostZombiesResponse", targetNamespace = "http://ws.voidstar.sjsu.edu/mashup", className = "edu.sjsu.voidstar.ws.mashup.GetCountriesWithTheMostZombiesResponse")
+    public List<String> getCountriesWithTheMostZombies(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Integer arg0);
 
 }

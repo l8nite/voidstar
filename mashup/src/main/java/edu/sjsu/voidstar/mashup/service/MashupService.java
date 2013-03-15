@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -231,6 +234,83 @@ public class MashupService {
 		return result.substring(0, result.length() - 2) + ")";
 	}
 	
+	// #6 
+	@WebMethod 
+	public List<String> getCountriesWithTheMostZombies(Integer maxResults) {
+		CountryService countryService = countryPortService.getCountryServicePort();
+		List<Country> countries = countryService.getAllCountries();
+		
+		InfectionService infectionService = infectionPortService.getInfectionServicePort();
+		Map<Country,Integer> infectionsInCountry = new HashMap<Country,Integer>();
+		
+		for(Country country : countries) {
+			List<Infection> infections = infectionService.getInfectionsForCountry(country);
+			Integer zombies = 0;
+			
+			for(Infection infection : infections) {
+				zombies += infection.getZombies();
+			}
+			
+			infectionsInCountry.put(country, zombies);
+		}
+		
+		Map<Country,Integer> sortedInfectionsByCountry = 
+				new TreeMap<Country,Integer>(new InfectionsInCountryComparator(infectionsInCountry));
+
+		sortedInfectionsByCountry.putAll(infectionsInCountry);
+		
+		List<String> result = new ArrayList<String>();
+		int resultCount = 1;
+		for(Entry<Country,Integer> entry : sortedInfectionsByCountry.entrySet()) {
+			result.add(entry.getKey().getName() + " has " + entry.getValue() + " zombies");
+			
+			resultCount++;
+			if(maxResults > 0 && resultCount > maxResults) {
+				break;
+			}
+		}
+		return result;
+	}
+	
+	// #7
+	@WebMethod
+	public List<String> getCitiesWithTheMostZombies(Integer maxResults) {
+		CityService cityService = cityPortService.getCityServicePort();
+		CountryService countryService = countryPortService.getCountryServicePort();
+		
+		List<City> cities = cityService.getAllCities();
+		
+		// Map each city to its ID
+		Map<Integer,City> citiesByCode = new HashMap<Integer,City>();
+		for(City city : cities) {
+			citiesByCode.put(city.getID(), city);
+		}
+		
+		InfectionService infectionService = infectionPortService.getInfectionServicePort();
+		
+		List<Infection> infections = infectionService.getAllInfections();
+		Collections.sort(infections, new Comparator<Infection>() {
+			// Order by number of zombies desc
+			public int compare(Infection o1, Infection o2) {
+				return o2.getZombies().compareTo(o1.getZombies());
+			}
+		});
+		
+		List<String> result = new ArrayList<String>();
+		int resultCount = 1;
+		for(Infection infection : infections) {
+			City infectedCity = cities.get(infection.getCityID());
+			Country country = countryService.getCountryWithCode(infectedCity.getCountryCode());
+			result.add(infectedCity.getName() + ", " + country.getName() + "(" + country.getContinent() + ") has " + infection.getZombies() + " zombies");
+			
+			resultCount++;
+			if(maxResults > 0 && resultCount > maxResults) {
+				break;
+			}
+		}
+		return result;	
+	}
+	
 	// helper methods 
 
 	private Language _getLanguageNamed(String languageName) {
@@ -401,6 +481,19 @@ public class MashupService {
 		
 		return "woot";
 		
+	}
+	
+	private class InfectionsInCountryComparator implements Comparator<Country> {
+		
+		private Map<Country,Integer> infections;
+		
+		public InfectionsInCountryComparator(Map<Country,Integer> infections) {
+			this.infections = infections;
+		}
+
+		public int compare(Country o1, Country o2) {
+			return infections.get(o2).compareTo(infections.get(o1));
+		}
 	}
 }
  
