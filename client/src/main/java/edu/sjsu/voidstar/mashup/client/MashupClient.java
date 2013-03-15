@@ -12,7 +12,7 @@ public class MashupClient {
 
 	public static void main(String[] args) {
 		MashupClient client = new MashupClient();
-		client.runMostZombies();
+		client.runTestQueries();
 	}
 
 	public void runTestQueries() {
@@ -38,6 +38,7 @@ public class MashupClient {
 		System.out.println(service.getZombiesBasedOnGeoIPLookup());
 	}
 	
+	/*
 	public void runMostZombies() {
 		MashupService service = mashupPortService.getMashupServicePort();
 		
@@ -52,4 +53,5 @@ public class MashupClient {
 			System.out.println(s);
 		}
 	}
+	*/
 }
