@@ -103,21 +103,21 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="testInfectionMethods">
-    <xs:sequence/>
-  </xs:complexType>
-
-  <xs:complexType name="testInfectionMethodsResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:complexType name="getZombiesBasedOnGeoIPLookup">
     <xs:sequence/>
   </xs:complexType>
 
   <xs:complexType name="getZombiesBasedOnGeoIPLookupResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testInfectionMethods">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="testInfectionMethodsResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:string" minOccurs="0"/>
     </xs:sequence>

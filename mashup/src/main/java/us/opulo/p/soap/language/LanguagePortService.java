@@ -30,7 +30,7 @@ public class LanguagePortService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://triton.idlemonkeys.net:8080/service-1.0-SNAPSHOT/language?wsdl");
+            url = new URL("http://localhost:8123/language?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

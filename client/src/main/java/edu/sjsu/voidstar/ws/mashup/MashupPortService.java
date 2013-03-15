@@ -30,7 +30,7 @@ public class MashupPortService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://triton.idlemonkeys.net:8080/mashup-0.0.1-SNAPSHOT/mashup?wsdl");
+            url = new URL("http://localhost:8124/mashup?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
