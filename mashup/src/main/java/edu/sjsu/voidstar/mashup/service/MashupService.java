@@ -278,7 +278,7 @@ public class MashupService {
 
 	// #7 
 	@WebMethod 
-	public List<String> getCountriesWithTheMostZombies(Integer maxResults) {
+	public List<String> getCountriesWithTheMostZombies(@WebParam(name = "maxResults") Integer maxResults) {
 		CountryService countryService = countryPortService.getCountryServicePort();
 		List<Country> countries = countryService.getAllCountries();
 		
@@ -316,7 +316,7 @@ public class MashupService {
 	
 	// #8
 	@WebMethod
-	public List<String> getCitiesWithTheMostZombies(Integer maxResults) {
+	public List<String> getCitiesWithTheMostZombies(@WebParam(name = "maxResults") Integer maxResults) {
 		CityService cityService = cityPortService.getCityServicePort();
 		CountryService countryService = countryPortService.getCountryServicePort();
 		
