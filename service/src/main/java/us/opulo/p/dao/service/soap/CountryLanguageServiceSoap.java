@@ -29,7 +29,9 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.CountryLanguageService;
+import us.opulo.p.guice.CoreModule;
 import us.opulo.p.guice.annotations.HibernateService;
+import us.opulo.p.guice.webservice.GuiceManaged;
 import us.opulo.p.util.StringUtil;
 
 @WebService(
@@ -42,6 +44,7 @@ import us.opulo.p.util.StringUtil;
 		use = SOAPBinding.Use.LITERAL, 
 		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED
 )
+@GuiceManaged( modules = { CoreModule.class } )
 @Singleton
 public class CountryLanguageServiceSoap implements CountryLanguageService {
 	private static final Logger log = LoggerFactory.getLogger(CountryLanguageServiceSoap.class);

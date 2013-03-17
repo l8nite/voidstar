@@ -28,7 +28,9 @@ import us.opulo.p.constants.Constants.XML.Namespaces;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.LanguageService;
+import us.opulo.p.guice.CoreModule;
 import us.opulo.p.guice.annotations.HibernateService;
+import us.opulo.p.guice.webservice.GuiceManaged;
 import us.opulo.p.util.StringUtil;
 
 @WebService(
@@ -41,6 +43,7 @@ import us.opulo.p.util.StringUtil;
 		use=SOAPBinding.Use.LITERAL,
 		parameterStyle=SOAPBinding.ParameterStyle.WRAPPED
 )
+@GuiceManaged( modules = { CoreModule.class } )
 @Singleton
 public class LanguageServiceSoap implements LanguageService {
 	private static final Logger log = LoggerFactory.getLogger(LanguageServiceSoap.class);
