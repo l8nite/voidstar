@@ -17,5 +17,5 @@ do
 	 wsimport -verbose -s src/main/java/ -d target/ ${1}/${wsdl}?wsdl	
 done
 
-wsimport -verbose -extension -s src/main/java/ -d target/ http://www.webservicex.net/geoipservice.asmx?WSDL
+wsimport -verbose -s src/main/java/ -d target/ http://www.webservicex.net/geoipservice.asmx?WSDL
 

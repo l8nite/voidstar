@@ -4,5 +4,4 @@ wsimport -verbose -s src/main/java/ -d target/ http://triton.idlemonkeys.net:808
 wsimport -verbose -s src/main/java/ -d target/ http://triton.idlemonkeys.net:8080/populous-1.0/countrylanguage?wsdl
 wsimport -verbose -s src/main/java/ -d target/ http://triton.idlemonkeys.net:8080/populous-1.0/infection?wsdl
 wsimport -verbose -s src/main/java/ -d target/ http://triton.idlemonkeys.net:8080/populous-1.0/language?wsdl
-wsimport -verbose -extension -s src/main/java/ -d target/ http://www.webservicex.net/geoipservice.asmx?WSDL
-
+wsimport -verbose -s src/main/java/ -d target/ http://www.webservicex.net/geoipservice.asmx?WSDL
