@@ -37,9 +37,9 @@ public interface CountryLanguageService {
 	List<CountryLanguage> getCountryLanguagesForLanguage(Language language);
 	
 	/**
-	 * Retrieves all CountryLanguages associated with one of the argument languages.
+	 * Retrieves all CountryLanguages associated with each of the argument languages.
 	 * @param languages The languages for which to retrieve all associated CountryLanguages.
-	 * @return All CountryLanguages associated with one of the argument languages. 
+	 * @return All CountryLanguages associated with each of the argument languages. 
 	 */
 	List<CountryLanguage> getCountryLanguagesForLanguages(Collection<Language> languages);
 	
@@ -51,9 +51,9 @@ public interface CountryLanguageService {
 	List<CountryLanguage> getCountryLanguagesForCountry(Country country);
 	
 	/**
-	 * Retrieves all CountryLanguages associated with one of the argument countries.
+	 * Retrieves all CountryLanguages associated with each of the argument countries.
 	 * @param countries The countries for which to retrieve all associated CountryLanguages
-	 * @return All CountryLanguages associated with one of the argument countries.
+	 * @return All CountryLanguages associated with each of the argument countries.
 	 */
 	List<CountryLanguage> getCountryLanguagesForCountries(Collection<Country> countries);
 }
