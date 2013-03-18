@@ -275,7 +275,11 @@ public class MashupService {
 			zombieCount += infection.getZombies();
 		}
 		
-		return country.getName() + " is infected with " + zombieCount + " zombies!";
+		StringBuilder response = new StringBuilder("Your IP: " + request.getRemoteAddr());
+		response.append(" - resolved to " + country.getName());
+		response.append(" (infected with " + zombieCount + " zombies!)");
+		
+		return response.toString();
 	}
 
 	// #7 
