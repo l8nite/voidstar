@@ -11,12 +11,10 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import javax.annotation.Resource;
-
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.ws.BindingProvider;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.handler.MessageContext;

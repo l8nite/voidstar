@@ -23,6 +23,10 @@ import us.opulo.p.dao.service.CountryLanguageService;
 import us.opulo.p.guice.annotations.HibernateService;
 import us.opulo.p.hibernate.HibernateSession;
 
+/**
+ * A library of methods used to query the CountryLanguage table.
+ * @author Jason Campos
+ */
 @Singleton
 public class CountryLanguageLibrary implements CountryLanguageService {
 	
