@@ -12,7 +12,7 @@ fi
 
 wsdls=( 'city' 'country' 'countrylanguage' 'infection' 'language' )
 
-for wsdl in $wsdls
+for wsdl in ${wsdls[@]}
 do
 	 wsimport -verbose -s src/main/java/ -d target/ ${1}/${wsdl}?wsdl	
 done
