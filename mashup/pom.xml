@@ -4,7 +4,8 @@
 	<groupId>edu.sjsu.voidstar</groupId>
 	<packaging>war</packaging>
 	<artifactId>mashup</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
+	<name>mashup</name>
 	<url>http://maven.apache.org</url>
 	
 	<properties>
@@ -32,13 +33,6 @@
 			<version>1.7.2</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>2.2.2</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>javax.xml.ws</groupId>
 			<artifactId>jaxws-api</artifactId>
 			<version>2.2.9</version>
@@ -47,6 +41,7 @@
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
 			<version>2.2.8-promoted-b146</version>
+			<scope>provided</scope>
 			<type>pom</type>
 		</dependency>
 		<dependency>
