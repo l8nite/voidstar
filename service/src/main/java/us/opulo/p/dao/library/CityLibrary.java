@@ -23,6 +23,10 @@ import us.opulo.p.hibernate.HibernateSession;
 
 import com.google.inject.Singleton;
 
+/**
+ * A library of methods used to query the City table.
+ * @author Jason Campos, Shaun Guth
+ */
 @Singleton
 public class CityLibrary implements CityService {
 	
@@ -70,6 +74,9 @@ public class CityLibrary implements CityService {
 	
 	/* ADDITIONAL NON-INTERFACE METHODS */
 	
+	/**
+	 * @return A random city in the world.
+	 */
 	public City getRandomCity() {
 		List<City> allCities = getAllCities();
 		return allCities.get(new Random().nextInt(allCities.size()));

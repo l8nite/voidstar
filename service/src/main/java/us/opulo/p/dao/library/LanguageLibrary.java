@@ -21,6 +21,10 @@ import us.opulo.p.dao.service.LanguageService;
 import us.opulo.p.guice.annotations.HibernateService;
 import us.opulo.p.hibernate.HibernateSession;
 
+/**
+ * A library of methods used to query the Language table.
+ * @author Jason Campos
+ */
 @Singleton
 public class LanguageLibrary implements LanguageService {
 
