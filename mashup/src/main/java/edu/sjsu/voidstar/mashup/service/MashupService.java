@@ -16,13 +16,14 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.servlet.http.HttpServletRequest;
+import javax.xml.ws.BindingProvider;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.handler.MessageContext;
 
 import net.webservicex.GeoIP;
 import net.webservicex.GeoIPService;
-import net.webservicex.GeoIPServiceHttpGet;
+import net.webservicex.GeoIPServiceSoap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -258,7 +259,8 @@ public class MashupService {
 		MessageContext messageContext = webServiceContext.getMessageContext();
 		HttpServletRequest request = (HttpServletRequest)messageContext.get(MessageContext.SERVLET_REQUEST);
 
-		GeoIPServiceHttpGet geoService = geoIPService.getGeoIPServiceHttpGet();
+		GeoIPServiceSoap geoService = geoIPService.getGeoIPServiceSoap();
+
 		GeoIP geoIP = geoService.getGeoIP(request.getRemoteAddr());
 		String countryCode = geoIP.getCountryCode();
 		
