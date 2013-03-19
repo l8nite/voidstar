@@ -1,0 +1,60 @@
+====
+    This file is a component of the p.opulo.us project.
+
+    Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
+    All Rights Reserved.
+
+    This software is licensed under The MIT License (MIT)
+    http://opensource.org/licenses/MIT
+====
+xmlns:xsi	Text
+http://www.w3.org/2001/XMLSchema-instance	Saint Helena
+http://www.w3.org/2001/XMLSchema-instance	Taiwan
+http://www.w3.org/2001/XMLSchema-instance	Kuwait
+http://www.w3.org/2001/XMLSchema-instance	Israel
+http://www.w3.org/2001/XMLSchema-instance	Cyprus
+http://www.w3.org/2001/XMLSchema-instance	Hong Kong
+http://www.w3.org/2001/XMLSchema-instance	Jordan
+http://www.w3.org/2001/XMLSchema-instance	Japan
+http://www.w3.org/2001/XMLSchema-instance	Macao
+http://www.w3.org/2001/XMLSchema-instance	Singapore
+http://www.w3.org/2001/XMLSchema-instance	Switzerland
+http://www.w3.org/2001/XMLSchema-instance	Greece
+http://www.w3.org/2001/XMLSchema-instance	Iceland
+http://www.w3.org/2001/XMLSchema-instance	Denmark
+http://www.w3.org/2001/XMLSchema-instance	Spain
+http://www.w3.org/2001/XMLSchema-instance	Finland
+http://www.w3.org/2001/XMLSchema-instance	France
+http://www.w3.org/2001/XMLSchema-instance	Germany
+http://www.w3.org/2001/XMLSchema-instance	United Kingdom
+http://www.w3.org/2001/XMLSchema-instance	Andorra
+http://www.w3.org/2001/XMLSchema-instance	Italy
+http://www.w3.org/2001/XMLSchema-instance	Ireland
+http://www.w3.org/2001/XMLSchema-instance	Liechtenstein
+http://www.w3.org/2001/XMLSchema-instance	Luxembourg
+http://www.w3.org/2001/XMLSchema-instance	Austria
+http://www.w3.org/2001/XMLSchema-instance	Monaco
+http://www.w3.org/2001/XMLSchema-instance	Malta
+http://www.w3.org/2001/XMLSchema-instance	Belgium
+http://www.w3.org/2001/XMLSchema-instance	Netherlands
+http://www.w3.org/2001/XMLSchema-instance	Norway
+http://www.w3.org/2001/XMLSchema-instance	Gibraltar
+http://www.w3.org/2001/XMLSchema-instance	San Marino
+http://www.w3.org/2001/XMLSchema-instance	Sweden
+http://www.w3.org/2001/XMLSchema-instance	Faroe Islands
+http://www.w3.org/2001/XMLSchema-instance	Canada
+http://www.w3.org/2001/XMLSchema-instance	Martinique
+http://www.w3.org/2001/XMLSchema-instance	Cuba
+http://www.w3.org/2001/XMLSchema-instance	Cayman Islands
+http://www.w3.org/2001/XMLSchema-instance	Bermuda
+http://www.w3.org/2001/XMLSchema-instance	Montserrat
+http://www.w3.org/2001/XMLSchema-instance	Guadeloupe
+http://www.w3.org/2001/XMLSchema-instance	Saint Pierre and Miquelon
+http://www.w3.org/2001/XMLSchema-instance	Aruba
+http://www.w3.org/2001/XMLSchema-instance	Anguilla
+http://www.w3.org/2001/XMLSchema-instance	United States
+http://www.w3.org/2001/XMLSchema-instance	Virgin Islands, U.S.
+http://www.w3.org/2001/XMLSchema-instance	Guam
+http://www.w3.org/2001/XMLSchema-instance	Australia
+http://www.w3.org/2001/XMLSchema-instance	New Zealand
+http://www.w3.org/2001/XMLSchema-instance	French Guiana

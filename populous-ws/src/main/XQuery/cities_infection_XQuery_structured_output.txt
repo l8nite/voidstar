@@ -1,0 +1,701 @@
+====
+    This file is a component of the p.opulo.us project.
+
+    Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
+    All Rights Reserved.
+
+    This software is licensed under The MIT License (MIT)
+    http://opensource.org/licenses/MIT
+====
+xmlns:xsi	Text
+http://www.w3.org/2001/XMLSchema-instance	Malita
+http://www.w3.org/2001/XMLSchema-instance	Negombo
+http://www.w3.org/2001/XMLSchema-instance	Amman
+http://www.w3.org/2001/XMLSchema-instance	Tiaret
+http://www.w3.org/2001/XMLSchema-instance	Habra
+http://www.w3.org/2001/XMLSchema-instance	Subotica
+http://www.w3.org/2001/XMLSchema-instance	Beau Bassin-Rose Hill
+http://www.w3.org/2001/XMLSchema-instance	Gatineau
+http://www.w3.org/2001/XMLSchema-instance	Basildon
+http://www.w3.org/2001/XMLSchema-instance	Birmingham
+http://www.w3.org/2001/XMLSchema-instance	B�rum
+http://www.w3.org/2001/XMLSchema-instance	Daska
+http://www.w3.org/2001/XMLSchema-instance	Kitakyushu
+http://www.w3.org/2001/XMLSchema-instance	Coquitlam
+http://www.w3.org/2001/XMLSchema-instance	Tete
+http://www.w3.org/2001/XMLSchema-instance	Novara
+http://www.w3.org/2001/XMLSchema-instance	Zhucheng
+http://www.w3.org/2001/XMLSchema-instance	Jalib al-Shuyukh
+http://www.w3.org/2001/XMLSchema-instance	Dumaguete
+http://www.w3.org/2001/XMLSchema-instance	Ceyhan
+http://www.w3.org/2001/XMLSchema-instance	Arusha
+http://www.w3.org/2001/XMLSchema-instance	Rishra
+http://www.w3.org/2001/XMLSchema-instance	Aksaray
+http://www.w3.org/2001/XMLSchema-instance	Guangshui
+http://www.w3.org/2001/XMLSchema-instance	Schwerin
+http://www.w3.org/2001/XMLSchema-instance	Tajimi
+http://www.w3.org/2001/XMLSchema-instance	Namwon
+http://www.w3.org/2001/XMLSchema-instance	Sekondi-Takoradi
+http://www.w3.org/2001/XMLSchema-instance	R�o Bravo
+http://www.w3.org/2001/XMLSchema-instance	Jilin
+http://www.w3.org/2001/XMLSchema-instance	Hildesheim
+http://www.w3.org/2001/XMLSchema-instance	Ume�
+http://www.w3.org/2001/XMLSchema-instance	Shishou
+http://www.w3.org/2001/XMLSchema-instance	Gandhidham
+http://www.w3.org/2001/XMLSchema-instance	Trento
+http://www.w3.org/2001/XMLSchema-instance	Jenakijeve
+http://www.w3.org/2001/XMLSchema-instance	Suqian
+http://www.w3.org/2001/XMLSchema-instance	Siem Reap
+http://www.w3.org/2001/XMLSchema-instance	Sz�kesfeh�rv�r
+http://www.w3.org/2001/XMLSchema-instance	Ust-Ilimsk
+http://www.w3.org/2001/XMLSchema-instance	Kecskem�t
+http://www.w3.org/2001/XMLSchema-instance	Sarapul
+http://www.w3.org/2001/XMLSchema-instance	Calapan
+http://www.w3.org/2001/XMLSchema-instance	Cheltenham
+http://www.w3.org/2001/XMLSchema-instance	Bergisch Gladbach
+http://www.w3.org/2001/XMLSchema-instance	Rouen
+http://www.w3.org/2001/XMLSchema-instance	Cabuyao
+http://www.w3.org/2001/XMLSchema-instance	Akishima
+http://www.w3.org/2001/XMLSchema-instance	Manchester
+http://www.w3.org/2001/XMLSchema-instance	Siirt
+http://www.w3.org/2001/XMLSchema-instance	Calabozo
+http://www.w3.org/2001/XMLSchema-instance	Varamin
+http://www.w3.org/2001/XMLSchema-instance	Waterbury
+http://www.w3.org/2001/XMLSchema-instance	Downey
+http://www.w3.org/2001/XMLSchema-instance	Barasat
+http://www.w3.org/2001/XMLSchema-instance	Unnao
+http://www.w3.org/2001/XMLSchema-instance	Forl�
+http://www.w3.org/2001/XMLSchema-instance	Lashio (Lasho)
+http://www.w3.org/2001/XMLSchema-instance	Pak Pattan
+http://www.w3.org/2001/XMLSchema-instance	Koblenz
+http://www.w3.org/2001/XMLSchema-instance	San Jose
+http://www.w3.org/2001/XMLSchema-instance	Hualien
+http://www.w3.org/2001/XMLSchema-instance	Teixeira de Freitas
+http://www.w3.org/2001/XMLSchema-instance	San Francisco de Macor�s
+http://www.w3.org/2001/XMLSchema-instance	Liling
+http://www.w3.org/2001/XMLSchema-instance	West Valley City
+http://www.w3.org/2001/XMLSchema-instance	Brahmanbaria
+http://www.w3.org/2001/XMLSchema-instance	Ourense (Orense)
+http://www.w3.org/2001/XMLSchema-instance	Reykjav�k
+http://www.w3.org/2001/XMLSchema-instance	Lauro de Freitas
+http://www.w3.org/2001/XMLSchema-instance	Legnica
+http://www.w3.org/2001/XMLSchema-instance	Termiz
+http://www.w3.org/2001/XMLSchema-instance	Bahawalnagar
+http://www.w3.org/2001/XMLSchema-instance	Perth
+http://www.w3.org/2001/XMLSchema-instance	Beirut
+http://www.w3.org/2001/XMLSchema-instance	Zixing
+http://www.w3.org/2001/XMLSchema-instance	Zoetermeer
+http://www.w3.org/2001/XMLSchema-instance	Dnipropetrovsk
+http://www.w3.org/2001/XMLSchema-instance	Ozamis
+http://www.w3.org/2001/XMLSchema-instance	Girardot
+http://www.w3.org/2001/XMLSchema-instance	Koganei
+http://www.w3.org/2001/XMLSchema-instance	Ciparay
+http://www.w3.org/2001/XMLSchema-instance	Higashikurume
+http://www.w3.org/2001/XMLSchema-instance	Slough
+http://www.w3.org/2001/XMLSchema-instance	Abha
+http://www.w3.org/2001/XMLSchema-instance	Nador
+http://www.w3.org/2001/XMLSchema-instance	El Mante
+http://www.w3.org/2001/XMLSchema-instance	Nkongsamba
+http://www.w3.org/2001/XMLSchema-instance	Xuangzhou
+http://www.w3.org/2001/XMLSchema-instance	Peoria
+http://www.w3.org/2001/XMLSchema-instance	Tarragona
+http://www.w3.org/2001/XMLSchema-instance	Barbacena
+http://www.w3.org/2001/XMLSchema-instance	Sachon
+http://www.w3.org/2001/XMLSchema-instance	Jabaliya
+http://www.w3.org/2001/XMLSchema-instance	Ipswich
+http://www.w3.org/2001/XMLSchema-instance	Phan Thi�t
+http://www.w3.org/2001/XMLSchema-instance	Lausanne
+http://www.w3.org/2001/XMLSchema-instance	Garanhuns
+http://www.w3.org/2001/XMLSchema-instance	Gera
+http://www.w3.org/2001/XMLSchema-instance	Silchar
+http://www.w3.org/2001/XMLSchema-instance	North Las Vegas
+http://www.w3.org/2001/XMLSchema-instance	Ebina
+http://www.w3.org/2001/XMLSchema-instance	Toyokawa
+http://www.w3.org/2001/XMLSchema-instance	El Tigre
+http://www.w3.org/2001/XMLSchema-instance	Richmond Hill
+http://www.w3.org/2001/XMLSchema-instance	Offenbach am Main
+http://www.w3.org/2001/XMLSchema-instance	Masjed-e-Soleyman
+http://www.w3.org/2001/XMLSchema-instance	Bragan�a Paulista
+http://www.w3.org/2001/XMLSchema-instance	Leiden
+http://www.w3.org/2001/XMLSchema-instance	San Juan del Monte
+http://www.w3.org/2001/XMLSchema-instance	Morogoro
+http://www.w3.org/2001/XMLSchema-instance	San Carlos
+http://www.w3.org/2001/XMLSchema-instance	Kuytun
+http://www.w3.org/2001/XMLSchema-instance	Fort Collins
+http://www.w3.org/2001/XMLSchema-instance	Hofu
+http://www.w3.org/2001/XMLSchema-instance	Mart�nez de la Torre
+http://www.w3.org/2001/XMLSchema-instance	Imabari
+http://www.w3.org/2001/XMLSchema-instance	Hebron
+http://www.w3.org/2001/XMLSchema-instance	Munich [M�nchen]
+http://www.w3.org/2001/XMLSchema-instance	R�mnicu V�lcea
+http://www.w3.org/2001/XMLSchema-instance	Dordrecht
+http://www.w3.org/2001/XMLSchema-instance	Nandyal
+http://www.w3.org/2001/XMLSchema-instance	Tangerang
+http://www.w3.org/2001/XMLSchema-instance	Manzhouli
+http://www.w3.org/2001/XMLSchema-instance	Heyuan
+http://www.w3.org/2001/XMLSchema-instance	Sapucaia do Sul
+http://www.w3.org/2001/XMLSchema-instance	Randfontein
+http://www.w3.org/2001/XMLSchema-instance	Bhimavaram
+http://www.w3.org/2001/XMLSchema-instance	Kawasaki
+http://www.w3.org/2001/XMLSchema-instance	Ju�rez
+http://www.w3.org/2001/XMLSchema-instance	Sitapur
+http://www.w3.org/2001/XMLSchema-instance	Zama
+http://www.w3.org/2001/XMLSchema-instance	Amadora
+http://www.w3.org/2001/XMLSchema-instance	al-Mukalla
+http://www.w3.org/2001/XMLSchema-instance	Nezahualc�yotl
+http://www.w3.org/2001/XMLSchema-instance	Blitar
+http://www.w3.org/2001/XMLSchema-instance	Makurdi
+http://www.w3.org/2001/XMLSchema-instance	Tlajomulco de Z��iga
+http://www.w3.org/2001/XMLSchema-instance	Matanzas
+http://www.w3.org/2001/XMLSchema-instance	K�kshetau
+http://www.w3.org/2001/XMLSchema-instance	Malaybalay
+http://www.w3.org/2001/XMLSchema-instance	Iguala de la Independencia
+http://www.w3.org/2001/XMLSchema-instance	Kashihara
+http://www.w3.org/2001/XMLSchema-instance	Milagro
+http://www.w3.org/2001/XMLSchema-instance	�rebro
+http://www.w3.org/2001/XMLSchema-instance	Mocuba
+http://www.w3.org/2001/XMLSchema-instance	Piatra Neamt
+http://www.w3.org/2001/XMLSchema-instance	Regensburg
+http://www.w3.org/2001/XMLSchema-instance	Chuzhou
+http://www.w3.org/2001/XMLSchema-instance	Luzi�nia
+http://www.w3.org/2001/XMLSchema-instance	Bender (T�ghina)
+http://www.w3.org/2001/XMLSchema-instance	Sukabumi
+http://www.w3.org/2001/XMLSchema-instance	Cartago
+http://www.w3.org/2001/XMLSchema-instance	Paranagu�
+http://www.w3.org/2001/XMLSchema-instance	Hobart
+http://www.w3.org/2001/XMLSchema-instance	Ilam
+http://www.w3.org/2001/XMLSchema-instance	Fujieda
+http://www.w3.org/2001/XMLSchema-instance	Omdurman
+http://www.w3.org/2001/XMLSchema-instance	San Miguel
+http://www.w3.org/2001/XMLSchema-instance	Piedras Negras
+http://www.w3.org/2001/XMLSchema-instance	Kariya
+http://www.w3.org/2001/XMLSchema-instance	Usak
+http://www.w3.org/2001/XMLSchema-instance	Colima
+http://www.w3.org/2001/XMLSchema-instance	Opole
+http://www.w3.org/2001/XMLSchema-instance	Po�os de Caldas
+http://www.w3.org/2001/XMLSchema-instance	Kuala Lumpur
+http://www.w3.org/2001/XMLSchema-instance	Soyapango
+http://www.w3.org/2001/XMLSchema-instance	Pinsk
+http://www.w3.org/2001/XMLSchema-instance	Lobito
+http://www.w3.org/2001/XMLSchema-instance	Hafizabad
+http://www.w3.org/2001/XMLSchema-instance	Valle de Santiago
+http://www.w3.org/2001/XMLSchema-instance	Plock
+http://www.w3.org/2001/XMLSchema-instance	Marawi
+http://www.w3.org/2001/XMLSchema-instance	Kongju
+http://www.w3.org/2001/XMLSchema-instance	Victoria
+http://www.w3.org/2001/XMLSchema-instance	Mutare
+http://www.w3.org/2001/XMLSchema-instance	Savannah
+http://www.w3.org/2001/XMLSchema-instance	Serpuhov
+http://www.w3.org/2001/XMLSchema-instance	Shangrao
+http://www.w3.org/2001/XMLSchema-instance	Long Xuyen
+http://www.w3.org/2001/XMLSchema-instance	Valdivia
+http://www.w3.org/2001/XMLSchema-instance	Link�ping
+http://www.w3.org/2001/XMLSchema-instance	Shihung
+http://www.w3.org/2001/XMLSchema-instance	Ciudad del Este
+http://www.w3.org/2001/XMLSchema-instance	Proddatur
+http://www.w3.org/2001/XMLSchema-instance	Caxias
+http://www.w3.org/2001/XMLSchema-instance	Silao
+http://www.w3.org/2001/XMLSchema-instance	Xichang
+http://www.w3.org/2001/XMLSchema-instance	Preston
+http://www.w3.org/2001/XMLSchema-instance	Matsubara
+http://www.w3.org/2001/XMLSchema-instance	Bahraich
+http://www.w3.org/2001/XMLSchema-instance	Adoni
+http://www.w3.org/2001/XMLSchema-instance	Jincheng
+http://www.w3.org/2001/XMLSchema-instance	Dali
+http://www.w3.org/2001/XMLSchema-instance	Tanga
+http://www.w3.org/2001/XMLSchema-instance	Paderborn
+http://www.w3.org/2001/XMLSchema-instance	Hafar al-Batin
+http://www.w3.org/2001/XMLSchema-instance	Recife
+http://www.w3.org/2001/XMLSchema-instance	Chittagong
+http://www.w3.org/2001/XMLSchema-instance	Lages
+http://www.w3.org/2001/XMLSchema-instance	Heidelberg
+http://www.w3.org/2001/XMLSchema-instance	Jessore
+http://www.w3.org/2001/XMLSchema-instance	Brownsville
+http://www.w3.org/2001/XMLSchema-instance	Kandy
+http://www.w3.org/2001/XMLSchema-instance	Potos�
+http://www.w3.org/2001/XMLSchema-instance	Almetjevsk
+http://www.w3.org/2001/XMLSchema-instance	Norilsk
+http://www.w3.org/2001/XMLSchema-instance	Poole
+http://www.w3.org/2001/XMLSchema-instance	Harare
+http://www.w3.org/2001/XMLSchema-instance	Sadiqabad
+http://www.w3.org/2001/XMLSchema-instance	al-Khubar
+http://www.w3.org/2001/XMLSchema-instance	Bago
+http://www.w3.org/2001/XMLSchema-instance	Kirikkale
+http://www.w3.org/2001/XMLSchema-instance	Salerno
+http://www.w3.org/2001/XMLSchema-instance	Oka-Akoko
+http://www.w3.org/2001/XMLSchema-instance	Ibadan
+http://www.w3.org/2001/XMLSchema-instance	K�tahya
+http://www.w3.org/2001/XMLSchema-instance	Oldbury/Smethwick (Warley)
+http://www.w3.org/2001/XMLSchema-instance	Osmaniye
+http://www.w3.org/2001/XMLSchema-instance	Le Mans
+http://www.w3.org/2001/XMLSchema-instance	Kioto
+http://www.w3.org/2001/XMLSchema-instance	Bengkulu
+http://www.w3.org/2001/XMLSchema-instance	�iauliai
+http://www.w3.org/2001/XMLSchema-instance	Morena
+http://www.w3.org/2001/XMLSchema-instance	Albacete
+http://www.w3.org/2001/XMLSchema-instance	Santa Rosa
+http://www.w3.org/2001/XMLSchema-instance	Hitachinaka
+http://www.w3.org/2001/XMLSchema-instance	Langfang
+http://www.w3.org/2001/XMLSchema-instance	Sikar
+http://www.w3.org/2001/XMLSchema-instance	Ji�an
+http://www.w3.org/2001/XMLSchema-instance	Karimnagar
+http://www.w3.org/2001/XMLSchema-instance	Metairie
+http://www.w3.org/2001/XMLSchema-instance	Kawanishi
+http://www.w3.org/2001/XMLSchema-instance	Surat
+http://www.w3.org/2001/XMLSchema-instance	Mandi Burewala
+http://www.w3.org/2001/XMLSchema-instance	Kanchipuram
+http://www.w3.org/2001/XMLSchema-instance	Trondheim
+http://www.w3.org/2001/XMLSchema-instance	Borisov
+http://www.w3.org/2001/XMLSchema-instance	Shulin
+http://www.w3.org/2001/XMLSchema-instance	Hugli-Chinsurah
+http://www.w3.org/2001/XMLSchema-instance	Puerto Montt
+http://www.w3.org/2001/XMLSchema-instance	Cuddalore
+http://www.w3.org/2001/XMLSchema-instance	Patras
+http://www.w3.org/2001/XMLSchema-instance	Balti
+http://www.w3.org/2001/XMLSchema-instance	Anjo
+http://www.w3.org/2001/XMLSchema-instance	Foggia
+http://www.w3.org/2001/XMLSchema-instance	York
+http://www.w3.org/2001/XMLSchema-instance	S�o Jos�
+http://www.w3.org/2001/XMLSchema-instance	Ashdod
+http://www.w3.org/2001/XMLSchema-instance	Zhoushan
+http://www.w3.org/2001/XMLSchema-instance	Agartala
+http://www.w3.org/2001/XMLSchema-instance	Qyzylorda
+http://www.w3.org/2001/XMLSchema-instance	Gusau
+http://www.w3.org/2001/XMLSchema-instance	Na�ala-Porto
+http://www.w3.org/2001/XMLSchema-instance	Curitiba
+http://www.w3.org/2001/XMLSchema-instance	Nogales
+http://www.w3.org/2001/XMLSchema-instance	Fuzhou
+http://www.w3.org/2001/XMLSchema-instance	Petah Tiqwa
+http://www.w3.org/2001/XMLSchema-instance	Huizhou
+http://www.w3.org/2001/XMLSchema-instance	Khujand
+http://www.w3.org/2001/XMLSchema-instance	Zaoyang
+http://www.w3.org/2001/XMLSchema-instance	Meycauayan
+http://www.w3.org/2001/XMLSchema-instance	Murwara (Katni)
+http://www.w3.org/2001/XMLSchema-instance	Rio Claro
+http://www.w3.org/2001/XMLSchema-instance	Ludwigshafen am Rhein
+http://www.w3.org/2001/XMLSchema-instance	Nakuru
+http://www.w3.org/2001/XMLSchema-instance	Dewas
+http://www.w3.org/2001/XMLSchema-instance	Zhuhai
+http://www.w3.org/2001/XMLSchema-instance	Guadalajara
+http://www.w3.org/2001/XMLSchema-instance	T�rgu Mures
+http://www.w3.org/2001/XMLSchema-instance	Ashikaga
+http://www.w3.org/2001/XMLSchema-instance	Dayton
+http://www.w3.org/2001/XMLSchema-instance	Xiaogan
+http://www.w3.org/2001/XMLSchema-instance	Passo Fundo
+http://www.w3.org/2001/XMLSchema-instance	Basel
+http://www.w3.org/2001/XMLSchema-instance	Plzen
+http://www.w3.org/2001/XMLSchema-instance	Izumi
+http://www.w3.org/2001/XMLSchema-instance	Witbank
+http://www.w3.org/2001/XMLSchema-instance	Secunderabad
+http://www.w3.org/2001/XMLSchema-instance	Rijeka
+http://www.w3.org/2001/XMLSchema-instance	Tripoli
+http://www.w3.org/2001/XMLSchema-instance	Danyang
+http://www.w3.org/2001/XMLSchema-instance	Jiutepec
+http://www.w3.org/2001/XMLSchema-instance	Hamburg
+http://www.w3.org/2001/XMLSchema-instance	L�zaro C�rdenas
+http://www.w3.org/2001/XMLSchema-instance	Chimoio
+http://www.w3.org/2001/XMLSchema-instance	Kaesong
+http://www.w3.org/2001/XMLSchema-instance	Bani Suwayf
+http://www.w3.org/2001/XMLSchema-instance	Mwanza
+http://www.w3.org/2001/XMLSchema-instance	Kusti
+http://www.w3.org/2001/XMLSchema-instance	Takaoka
+http://www.w3.org/2001/XMLSchema-instance	Calabar
+http://www.w3.org/2001/XMLSchema-instance	Qashqar
+http://www.w3.org/2001/XMLSchema-instance	Burnpur
+http://www.w3.org/2001/XMLSchema-instance	Ube
+http://www.w3.org/2001/XMLSchema-instance	Alvorada
+http://www.w3.org/2001/XMLSchema-instance	Herne
+http://www.w3.org/2001/XMLSchema-instance	Puyang
+http://www.w3.org/2001/XMLSchema-instance	San Felipe del Progreso
+http://www.w3.org/2001/XMLSchema-instance	Cartagena
+http://www.w3.org/2001/XMLSchema-instance	Colombo
+http://www.w3.org/2001/XMLSchema-instance	Chill�n
+http://www.w3.org/2001/XMLSchema-instance	Ettadhamen
+http://www.w3.org/2001/XMLSchema-instance	Tacloban
+http://www.w3.org/2001/XMLSchema-instance	Maoming
+http://www.w3.org/2001/XMLSchema-instance	Arapiraca
+http://www.w3.org/2001/XMLSchema-instance	Reggio di Calabria
+http://www.w3.org/2001/XMLSchema-instance	Hailar
+http://www.w3.org/2001/XMLSchema-instance	Changsha
+http://www.w3.org/2001/XMLSchema-instance	Changshu
+http://www.w3.org/2001/XMLSchema-instance	Berezniki
+http://www.w3.org/2001/XMLSchema-instance	Nawabshah
+http://www.w3.org/2001/XMLSchema-instance	al-Kut
+http://www.w3.org/2001/XMLSchema-instance	Batna
+http://www.w3.org/2001/XMLSchema-instance	Owo
+http://www.w3.org/2001/XMLSchema-instance	Odense
+http://www.w3.org/2001/XMLSchema-instance	Medan
+http://www.w3.org/2001/XMLSchema-instance	Yiyang
+http://www.w3.org/2001/XMLSchema-instance	Medell�n
+http://www.w3.org/2001/XMLSchema-instance	Durham
+http://www.w3.org/2001/XMLSchema-instance	S�o Carlos
+http://www.w3.org/2001/XMLSchema-instance	North Shore
+http://www.w3.org/2001/XMLSchema-instance	Arica
+http://www.w3.org/2001/XMLSchema-instance	S�o Leopoldo
+http://www.w3.org/2001/XMLSchema-instance	Huntington Beach
+http://www.w3.org/2001/XMLSchema-instance	Nagar Coil
+http://www.w3.org/2001/XMLSchema-instance	Pegu (Bago)
+http://www.w3.org/2001/XMLSchema-instance	Uitenhage
+http://www.w3.org/2001/XMLSchema-instance	Nagaoka
+http://www.w3.org/2001/XMLSchema-instance	al-Ramadi
+http://www.w3.org/2001/XMLSchema-instance	Fuyu
+http://www.w3.org/2001/XMLSchema-instance	Fengcheng
+http://www.w3.org/2001/XMLSchema-instance	Nanping
+http://www.w3.org/2001/XMLSchema-instance	Burgas
+http://www.w3.org/2001/XMLSchema-instance	Kowloon and New Kowloon
+http://www.w3.org/2001/XMLSchema-instance	Kofu
+http://www.w3.org/2001/XMLSchema-instance	Yixing
+http://www.w3.org/2001/XMLSchema-instance	Charleroi
+http://www.w3.org/2001/XMLSchema-instance	Okara
+http://www.w3.org/2001/XMLSchema-instance	Bi�an
+http://www.w3.org/2001/XMLSchema-instance	Kasukabe
+http://www.w3.org/2001/XMLSchema-instance	Klaipeda
+http://www.w3.org/2001/XMLSchema-instance	Dezful
+http://www.w3.org/2001/XMLSchema-instance	Shijiazhuang
+http://www.w3.org/2001/XMLSchema-instance	Jedda
+http://www.w3.org/2001/XMLSchema-instance	Bei�an
+http://www.w3.org/2001/XMLSchema-instance	Fort Wayne
+http://www.w3.org/2001/XMLSchema-instance	Katsina
+http://www.w3.org/2001/XMLSchema-instance	Cilacap
+http://www.w3.org/2001/XMLSchema-instance	Manisa
+http://www.w3.org/2001/XMLSchema-instance	Baruta
+http://www.w3.org/2001/XMLSchema-instance	Xuchang
+http://www.w3.org/2001/XMLSchema-instance	Izmit (Kocaeli)
+http://www.w3.org/2001/XMLSchema-instance	Wad Madani
+http://www.w3.org/2001/XMLSchema-instance	Toskent
+http://www.w3.org/2001/XMLSchema-instance	Damanhur
+http://www.w3.org/2001/XMLSchema-instance	Kielce
+http://www.w3.org/2001/XMLSchema-instance	Atsugi
+http://www.w3.org/2001/XMLSchema-instance	Paris
+http://www.w3.org/2001/XMLSchema-instance	Hebi
+http://www.w3.org/2001/XMLSchema-instance	Izmir
+http://www.w3.org/2001/XMLSchema-instance	La Paz
+http://www.w3.org/2001/XMLSchema-instance	L�beck
+http://www.w3.org/2001/XMLSchema-instance	Jiangyin
+http://www.w3.org/2001/XMLSchema-instance	Mossor�
+http://www.w3.org/2001/XMLSchema-instance	Ichalkaranji
+http://www.w3.org/2001/XMLSchema-instance	Firozabad
+http://www.w3.org/2001/XMLSchema-instance	Yangjiang
+http://www.w3.org/2001/XMLSchema-instance	Panipat
+http://www.w3.org/2001/XMLSchema-instance	Shangzi
+http://www.w3.org/2001/XMLSchema-instance	Southampton
+http://www.w3.org/2001/XMLSchema-instance	Chigasaki
+http://www.w3.org/2001/XMLSchema-instance	Trieste
+http://www.w3.org/2001/XMLSchema-instance	Campeche
+http://www.w3.org/2001/XMLSchema-instance	Alger
+http://www.w3.org/2001/XMLSchema-instance	Lapu-Lapu
+http://www.w3.org/2001/XMLSchema-instance	Borujerd
+http://www.w3.org/2001/XMLSchema-instance	Jember
+http://www.w3.org/2001/XMLSchema-instance	Van
+http://www.w3.org/2001/XMLSchema-instance	Cabimas
+http://www.w3.org/2001/XMLSchema-instance	Niznekamsk
+http://www.w3.org/2001/XMLSchema-instance	Tehuac�n
+http://www.w3.org/2001/XMLSchema-instance	Gongziling
+http://www.w3.org/2001/XMLSchema-instance	Salamanca
+http://www.w3.org/2001/XMLSchema-instance	Nairobi
+http://www.w3.org/2001/XMLSchema-instance	Namyangju
+http://www.w3.org/2001/XMLSchema-instance	Severodvinsk
+http://www.w3.org/2001/XMLSchema-instance	Obeid
+http://www.w3.org/2001/XMLSchema-instance	Swansea
+http://www.w3.org/2001/XMLSchema-instance	Salvador
+http://www.w3.org/2001/XMLSchema-instance	Radom
+http://www.w3.org/2001/XMLSchema-instance	Nalt�ik
+http://www.w3.org/2001/XMLSchema-instance	Magdeburg
+http://www.w3.org/2001/XMLSchema-instance	Dunhua
+http://www.w3.org/2001/XMLSchema-instance	Shahjahanpur
+http://www.w3.org/2001/XMLSchema-instance	Santa Maria
+http://www.w3.org/2001/XMLSchema-instance	Rybinsk
+http://www.w3.org/2001/XMLSchema-instance	Tripoli
+http://www.w3.org/2001/XMLSchema-instance	Muzaffarpur
+http://www.w3.org/2001/XMLSchema-instance	Ko�ice
+http://www.w3.org/2001/XMLSchema-instance	A Coru�a (La Coru�a)
+http://www.w3.org/2001/XMLSchema-instance	Rampur
+http://www.w3.org/2001/XMLSchema-instance	Sasebo
+http://www.w3.org/2001/XMLSchema-instance	Mardan
+http://www.w3.org/2001/XMLSchema-instance	Ikerre
+http://www.w3.org/2001/XMLSchema-instance	Pachuca de Soto
+http://www.w3.org/2001/XMLSchema-instance	Bellary
+http://www.w3.org/2001/XMLSchema-instance	Tarsus
+http://www.w3.org/2001/XMLSchema-instance	Laiwu
+http://www.w3.org/2001/XMLSchema-instance	Mokpo
+http://www.w3.org/2001/XMLSchema-instance	Thi�s
+http://www.w3.org/2001/XMLSchema-instance	Ambon
+http://www.w3.org/2001/XMLSchema-instance	Addis Abeba
+http://www.w3.org/2001/XMLSchema-instance	Coacalco de Berrioz�bal
+http://www.w3.org/2001/XMLSchema-instance	Kediri
+http://www.w3.org/2001/XMLSchema-instance	Fukui
+http://www.w3.org/2001/XMLSchema-instance	Oaxaca de Ju�rez
+http://www.w3.org/2001/XMLSchema-instance	Lexington-Fayette
+http://www.w3.org/2001/XMLSchema-instance	Klerksdorp
+http://www.w3.org/2001/XMLSchema-instance	Safi
+http://www.w3.org/2001/XMLSchema-instance	Kyiv
+http://www.w3.org/2001/XMLSchema-instance	Boksburg
+http://www.w3.org/2001/XMLSchema-instance	Victoria
+http://www.w3.org/2001/XMLSchema-instance	Wuhai
+http://www.w3.org/2001/XMLSchema-instance	Uruapan
+http://www.w3.org/2001/XMLSchema-instance	Haifa
+http://www.w3.org/2001/XMLSchema-instance	al-Nasiriya
+http://www.w3.org/2001/XMLSchema-instance	Davangere
+http://www.w3.org/2001/XMLSchema-instance	Gij�n
+http://www.w3.org/2001/XMLSchema-instance	Ichinomiya
+http://www.w3.org/2001/XMLSchema-instance	Ljubljana
+http://www.w3.org/2001/XMLSchema-instance	Tapachula
+http://www.w3.org/2001/XMLSchema-instance	Soacha
+http://www.w3.org/2001/XMLSchema-instance	Alicante [Alacant]
+http://www.w3.org/2001/XMLSchema-instance	Phyongsong
+http://www.w3.org/2001/XMLSchema-instance	Chitungwiza
+http://www.w3.org/2001/XMLSchema-instance	Yao
+http://www.w3.org/2001/XMLSchema-instance	Karlsruhe
+http://www.w3.org/2001/XMLSchema-instance	T�touan
+http://www.w3.org/2001/XMLSchema-instance	Talcahuano
+http://www.w3.org/2001/XMLSchema-instance	Bi�n Hoa
+http://www.w3.org/2001/XMLSchema-instance	Apodaca
+http://www.w3.org/2001/XMLSchema-instance	�rhus
+http://www.w3.org/2001/XMLSchema-instance	Kigali
+http://www.w3.org/2001/XMLSchema-instance	Nanking [Nanjing]
+http://www.w3.org/2001/XMLSchema-instance	Morioka
+http://www.w3.org/2001/XMLSchema-instance	Fukushima
+http://www.w3.org/2001/XMLSchema-instance	Armenia
+http://www.w3.org/2001/XMLSchema-instance	Nonthaburi
+http://www.w3.org/2001/XMLSchema-instance	K�nitra
+http://www.w3.org/2001/XMLSchema-instance	Tabuk
+http://www.w3.org/2001/XMLSchema-instance	Buffalo
+http://www.w3.org/2001/XMLSchema-instance	Tampico
+http://www.w3.org/2001/XMLSchema-instance	Aomori
+http://www.w3.org/2001/XMLSchema-instance	Jund�a�
+http://www.w3.org/2001/XMLSchema-instance	G�nc�
+http://www.w3.org/2001/XMLSchema-instance	Shihezi
+http://www.w3.org/2001/XMLSchema-instance	Wonsan
+http://www.w3.org/2001/XMLSchema-instance	Ciudad Bol�var
+http://www.w3.org/2001/XMLSchema-instance	Vologda
+http://www.w3.org/2001/XMLSchema-instance	Yueyang
+http://www.w3.org/2001/XMLSchema-instance	Foshan
+http://www.w3.org/2001/XMLSchema-instance	Surrey
+http://www.w3.org/2001/XMLSchema-instance	San Isidro
+http://www.w3.org/2001/XMLSchema-instance	Mataram
+http://www.w3.org/2001/XMLSchema-instance	New Bombay
+http://www.w3.org/2001/XMLSchema-instance	Dongwan
+http://www.w3.org/2001/XMLSchema-instance	T�erkasy
+http://www.w3.org/2001/XMLSchema-instance	Nuevo Laredo
+http://www.w3.org/2001/XMLSchema-instance	�skemen
+http://www.w3.org/2001/XMLSchema-instance	Chaozhou
+http://www.w3.org/2001/XMLSchema-instance	Toledo
+http://www.w3.org/2001/XMLSchema-instance	San Miguelito
+http://www.w3.org/2001/XMLSchema-instance	Vila Velha
+http://www.w3.org/2001/XMLSchema-instance	San Crist�bal
+http://www.w3.org/2001/XMLSchema-instance	Sharja
+http://www.w3.org/2001/XMLSchema-instance	Valle de Chalco Solidaridad
+http://www.w3.org/2001/XMLSchema-instance	Tonghua
+http://www.w3.org/2001/XMLSchema-instance	Belgaum
+http://www.w3.org/2001/XMLSchema-instance	Yazd
+http://www.w3.org/2001/XMLSchema-instance	Kawagoe
+http://www.w3.org/2001/XMLSchema-instance	Anaheim
+http://www.w3.org/2001/XMLSchema-instance	Vereeniging
+http://www.w3.org/2001/XMLSchema-instance	Ndola
+http://www.w3.org/2001/XMLSchema-instance	Chinju
+http://www.w3.org/2001/XMLSchema-instance	Mushin
+http://www.w3.org/2001/XMLSchema-instance	Bloemfontein
+http://www.w3.org/2001/XMLSchema-instance	Pittsburgh
+http://www.w3.org/2001/XMLSchema-instance	Hamilton
+http://www.w3.org/2001/XMLSchema-instance	Chimbote
+http://www.w3.org/2001/XMLSchema-instance	Z�rich
+http://www.w3.org/2001/XMLSchema-instance	San Jos�
+http://www.w3.org/2001/XMLSchema-instance	Plovdiv
+http://www.w3.org/2001/XMLSchema-instance	Nantong
+http://www.w3.org/2001/XMLSchema-instance	Suita
+http://www.w3.org/2001/XMLSchema-instance	Shaoguan
+http://www.w3.org/2001/XMLSchema-instance	S�o Jos� do Rio Preto
+http://www.w3.org/2001/XMLSchema-instance	Campina Grande
+http://www.w3.org/2001/XMLSchema-instance	Herson
+http://www.w3.org/2001/XMLSchema-instance	Ahome
+http://www.w3.org/2001/XMLSchema-instance	Santa Marta
+http://www.w3.org/2001/XMLSchema-instance	Ado-Ekiti
+http://www.w3.org/2001/XMLSchema-instance	Toyohashi
+http://www.w3.org/2001/XMLSchema-instance	Luxor
+http://www.w3.org/2001/XMLSchema-instance	Dhaka
+http://www.w3.org/2001/XMLSchema-instance	Arkangeli
+http://www.w3.org/2001/XMLSchema-instance	Hsinchu
+http://www.w3.org/2001/XMLSchema-instance	Yangquan
+http://www.w3.org/2001/XMLSchema-instance	Machida
+http://www.w3.org/2001/XMLSchema-instance	Depok
+http://www.w3.org/2001/XMLSchema-instance	Oujda
+http://www.w3.org/2001/XMLSchema-instance	Benoni
+http://www.w3.org/2001/XMLSchema-instance	Salta
+http://www.w3.org/2001/XMLSchema-instance	Honolulu
+http://www.w3.org/2001/XMLSchema-instance	Saharanpur
+http://www.w3.org/2001/XMLSchema-instance	Murmansk
+http://www.w3.org/2001/XMLSchema-instance	Mazatl�n
+http://www.w3.org/2001/XMLSchema-instance	Arak
+http://www.w3.org/2001/XMLSchema-instance	Celaya
+http://www.w3.org/2001/XMLSchema-instance	Minneapolis
+http://www.w3.org/2001/XMLSchema-instance	Thessaloniki
+http://www.w3.org/2001/XMLSchema-instance	Kumasi
+http://www.w3.org/2001/XMLSchema-instance	Keelung (Chilung)
+http://www.w3.org/2001/XMLSchema-instance	Toulouse
+http://www.w3.org/2001/XMLSchema-instance	Vinnytsja
+http://www.w3.org/2001/XMLSchema-instance	Wakayama
+http://www.w3.org/2001/XMLSchema-instance	Ibagu�
+http://www.w3.org/2001/XMLSchema-instance	Mesa
+http://www.w3.org/2001/XMLSchema-instance	Abu Dhabi
+http://www.w3.org/2001/XMLSchema-instance	Hamadan
+http://www.w3.org/2001/XMLSchema-instance	Bristol
+http://www.w3.org/2001/XMLSchema-instance	Kataka (Cuttack)
+http://www.w3.org/2001/XMLSchema-instance	Kolhapur
+http://www.w3.org/2001/XMLSchema-instance	Santos
+http://www.w3.org/2001/XMLSchema-instance	San Salvador
+http://www.w3.org/2001/XMLSchema-instance	Atlanta
+http://www.w3.org/2001/XMLSchema-instance	Calicut (Kozhikode)
+http://www.w3.org/2001/XMLSchema-instance	Niamey
+http://www.w3.org/2001/XMLSchema-instance	Amravati
+http://www.w3.org/2001/XMLSchema-instance	Leeds
+http://www.w3.org/2001/XMLSchema-instance	Callao
+http://www.w3.org/2001/XMLSchema-instance	Durgapur
+http://www.w3.org/2001/XMLSchema-instance	Shenyang
+http://www.w3.org/2001/XMLSchema-instance	Harbin
+http://www.w3.org/2001/XMLSchema-instance	Tultitl�n
+http://www.w3.org/2001/XMLSchema-instance	Urmia
+http://www.w3.org/2001/XMLSchema-instance	Raipur
+http://www.w3.org/2001/XMLSchema-instance	S�o Jo�o de Meriti
+http://www.w3.org/2001/XMLSchema-instance	Lyon
+http://www.w3.org/2001/XMLSchema-instance	Aracaju
+http://www.w3.org/2001/XMLSchema-instance	Albuquerque
+http://www.w3.org/2001/XMLSchema-instance	Para�aque
+http://www.w3.org/2001/XMLSchema-instance	Juiz de Fora
+http://www.w3.org/2001/XMLSchema-instance	Yantai
+http://www.w3.org/2001/XMLSchema-instance	Kawaguchi
+http://www.w3.org/2001/XMLSchema-instance	Cuiab�
+http://www.w3.org/2001/XMLSchema-instance	Haikou
+http://www.w3.org/2001/XMLSchema-instance	Veracruz
+http://www.w3.org/2001/XMLSchema-instance	Ivanovo
+http://www.w3.org/2001/XMLSchema-instance	Mekn�s
+http://www.w3.org/2001/XMLSchema-instance	Matsudo
+http://www.w3.org/2001/XMLSchema-instance	St Petersburg
+http://www.w3.org/2001/XMLSchema-instance	Santiago de Chile
+http://www.w3.org/2001/XMLSchema-instance	Ciudad de Panam�
+http://www.w3.org/2001/XMLSchema-instance	Xinxiang
+http://www.w3.org/2001/XMLSchema-instance	Gomel
+http://www.w3.org/2001/XMLSchema-instance	Kayseri
+http://www.w3.org/2001/XMLSchema-instance	Blantyre
+http://www.w3.org/2001/XMLSchema-instance	Feira de Santana
+http://www.w3.org/2001/XMLSchema-instance	al-Dammam
+http://www.w3.org/2001/XMLSchema-instance	Banjarmasin
+http://www.w3.org/2001/XMLSchema-instance	Valenzuela
+http://www.w3.org/2001/XMLSchema-instance	Astrahan
+http://www.w3.org/2001/XMLSchema-instance	Uberl�ndia
+http://www.w3.org/2001/XMLSchema-instance	K�benhavn
+http://www.w3.org/2001/XMLSchema-instance	Tjumen
+http://www.w3.org/2001/XMLSchema-instance	Pasig
+http://www.w3.org/2001/XMLSchema-instance	Gorakhpur
+http://www.w3.org/2001/XMLSchema-instance	Hims
+http://www.w3.org/2001/XMLSchema-instance	Mykolajiv
+http://www.w3.org/2001/XMLSchema-instance	Vancouver
+http://www.w3.org/2001/XMLSchema-instance	Nabereznyje T�elny
+http://www.w3.org/2001/XMLSchema-instance	Pimpri-Chinchwad
+http://www.w3.org/2001/XMLSchema-instance	Duisburg
+http://www.w3.org/2001/XMLSchema-instance	Contagem
+http://www.w3.org/2001/XMLSchema-instance	Lipetsk
+http://www.w3.org/2001/XMLSchema-instance	El Alto
+http://www.w3.org/2001/XMLSchema-instance	Almirante Brown
+http://www.w3.org/2001/XMLSchema-instance	Denver
+http://www.w3.org/2001/XMLSchema-instance	Helsinki [Helsingfors]
+http://www.w3.org/2001/XMLSchema-instance	Rajkot
+http://www.w3.org/2001/XMLSchema-instance	Nampo
+http://www.w3.org/2001/XMLSchema-instance	Poznan
+http://www.w3.org/2001/XMLSchema-instance	Stuttgart
+http://www.w3.org/2001/XMLSchema-instance	Jo�o Pessoa
+http://www.w3.org/2001/XMLSchema-instance	Dortmund
+http://www.w3.org/2001/XMLSchema-instance	Ranchi
+http://www.w3.org/2001/XMLSchema-instance	Zaragoza
+http://www.w3.org/2001/XMLSchema-instance	Hermosillo
+http://www.w3.org/2001/XMLSchema-instance	Winnipeg
+http://www.w3.org/2001/XMLSchema-instance	Bulawayo
+http://www.w3.org/2001/XMLSchema-instance	Lomas de Zamora
+http://www.w3.org/2001/XMLSchema-instance	Genova
+http://www.w3.org/2001/XMLSchema-instance	Trujillo
+http://www.w3.org/2001/XMLSchema-instance	Osasco
+http://www.w3.org/2001/XMLSchema-instance	Khulna
+http://www.w3.org/2001/XMLSchema-instance	Chihuahua
+http://www.w3.org/2001/XMLSchema-instance	Antananarivo
+http://www.w3.org/2001/XMLSchema-instance	Jixi
+http://www.w3.org/2001/XMLSchema-instance	Toronto
+http://www.w3.org/2001/XMLSchema-instance	Kryvyi Rig
+http://www.w3.org/2001/XMLSchema-instance	M�rida
+http://www.w3.org/2001/XMLSchema-instance	Faridabad
+http://www.w3.org/2001/XMLSchema-instance	Zagreb
+http://www.w3.org/2001/XMLSchema-instance	Krak�w
+http://www.w3.org/2001/XMLSchema-instance	Peking
+http://www.w3.org/2001/XMLSchema-instance	Vishakhapatnam
+http://www.w3.org/2001/XMLSchema-instance	Port Elizabeth
+http://www.w3.org/2001/XMLSchema-instance	Luoyang
+http://www.w3.org/2001/XMLSchema-instance	Noum�a
+http://www.w3.org/2001/XMLSchema-instance	Tokyo
+http://www.w3.org/2001/XMLSchema-instance	Yichun
+http://www.w3.org/2001/XMLSchema-instance	L�dz
+http://www.w3.org/2001/XMLSchema-instance	Thane (Thana)
+http://www.w3.org/2001/XMLSchema-instance	Ahvaz
+http://www.w3.org/2001/XMLSchema-instance	Bamako
+http://www.w3.org/2001/XMLSchema-instance	Tegucigalpa
+http://www.w3.org/2001/XMLSchema-instance	Wuxi
+http://www.w3.org/2001/XMLSchema-instance	S�o Lu�s
+http://www.w3.org/2001/XMLSchema-instance	Moscow
+http://www.w3.org/2001/XMLSchema-instance	Handan
+http://www.w3.org/2001/XMLSchema-instance	Freetown
+http://www.w3.org/2001/XMLSchema-instance	Monrovia
+http://www.w3.org/2001/XMLSchema-instance	Ciudad de M�xico
+http://www.w3.org/2001/XMLSchema-instance	Songnam
+http://www.w3.org/2001/XMLSchema-instance	S�o Gon�alo
+http://www.w3.org/2001/XMLSchema-instance	Port-au-Prince
+http://www.w3.org/2001/XMLSchema-instance	Kampala
+http://www.w3.org/2001/XMLSchema-instance	Agra
+http://www.w3.org/2001/XMLSchema-instance	Ladysmith
+http://www.w3.org/2001/XMLSchema-instance	Liepaja
+http://www.w3.org/2001/XMLSchema-instance	Kenosha
+http://www.w3.org/2001/XMLSchema-instance	El Fuerte
+http://www.w3.org/2001/XMLSchema-instance	Wazirabad
+http://www.w3.org/2001/XMLSchema-instance	Miaoli
+http://www.w3.org/2001/XMLSchema-instance	Zhezqazghan
+http://www.w3.org/2001/XMLSchema-instance	T�aikovski
+http://www.w3.org/2001/XMLSchema-instance	Miandoab
+http://www.w3.org/2001/XMLSchema-instance	Rehovot
+http://www.w3.org/2001/XMLSchema-instance	Tandil
+http://www.w3.org/2001/XMLSchema-instance	Tsuyama
+http://www.w3.org/2001/XMLSchema-instance	Boulder
+http://www.w3.org/2001/XMLSchema-instance	Narita
+http://www.w3.org/2001/XMLSchema-instance	Arezzo
+http://www.w3.org/2001/XMLSchema-instance	San Mateo
+http://www.w3.org/2001/XMLSchema-instance	Barletta
+http://www.w3.org/2001/XMLSchema-instance	S�o Louren�o da Mata
+http://www.w3.org/2001/XMLSchema-instance	Kaiyuan
+http://www.w3.org/2001/XMLSchema-instance	Gainesville
+http://www.w3.org/2001/XMLSchema-instance	Candelaria
+http://www.w3.org/2001/XMLSchema-instance	Purulia
+http://www.w3.org/2001/XMLSchema-instance	Izumisano
+http://www.w3.org/2001/XMLSchema-instance	Taza
+http://www.w3.org/2001/XMLSchema-instance	Tabora
+http://www.w3.org/2001/XMLSchema-instance	Billings
+http://www.w3.org/2001/XMLSchema-instance	Tultepec
+http://www.w3.org/2001/XMLSchema-instance	Chhindwara
+http://www.w3.org/2001/XMLSchema-instance	Ming��evir
+http://www.w3.org/2001/XMLSchema-instance	Taichung
+http://www.w3.org/2001/XMLSchema-instance	Andria
+http://www.w3.org/2001/XMLSchema-instance	Maizuru
+http://www.w3.org/2001/XMLSchema-instance	Pagakku (Pakokku)
+http://www.w3.org/2001/XMLSchema-instance	Haora (Howrah)
+http://www.w3.org/2001/XMLSchema-instance	�st� nad Labem
+http://www.w3.org/2001/XMLSchema-instance	La Spezia
+http://www.w3.org/2001/XMLSchema-instance	Garut
+http://www.w3.org/2001/XMLSchema-instance	Konotop
+http://www.w3.org/2001/XMLSchema-instance	Patan
+http://www.w3.org/2001/XMLSchema-instance	Ourinhos
+http://www.w3.org/2001/XMLSchema-instance	Salto
+http://www.w3.org/2001/XMLSchema-instance	Mojokerto
+http://www.w3.org/2001/XMLSchema-instance	Savannakhet
+http://www.w3.org/2001/XMLSchema-instance	Bor�s
+http://www.w3.org/2001/XMLSchema-instance	Molodet�no
+http://www.w3.org/2001/XMLSchema-instance	Chelmsford
+http://www.w3.org/2001/XMLSchema-instance	Conselheiro Lafaiete
+http://www.w3.org/2001/XMLSchema-instance	Isehara
+http://www.w3.org/2001/XMLSchema-instance	Kuznetsk
+http://www.w3.org/2001/XMLSchema-instance	Ancona
+http://www.w3.org/2001/XMLSchema-instance	Araguari
+http://www.w3.org/2001/XMLSchema-instance	San Pedro Cholula

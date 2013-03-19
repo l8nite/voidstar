@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    This file is a component of the p.opulo.us project.
+
+    Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
+    All Rights Reserved.
+
+    This software is licensed under The MIT License (MIT)
+    http://opensource.org/licenses/MIT
+
+-->
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Infection" type="Infection"/>
+
+  <xs:element name="Infections" type="Infections"/>
+
+  <xs:complexType name="Infections">
+    <xs:sequence>
+      <xs:element ref="Infection" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Infection">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:int" minOccurs="0"/>
+      <xs:element name="CityID" type="xs:string" minOccurs="0"/>
+      <xs:element name="Zombies" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

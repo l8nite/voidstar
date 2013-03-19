@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    This file is a component of the p.opulo.us project.
+
+    Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
+    All Rights Reserved.
+
+    This software is licensed under The MIT License (MIT)
+    http://opensource.org/licenses/MIT
+
+-->
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="us.opulo.p.dao.service.soap.CityServiceSoap" name="city" url-pattern="/city"/>
+  <endpoint implementation="us.opulo.p.dao.service.soap.CountryServiceSoap" name="country" url-pattern="/country"/>
+  <endpoint implementation="us.opulo.p.dao.service.soap.CountryLanguageServiceSoap" name="countrylanguage" url-pattern="/countrylanguage"/>
+  <endpoint implementation="us.opulo.p.dao.service.soap.InfectionServiceSoap" name="infection" url-pattern="/infection"/>
+  <endpoint implementation="us.opulo.p.dao.service.soap.LanguageServiceSoap" name="language" url-pattern="/language"/>
+</endpoints>

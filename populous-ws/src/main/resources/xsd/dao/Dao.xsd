@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    This file is a component of the p.opulo.us project.
+
+    Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
+    All Rights Reserved.
+
+    This software is licensed under The MIT License (MIT)
+    http://opensource.org/licenses/MIT
+
+-->
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://p.opulo.us/dao"
+>
+		<xs:include schemaLocation="Cities.xsd"/>
+		<xs:include schemaLocation="Countries.xsd"/>
+		<xs:include schemaLocation="CountryLanguages.xsd"/>
+		<xs:include schemaLocation="Infections.xsd"/>
+		<xs:include schemaLocation="Languages.xsd"/>
+</xs:schema>
