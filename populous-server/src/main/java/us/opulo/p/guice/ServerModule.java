@@ -26,6 +26,10 @@ import us.opulo.p.hibernate.HibernateSessionImpl;
 
 import com.google.inject.AbstractModule;
 
+/**
+ * The default module for the server. Provides all bindings and configurations for hibernate and all hibernate services.
+ * @author Jason Campos
+ */
 public class ServerModule extends AbstractModule {
 
 	@Override
@@ -40,6 +44,5 @@ public class ServerModule extends AbstractModule {
 		bind(CountryLanguageService.class).annotatedWith(us.opulo.p.annotations.HibernateService.class).to(CountryLanguageServiceHibernate.class);
 		bind(InfectionService.class).annotatedWith(us.opulo.p.annotations.HibernateService.class).to(InfectionServiceHibernate.class);
 		bind(LanguageService.class).annotatedWith(us.opulo.p.annotations.HibernateService.class).to(LanguageServiceHibernate.class);
-		
 	}	
 }

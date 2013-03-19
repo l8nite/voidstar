@@ -24,14 +24,14 @@ import org.slf4j.LoggerFactory;
 
 import us.opulo.p.dao.HEntity;
 import us.opulo.p.jaxb.annotations.XmlGroup;
-import us.opulo.p.jaxb.assertions.JAXBAssertions;
 import us.opulo.p.jaxb.tables.EntityTable;
+import us.opulo.p.util.Assertions;
 
 /**
- * Class responsible for unmarshalling XML from EntityTable XML.
+ * Class responsible for unmarshalling XML of HENtitys
  * 
  * @author Jason Campos
- * @param <T> The EntityTable class being unmarshalled.
+ * @param <T> The Entity class being unmarshalled.
  */
 public class EntityUnmarshaller <E extends HEntity> {
 	private static final Logger log = LoggerFactory.getLogger(EntityUnmarshaller.class);
@@ -39,8 +39,15 @@ public class EntityUnmarshaller <E extends HEntity> {
 	private JAXBContext context;
 	private Unmarshaller unmarshaller;
 	
+	/**
+	 * Creates an EntityUnmarshaller for the argument entityClass. The argument class must be annotated with the {@code @XmlGroup} 
+	 * annotation and the XML document being parsed must match the format of the class returned from the annotation.  
+	 *  
+	 * @param entityClass The class of the entities being unmarshalled.
+	 * @return An EntityUnmarshaller capable of unmarshalling objects of the argument entityClass.
+	 */
 	public static <E extends HEntity> EntityUnmarshaller<E> create(Class<E> entityClass) {
-		JAXBAssertions.assertXmlGroupAnnotationIsPresent(entityClass);
+		Assertions.assertAnnotationPresent(entityClass, XmlGroup.class);
 		
 		@SuppressWarnings("unchecked")
 		Class<EntityTable<E>> tableClass = (Class<EntityTable<E>>) entityClass.getAnnotation(XmlGroup.class).value();
@@ -48,6 +55,10 @@ public class EntityUnmarshaller <E extends HEntity> {
 		return new EntityUnmarshaller<E>(tableClass);
 	}
 	
+	/*
+	 * (non-javadoc)
+	 * Private constructor. Public facing API is the factory create() method. 	 
+	 */
 	private EntityUnmarshaller(Class<? extends EntityTable<?>> entityTableClass) {	
 		try {
 			this.context = JAXBContext.newInstance( new Class[] { entityTableClass } );
@@ -58,15 +69,32 @@ public class EntityUnmarshaller <E extends HEntity> {
 		}
 	}
 	
+	/**
+	 * Parses the argument XML file and returns a list of unmarshalled objects. 
+	 * @param file The XML file to parse
+	 * @return A {@code List} of objects unmarshalled from the XML. 
+	 * @throws FileNotFoundException
+	 * @throws JAXBException
+	 */
 	public List<E> unmarshal(File file) throws FileNotFoundException, JAXBException {
 		return unmarshal(new FileInputStream(file));
 	}
 	
+	/**
+	 * Parses the argument input stream as XML and returns a list of unmarshalled objects.
+	 * @param is The input stream of XML
+	 * @return A {@code List} of objects unmarshalled from the XML
+	 * @throws JAXBException
+	 */
 	public List<E> unmarshal(InputStream is) throws JAXBException {
 		EntityTable<E> entityTable = unmarshalFromXml(is);
 		return entityTable.getEntities();
 	}
 
+	/*
+	 * (non-javadoc)
+	 * Unmarshals the argument unput stream into the an entity table. 
+	 */
 	@SuppressWarnings("unchecked")
 	private EntityTable<E> unmarshalFromXml(InputStream is) throws JAXBException {
 		return (EntityTable<E>) unmarshaller.unmarshal(is);

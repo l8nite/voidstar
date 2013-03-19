@@ -19,6 +19,12 @@ import java.lang.annotation.Target;
 
 import com.google.inject.BindingAnnotation;
 
+/**
+ * A {@link BindingAnnotation} used by Guice to indicate that the annotated object 
+ * uses hibernate to provide the service implementation.
+ * 
+ * @author Jason Campos
+ */
 @Retention(RUNTIME) 
 @Target({FIELD, LOCAL_VARIABLE, CONSTRUCTOR})
 @BindingAnnotation

@@ -22,15 +22,14 @@ import org.slf4j.LoggerFactory;
 import us.opulo.p.dao.HEntity;
 import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
-import us.opulo.p.jaxb.assertions.JAXBAssertions;
 import us.opulo.p.jaxb.tables.EntityTable;
+import us.opulo.p.util.Assertions;
 
 /**
  * Class responsible for marshalling EntityTable/HEntity objects to XML.
  * 
  * @author Jason Campos
- * @param <T> The EntityTable wrapper responsible for marshalling the Entity
- * @param <E> The Entity being marshalled
+ * @param <E> The Entity class being marshalled
  */
 public class EntityMarshaller <E extends HEntity>{
 	private static final Logger log = LoggerFactory.getLogger(EntityMarshaller.class);
@@ -39,8 +38,17 @@ public class EntityMarshaller <E extends HEntity>{
 	private Class<? extends EntityTable<E>> tableClass;
 	private EntityTable<E> table;
 	
+	/**
+	 * Creates an EntityMarshaller for the argument entityClass. The argument class must be annotated with the {@code @XmlGroup} 
+	 * annotation in order to be properly marshalled into the correct binding. 
+	 * 
+	 * @param entityClass The entity class being marshalled.
+	 * @return An EntityMarshaller capable of marshalling entities of the argument entityClass into the correct binding.
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 */
 	public static <E extends HEntity> EntityMarshaller<E> create(Class<E> entityClass) throws InstantiationException, IllegalAccessException {
-		JAXBAssertions.assertXmlGroupAnnotationIsPresent(entityClass);
+		Assertions.assertAnnotationPresent(entityClass, XmlGroup.class);
 		XmlGroup group = entityClass.getAnnotation(XmlGroup.class);
 		
 		// Runtime error if the tableclass's type parameter does not match E
@@ -50,15 +58,27 @@ public class EntityMarshaller <E extends HEntity>{
 		return new EntityMarshaller<E>(tableClass);
 	}
 	
+	/*
+	 * (non-javadoc)
+	 * Private constructor. Public facing API is to use the factory method create().
+	 */
 	private <T extends EntityTable<E>> EntityMarshaller(Class<T> tableClass) throws InstantiationException, IllegalAccessException {
 		this.tableClass = tableClass;
 		this.table = tableClass.newInstance();	
 	}
 
+	/**
+	 * Add an entity to the XML
+	 * @param entity The entity to add to the XML.
+	 */
 	public void add(E entity) {
 		table.add(entity);
 	}
 	
+	/**
+	 * Add a collection of entities to the XML
+	 * @param entities The entities to add to the XML.
+	 */
 	public void addAll(Collection<E> entities) {
 		table.addAll(entities);
 	}
