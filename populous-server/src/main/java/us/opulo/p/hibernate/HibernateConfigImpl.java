@@ -9,9 +9,14 @@
  */
 package us.opulo.p.hibernate;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
@@ -27,6 +32,8 @@ import us.opulo.p.util.Assertions;
  * @author Jason Campos
  */
 public class HibernateConfigImpl implements HibernateConfig {
+	
+	private static final Logger log = LoggerFactory.getLogger(HibernateConfigImpl.class);
 	
 	/**
 	 * @return A list of classes that map to Hibernate entitities
@@ -47,11 +54,25 @@ public class HibernateConfigImpl implements HibernateConfig {
 	 */
 	public Properties getProperties(){
 		Properties properties = new Properties();
-		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		
+		InputStream input = null;
+		try {
+			input = getClass().getResource("/db.credentials").openStream();
+			properties.load(input);
+		} catch (IOException e) {
+			log.error("Could not load database configuration file 'db.credentials'.", e);
+			throw new RuntimeException(e);
+		} finally {
+			if (input != null) {
+				try {
+					input.close();
+				} catch (IOException e) {
+					// ignore
+				}
+			}
+		}
+			properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		properties.put("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-		properties.put("hibernate.connection.url", "jdbc:DATABASE");
-		properties.put("hibernate.connection.username", "USERNAME");
-		properties.put("hibernate.connection.password", "PASSWORD");
 		properties.put("hibernate.current_session_context_class", "org.hibernate.context.ThreadLocalSessionContext");
 		properties.put("hibernate.show.sql", true);
 		return properties;
