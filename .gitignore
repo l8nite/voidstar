@@ -1,6 +1,9 @@
 *.class
 .settings
 
+# db settings #
+db.credentials
+
 # Package Files #
 *.war
 *.ear
