@@ -23,15 +23,15 @@ import javax.jws.soap.SOAPBinding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import us.opulo.p.constants.Constants.WebService.Soap.*;
+import us.opulo.p.annotations.HibernateService;
+import us.opulo.p.constants.Constants.WebService.Soap.ServiceName;
 import us.opulo.p.constants.Constants.XML.Namespaces;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.CountryLanguageService;
-import us.opulo.p.guice.CoreModule;
-import us.opulo.p.guice.annotations.HibernateService;
-import us.opulo.p.guice.webservice.GuiceManaged;
+import us.opulo.p.guice.GuiceManaged;
+import us.opulo.p.guice.ServerModule;
 import us.opulo.p.util.StringUtil;
 
 @WebService(
@@ -44,7 +44,7 @@ import us.opulo.p.util.StringUtil;
 		use = SOAPBinding.Use.LITERAL, 
 		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED
 )
-@GuiceManaged( modules = { CoreModule.class } )
+@GuiceManaged( modules = { ServerModule.class } )
 @Singleton
 public class CountryLanguageServiceSoap implements CountryLanguageService {
 	private static final Logger log = LoggerFactory.getLogger(CountryLanguageServiceSoap.class);

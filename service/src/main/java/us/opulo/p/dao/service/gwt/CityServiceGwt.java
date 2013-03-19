@@ -18,10 +18,10 @@ import javax.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CityService;
-import us.opulo.p.guice.annotations.HibernateService;
 import us.opulo.p.util.StringUtil;
 
 import com.google.gwt.user.client.rpc.RemoteService;
