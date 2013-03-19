@@ -22,6 +22,10 @@ import javax.xml.ws.spi.WebServiceFeatureAnnotation;
 import com.google.inject.Module;
 import com.sun.xml.ws.api.server.InstanceResolverAnnotation;
 
+/**
+ * This source code contains snippets from various internet websites and repositories. 
+ * The original code may have been a part of the Guicyfruit project.
+ */
 @Retention(RUNTIME)
 @Target(TYPE)
 @Documented

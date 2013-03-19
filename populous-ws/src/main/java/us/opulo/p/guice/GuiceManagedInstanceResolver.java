@@ -27,6 +27,10 @@ import com.sun.xml.ws.api.server.WSEndpoint;
 import com.sun.xml.ws.api.server.WSWebServiceContext;
 import com.sun.xml.ws.server.AbstractMultiInstanceResolver;
 
+/**
+ * This source code contains snippets from various internet websites and repositories. 
+ * The original code may have been a part of the Guicyfruit project.
+ */
 public class GuiceManagedInstanceResolver<T> extends AbstractMultiInstanceResolver<T> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GuiceManagedInstanceResolver.class);

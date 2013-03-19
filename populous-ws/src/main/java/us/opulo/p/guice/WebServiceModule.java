@@ -23,6 +23,10 @@ import us.opulo.p.dao.service.soap.LanguageServiceSoap;
 
 import com.google.inject.AbstractModule;
 
+/**
+ * Guice web service bindings. 
+ * @author Jason Campos
+ */
 public class WebServiceModule extends AbstractModule {
 
 	@Override

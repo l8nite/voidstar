@@ -34,6 +34,12 @@ import us.opulo.p.guice.GuiceManaged;
 import us.opulo.p.guice.WebServiceModule;
 import us.opulo.p.util.StringUtil;
 
+/**
+ * A SOAP web service which implements the InfectionService interface. 
+ * No additional methods are added to this class beyond what is specified in the interface. 
+ * 
+ * @author Jason Campos, Shaun Guth
+ */
 @WebService(
 		 targetNamespace=Namespaces.Soap.INFECTION_SERVICE,
 		 serviceName = ServiceName.INFECTION_PORT_SERVICE,
