@@ -12,8 +12,7 @@ package us.opulo.p.dao;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * Base class for all DAO objects being persisted using Hibernate. This class provides shortcuts for
- * saving, updating, and deleting objects in persistent storage.
+ * Base class for all DAO objects being persisted using Hibernate.
  * 
  * @author Jason Campos
  */
