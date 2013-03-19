@@ -16,7 +16,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * Specify the location of the schema the EntityMarshaller
+ * Used for XML marshalling/unmarshalling to specify the location of the class' XSD.
  * @author Jason Campos
  */
 @Retention(RUNTIME) 

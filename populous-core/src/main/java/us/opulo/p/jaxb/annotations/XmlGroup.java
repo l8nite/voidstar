@@ -17,6 +17,10 @@ import java.lang.annotation.Target;
 
 import us.opulo.p.jaxb.tables.EntityTable;
 
+/**
+ * Used for XML marshalling/unmarshalling to specify the JAXB "Table" to use for grouping. 
+ * @author Jason Campos
+ */
 @Retention(RUNTIME) 
 @Target(TYPE)
 public @interface XmlGroup {
