@@ -23,7 +23,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 
-public class App {
+public class InfectionSimulator {
 
 	public static void main(String[] args) throws InterruptedException {
 		Injector injector = Guice.createInjector(new ServerModule());

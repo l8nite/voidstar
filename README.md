@@ -1,31 +1,51 @@
-SE157B - Project 3 - Team void* - Ash Islam, Jason Campos, Shaun Guth
+Copyright (c) 2013 Jason Campos, Shaun Guth, Ash Islam
 
-There are 3 components in this project:
+MIT License
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-service - "core" SOAP services supporting queries against City, Country, Language, Infection, and CountryLanguage data
-mashup - a SOAP service itself, which acts as a client of the "core" services (plus a GeoIP service)
-client - a couple of test drivers which act as SOAP clients for the other two
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-All projects are built using maven: mvn clean compile; however, you will also need to run the bin/wsimports scripts to generate the SOAP client code for the 'mashup' and 'client' directories.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+IN THE SOFTWARE.
 
-The "service" code is deployed remotely @:
+PROJECTS
+populous-client - Clients to the populous-ws project. Code here should remain GWT compatible.
+populous-core - DAO, Constants, and utility classes.
+populous-mashup - Web services mashups from the populous-ws project.
+populous-server - Server core. Provides service interfaces for the various DAO classes and a means of persisting (hibernate) the entities to an RDBMS.
+populous-simulator - Zombie infection simulator.
+populous-ws - Web service interfaces to the populous-server project.
+
+All projects are built using maven: mvn clean compile; 
+
+CURRENT DEPLOYMENT
+Web services are currently being hosted at
 http://p.opulo.us:8080/populous-1.0/city
 http://p.opulo.us:8080/populous-1.0/country
 http://p.opulo.us:8080/populous-1.0/language
 http://p.opulo.us:8080/populous-1.0/countrylanguage
 http://p.opulo.us:8080/populous-1.0/infection
-
-Same goes for the "mashup" code @:
 http://p.opulo.us:8080/mashup-1.0/mashup
 
-To run the client code for the mashup service, execute the edu.sjsu.voidstar.mashup.client.MashupClient program.
+* Services not guaranteed to be up 24/7
 
-To run the client code for the core service (simple test), execute the edu.sjsu.voidstar.service.client.ServiceClient program.
+DEVELOPMENT NOTES
 
-Alternatively, If you'd like to run the service and mashup SOAP services yourself, you will need to either "mvn compile package" and deploy the .war file from the target/ directory of each -OR- use the Endpoint.publish() driver classes we have provided:
+populous-mashup & populous-client projects
+	- Run ./bin/wsimports.sh <wsdllocation> to generate the necessary java classes. 
 
-For the service, that is us.opulo.p.project3.PublishServices class 
+populous-mashup & populous-ws 
+	- Both projects contain a development endpoint for adding new web services and local testing. 
+		mashup:  edu.sjsu.voidstar.mashup.client.MashupClient program.
+		poulous: us.opulo.p.ws.endpoint.DevEndpoint
+	- Alternatively, execute 'mvn compile package' and deploy the .war files to your desired application server.
 
-For the mashup, that is edu.sjsu.voidstar.mashup.publish.PublishMashupService
+populous-client
+	- To test a mashup client, a mashup service must be running. To run a mashup, a populous-ws must be running. 
+	- GWT application coming soon
 
-Also, before compiling the mashup, you will need to re-generate SOAP client code so that they point at your locally running copy of the service. There are scripts in the 'bin' folder for the mashup that you can execute to do this.
+

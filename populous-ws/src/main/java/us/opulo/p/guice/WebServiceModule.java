@@ -21,16 +21,17 @@ import us.opulo.p.dao.service.soap.CountryServiceSoap;
 import us.opulo.p.dao.service.soap.InfectionServiceSoap;
 import us.opulo.p.dao.service.soap.LanguageServiceSoap;
 
-import com.google.inject.AbstractModule;
-
 /**
- * Guice web service bindings. 
+ * Guice web service bindings.
  * @author Jason Campos
  */
-public class WebServiceModule extends AbstractModule {
+public class WebServiceModule extends ServerModule {
 
 	@Override
 	protected void configure() {
+		// Load server bindings
+		super.configure();
+		
 		// Soap Services
 		bind(CityService.class).annotatedWith(SoapService.class).to(CityServiceSoap.class);
 		bind(CountryService.class).annotatedWith(SoapService.class).to(CountryServiceSoap.class);
