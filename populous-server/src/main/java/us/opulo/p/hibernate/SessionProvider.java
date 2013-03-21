@@ -23,7 +23,7 @@ import com.google.inject.Provider;
 /**
  * Singleton provider for the hibernate connection pool. Classes implementing 
  * <code>HibernateSession</code> should inject an instance of this provider 
- * and invoke {@link #get()} to wrap a <code>Session</code>. 
+ * and invoke {@link #get()} to obtain the proper Session. 
  * 
  * @author Jason Campos
  */

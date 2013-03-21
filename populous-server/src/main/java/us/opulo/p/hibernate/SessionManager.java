@@ -1,3 +1,12 @@
+/**
+ * This file is a component of the p.opulo.us project.
+ *
+ * Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
+ * All Rights Reserved.
+ *
+ * This software is licensed under The MIT License (MIT)
+ * http://opensource.org/licenses/MIT
+ */
 package us.opulo.p.hibernate;
 
 import org.hibernate.Session;
@@ -5,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * Provides basic Session management for hibernate. Tracks Sessions on a per-thread basis. Does NOT include 
+ * automatic session closing. Care must be taken to close open Hibernate connections.
  *  
  * @author Jason Campos
  */
@@ -23,7 +34,7 @@ public class SessionManager {
 	 * @throws IllegalStateException Thrown if a session already exists.
 	 */
 	public static synchronized final void set(Session session) {
-		log.info("Session initialized");
+		log.debug("Session initialized");
 		if(ACTIVE_SESSIONS.get() != null) {
 			throw new IllegalStateException(DUPLICATE_SESSION);
 		}
@@ -56,7 +67,7 @@ public class SessionManager {
 			session.disconnect();
 			session.close();
 			ACTIVE_SESSIONS.remove();
-			log.info("Session closed");
+			log.debug("Session closed");
 		}
 	}
 }
