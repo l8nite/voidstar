@@ -23,6 +23,7 @@ import java.util.TreeMap;
 import javax.inject.Inject;
 
 import org.hibernate.Criteria;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
@@ -36,7 +37,7 @@ import us.opulo.p.dao.library.CountryLanguageLibrary;
 import us.opulo.p.dao.library.DAOLibrary;
 import us.opulo.p.dao.library.WorldLibrary;
 import us.opulo.p.dao.service.InfectionService;
-import us.opulo.p.hibernate.HibernateSession;
+import us.opulo.p.hibernate.SessionProvider;
 
 import com.google.common.base.Joiner;
 
@@ -54,7 +55,7 @@ public class ZombieInfection {
 	CountryLanguageLibrary countryLanguageLibrary;
 	
 	@Inject
-	private HibernateSession session;
+	private SessionProvider session;
 	
 	@Inject 
 	DAOLibrary library;
@@ -94,7 +95,7 @@ public class ZombieInfection {
 		
 		if (infectedCity == null) {
 			infectedCity = new Infection(city);
-			session.save(infectedCity);
+			session.get().save(infectedCity);
 		}
 		
 		Integer population = city.getPopulation();
@@ -126,9 +127,9 @@ public class ZombieInfection {
 		System.out.println(String.format("In this city: %d/%d (%.2f%%) of the population is infected!%n", infected, population, percentInfected));
 		
 		// save the infected city data back into the database
-		session.beginTransaction();
-		session.save(infectedCity);
-		session.commitTransaction();
+		Transaction tx = session.get().beginTransaction();
+		session.get().save(infectedCity);
+		tx.commit();
 	}
 
 	public void reportInfectionProgress() {
