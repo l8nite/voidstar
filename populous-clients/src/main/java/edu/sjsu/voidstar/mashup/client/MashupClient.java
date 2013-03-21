@@ -35,7 +35,7 @@ public class MashupClient {
 		
 		System.out.println(service.getZombiesInCountriesWhereLanguageIsSpoken("Yucatec"));
 		
-		System.out.println(service.getZombiesBasedOnGeoIPLookup());
+		//System.out.println(service.getZombiesBasedOnGeoIPLookup());
 	}
 	
 	/*

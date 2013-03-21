@@ -19,7 +19,6 @@ import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.LanguageService;
-import us.opulo.p.hibernate.HibernateSession;
 
 /**
  * A library of methods used to query the Language table.
@@ -31,9 +30,6 @@ public class LanguageLibrary implements LanguageService {
 	@Inject 
 	@HibernateService
 	private LanguageService service;
-	
-	@Inject 
-	private HibernateSession session;
 
 	@Override
 	public List<Language> getAllLanguages() {

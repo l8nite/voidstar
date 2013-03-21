@@ -16,7 +16,8 @@ import javax.inject.Singleton;
 import javax.persistence.Table;
 
 import us.opulo.p.dao.HEntity;
-import us.opulo.p.hibernate.HibernateSession;
+import us.opulo.p.hibernate.HibernateConfig;
+import us.opulo.p.hibernate.SessionProvider;
 import us.opulo.p.util.Assertions;
 
 @Singleton
@@ -28,7 +29,8 @@ public class DAOLibrary {
 	@Inject private InfectionLibrary infectionLib;
 	@Inject private LanguageLibrary languageLib;
 	
-	@Inject private HibernateSession session;
+	@Inject private SessionProvider session;
+	@Inject private HibernateConfig config;
 	
 	public CityLibrary getCityLibrary() {
 		return cityLib;
@@ -80,7 +82,7 @@ public class DAOLibrary {
 	 * Deletes all rows from the database for every entity class loaded from the configuration.
 	 */
 	public void resetDatabase() {
-		for(Class<? extends HEntity> c : session.getConfig().getClasses()) {
+		for(Class<? extends HEntity> c : config.getClasses()) {
 			deleteAll(c);
 		}
 	}

@@ -23,7 +23,7 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.CountryLanguageService;
-import us.opulo.p.hibernate.HibernateSession;
+import us.opulo.p.hibernate.SessionProvider;
 
 import com.google.inject.Singleton;
 
@@ -39,7 +39,7 @@ public class CountryLanguageLibrary implements CountryLanguageService {
 	private CountryLanguageService service;
 	
 	@Inject
-	private HibernateSession session;
+	private SessionProvider session;
 
 	@Override
 	public List<CountryLanguage> getAllCountryLanguages() {

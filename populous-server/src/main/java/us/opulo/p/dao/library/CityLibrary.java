@@ -19,7 +19,6 @@ import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CityService;
-import us.opulo.p.hibernate.HibernateSession;
 
 import com.google.inject.Singleton;
 
@@ -33,11 +32,7 @@ public class CityLibrary implements CityService {
 	@Inject
 	@HibernateService
 	private CityService service;
-	
-	@Inject
-	private 
-	HibernateSession session;
-	
+
 	@Override
 	public List<City> getAllCities() {
 		return service.getAllCities();

@@ -14,6 +14,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -49,6 +50,7 @@ import us.opulo.p.util.StringUtil;
 		use=SOAPBinding.Use.LITERAL,
 		parameterStyle=SOAPBinding.ParameterStyle.WRAPPED
 )
+@HandlerChain(file="handlerchain.xml")
 @GuiceManaged( modules = { WebServiceModule.class } )
 @Singleton
 public class LanguageServiceSoap implements LanguageService {

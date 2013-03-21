@@ -20,13 +20,13 @@ import org.hibernate.criterion.Restrictions;
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CityService;
-import us.opulo.p.hibernate.HibernateSession;
+import us.opulo.p.hibernate.SessionProvider;
 
 @Singleton
 public class CityServiceHibernate implements CityService {
 	
 	@Inject
-	private HibernateSession session;
+	private SessionProvider session;
 
 	@Override
 	@SuppressWarnings("unchecked")

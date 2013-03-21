@@ -20,6 +20,7 @@ import us.opulo.p.dao.service.soap.CountryLanguageServiceSoap;
 import us.opulo.p.dao.service.soap.CountryServiceSoap;
 import us.opulo.p.dao.service.soap.InfectionServiceSoap;
 import us.opulo.p.dao.service.soap.LanguageServiceSoap;
+import us.opulo.p.soap.HandlerChain;
 
 /**
  * Guice web service bindings.
@@ -38,5 +39,7 @@ public class WebServiceModule extends ServerModule {
 		bind(CountryLanguageService.class).annotatedWith(SoapService.class).to(CountryLanguageServiceSoap.class);
 		bind(InfectionService.class).annotatedWith(SoapService.class).to(InfectionServiceSoap.class);
 		bind(LanguageService.class).annotatedWith(SoapService.class).to(LanguageServiceSoap.class);
+	
+		requestStaticInjection(HandlerChain.class);
 	}	
 }

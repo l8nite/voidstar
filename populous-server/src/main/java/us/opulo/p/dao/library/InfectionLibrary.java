@@ -14,14 +14,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import com.google.inject.Singleton;
-
 import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.service.InfectionService;
-import us.opulo.p.hibernate.HibernateSession;
+
+import com.google.inject.Singleton;
 
 /**
  * A library of methods used to query the Infection table.
@@ -33,9 +32,6 @@ public class InfectionLibrary implements InfectionService {
 	@Inject
 	@HibernateService
 	private InfectionService service;
-	
-	@Inject
-	private HibernateSession session;
 
 	@Override
 	public List<Infection> getAllInfections() {

@@ -24,13 +24,13 @@ import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.service.InfectionService;
-import us.opulo.p.hibernate.HibernateSession;
+import us.opulo.p.hibernate.SessionProvider;
 
 @Singleton
 public class InfectionServiceHibernate implements InfectionService {
 	
 	@Inject
-	HibernateSession session;
+	private SessionProvider session;
 	
 	@Override
 	@SuppressWarnings("unchecked")

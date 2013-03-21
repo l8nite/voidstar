@@ -19,13 +19,13 @@ import org.hibernate.criterion.Restrictions;
 
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CountryService;
-import us.opulo.p.hibernate.HibernateSession;
+import us.opulo.p.hibernate.SessionProvider;
 
 @Singleton
 public class CountryServiceHibernate implements CountryService {
 	
 	@Inject
-	HibernateSession session;
+	private SessionProvider session;
 	
 	@Override
 	@SuppressWarnings("unchecked")

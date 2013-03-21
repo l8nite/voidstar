@@ -21,8 +21,6 @@ import us.opulo.p.dao.service.hibernate.InfectionServiceHibernate;
 import us.opulo.p.dao.service.hibernate.LanguageServiceHibernate;
 import us.opulo.p.hibernate.HibernateConfig;
 import us.opulo.p.hibernate.HibernateConfigImpl;
-import us.opulo.p.hibernate.HibernateSession;
-import us.opulo.p.hibernate.HibernateSessionImpl;
 
 import com.google.inject.AbstractModule;
 
@@ -36,8 +34,7 @@ public class ServerModule extends AbstractModule {
 	protected void configure() {
 		// DB Connection
 		bind(HibernateConfig.class).to(HibernateConfigImpl.class);
-		bind(HibernateSession.class).to(HibernateSessionImpl.class);
-				
+		
 		// Hibernate Services
 		bind(CityService.class).annotatedWith(us.opulo.p.annotations.HibernateService.class).to(CityServiceHibernate.class);
 		bind(CountryService.class).annotatedWith(us.opulo.p.annotations.HibernateService.class).to(CountryServiceHibernate.class);

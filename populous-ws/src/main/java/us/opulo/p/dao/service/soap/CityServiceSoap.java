@@ -14,6 +14,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -31,6 +32,7 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CityService;
 import us.opulo.p.guice.GuiceManaged;
 import us.opulo.p.guice.WebServiceModule;
+import us.opulo.p.hibernate.SessionProvider;
 import us.opulo.p.util.StringUtil;
 
 /**
@@ -49,6 +51,7 @@ import us.opulo.p.util.StringUtil;
 		use = SOAPBinding.Use.LITERAL, 
 		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED
 )
+@HandlerChain(file="handlerchain.xml")
 @GuiceManaged( modules = { WebServiceModule.class } )
 @Singleton
 public class CityServiceSoap implements CityService {
@@ -57,6 +60,9 @@ public class CityServiceSoap implements CityService {
 	@Inject
 	@HibernateService
 	private CityService hibernateService;
+	
+	@Inject
+	private SessionProvider session;
 	
 	@Override
 	@WebMethod
@@ -77,7 +83,7 @@ public class CityServiceSoap implements CityService {
 	@Override
 	@WebMethod
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
-	public List<City> getCitiesWithIds(@WebParam(name="ids") Collection<Integer> cityIds) {
+	public List<City> getCitiesWithIds(@WebParam(name="ids") Collection<Integer> cityIds) {	
 		log.info("getCitiesById(): ids = " + StringUtil.joinCollection(cityIds, ','));
 		return hibernateService.getCitiesWithIds(cityIds);
 	}
@@ -112,6 +118,6 @@ public class CityServiceSoap implements CityService {
 	@WebResult(targetNamespace=Namespaces.DAO, name="City")
 	public List<City> getCitiesInCountries(@WebParam(name="Country", targetNamespace=Namespaces.DAO) Collection<Country> countries) {
 		log.info("getCitiesByCountry: countries = " + StringUtil.joinCollection(countries, ','));
-		return hibernateService.getCitiesInCountries(countries);
+		return hibernateService.getCitiesInCountries(countries);		
 	}
 }

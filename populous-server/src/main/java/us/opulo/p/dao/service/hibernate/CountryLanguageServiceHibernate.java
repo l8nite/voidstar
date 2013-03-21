@@ -21,13 +21,13 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.CountryLanguageService;
-import us.opulo.p.hibernate.HibernateSession;
+import us.opulo.p.hibernate.SessionProvider;
 
 @Singleton
 public class CountryLanguageServiceHibernate implements CountryLanguageService {
 	
 	@Inject
-	private HibernateSession session;
+	private SessionProvider session;
 	
 	@Override
 	@SuppressWarnings("unchecked")

@@ -17,7 +17,6 @@ import javax.inject.Inject;
 import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CountryService;
-import us.opulo.p.hibernate.HibernateSession;
 
 import com.google.inject.Singleton;
 
@@ -31,9 +30,6 @@ public class CountryLibrary implements CountryService {
 	@Inject
 	@HibernateService
 	private CountryService service;
-	
-	@Inject
-	private HibernateSession session;
 
 	@Override
 	public List<Country> getAllCountries() {
