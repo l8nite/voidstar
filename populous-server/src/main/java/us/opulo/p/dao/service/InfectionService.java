@@ -16,6 +16,8 @@ import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Infection;
 
+import com.google.gwt.user.client.rpc.RemoteService;
+
 /**
  * A service interface for the Infection table. Implementing classes serve the requested object(s) 
  * in a means consistent with the interface. For example, XServiceSoap would service requests 
@@ -23,7 +25,7 @@ import us.opulo.p.dao.Infection;
  * 
  * @author Jason Campos
  */
-public interface InfectionService {
+public interface InfectionService extends RemoteService {
 	/**
 	 * @return All Infections
 	 */

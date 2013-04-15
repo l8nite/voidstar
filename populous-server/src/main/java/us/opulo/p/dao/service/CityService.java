@@ -15,6 +15,8 @@ import java.util.List;
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 
+import com.google.gwt.user.client.rpc.RemoteService;
+
 /**
  * A service interface for the City table. Implementing classes serve the requested object(s) 
  * in a means consistent with the interface. For example, XServiceSoap would service requests 
@@ -22,7 +24,7 @@ import us.opulo.p.dao.Country;
  * 
  * @author Jason Campos
  */
-public interface CityService {
+public interface CityService extends RemoteService {
 	/**
 	 * @return All Cities.
 	 */

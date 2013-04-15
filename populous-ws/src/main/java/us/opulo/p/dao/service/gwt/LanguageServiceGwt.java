@@ -24,11 +24,10 @@ import us.opulo.p.dao.Language;
 import us.opulo.p.dao.service.LanguageService;
 import us.opulo.p.util.StringUtil;
 
-import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 @Singleton
-public class LanguageServiceGwt extends RemoteServiceServlet implements LanguageService, RemoteService {
+public class LanguageServiceGwt extends RemoteServiceServlet implements LanguageService {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LoggerFactory.getLogger(LanguageServiceGwt.class);
 	

@@ -15,6 +15,8 @@ import java.util.List;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Language;
 
+import com.google.gwt.user.client.rpc.RemoteService;
+
 /**
  * A service interface for the Language table. Implementing classes serve the requested object(s) 
  * in a means consistent with the interface. For example, XServiceSoap would service requests 
@@ -22,7 +24,7 @@ import us.opulo.p.dao.Language;
  * 
  * @author Jason Campos
  */
-public interface LanguageService {
+public interface LanguageService extends RemoteService {
 	/**
 	 * @return All Languages.
 	 */

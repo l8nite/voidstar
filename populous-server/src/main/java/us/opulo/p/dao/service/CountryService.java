@@ -14,6 +14,8 @@ import java.util.List;
 
 import us.opulo.p.dao.Country;
 
+import com.google.gwt.user.client.rpc.RemoteService;
+
 /**
  * A service interface for the Country table. Implementing classes serve the requested object(s) 
  * in a means consistent with the interface. For example, XServiceSoap would service requests 
@@ -21,7 +23,7 @@ import us.opulo.p.dao.Country;
  * 
  * @author Jason Campos
  */
-public interface CountryService {
+public interface CountryService extends RemoteService {
 	/**
 	 * @return All Countries
 	 */

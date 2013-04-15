@@ -16,6 +16,8 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.Language;
 
+import com.google.gwt.user.client.rpc.RemoteService;
+
 /**
  * A service interface for the CountryLanguage table. Implementing classes serve the requested object(s) 
  * in a means consistent with the interface. For example, XServiceSoap would service requests 
@@ -23,7 +25,7 @@ import us.opulo.p.dao.Language;
  * 
  * @author Jason Campos
  */
-public interface CountryLanguageService {
+public interface CountryLanguageService extends RemoteService {
 	/**
 	 * @return All CountryLanguages.
 	 */

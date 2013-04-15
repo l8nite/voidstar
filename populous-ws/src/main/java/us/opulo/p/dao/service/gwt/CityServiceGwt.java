@@ -24,11 +24,12 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CityService;
 import us.opulo.p.util.StringUtil;
 
-import com.google.gwt.user.client.rpc.RemoteService;
+import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+@RemoteServiceRelativePath("city")
 @Singleton
-public class CityServiceGwt extends RemoteServiceServlet implements CityService, RemoteService {
+public class CityServiceGwt extends RemoteServiceServlet implements CityService {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LoggerFactory.getLogger(CityServiceGwt.class);
 	

@@ -25,11 +25,10 @@ import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.service.InfectionService;
 import us.opulo.p.util.StringUtil;
 
-import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 @Singleton
-public class InfectionServiceGwt extends RemoteServiceServlet implements InfectionService, RemoteService {
+public class InfectionServiceGwt extends RemoteServiceServlet implements InfectionService {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LoggerFactory.getLogger(InfectionServiceGwt.class);
 	

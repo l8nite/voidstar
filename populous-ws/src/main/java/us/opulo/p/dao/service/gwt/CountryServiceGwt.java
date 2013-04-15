@@ -23,11 +23,10 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.service.CountryService;
 import us.opulo.p.util.StringUtil;
 
-import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 @Singleton
-public class CountryServiceGwt extends RemoteServiceServlet implements CountryService, RemoteService {
+public class CountryServiceGwt extends RemoteServiceServlet implements CountryService {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LoggerFactory.getLogger(CountryServiceGwt.class);
 	

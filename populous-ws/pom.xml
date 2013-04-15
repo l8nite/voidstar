@@ -3,14 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>us.opulo.p.ws</groupId>
 	<artifactId>populous-ws</artifactId>
-	<packaging>war</packaging>
 	<version>1.0</version>
 	<name>populous</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<spring.version>3.0.5.RELEASE</spring.version>
-		<junit.version>4.11</junit.version>
 		<jdk.version>1.7</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -142,11 +139,6 @@
 			<version>1.1.0.CR1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-servlet</artifactId>
-			<version>2.5.1-rc1</version>
-		</dependency>
-		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.0.0.CR1</version>
@@ -214,4 +206,5 @@
 	<scm>
 		<url>http://github.com/l8nite/voidstar</url>
 	</scm>
+	<packaging>war</packaging>
 </project>
