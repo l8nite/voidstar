@@ -1,13 +1,6 @@
-/**
- * This file is a component of the p.opulo.us project.
- *
- * Copyright (c) 2013 Jason Campos <jcampos8782@gmail.com>, Shaun Guth, Ash Islam
- * All Rights Reserved.
- *
- * This software is licensed under The MIT License (MIT)
- * http://opensource.org/licenses/MIT
- */
 package us.opulo.p.dao;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,104 +18,95 @@ import javax.xml.bind.annotation.XmlType;
 import us.opulo.p.constants.Constants.Resources.XSD;
 import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
-import us.opulo.p.jaxb.tables.Infections;
+import us.opulo.p.jaxb.tables.Strains;
 
 /**
- * Infection data access object. Objects of this class are persisted in the 'Infection' database table. 
- * An Infection is associated with a city and provides a representation of the zombie infection for the 
- * <code>City</code>.
+ * InfectionEvent data access object. Objects of this class are persisted in the 'InfectionEvent' database table. 
  * 
- * @author Jason Campos, Shaun Guth
+ * @author Jason Campos
  */
 @Entity
-@XmlRootElement(name="Infection")
+@XmlRootElement(name="Strain")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Infection", propOrder = {
-    "id",
-    "cityID",
-    "zombies"
+@XmlType(name = "Strain", propOrder = {
+		"cityID",
+		"strainID",
+		"date"
 })
-@XmlGroup(Infections.class)
-@Table(name = "Infection")
-@SchemaLocation(XSD.INFECTION)
-public final class Infection extends HEntity {
+@XmlGroup(Strains.class)
+@Table(name = "Strain")
+@SchemaLocation(XSD.STRAIN)
+public class InfectionEvent extends HEntity {
+	
 	@Id
 	@GeneratedValue
-	@XmlElement(name = "ID")
+	@XmlElement(name="ID")
 	private Integer id;
-
+	
 	@OneToOne
-	@JoinColumn(name = "CityID", insertable=false)
+	@JoinColumn(name="cityID", insertable=false)
 	@XmlTransient
 	private City city;
-    
-	@XmlElement(name = "CityID")
-    private Integer cityID;
-    
+	
 	@OneToOne
-	@JoinColumn(name="ID", insertable=false)
+	@JoinColumn(name="strainID", insertable=false)
 	@XmlTransient
 	private Strain strain;
 	
-	@XmlElement(name="StrainID") 
+	@XmlElement(name="date")
+	private Date eventDate;
+	
+	@XmlElement(name="cityID")
+	private Integer cityID;
+	
+	@XmlElement(name="strainID")
 	private Integer strainID;
 	
-	@XmlElement(name = "Zombies")
-	private Integer zombies = 0;
-
 	/*
 	 * (non-javadoc)
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
 	 */
 	@SuppressWarnings("unused")
-	private Infection () { }
+	private InfectionEvent () { }
 	
-	public Infection (City city) {
+	public InfectionEvent(City city, Strain strain, Date eventDate) {
 		setCity(city);
+		setStrain(strain);
+		setDate(eventDate);
 	}
 	
-	public Integer getId() {
+	public Integer getID() {
 		return id;
 	}
-
-	public void setId(Integer id) {
+	
+	public void setID(Integer id) {
 		this.id = id;
 	}
 	
 	public City getCity() {
 		return city;
 	}
-
+	
 	public void setCity(City city) {
 		this.city = city;
 		this.cityID = city.getId();
 	}
-
+	
 	public Strain getStrain() {
 		return strain;
 	}
-
+	
 	public void setStrain(Strain strain) {
 		this.strain = strain;
 		this.strainID = strain.getId();
 	}
-	
-	
-	public Integer getZombies() {
-		return zombies;
-	}
 
-	public void setZombies(Integer zombies) {
-		this.zombies = zombies;
+	public void setDate(Date eventDate) {
+		this.eventDate = eventDate;
 	}
-
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private Integer getCityID() {
-		return cityID;
+	
+	public Date getDate() {
+		return eventDate;
 	}
 	
 	/*
@@ -139,8 +123,8 @@ public final class Infection extends HEntity {
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
 	 */
 	@SuppressWarnings("unused")
-	private Integer getStrainID() {
-		return strainID;
+	private Integer getCityID() {
+		return cityID;
 	}
 	
 	/*
@@ -152,7 +136,12 @@ public final class Infection extends HEntity {
 		this.strainID = strainID;
 	}
 	
-	public String toString() {
-		return "ID: " + id + ", CityID: " + cityID + ", StrainID: " + strainID + ", Zombies: " + zombies;
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private Integer getStrainID() {
+		return strainID;
 	}
 }

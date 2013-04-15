@@ -47,8 +47,14 @@ public class Constants {
 			public static final String COUNTRY_LANGUAGE = PATH + "/CountryLanguage.xsd";
 			public static final String INFECTIONS = PATH + "/Infections.xsd";
 			public static final String INFECTION = PATH + "/Infection.xsd";
+			public static final String INFECTION_EVENT = PATH + "/InfectionEvent.xsd";
+			public static final String INFECTION_EVENTS = PATH + "/InfectionEvents.xsd";
+			public static final String INFECTION_EVENT_DETAIL = PATH + "InfectionEventDetail.xsd";
+			public static final String INFECTION_EVENT_DETAILS = PATH + "InfectionEventDetails.xsd";
 			public static final String LANGUAGES = PATH + "/Languages.xsd";
 			public static final String LANGUAGE = PATH + "/Language.xsd";
+			public static final String STRAIN = PATH + "/Strain.xsd";
+			public static final String STRAINS = PATH + "/Strains.xsd";
 		}
 	}
 	
