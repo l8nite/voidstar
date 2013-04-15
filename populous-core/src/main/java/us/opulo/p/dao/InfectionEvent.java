@@ -1,13 +1,12 @@
 package us.opulo.p.dao;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,14 +52,23 @@ public class InfectionEvent extends HEntity {
 	@XmlTransient
 	private Strain strain;
 	
-	@XmlElement(name="date")
+	@OneToOne
+	@JoinColumn(name="dateID", insertable=false)
+	@XmlTransient
 	private Date eventDate;
+	
+	@XmlTransient
+	private Integer dateID;
 	
 	@XmlElement(name="cityID")
 	private Integer cityID;
 	
 	@XmlElement(name="strainID")
 	private Integer strainID;
+	
+	@XmlElement(name="date")
+	@Transient
+	private String date;
 	
 	/*
 	 * (non-javadoc)
@@ -69,10 +77,10 @@ public class InfectionEvent extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEvent () { }
 	
-	public InfectionEvent(City city, Strain strain, Date eventDate) {
+	public InfectionEvent(City city, Strain strain, java.util.Date eventDate) {
 		setCity(city);
 		setStrain(strain);
-		setDate(eventDate);
+		setDate(new Date(eventDate));
 	}
 	
 	public Integer getID() {
@@ -103,6 +111,8 @@ public class InfectionEvent extends HEntity {
 
 	public void setDate(Date eventDate) {
 		this.eventDate = eventDate;
+		this.dateID = eventDate.getId();
+		this.date = eventDate.toString();
 	}
 	
 	public Date getDate() {
