@@ -10,13 +10,13 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
- * Dimensioned date, data access object. Objects of this class are persisted in the 'InfectionDate' database table. 
+ * Dimensioned date, data access object. Objects of this class are persisted in the 'InfectionEventDate' database table. 
  * 
  * @author Jason Campos, Shaun Guth
  */
 @Entity
-@Table(name = "InfectionDate")
-public class InfectionDate extends HEntity {
+@Table(name = "InfectionEventDate")
+public class InfectionEventDate extends HEntity {
 
 	@Id
 	@GeneratedValue
@@ -37,7 +37,7 @@ public class InfectionDate extends HEntity {
 	@Transient
 	private static final String[] MONTH = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 	
-	public InfectionDate (Date date) {
+	public InfectionEventDate (Date date) {
 		setDate(date);
 	}
 	
