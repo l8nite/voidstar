@@ -77,8 +77,9 @@ public final class Infection extends HEntity {
 	@SuppressWarnings("unused")
 	private Infection () { }
 	
-	public Infection (City city) {
+	public Infection (City city, Strain strain) {
 		setCity(city);
+		setStrain(strain);
 	}
 	
 	public Integer getId() {

@@ -77,9 +77,9 @@ public class InfectionEvent extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEvent () { }
 	
-	public InfectionEvent(City city, Strain strain, java.util.Date eventDate) {
-		setCity(city);
-		setStrain(strain);
+	public InfectionEvent(Infection infection, java.util.Date eventDate) {
+		setCity(infection.getCity());
+		setStrain(infection.getStrain());
 		setDate(new Date(eventDate));
 	}
 	
