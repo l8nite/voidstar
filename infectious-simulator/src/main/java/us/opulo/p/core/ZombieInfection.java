@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -43,7 +42,7 @@ public class ZombieInfection {
 	Provider<City> cityProvider;
 	Provider<Strain> strainProvider;
 	Provider<Date> dateProvider;
-	Provider<Integer> zombieProvider;
+	Provider<Double> percentProvider;
 
 	InfectionService infectionService;
 	
@@ -55,13 +54,13 @@ public class ZombieInfection {
 	public ZombieInfection (Provider<City> cityProvider, 
 			Provider<Strain> strainProvider, 
 			Provider<Date> dateProvider, 
-			Provider<Integer> zombieProvider, 
+			Provider<Double> percentProvider, 
 			@HibernateService InfectionService infectionService ) 
 	{
 		this.cityProvider = cityProvider;
 		this.strainProvider = strainProvider;
 		this.dateProvider = dateProvider;
-		this.zombieProvider = zombieProvider;
+		this.percentProvider = percentProvider;
 		this.infectionService = infectionService;
 	}
 
@@ -107,8 +106,7 @@ public class ZombieInfection {
 			String inOrTo = infected == 0 ? "to" : "in";
 	
 			// Randomly infect a new number of people
-			Random generator = new Random();
-			Integer newInfections = infected + (int) (generator.nextDouble() * (population - infected));;
+			Integer newInfections = infected + (int) (percentProvider.get() * (population - infected));;
 			
 			// cap # of newInfections at remaining healthy population 
 			if (newInfections + infected > population) {

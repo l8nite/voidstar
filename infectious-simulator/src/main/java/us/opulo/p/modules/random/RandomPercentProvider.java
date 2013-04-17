@@ -10,17 +10,17 @@ import javax.inject.Singleton;
  * @author Jason Campos
  */
 @Singleton
-public class RandomIntegerProvider implements Provider<Integer> {
+public class RandomPercentProvider implements Provider<Double> {
 
 	Random random;
 	
-	public RandomIntegerProvider () {
+	public RandomPercentProvider () {
 		super();
 		random = new Random();
 	}
 	
 	@Override
-	public Integer get() {
-		return random.nextInt();
+	public Double get() {
+		return random.nextDouble();
 	}
 }
