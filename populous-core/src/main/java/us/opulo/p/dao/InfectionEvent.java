@@ -25,16 +25,16 @@ import us.opulo.p.jaxb.tables.Strains;
  * @author Jason Campos
  */
 @Entity
-@XmlRootElement(name="Strain")
+@XmlRootElement(name="InfectionEvent")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Strain", propOrder = {
+@XmlType(name = "InfectionEvent", propOrder = {
 		"cityID",
 		"strainID",
 		"date"
 })
 @XmlGroup(Strains.class)
-@Table(name = "Strain")
-@SchemaLocation(XSD.STRAIN)
+@Table(name = "InfectionEvent")
+@SchemaLocation(XSD.INFECTION)
 public class InfectionEvent extends HEntity {
 	
 	@Id
@@ -55,7 +55,7 @@ public class InfectionEvent extends HEntity {
 	@OneToOne
 	@JoinColumn(name="dateID", insertable=false)
 	@XmlTransient
-	private Date eventDate;
+	private InfectionEventDate eventDate;
 	
 	@XmlTransient
 	private Integer dateID;
@@ -80,7 +80,7 @@ public class InfectionEvent extends HEntity {
 	public InfectionEvent(Infection infection, java.util.Date eventDate) {
 		setCity(infection.getCity());
 		setStrain(infection.getStrain());
-		setDate(new Date(eventDate));
+		setDate(new InfectionEventDate(eventDate));
 	}
 	
 	public Integer getID() {
@@ -109,13 +109,13 @@ public class InfectionEvent extends HEntity {
 		this.strainID = strain.getId();
 	}
 
-	public void setDate(Date eventDate) {
+	public void setDate(InfectionEventDate eventDate) {
 		this.eventDate = eventDate;
 		this.dateID = eventDate.getId();
 		this.date = eventDate.toString();
 	}
 	
-	public Date getDate() {
+	public InfectionEventDate getDate() {
 		return eventDate;
 	}
 	
