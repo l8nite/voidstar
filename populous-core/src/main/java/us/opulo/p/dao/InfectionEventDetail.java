@@ -24,7 +24,7 @@ import us.opulo.p.jaxb.tables.InfectionEventDetails;
  * @author Jason Campos
  */
 @Entity
-@XmlRootElement(name="Strain")
+@XmlRootElement(name="InfectionEventDetail")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InfectionEventDetail", propOrder = {
     "InfectionEventID",
