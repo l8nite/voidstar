@@ -1,6 +1,7 @@
 package us.opulo.p.dao;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,19 +10,19 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
- * Date data access object. Objects of this class are persisted in the 'Date' database table. 
+ * Dimensioned date, data access object. Objects of this class are persisted in the 'InfectionDate' database table. 
  * 
  * @author Jason Campos, Shaun Guth
  */
 @Entity
-@Table(name = "Date")
-public class Date extends HEntity {
+@Table(name = "InfectionDate")
+public class InfectionDate extends HEntity {
 
 	@Id
 	@GeneratedValue
 	private Integer id;
 	
-	private java.util.Date date;
+	private Date date;
 	
 	private Integer day;
 	private Integer month;
@@ -36,17 +37,17 @@ public class Date extends HEntity {
 	@Transient
 	private static final String[] MONTH = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 	
-	public Date (java.util.Date date) {
+	public InfectionDate (Date date) {
 		setDate(date);
 	}
 	
-	public java.util.Date getDate() {
+	public Date getDate() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
 		return calendar.getTime();
 	}
 	
-	private void setDate(java.util.Date date) {
+	private void setDate(Date date) {
 		this.date = date;
 		
 		Calendar calendar = Calendar.getInstance();
