@@ -20,14 +20,14 @@ public class RandomCityProvider implements Provider<City> {
 
 	List<City> allCities;
 	Random random;
-	
+
 	@Inject
 	public RandomCityProvider(@HibernateService CityService cityService) {
 		super();
 		allCities = cityService.getAllCities();
 		random = new Random();
 	}
-	
+
 	@Override
 	public City get() {
 		return allCities.get(random.nextInt(allCities.size()));

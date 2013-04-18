@@ -6,7 +6,7 @@ import javax.inject.Provider;
 import javax.inject.Singleton;
 
 /**
- * Returns a random integer
+ * Returns a random Double
  * @author Jason Campos
  */
 @Singleton

@@ -38,9 +38,9 @@ public class ZombieInfection {
 	
 	private static final Logger log = LoggerFactory.getLogger(ZombieInfection.class);
 	
-	Provider<City> cityProvider;
-	Provider<Date> dateProvider;
-	Provider<Double> percentProvider;
+	private final Provider<City> cityProvider;
+	private final Provider<Date> dateProvider;
+	private final Provider<Double> percentProvider;
 
 	InfectionService infectionService;
 	
@@ -52,7 +52,7 @@ public class ZombieInfection {
 	public ZombieInfection (Provider<City> cityProvider,  
 			Provider<Date> dateProvider, 
 			Provider<Double> percentProvider, 
-			@HibernateService InfectionService infectionService ) 
+			@HibernateService InfectionService infectionService) 
 	{
 		this.cityProvider = cityProvider;
 		this.dateProvider = dateProvider;
@@ -83,21 +83,20 @@ public class ZombieInfection {
 			
 			Infection infection = infectionService.getInfectionForCity(city);
 			Date infectionDate = dateProvider.get();
-			Strain strain = strainProvider.get();
 					
 			if (infection == null) {
-				infection = new Infection(city, strain);
+				infection = new Infection(city);
 			}
 			
 			// Log the event
-			InfectionEvent event = new InfectionEvent(infection, infectionDate);
-			InfectionEventDetail eventDetails = new InfectionEventDetail(event);
+			InfectionEvent event = null; // = new InfectionEvent(infection, infectionDate);
+			InfectionEventDetail eventDetails = null; //= new InfectionEventDetail(event);
 			
 			Integer population = city.getPopulation();
 			Integer infected = infection.getZombies();
 			
-			eventDetails.setHealthyBefore(population - infected);
-			eventDetails.setInfectedBefore(infected);
+			event.setHealthyBefore(population - infected);
+			event.setInfectedBefore(infected);
 			
 			String inOrTo = infected == 0 ? "to" : "in";
 	
@@ -117,8 +116,8 @@ public class ZombieInfection {
 			infected += newInfections;
 			infection.setZombies(infected);
 	
-			eventDetails.setInfectedAfter(infected);
-			eventDetails.setHealthyAfter(population - infected);
+			event.setInfectedAfter(infected);
+			event.setHealthyAfter(population - infected);
 			
 			// Update the total number of infections to include the new
 			infectedWorldPopulation += newInfections;
