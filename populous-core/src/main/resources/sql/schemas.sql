@@ -70,7 +70,7 @@ CREATE TABLE `InfectionEventDetail` (
     `Mutation` char(20) NOT NULL,
     `Strain` char(20) NOT NULL,
     `Vector` char(20) NOT NULL,
-    `Epidemic` char(20) NOT NULL,
+    `Epidemic` char(50) NOT NULL,
     PRIMARY KEY (`ID`)
 )  ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
 
