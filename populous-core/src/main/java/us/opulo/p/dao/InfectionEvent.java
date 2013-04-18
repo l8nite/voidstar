@@ -57,6 +57,27 @@ public class InfectionEvent extends HEntity {
 	@XmlTransient
 	private InfectionEventDate eventDate;
 	
+	@XmlElement(name="HealthyPopulationChange")
+	private Integer healthyPopulationChange;
+	
+	@XmlElement(name="InfectedPopulationChange")
+	private Integer infectedPopulationChange;
+	
+	@XmlElement(name="HealthyBefore")
+	private Integer healthyBefore;
+	
+	@XmlElement(name="HealthyAfter")
+	private Integer healthyAfter;
+	
+	@XmlElement(name="Infected")
+	private Integer infected;
+	
+	@XmlElement(name="InfectedBefore")
+	private Integer infectedBefore;
+	
+	@XmlElement(name="InfectedAfter")
+	private Integer infectedAfter;
+	
 	@XmlElement(name="cityID")
 	private Integer cityID;
 
@@ -79,6 +100,62 @@ public class InfectionEvent extends HEntity {
 		setEventDate(new InfectionEventDate(eventDate));
 	}
 	
+	public Integer getHealthyPopulationChange() {
+		return healthyPopulationChange;
+	}
+
+	public void setHealthyPopulationChange(Integer healthyPopulationChange) {
+		this.healthyPopulationChange = healthyPopulationChange;
+	}
+
+	public Integer getInfectedPopulationChange() {
+		return infectedPopulationChange;
+	}
+
+	public void setInfectedPopulationChange(Integer infectedPopulationChange) {
+		this.infectedPopulationChange = infectedPopulationChange;
+	}
+
+	public Integer getHealthyBefore() {
+		return healthyBefore;
+	}
+
+	public void setHealthyBefore(Integer healthyBefore) {
+		this.healthyBefore = healthyBefore;
+	}
+
+	public Integer getHealthyAfter() {
+		return healthyAfter;
+	}
+
+	public void setHealthyAfter(Integer healthyAfter) {
+		this.healthyAfter = healthyAfter;
+	}
+
+	public Integer getInfected() {
+		return infected;
+	}
+
+	public void setInfected(Integer infected) {
+		this.infected = infected;
+	}
+
+	public Integer getInfectedBefore() {
+		return infectedBefore;
+	}
+
+	public void setInfectedBefore(Integer infectedBefore) {
+		this.infectedBefore = infectedBefore;
+	}
+
+	public Integer getInfectedAfter() {
+		return infectedAfter;
+	}
+
+	public void setInfectedAfter(Integer infectedAfter) {
+		this.infectedAfter = infectedAfter;
+	}
+
 	public Integer getID() {
 		return id;
 	}

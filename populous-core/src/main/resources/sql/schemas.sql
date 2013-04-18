@@ -80,6 +80,13 @@ CREATE TABLE `InfectionEvent` (
 	`CityID` int(11) NOT NULL,
 	`InfectionEventDetailID` int(11) NOT NULL,
 	`InfectionEventDateID` int(11) NOT NULL,
+	`HealthyPopulationChange` int(11) NOT NULL,
+	`InfectedPopulationChange` int(11) NOT NULL,
+	`HealthyBefore` int(11) NOT NULL,
+	`HealthyAfter` int(11) NOT NULL,
+	`Infected` int(11) NOT NULL,
+	`InfectedBefore` int(11) NOT NULL,
+	`InfectedAfter` int(11) NOT NULL,
     PRIMARY KEY (`ID`),
     FOREIGN KEY (CityID)
         REFERENCES City (ID)
@@ -101,6 +108,6 @@ CREATE TABLE `InfectionEventDate` (
     `Month` char(2) NOT NULL,
     `NameOfMonth` char(9) NOT NULL,
     `Year` char(4) NOT NULL,
-    PRIMARY KEY (`ID`),
+    PRIMARY KEY (`ID`)
 )  ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
 
