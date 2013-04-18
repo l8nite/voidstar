@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.UUID;
@@ -29,6 +30,7 @@ import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.InfectionEvent;
+import us.opulo.p.dao.InfectionEventDate;
 import us.opulo.p.dao.InfectionEventDetail;
 import us.opulo.p.dao.service.InfectionService;
 import us.opulo.p.dao.service.query.WorldQueryService;
@@ -51,12 +53,14 @@ public class ZombieEpidemic {
 	// the calendar for this epidemic, each call to spreadInfection() adds 1 hour
 	private Calendar epidemicCalendar;
 	
-	// TODO: move these into a strainprovider, mutationprovider, vectorprovider
+	// TODO: move these into random strainprovider, mutationprovider, vectorprovider etc..
+	private Random random;
 	private final String[] strains = { "Alpha Zero", "Beta One", "Cappa Two" };
 	private final String[] mutations = { "M1", "M2", "M3", "M4", "M5" };
 	private final String[] vectors = { "Airborne", "Contact", "Water" };
 
-	InfectionService infectionService;
+	private InfectionService infectionService;
+	private WorldQueryService worldQueryService;
 	
 	private City genesis;
 	private int infectedWorldPopulation = 0;
@@ -66,20 +70,22 @@ public class ZombieEpidemic {
 	public ZombieEpidemic (Provider<City> cityProvider,  
 			Provider<Date> dateProvider, 
 			Provider<Double> percentProvider, 
-			@HibernateService InfectionService infectionService) 
+			@HibernateService InfectionService infectionService,
+			WorldQueryService worldQueryService) 
 	{
 		this.cityProvider = cityProvider;
 		this.dateProvider = dateProvider;
 		this.percentProvider = percentProvider;
-		this.infectionService = infectionService;		
+		this.infectionService = infectionService;
+		this.worldQueryService = worldQueryService;
 	}
 
 	// set epidemic start date to whatever the dateProvider gives us
 	// then generate an identifier for this epidemic
 	// then get the first city to infect, and infect it
 	public void startInfection() {
-		this.epidemicCalendar = Calendar.getInstance();
-		this.epidemicCalendar.setTime(dateProvider.get());
+		epidemicCalendar = Calendar.getInstance();
+		epidemicCalendar.setTime(dateProvider.get());
 		this.epidemicId = UUID.randomUUID().toString();
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -105,8 +111,6 @@ public class ZombieEpidemic {
 		Session session = SessionManager.get();
 		Transaction tx = null;
 		try {
-			tx = session.beginTransaction();
-
 			// see if there's an Infection table entry for this City
 			Infection infection = infectionService.getInfectionForCity(city);
 
@@ -114,50 +118,56 @@ public class ZombieEpidemic {
 				infection = new Infection(city);
 			}
 
-			// create InfectionEvent for data analytics purposes
-			InfectionEvent event = null; // = new InfectionEvent(infection, infectionDate);
-			InfectionEventDetail eventDetails = null; //= new InfectionEventDetail(event);
-			
 			Integer population = city.getPopulation();
-			Integer infected = infection.getZombies();
-			
-			event.setHealthyBefore(population - infected);
-			event.setInfectedBefore(infected);
-			
-			String inOrTo = infected == 0 ? "to" : "in";
-	
-			// Randomly infect a new number of people
-			Integer newInfections = infected + (int) (percentProvider.get() * (population - infected));;
+			Integer infectedBefore = infection.getZombies();
+			Integer healthyBefore = population - infectedBefore;
+			Integer infected = infectedBefore + (int) (percentProvider.get() * healthyBefore);
 			
 			// cap # of newInfections at remaining healthy population 
-			if (newInfections + infected > population) {
-				newInfections = population - infected;
+			if (infected + infectedBefore > population) {
+				infected = population - infectedBefore;
 			}
 	
-			String peoplePerson = newInfections == 1 ? "person" : "people";
-			
+			String inOrTo = infected == 0 ? "to" : "in";
 			log.info("The infection spreads " + inOrTo + " " + city.toString() + "!");
-			log.info("The virus has infected " + newInfections + " new " + peoplePerson + ".");
+			
+			String peoplePerson = infected == 1 ? "person" : "people";
+			log.info("The virus has infected " + infected + " new " + peoplePerson + ".");
+			
+			Integer infectedAfter = infectedBefore + infected;
+			Integer healthyAfter = population - infectedAfter;
 	
-			infected += newInfections;
-			infection.setZombies(infected);
+			infection.setZombies(infectedAfter);
 	
-			event.setInfectedAfter(infected);
-			event.setHealthyAfter(population - infected);
+			// TODO: random mutation, strain, vector
+			InfectionEventDetail eventDetail = new InfectionEventDetail("M", "S", "V", epidemicId);
+			InfectionEventDate eventDate = new InfectionEventDate(epidemicCalendar.getTime());
+			InfectionEvent event = new InfectionEvent(city, eventDetail, eventDate);
+
+//			eventDetail.setInfectionEvent(event);
+//			eventDate.setInfectionEvent(event);
+
+			event.setHealthyBefore(healthyBefore);
+			event.setHealthyAfter(healthyAfter);
+			event.setInfected(infected);
+			event.setInfectedBefore(infectedBefore);
+			event.setInfectedAfter(infectedAfter);
 			
-			// Update the total number of infections to include the new
-			infectedWorldPopulation += newInfections;
-			infectedCities.add(city);
+
 			
-			double percentInfected = (infected * 100.0f) / population;
-			log.info(String.format("In this city: %d/%d (%.2f%%) of the population is infected!%n", infected, population, percentInfected));
-			
-			// Save the new entities
+			// record event to database
+			tx = session.beginTransaction();
 			session.saveOrUpdate(infection);
 			session.save(event);
-			session.save(eventDetails);
-			
 			tx.commit();
+
+			// update the total number of infections to include the newly infected
+			infectedWorldPopulation += infected;
+			infectedCities.add(city);
+
+			// report on the percentage of the population that is infected 
+			double percentInfected = (infectedAfter * 100.0f) / population;
+			log.info(String.format("In this city: %d/%d (%.2f%%) of the population is infected!%n", infectedAfter, population, percentInfected));
 		} catch (HibernateException e) {
 			log.error("An unexpected error occurred: " + e.getMessage(), e);
 			
@@ -177,7 +187,7 @@ public class ZombieEpidemic {
 	}
 
 	private void reportPopulationInfected() {
-		double percentInfected = (infectedWorldPopulation * 100f) / new WorldQueryService().getPopulation();
+		double percentInfected = (infectedWorldPopulation * 100f) / worldQueryService.getPopulation();
 		String citiesOrCity = infectedCities.size() == 1 ? "city has" : "cities have";
 		log.info(infectedCities.size() + " " + citiesOrCity + " been infected!");
 		log.info(String.format("The world population is %.2f%% infected %n", percentInfected));
