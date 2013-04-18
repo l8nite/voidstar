@@ -21,10 +21,10 @@ public class IncrementalDateProvider implements Provider<Date> {
 	
 	public IncrementalDateProvider() {
 		super();
+		random = new Random();
 		calendar = Calendar.getInstance();
 		calendar.setTime(new Date());
 		calendar.add(Calendar.DAY_OF_YEAR, random.nextInt(7300) - 3650);
-		random = new Random();
 	}
 	
 	@Override
