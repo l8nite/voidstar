@@ -64,3 +64,43 @@ CREATE TABLE `Infection` (
         ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
 
+DROP TABLE IF EXISTS `InfectionEventDetail`;
+CREATE TABLE `InfectionEventDetail` (
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+    `Mutation` char(20) NOT NULL,
+    `Strain` char(20) NOT NULL,
+    `Vector` char(20) NOT NULL,
+    `Epidemic` char(20) NOT NULL,
+    PRIMARY KEY (`ID`)
+)  ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `InfectionEvent`;
+CREATE TABLE `InfectionEvent` (
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+	`CityID` int(11) NOT NULL,
+	`InfectionEventDetailID` int(11) NOT NULL,
+	`InfectionEventDateID` int(11) NOT NULL,
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (CityID)
+        REFERENCES City (ID)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (InfectionEventDetailID)
+        REFERENCES InfectionEventDetail (ID)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (InfectionEventDateID)
+        REFERENCES InfectionEventDate (ID)
+        ON DELETE CASCADE ON UPDATE CASCADE
+)  ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `InfectionEventDate`;
+CREATE TABLE `InfectionEventDate` (
+	`ID` int(11) NOT NULL AUTO_INCREMENT,
+    `Date` char(50) NOT NULL,
+    `Day` char(2) NOT NULL,
+    `DayOfWeek` char(9) NOT NULL,
+    `Month` char(2) NOT NULL,
+    `NameOfMonth` char(9) NOT NULL,
+    `Year` char(4) NOT NULL,
+    PRIMARY KEY (`ID`),
+)  ENGINE=MyISAM AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
+
