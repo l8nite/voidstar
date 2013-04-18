@@ -1,7 +1,5 @@
 package us.opulo.p.dao;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -35,7 +33,7 @@ import us.opulo.p.jaxb.tables.InfectionEvents;
 })
 @XmlGroup(InfectionEvents.class)
 @Table(name = "InfectionEvent")
-@SchemaLocation(XSD.INFECTION)
+@SchemaLocation(XSD.INFECTION_EVENT)
 public class InfectionEvent extends HEntity {
 	@Id
 	@GeneratedValue
@@ -43,17 +41,17 @@ public class InfectionEvent extends HEntity {
 	private Integer id;
 	
 	@OneToOne
-	@JoinColumn(name="cityID", insertable=false)
+	@JoinColumn(name="cityID")
 	@XmlTransient
 	private City city;
 	
 	@OneToOne
-	@JoinColumn(name="infectionEventDetailID", insertable=false)
+	@JoinColumn(name="infectionEventDetailID")
 	@XmlTransient
 	private InfectionEventDetail eventDetail;
 	
 	@OneToOne
-	@JoinColumn(name="infectionEventDateID", insertable=false)
+	@JoinColumn(name="infectionEventDateID")
 	@XmlTransient
 	private InfectionEventDate eventDate;
 	
@@ -72,15 +70,6 @@ public class InfectionEvent extends HEntity {
 	@XmlElement(name="InfectedAfter")
 	private Integer infectedAfter;
 	
-	@XmlElement(name="cityID")
-	private Integer cityID;
-
-	@XmlElement(name="infectionEventDateID")
-	private Integer infectionEventDateID;
-
-	@XmlElement(name="infectionEventDetailID")
-	private Integer infectionEventDetailID;
-
 	/*
 	 * (non-javadoc)
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
@@ -88,10 +77,10 @@ public class InfectionEvent extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEvent () { }
 	
-	public InfectionEvent(City city, InfectionEventDetail eventDetail, Date eventDate) {
+	public InfectionEvent(City city, InfectionEventDetail eventDetail, InfectionEventDate eventDate) {
 		setCity(city);
 		setEventDetail(eventDetail);
-		setEventDate(new InfectionEventDate(eventDate));
+		setEventDate(eventDate);
 	}
 	
 	public Integer getHealthyBefore() {
@@ -148,7 +137,6 @@ public class InfectionEvent extends HEntity {
 	
 	public void setCity(City city) {
 		this.city = city;
-		this.cityID = city.getId();
 	}
 
 	public InfectionEventDate getEventDate() {
@@ -165,59 +153,5 @@ public class InfectionEvent extends HEntity {
 	
 	public void setEventDetail(InfectionEventDetail eventDetail) {
 		this.eventDetail = eventDetail;
-	}
-
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private void setCityID(Integer cityID) {
-		this.cityID = cityID;
-	}
-	
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private Integer getCityID() {
-		return cityID;
-	}
-	
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private void setInfectionEventDateID(Integer infectionEventDateID) {
-		this.infectionEventDateID = infectionEventDateID;
-	}
-	
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private Integer getInfectionEventDateID() {
-		return infectionEventDateID;
-	}
-	
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private void setInfectionEventDetailID(Integer infectionEventDetailID) {
-		this.infectionEventDetailID = infectionEventDetailID;
-	}
-	
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private Integer getInfectionEventDetailID() {
-		return infectionEventDetailID;
 	}
 }

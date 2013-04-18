@@ -5,9 +5,13 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  * Dimensioned date, data access object. Objects of this class are persisted in the 'InfectionEventDate' database table. 
@@ -19,7 +23,8 @@ import javax.persistence.Transient;
 public class InfectionEventDate extends HEntity {
 
 	@Id
-	@GeneratedValue
+    @GeneratedValue
+	@XmlElement(name="ID")
 	private Integer id;
 	
 	private Date date;
@@ -54,7 +59,8 @@ public class InfectionEventDate extends HEntity {
 		calendar.setTime(date);
 		
 		this.setDay(calendar.get(Calendar.DAY_OF_MONTH));
-		this.setDayOfWeek(DAY_OF_WEEK[calendar.get(Calendar.DAY_OF_WEEK)]);
+		Integer idx = calendar.get(Calendar.DAY_OF_WEEK);
+		this.setDayOfWeek(DAY_OF_WEEK[idx]);
 		this.setMonth(calendar.get(Calendar.MONTH) + 1); // Calendar.January = 0
 		this.setYear(calendar.get(Calendar.YEAR));		
 	}
