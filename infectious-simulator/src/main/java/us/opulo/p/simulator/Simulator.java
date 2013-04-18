@@ -14,20 +14,22 @@ public class Simulator {
 	public static void main(String[] args) throws InterruptedException {
 		Injector injector = Guice.createInjector(new RandomEpidemicModule());
 
-		WorldQueryService worldService = new WorldQueryService();
-		System.out.println("World population: " + NumberFormat.getNumberInstance(Locale.US).format(worldService.getPopulation()));
+		WorldQueryService worldQueryService = injector.getInstance(WorldQueryService.class);
+		System.out.println("World population: " + NumberFormat.getNumberInstance(Locale.US).format(worldQueryService.getPopulation()));
 
 		System.out.println("Panic! Zombies are coming!");
 
 		ZombieEpidemic zombieEpidemic = injector.getInstance(ZombieEpidemic.class);
+		zombieEpidemic.startInfection();
 
-		for (int i = 1; i <= 1000; ++i) {	
-			zombieEpidemic.spreadInfection();
-			
-			if (i % 100 == 0) {
-				zombieEpidemic.reportInfectionProgress();
-				Thread.sleep(2000);
-			}
-		}
+		return;
+//		for (int i = 1; i <= 1000; ++i) {	
+//			zombieEpidemic.spreadInfection();
+//			
+//			if (i % 100 == 0) {
+//				zombieEpidemic.reportInfectionProgress();
+//				Thread.sleep(2000);
+//			}
+//		}
 	}
 }
