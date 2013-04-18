@@ -27,7 +27,6 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.InfectionEvent;
 import us.opulo.p.dao.InfectionEventDetail;
-import us.opulo.p.dao.Strain;
 import us.opulo.p.dao.service.InfectionService;
 import us.opulo.p.dao.service.query.WorldQueryService;
 import us.opulo.p.hibernate.SessionManager;
@@ -40,7 +39,6 @@ public class ZombieInfection {
 	private static final Logger log = LoggerFactory.getLogger(ZombieInfection.class);
 	
 	Provider<City> cityProvider;
-	Provider<Strain> strainProvider;
 	Provider<Date> dateProvider;
 	Provider<Double> percentProvider;
 
@@ -51,14 +49,12 @@ public class ZombieInfection {
 	private Set<City> infectedCities = new HashSet<>();
 	
 	@Inject
-	public ZombieInfection (Provider<City> cityProvider, 
-			Provider<Strain> strainProvider, 
+	public ZombieInfection (Provider<City> cityProvider,  
 			Provider<Date> dateProvider, 
 			Provider<Double> percentProvider, 
 			@HibernateService InfectionService infectionService ) 
 	{
 		this.cityProvider = cityProvider;
-		this.strainProvider = strainProvider;
 		this.dateProvider = dateProvider;
 		this.percentProvider = percentProvider;
 		this.infectionService = infectionService;

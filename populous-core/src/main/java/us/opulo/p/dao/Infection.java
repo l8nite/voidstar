@@ -58,15 +58,7 @@ public final class Infection extends HEntity {
     
 	@XmlElement(name = "CityID")
     private Integer cityID;
-    
-	@OneToOne
-	@JoinColumn(name="ID", insertable=false)
-	@XmlTransient
-	private Strain strain;
-	
-	@XmlElement(name="StrainID") 
-	private Integer strainID;
-	
+
 	@XmlElement(name = "Zombies")
 	private Integer zombies = 0;
 
@@ -77,9 +69,8 @@ public final class Infection extends HEntity {
 	@SuppressWarnings("unused")
 	private Infection () { }
 	
-	public Infection (City city, Strain strain) {
+	public Infection (City city) {
 		setCity(city);
-		setStrain(strain);
 	}
 	
 	public Integer getId() {
@@ -98,16 +89,6 @@ public final class Infection extends HEntity {
 		this.city = city;
 		this.cityID = city.getId();
 	}
-
-	public Strain getStrain() {
-		return strain;
-	}
-
-	public void setStrain(Strain strain) {
-		this.strain = strain;
-		this.strainID = strain.getId();
-	}
-	
 	
 	public Integer getZombies() {
 		return zombies;
@@ -134,26 +115,8 @@ public final class Infection extends HEntity {
 	private void setCityID(Integer cityID) {
 		this.cityID = cityID;
 	}
-	
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private Integer getStrainID() {
-		return strainID;
-	}
-	
-	/*
-	 * (non-javadoc)
-	 * Keep private. Needed for Hibernate and JAXB but should never be used.
-	 */
-	@SuppressWarnings("unused")
-	private void setStrainID(Integer strainID) {
-		this.strainID = strainID;
-	}
-	
+
 	public String toString() {
-		return "ID: " + id + ", CityID: " + cityID + ", StrainID: " + strainID + ", Zombies: " + zombies;
+		return "ID: " + id + ", CityID: " + cityID + ", Zombies: " + zombies;
 	}
 }

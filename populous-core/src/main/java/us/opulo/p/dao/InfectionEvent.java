@@ -1,12 +1,13 @@
 package us.opulo.p.dao;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
 import us.opulo.p.constants.Constants.Resources.XSD;
 import us.opulo.p.jaxb.annotations.SchemaLocation;
 import us.opulo.p.jaxb.annotations.XmlGroup;
-import us.opulo.p.jaxb.tables.Strains;
+import us.opulo.p.jaxb.tables.InfectionEvents;
 
 /**
  * InfectionEvent data access object. Objects of this class are persisted in the 'InfectionEvent' database table. 
@@ -29,14 +30,13 @@ import us.opulo.p.jaxb.tables.Strains;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InfectionEvent", propOrder = {
 		"cityID",
-		"strainID",
-		"date"
+		"infectionEventDetailID",
+		"infectionEventDateID"
 })
-@XmlGroup(Strains.class)
+@XmlGroup(InfectionEvents.class)
 @Table(name = "InfectionEvent")
 @SchemaLocation(XSD.INFECTION)
 public class InfectionEvent extends HEntity {
-	
 	@Id
 	@GeneratedValue
 	@XmlElement(name="ID")
@@ -48,28 +48,24 @@ public class InfectionEvent extends HEntity {
 	private City city;
 	
 	@OneToOne
-	@JoinColumn(name="strainID", insertable=false)
+	@JoinColumn(name="infectionEventDetailID", insertable=false)
 	@XmlTransient
-	private Strain strain;
+	private InfectionEventDetail eventDetail;
 	
 	@OneToOne
-	@JoinColumn(name="dateID", insertable=false)
+	@JoinColumn(name="infectionEventDateID", insertable=false)
 	@XmlTransient
 	private InfectionEventDate eventDate;
 	
-	@XmlTransient
-	private Integer dateID;
-	
 	@XmlElement(name="cityID")
 	private Integer cityID;
-	
-	@XmlElement(name="strainID")
-	private Integer strainID;
-	
-	@XmlElement(name="date")
-	@Transient
-	private String date;
-	
+
+	@XmlElement(name="infectionEventDateID")
+	private Integer infectionEventDateID;
+
+	@XmlElement(name="infectionEventDetailID")
+	private Integer infectionEventDetailID;
+
 	/*
 	 * (non-javadoc)
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
@@ -77,10 +73,10 @@ public class InfectionEvent extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEvent () { }
 	
-	public InfectionEvent(Infection infection, java.util.Date eventDate) {
-		setCity(infection.getCity());
-		setStrain(infection.getStrain());
-		setDate(new InfectionEventDate(eventDate));
+	public InfectionEvent(City city, InfectionEventDetail eventDetail, Date eventDate) {
+		setCity(city);
+		setEventDetail(eventDetail);
+		setEventDate(new InfectionEventDate(eventDate));
 	}
 	
 	public Integer getID() {
@@ -99,26 +95,23 @@ public class InfectionEvent extends HEntity {
 		this.city = city;
 		this.cityID = city.getId();
 	}
-	
-	public Strain getStrain() {
-		return strain;
-	}
-	
-	public void setStrain(Strain strain) {
-		this.strain = strain;
-		this.strainID = strain.getId();
-	}
 
-	public void setDate(InfectionEventDate eventDate) {
-		this.eventDate = eventDate;
-		this.dateID = eventDate.getId();
-		this.date = eventDate.toString();
-	}
-	
-	public InfectionEventDate getDate() {
+	public InfectionEventDate getEventDate() {
 		return eventDate;
 	}
 	
+	public void setEventDate(InfectionEventDate eventDate) {
+		this.eventDate = eventDate;
+	}
+
+	public InfectionEventDetail getEventDetail() {
+		return eventDetail;
+	}
+	
+	public void setEventDetail(InfectionEventDetail eventDetail) {
+		this.eventDetail = eventDetail;
+	}
+
 	/*
 	 * (non-javadoc)
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
@@ -142,8 +135,8 @@ public class InfectionEvent extends HEntity {
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
 	 */
 	@SuppressWarnings("unused")
-	private void setStrainID(Integer strainID) {
-		this.strainID = strainID;
+	private void setInfectionEventDateID(Integer infectionEventDateID) {
+		this.infectionEventDateID = infectionEventDateID;
 	}
 	
 	/*
@@ -151,7 +144,25 @@ public class InfectionEvent extends HEntity {
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
 	 */
 	@SuppressWarnings("unused")
-	private Integer getStrainID() {
-		return strainID;
+	private Integer getInfectionEventDateID() {
+		return infectionEventDateID;
+	}
+	
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private void setInfectionEventDetailID(Integer infectionEventDetailID) {
+		this.infectionEventDetailID = infectionEventDetailID;
+	}
+	
+	/*
+	 * (non-javadoc)
+	 * Keep private. Needed for Hibernate and JAXB but should never be used.
+	 */
+	@SuppressWarnings("unused")
+	private Integer getInfectionEventDetailID() {
+		return infectionEventDetailID;
 	}
 }

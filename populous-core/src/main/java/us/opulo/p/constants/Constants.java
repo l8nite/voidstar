@@ -53,8 +53,6 @@ public class Constants {
 			public static final String INFECTION_EVENT_DETAILS = PATH + "InfectionEventDetails.xsd";
 			public static final String LANGUAGES = PATH + "/Languages.xsd";
 			public static final String LANGUAGE = PATH + "/Language.xsd";
-			public static final String STRAIN = PATH + "/Strain.xsd";
-			public static final String STRAINS = PATH + "/Strains.xsd";
 		}
 	}
 	

@@ -28,10 +28,10 @@ import us.opulo.p.jaxb.tables.InfectionEventDetails;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InfectionEventDetail", propOrder = {
     "InfectionEventID",
-    "HealthyBefore",
-    "HealthyAfter",
-    "InfectedBefore",
-    "InfectedAfter"
+    "Mutation",
+    "Strain",
+    "Vector",
+    "Epidemic"
 })
 @XmlGroup(InfectionEventDetails.class)
 @Table(name = "InfectionEventDetail")
@@ -43,25 +43,20 @@ public class InfectionEventDetail extends HEntity {
 	@XmlElement(name="ID")
 	private Integer id;
 	
-	@OneToOne
-	@JoinColumn(name="InfectionEventID", insertable=false)
-	@XmlTransient
-	private InfectionEvent infectionEvent;
-	
 	@XmlElement(name="InfectionEventID")
 	private Integer infectionEventID;
 	
-	@XmlElement(name="InfectedBefore")
-	private Integer infectedBefore;
+	@XmlElement(name="Mutation")
+	private String mutation;
 	
-	@XmlElement(name="InfectedAfter")
-	private Integer infectedAfter;
+	@XmlElement(name="Strain")
+	private String strain;
 
-	@XmlElement(name="HealthyBefore")
-	private Integer healthyBefore;
+	@XmlElement(name="Vector")
+	private String vector;
 	
-	@XmlElement(name="HealthyAfter")
-	private Integer healthyAfter;
+	@XmlElement(name="Epidemic")
+	private String epidemic;
 	
 	/*
 	 * (non-javadoc)
@@ -70,51 +65,45 @@ public class InfectionEventDetail extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEventDetail() { }
 
-	public InfectionEventDetail(InfectionEvent infectionEvent) {
-		setInfectionEvent(infectionEvent);
+	public InfectionEventDetail(String mutation, String strain, String vector, String epidemic) {
+		setMutation(mutation);
+		setStrain(strain);
+		setVector(vector);
+		setEpidemic(epidemic);
+	}
+	
+	public String getMutation() {
+		return mutation;
 	}
 
-	public void setInfectionEvent(InfectionEvent infectionEvent) {
-		this.infectionEvent = infectionEvent;
-		this.infectionEventID = infectionEvent.getID();
+	public void setMutation(String mutation) {
+		this.mutation = mutation;
 	}
-	
-	public InfectionEvent getInfectionEvent() {
-		return infectionEvent;
+
+	public String getStrain() {
+		return strain;
 	}
-	
-	public void setHealthyBefore(Integer healthyBefore) {
-		this.healthyBefore = healthyBefore;
+
+	public void setStrain(String strain) {
+		this.strain = strain;
 	}
-	
-	public Integer getHealthyBefore() {
-		return healthyBefore;
+
+	public String getVector() {
+		return vector;
 	}
-	
-	public void setHealthyAfter(Integer healthyAfter) {
-		this.healthyAfter = healthyAfter;
+
+	public void setVector(String vector) {
+		this.vector = vector;
 	}
-	
-	public Integer getHealthyAfter() {
-		return healthyAfter;
+
+	public String getEpidemic() {
+		return epidemic;
 	}
-	
-	public void setInfectedBefore(Integer infectedBefore) {
-		this.infectedBefore = infectedBefore;
+
+	public void setEpidemic(String epidemic) {
+		this.epidemic = epidemic;
 	}
-	
-	public Integer getInfectedBefore() {
-		return infectedBefore;
-	}
-	
-	public void setInfectedAfter(Integer infectedAfter) {
-		this.infectedAfter = infectedAfter;
-	}
-	
-	public Integer getInfectedAfter() {
-		return infectedAfter;
-	}
-	
+
 	/*
 	 * (non-javadoc)
 	 * Keep private. Needed for Hibernate and JAXB but should never be used.
