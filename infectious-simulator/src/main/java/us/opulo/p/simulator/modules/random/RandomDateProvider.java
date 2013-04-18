@@ -1,4 +1,4 @@
-package us.opulo.p.modules.random;
+package us.opulo.p.simulator.modules.random;
 
 import java.util.Calendar;
 import java.util.Date;

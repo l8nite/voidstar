@@ -1,4 +1,4 @@
-package us.opulo.p.modules.random;
+package us.opulo.p.simulator.modules.random;
 
 import java.util.Date;
 
@@ -16,7 +16,7 @@ import com.google.inject.AbstractModule;
  * 
  * @author Jason Campos
  */
-public class RandomInfectionModule extends AbstractModule {
+public class RandomEpidemicModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
