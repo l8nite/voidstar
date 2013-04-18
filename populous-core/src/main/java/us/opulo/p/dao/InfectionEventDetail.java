@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -64,11 +63,11 @@ public class InfectionEventDetail extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEventDetail() { }
 
-	public InfectionEventDetail(String mutation, String strain, String vector, String epidemic) {
-		setMutation(mutation);
+	public InfectionEventDetail(String name, String strain, String mutation, String vector) {
+		setEpidemic(name);
 		setStrain(strain);
+		setMutation(mutation);
 		setVector(vector);
-		setEpidemic(epidemic);
 	}
 	
 	public String getMutation() {

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.City;
+import us.opulo.p.dao.InfectionEventDetail;
 import us.opulo.p.dao.service.CityService;
 import us.opulo.p.dao.service.InfectionService;
 import us.opulo.p.dao.service.hibernate.CityServiceHibernate;
@@ -32,9 +33,12 @@ public class RandomEpidemicModule extends AbstractModule {
 			.toProvider(RandomCityProvider.class);
 		
 		bind(Date.class)
-			.toProvider(RandomDateProvider.class);
+			.toProvider(IncrementalDateProvider.class);
 		
 		bind(Double.class)
 			.toProvider(RandomPercentProvider.class);
+		
+		bind(InfectionEventDetail.class)
+			.toProvider(RandomEventDetailProvider.class);
 	}
 }

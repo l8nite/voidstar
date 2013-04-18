@@ -22,7 +22,6 @@ public class Simulator {
 		ZombieEpidemic zombieEpidemic = injector.getInstance(ZombieEpidemic.class);
 		zombieEpidemic.startInfection();
 
-		return;
 //		for (int i = 1; i <= 1000; ++i) {	
 //			zombieEpidemic.spreadInfection();
 //			

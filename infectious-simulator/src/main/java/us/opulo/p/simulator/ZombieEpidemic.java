@@ -1,7 +1,6 @@
 package us.opulo.p.simulator;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
@@ -9,10 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -30,7 +27,6 @@ import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.InfectionEvent;
-import us.opulo.p.dao.InfectionEventDate;
 import us.opulo.p.dao.InfectionEventDetail;
 import us.opulo.p.dao.service.InfectionService;
 import us.opulo.p.dao.service.query.WorldQueryService;
@@ -46,19 +42,8 @@ public class ZombieEpidemic {
 	private final Provider<City> cityProvider;
 	private final Provider<Date> dateProvider;
 	private final Provider<Double> percentProvider;
+	private final Provider<InfectionEventDetail> infectionEventDetailProvider;
 	
-	// a single run of the simulator is an epidemic, given a unique random name
-	private String epidemicId;
-	
-	// the calendar for this epidemic, each call to spreadInfection() adds 1 hour
-	private Calendar epidemicCalendar;
-	
-	// TODO: move these into random strainprovider, mutationprovider, vectorprovider etc..
-	private Random random;
-	private final String[] strains = { "Alpha Zero", "Beta One", "Cappa Two" };
-	private final String[] mutations = { "M1", "M2", "M3", "M4", "M5" };
-	private final String[] vectors = { "Airborne", "Contact", "Water" };
-
 	private InfectionService infectionService;
 	private WorldQueryService worldQueryService;
 	
@@ -70,6 +55,7 @@ public class ZombieEpidemic {
 	public ZombieEpidemic (Provider<City> cityProvider,  
 			Provider<Date> dateProvider, 
 			Provider<Double> percentProvider, 
+			Provider<InfectionEventDetail> infectionEventDetailProvider,
 			@HibernateService InfectionService infectionService,
 			WorldQueryService worldQueryService) 
 	{
@@ -78,36 +64,34 @@ public class ZombieEpidemic {
 		this.percentProvider = percentProvider;
 		this.infectionService = infectionService;
 		this.worldQueryService = worldQueryService;
+		this.infectionEventDetailProvider = infectionEventDetailProvider;
 	}
 
 	// set epidemic start date to whatever the dateProvider gives us
 	// then generate an identifier for this epidemic
 	// then get the first city to infect, and infect it
 	public void startInfection() {
-		epidemicCalendar = Calendar.getInstance();
-		epidemicCalendar.setTime(dateProvider.get());
-		this.epidemicId = UUID.randomUUID().toString();
-
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		log.info("Epidemic '" + epidemicId + "': starting on " + sdf.format(epidemicCalendar.getTime()));
+		Date startDate = dateProvider.get();
+		
+		log.info("Epidemic starting on " + sdf.format(startDate));
 		log.info("Choosing city for virulent strain genesis");
 
 		genesis = cityProvider.get();
 		
 		log.info("City chosen: " + genesis.toString() + "\n");
 		
-		infect(genesis);
+		infect(genesis, infectionEventDetailProvider.get(), startDate);
 	}
 
 	// advance the epidemic calendar by 1 hour
 	// then get the next city to infect, and infect it
 	public void spreadInfection() {
-		epidemicCalendar.add(Calendar.HOUR_OF_DAY, 1);
-		infect(cityProvider.get());
+		infect(cityProvider.get(), infectionEventDetailProvider.get(), dateProvider.get());
 	}
 
 	// infects the given city, generates infection event
-	private void infect(City city) {
+	private void infect(City city, InfectionEventDetail details, Date date) {
 		Session session = SessionManager.get();
 		Transaction tx = null;
 		try {
@@ -140,20 +124,13 @@ public class ZombieEpidemic {
 			infection.setZombies(infectedAfter);
 	
 			// TODO: random mutation, strain, vector
-			InfectionEventDetail eventDetail = new InfectionEventDetail("M", "S", "V", epidemicId);
-			InfectionEventDate eventDate = new InfectionEventDate(epidemicCalendar.getTime());
-			InfectionEvent event = new InfectionEvent(city, eventDetail, eventDate);
-
-//			eventDetail.setInfectionEvent(event);
-//			eventDate.setInfectionEvent(event);
-
+			InfectionEvent event = new InfectionEvent(city, details, date);
+			
 			event.setHealthyBefore(healthyBefore);
 			event.setHealthyAfter(healthyAfter);
 			event.setInfected(infected);
 			event.setInfectedBefore(infectedBefore);
 			event.setInfectedAfter(infectedAfter);
-			
-
 			
 			// record event to database
 			tx = session.beginTransaction();
