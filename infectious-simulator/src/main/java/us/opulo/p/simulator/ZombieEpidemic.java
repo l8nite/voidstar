@@ -9,7 +9,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.UUID;
@@ -54,7 +53,6 @@ public class ZombieEpidemic {
 	private Calendar epidemicCalendar;
 	
 	// TODO: move these into random strainprovider, mutationprovider, vectorprovider etc..
-	private Random random;
 	private final String[] strains = { "Alpha Zero", "Beta One", "Cappa Two" };
 	private final String[] mutations = { "M1", "M2", "M3", "M4", "M5" };
 	private final String[] vectors = { "Airborne", "Contact", "Water" };
@@ -143,17 +141,12 @@ public class ZombieEpidemic {
 			InfectionEventDetail eventDetail = new InfectionEventDetail("M", "S", "V", epidemicId);
 			InfectionEventDate eventDate = new InfectionEventDate(epidemicCalendar.getTime());
 			InfectionEvent event = new InfectionEvent(city, eventDetail, eventDate);
-
-//			eventDetail.setInfectionEvent(event);
-//			eventDate.setInfectionEvent(event);
-
+			
 			event.setHealthyBefore(healthyBefore);
 			event.setHealthyAfter(healthyAfter);
 			event.setInfected(infected);
 			event.setInfectedBefore(infectedBefore);
 			event.setInfectedAfter(infectedAfter);
-			
-
 			
 			// record event to database
 			tx = session.beginTransaction();
