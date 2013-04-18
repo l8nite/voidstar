@@ -7,6 +7,8 @@ public class Epidemic {
 	private String mutation;
 	private String vector;
 
+	public Epidemic() { }
+	
 	public Epidemic(String name, String strain, String mutation, String vector) {
 		this.name = name;
 		this.strain = strain;

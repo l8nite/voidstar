@@ -77,7 +77,8 @@ public class HibernateConfigImpl implements HibernateConfig {
 				}
 			}
 		}
-			properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		
+		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		properties.put("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
 		properties.put("hibernate.current_session_context_class", "org.hibernate.context.ThreadLocalSessionContext");
 		properties.put("hibernate.show.sql", true);
