@@ -32,7 +32,7 @@ public class RandomEpidemicModule extends AbstractModule {
 			.toProvider(RandomCityProvider.class);
 		
 		bind(Date.class)
-			.toProvider(RandomDateProvider.class);
+			.toProvider(IncrementalDateProvider.class);
 		
 		bind(Double.class)
 			.toProvider(RandomPercentProvider.class);

@@ -57,8 +57,8 @@ public class InfectionEventDate extends HEntity {
 		
 		this.setDay(calendar.get(Calendar.DAY_OF_MONTH));
 		Integer idx = calendar.get(Calendar.DAY_OF_WEEK);
-		this.setDayOfWeek(DAY_OF_WEEK[idx]);
-		this.setMonth(calendar.get(Calendar.MONTH) + 1); // Calendar.January = 0
+		this.setDayOfWeek(DAY_OF_WEEK[idx - 1]);
+		this.setMonth(calendar.get(Calendar.MONTH)); // Calendar.January = 0
 		this.setYear(calendar.get(Calendar.YEAR));		
 	}
 	
@@ -84,7 +84,7 @@ public class InfectionEventDate extends HEntity {
 	
 	private void setMonth(Integer month) {
 		this.month = month;
-		setNameOfMonth(MONTH[month - 1]);
+		setNameOfMonth(MONTH[month]);
 	}
 	
 	public Integer getYear() {

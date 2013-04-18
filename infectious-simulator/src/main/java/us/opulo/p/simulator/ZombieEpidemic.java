@@ -1,7 +1,6 @@
 package us.opulo.p.simulator;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,7 +10,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -27,6 +25,7 @@ import org.slf4j.LoggerFactory;
 import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
+import us.opulo.p.dao.Epidemic;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.InfectionEvent;
 import us.opulo.p.dao.InfectionEventDate;
@@ -46,21 +45,11 @@ public class ZombieEpidemic {
 	private final Provider<Date> dateProvider;
 	private final Provider<Double> percentProvider;
 	
-	// a single run of the simulator is an epidemic, given a unique random name
-	private String epidemicId;
-	
-	// the calendar for this epidemic, each call to spreadInfection() adds 1 hour
-	private Calendar epidemicCalendar;
-	
-	// TODO: move these into random strainprovider, mutationprovider, vectorprovider etc..
-	private final String[] strains = { "Alpha Zero", "Beta One", "Cappa Two" };
-	private final String[] mutations = { "M1", "M2", "M3", "M4", "M5" };
-	private final String[] vectors = { "Airborne", "Contact", "Water" };
-
 	private InfectionService infectionService;
 	private WorldQueryService worldQueryService;
 	
 	private City genesis;
+	private Epidemic epidemic;
 	private int infectedWorldPopulation = 0;
 	private Set<City> infectedCities = new HashSet<>();
 	
@@ -68,6 +57,7 @@ public class ZombieEpidemic {
 	public ZombieEpidemic (Provider<City> cityProvider,  
 			Provider<Date> dateProvider, 
 			Provider<Double> percentProvider, 
+			Provider<Epidemic> epidemicProvider,
 			@HibernateService InfectionService infectionService,
 			WorldQueryService worldQueryService) 
 	{
@@ -76,36 +66,35 @@ public class ZombieEpidemic {
 		this.percentProvider = percentProvider;
 		this.infectionService = infectionService;
 		this.worldQueryService = worldQueryService;
+		
+		this.epidemic = epidemicProvider.get();
 	}
 
 	// set epidemic start date to whatever the dateProvider gives us
 	// then generate an identifier for this epidemic
 	// then get the first city to infect, and infect it
 	public void startInfection() {
-		epidemicCalendar = Calendar.getInstance();
-		epidemicCalendar.setTime(dateProvider.get());
-		this.epidemicId = UUID.randomUUID().toString();
-
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		log.info("Epidemic '" + epidemicId + "': starting on " + sdf.format(epidemicCalendar.getTime()));
+		Date startDate = dateProvider.get();
+		
+		log.info("Epidemic '" + epidemic + "': starting on " + sdf.format(startDate));
 		log.info("Choosing city for virulent strain genesis");
 
 		genesis = cityProvider.get();
 		
 		log.info("City chosen: " + genesis.toString() + "\n");
 		
-		infect(genesis);
+		infect(genesis, startDate);
 	}
 
 	// advance the epidemic calendar by 1 hour
 	// then get the next city to infect, and infect it
 	public void spreadInfection() {
-		epidemicCalendar.add(Calendar.HOUR_OF_DAY, 1);
-		infect(cityProvider.get());
+		infect(cityProvider.get(), dateProvider.get());
 	}
 
 	// infects the given city, generates infection event
-	private void infect(City city) {
+	private void infect(City city, Date date) {
 		Session session = SessionManager.get();
 		Transaction tx = null;
 		try {
@@ -138,8 +127,8 @@ public class ZombieEpidemic {
 			infection.setZombies(infectedAfter);
 	
 			// TODO: random mutation, strain, vector
-			InfectionEventDetail eventDetail = new InfectionEventDetail("M", "S", "V", epidemicId);
-			InfectionEventDate eventDate = new InfectionEventDate(epidemicCalendar.getTime());
+			InfectionEventDetail eventDetail = new InfectionEventDetail(epidemic);
+			InfectionEventDate eventDate = new InfectionEventDate(date);
 			InfectionEvent event = new InfectionEvent(city, eventDetail, eventDate);
 			
 			event.setHealthyBefore(healthyBefore);
