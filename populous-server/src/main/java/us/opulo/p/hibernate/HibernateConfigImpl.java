@@ -23,6 +23,9 @@ import us.opulo.p.dao.Country;
 import us.opulo.p.dao.CountryLanguage;
 import us.opulo.p.dao.HEntity;
 import us.opulo.p.dao.Infection;
+import us.opulo.p.dao.InfectionEvent;
+import us.opulo.p.dao.InfectionEventDate;
+import us.opulo.p.dao.InfectionEventDetail;
 import us.opulo.p.dao.Language;
 import us.opulo.p.util.Assertions;
 
@@ -45,6 +48,9 @@ public class HibernateConfigImpl implements HibernateConfig {
 		entityClasses.add(CountryLanguage.class);
 		entityClasses.add(Language.class);
 		entityClasses.add(Infection.class);
+		entityClasses.add(InfectionEvent.class);
+		entityClasses.add(InfectionEventDetail.class);
+		entityClasses.add(InfectionEventDate.class);
 		verifyClassesAreAnnotated(entityClasses);
 		return entityClasses;
 	}
