@@ -122,10 +122,8 @@ public class ZombieEpidemic {
 			Integer healthyAfter = population - infectedAfter;
 	
 			infection.setZombies(infectedAfter);
-	
-			// TODO: random mutation, strain, vector
-			InfectionEvent event = new InfectionEvent(city, details, date);
-			
+
+			InfectionEvent event = new InfectionEvent(city, details, date);			
 			event.setHealthyBefore(healthyBefore);
 			event.setHealthyAfter(healthyAfter);
 			event.setInfected(infected);
