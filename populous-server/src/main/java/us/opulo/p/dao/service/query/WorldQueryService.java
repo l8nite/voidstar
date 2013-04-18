@@ -12,7 +12,9 @@ package us.opulo.p.dao.service.query;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.City;
+import us.opulo.p.dao.service.CityService;
 
 /**
  * Representation of all cities and countries in the world. This class is not persistent but rather 
@@ -23,8 +25,13 @@ import us.opulo.p.dao.City;
 @Singleton
 public class WorldQueryService {
 
+	private final CityService cityService;
+	
 	@Inject
-	private CityQueryService cityService;
+	public WorldQueryService(@HibernateService CityService cityService)
+	{
+		this.cityService = cityService;
+	}
 	
 	/**
 	 * @return The total number of people in the world.
