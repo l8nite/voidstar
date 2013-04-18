@@ -176,7 +176,7 @@ public class ZombieEpidemic {
 			Country country = infectedCountry.getKey();
 			Float infectionPercentage = infectedCountry.getValue();
 		
-			log.info(String.format("%3.2f%% - %s (%s)", infectionPercentage, country));
+			log.info(String.format("%3.2f%% - %s", infectionPercentage, country));
 			
 			if(--countriesToDisplay == 0) {
 				break;
