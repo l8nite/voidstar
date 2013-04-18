@@ -57,12 +57,6 @@ public class InfectionEvent extends HEntity {
 	@XmlTransient
 	private InfectionEventDate eventDate;
 	
-	@XmlElement(name="HealthyPopulationChange")
-	private Integer healthyPopulationChange;
-	
-	@XmlElement(name="InfectedPopulationChange")
-	private Integer infectedPopulationChange;
-	
 	@XmlElement(name="HealthyBefore")
 	private Integer healthyBefore;
 	
@@ -100,22 +94,6 @@ public class InfectionEvent extends HEntity {
 		setEventDate(new InfectionEventDate(eventDate));
 	}
 	
-	public Integer getHealthyPopulationChange() {
-		return healthyPopulationChange;
-	}
-
-	public void setHealthyPopulationChange(Integer healthyPopulationChange) {
-		this.healthyPopulationChange = healthyPopulationChange;
-	}
-
-	public Integer getInfectedPopulationChange() {
-		return infectedPopulationChange;
-	}
-
-	public void setInfectedPopulationChange(Integer infectedPopulationChange) {
-		this.infectedPopulationChange = infectedPopulationChange;
-	}
-
 	public Integer getHealthyBefore() {
 		return healthyBefore;
 	}

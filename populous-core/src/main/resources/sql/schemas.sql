@@ -80,8 +80,6 @@ CREATE TABLE `InfectionEvent` (
 	`CityID` int(11) NOT NULL,
 	`InfectionEventDetailID` int(11) NOT NULL,
 	`InfectionEventDateID` int(11) NOT NULL,
-	`HealthyPopulationChange` int(11) NOT NULL,
-	`InfectedPopulationChange` int(11) NOT NULL,
 	`HealthyBefore` int(11) NOT NULL,
 	`HealthyAfter` int(11) NOT NULL,
 	`Infected` int(11) NOT NULL,
