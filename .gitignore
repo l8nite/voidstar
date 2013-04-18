@@ -7,3 +7,6 @@ db.credentials
 # Package Files #
 *.war
 *.ear
+
+# build output #
+target
