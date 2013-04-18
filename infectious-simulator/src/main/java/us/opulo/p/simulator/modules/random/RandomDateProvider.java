@@ -8,7 +8,8 @@ import javax.inject.Provider;
 import javax.inject.Singleton;
 
 /**
- * A provider configured to return a random date +/- 1 year. Zombies sleep on leap year.
+ * A provider configured to return a random date +/- 10 years
+ * Ponder: Do zombies obey daylight savings time?
  * @author Jason Campos
  */
 @Singleton
@@ -29,14 +30,9 @@ public class RandomDateProvider implements Provider<Date> {
 	public Date get() {
 		Calendar returnDate = Calendar.getInstance();
 		
-		int year = calendar.get(Calendar.YEAR) + (random.nextInt(1) - random.nextInt(1));
-		int month = random.nextInt(12) % 12;
-		int date = random.nextInt(31) % daysInMonth[month];
-		
-		returnDate.set(Calendar.YEAR, year);
-		returnDate.set(Calendar.MONTH, month);
-		returnDate.set(Calendar.DATE, date);
-		
+		// pick a random number of days (+/- 10 years)
+		returnDate.add(Calendar.DAY_OF_YEAR, random.nextInt(7300) - 3650);
+
 		return returnDate.getTime();
 	}
 
