@@ -46,12 +46,12 @@ public class InfectionEvent extends HEntity {
 	private City city;
 	
 	@OneToOne
-	@JoinColumn(name="infectionEventDetailID")
+	@JoinColumn(name="infectionEventDetailID", insertable = false)
 	@XmlTransient
 	private InfectionEventDetail eventDetail;
 	
 	@OneToOne
-	@JoinColumn(name="infectionEventDateID")
+	@JoinColumn(name="infectionEventDateID", insertable = false)
 	@XmlTransient
 	private InfectionEventDate eventDate;
 	
