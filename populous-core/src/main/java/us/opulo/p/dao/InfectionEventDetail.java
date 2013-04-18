@@ -63,11 +63,11 @@ public class InfectionEventDetail extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEventDetail() { }
 
-	public InfectionEventDetail(Epidemic epidemic) {
-		setMutation(epidemic.getMutation());
-		setStrain(epidemic.getStrain());
-		setVector(epidemic.getVector());
-		setEpidemic(epidemic.getName());
+	public InfectionEventDetail(String name, String strain, String mutation, String vector) {
+		setEpidemic(name);
+		setStrain(strain);
+		setMutation(mutation);
+		setVector(vector);
 	}
 	
 	public String getMutation() {

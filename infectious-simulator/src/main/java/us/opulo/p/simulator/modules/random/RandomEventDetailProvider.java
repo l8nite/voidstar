@@ -5,9 +5,9 @@ import java.util.UUID;
 
 import javax.inject.Provider;
 
-import us.opulo.p.dao.Epidemic;
+import us.opulo.p.dao.InfectionEventDetail;
 
-public class RandomEpidemicProvider implements Provider<Epidemic> {
+public class RandomEventDetailProvider implements Provider<InfectionEventDetail> {
 
 	// TODO: move these into random strainprovider, mutationprovider, vectorprovider etc..
 	private final String[] strains = { "Alpha Zero", "Beta One", "Cappa Two" };
@@ -15,9 +15,9 @@ public class RandomEpidemicProvider implements Provider<Epidemic> {
 	private final String[] vectors = { "Airborne", "Contact", "Water" };
 
 	@Override
-	public Epidemic get() {
+	public InfectionEventDetail get() {
 		Random rand = new Random();
-		return new Epidemic(UUID.randomUUID().toString(), strains[rand.nextInt(strains.length)], mutations[rand.nextInt(mutations.length)], vectors[rand.nextInt(vectors.length)]);
+		return new InfectionEventDetail(UUID.randomUUID().toString(), strains[rand.nextInt(strains.length)], mutations[rand.nextInt(mutations.length)], vectors[rand.nextInt(vectors.length)]);
 	}
 
 }

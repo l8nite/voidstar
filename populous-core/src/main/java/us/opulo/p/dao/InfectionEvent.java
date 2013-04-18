@@ -1,5 +1,7 @@
 package us.opulo.p.dao;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -77,10 +79,10 @@ public class InfectionEvent extends HEntity {
 	@SuppressWarnings("unused")
 	private InfectionEvent () { }
 	
-	public InfectionEvent(City city, InfectionEventDetail eventDetail, InfectionEventDate eventDate) {
+	public InfectionEvent(City city, InfectionEventDetail eventDetails, Date date) {
 		setCity(city);
-		setEventDetail(eventDetail);
-		setEventDate(eventDate);
+		setEventDetail(eventDetails);
+		setEventDate(new InfectionEventDate(date));
 	}
 	
 	public Integer getHealthyBefore() {

@@ -25,10 +25,8 @@ import org.slf4j.LoggerFactory;
 import us.opulo.p.annotations.HibernateService;
 import us.opulo.p.dao.City;
 import us.opulo.p.dao.Country;
-import us.opulo.p.dao.Epidemic;
 import us.opulo.p.dao.Infection;
 import us.opulo.p.dao.InfectionEvent;
-import us.opulo.p.dao.InfectionEventDate;
 import us.opulo.p.dao.InfectionEventDetail;
 import us.opulo.p.dao.service.InfectionService;
 import us.opulo.p.dao.service.query.WorldQueryService;
@@ -44,12 +42,12 @@ public class ZombieEpidemic {
 	private final Provider<City> cityProvider;
 	private final Provider<Date> dateProvider;
 	private final Provider<Double> percentProvider;
+	private final Provider<InfectionEventDetail> infectionEventDetailProvider;
 	
 	private InfectionService infectionService;
 	private WorldQueryService worldQueryService;
 	
 	private City genesis;
-	private Epidemic epidemic;
 	private int infectedWorldPopulation = 0;
 	private Set<City> infectedCities = new HashSet<>();
 	
@@ -57,7 +55,7 @@ public class ZombieEpidemic {
 	public ZombieEpidemic (Provider<City> cityProvider,  
 			Provider<Date> dateProvider, 
 			Provider<Double> percentProvider, 
-			Provider<Epidemic> epidemicProvider,
+			Provider<InfectionEventDetail> infectionEventDetailProvider,
 			@HibernateService InfectionService infectionService,
 			WorldQueryService worldQueryService) 
 	{
@@ -66,8 +64,7 @@ public class ZombieEpidemic {
 		this.percentProvider = percentProvider;
 		this.infectionService = infectionService;
 		this.worldQueryService = worldQueryService;
-		
-		this.epidemic = epidemicProvider.get();
+		this.infectionEventDetailProvider = infectionEventDetailProvider;
 	}
 
 	// set epidemic start date to whatever the dateProvider gives us
@@ -77,24 +74,24 @@ public class ZombieEpidemic {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date startDate = dateProvider.get();
 		
-		log.info("Epidemic '" + epidemic + "': starting on " + sdf.format(startDate));
+		log.info("Epidemic starting on " + sdf.format(startDate));
 		log.info("Choosing city for virulent strain genesis");
 
 		genesis = cityProvider.get();
 		
 		log.info("City chosen: " + genesis.toString() + "\n");
 		
-		infect(genesis, startDate);
+		infect(genesis, infectionEventDetailProvider.get(), startDate);
 	}
 
 	// advance the epidemic calendar by 1 hour
 	// then get the next city to infect, and infect it
 	public void spreadInfection() {
-		infect(cityProvider.get(), dateProvider.get());
+		infect(cityProvider.get(), infectionEventDetailProvider.get(), dateProvider.get());
 	}
 
 	// infects the given city, generates infection event
-	private void infect(City city, Date date) {
+	private void infect(City city, InfectionEventDetail details, Date date) {
 		Session session = SessionManager.get();
 		Transaction tx = null;
 		try {
@@ -127,9 +124,7 @@ public class ZombieEpidemic {
 			infection.setZombies(infectedAfter);
 	
 			// TODO: random mutation, strain, vector
-			InfectionEventDetail eventDetail = new InfectionEventDetail(epidemic);
-			InfectionEventDate eventDate = new InfectionEventDate(date);
-			InfectionEvent event = new InfectionEvent(city, eventDetail, eventDate);
+			InfectionEvent event = new InfectionEvent(city, details, date);
 			
 			event.setHealthyBefore(healthyBefore);
 			event.setHealthyAfter(healthyAfter);
