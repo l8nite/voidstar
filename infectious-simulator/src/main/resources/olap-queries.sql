@@ -1,4 +1,23 @@
 /*
+Demonstrate the basic OLAP operations by generating two-dimensional reports from your dimensional model:
+
+    o Select dimensions: Generate reports with each combination of two out of the three dimensions.
+
+
+    o Drill up and drill down: Demonstrate with three reports. 
+        - first report is a “base” report. 
+        - second report is a drill down from the base report, 
+        - third report is a drill up from the base report.
+
+    o Slice and dice: Demonstrate with three reports. 
+        - first report is a “base” report (which can be the same base report you used for drill up/down).
+        - second report is a slice of the base report
+        - third report is a dice of the base report. 
+
+    o Pivot: Demonstrate with two reports, one which is a pivot of the other.
+*/
+    
+/*
 1a. Detail + Date
 How many infected by Epidemic by Year
 */
@@ -54,7 +73,7 @@ FROM
 GROUP BY 
     CityCountry, InfectionEventDate.Year
 ORDER BY
-    InfectionEventDate.Year;
+    InfectionEventDate.Year, CityCountry;
 
 
 /*
