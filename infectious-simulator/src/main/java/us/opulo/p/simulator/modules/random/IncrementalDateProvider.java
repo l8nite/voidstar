@@ -8,7 +8,7 @@ import javax.inject.Provider;
 import javax.inject.Singleton;
 
 /**
- * A provider configured to pick a random date +/- 10 years and then add one hour to subsequent invocations.
+ * A provider configured to pick a random date +/- 10 years and then advance a random number of hours on subsequent invocations.
  * Ponder: Do zombies obey daylight savings time?
  * @author Jason Campos
  */
@@ -29,7 +29,8 @@ public class IncrementalDateProvider implements Provider<Date> {
 	
 	@Override
 	public synchronized Date get() {
-		calendar.add(Calendar.HOUR, 1);
+		// add a random number of hours (at least 1, up to 1440 (60 days))
+		calendar.add(Calendar.HOUR, random.nextInt(1440) + 1);
 		return calendar.getTime();
 	}
 
