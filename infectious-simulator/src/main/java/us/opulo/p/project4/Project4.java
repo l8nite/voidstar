@@ -32,12 +32,15 @@ public class Project4 {
 
 		// 1a. Detail + Date
 		// How many infected by Epidemic by Year
+		// SELECT InfectionEventDetail.Epidemic, InfectionEventDate.Year, SUM(InfectionEvent.Infected) FROM InfectionEvent INNER JOIN InfectionEventDetail ON InfectionEvent.InfectionEventDetailID = InfectionEventDetail.ID INNER JOIN InfectionEventDate ON InfectionEvent.InfectionEventDateID = InfectionEventDate.ID GROUP BY InfectionEventDetail.Epidemic, InfectionEventDate.Year ORDER BY InfectionEventDate.Year;
 		
 		// 1b. City + Detail
 		// How many infected in City by Vector
+		// SELECT CONCAT(City.Name, CONCAT(", ", Country.Name)) as CityCountry, InfectionEventDetail.Vector, SUM(InfectionEvent.Infected) FROM InfectionEvent INNER JOIN City ON InfectionEvent.CityID = City.ID INNER JOIN Country ON City.CountryCode = Country.Code INNER JOIN InfectionEventDetail ON InfectionEvent.InfectionEventDetailID = InfectionEventDetail.ID GROUP BY CityCountry, InfectionEventDetail.Vector;
 		
 		// 1c. City + Date
 		// How many infected in City by Year
+		// SELECT CONCAT(City.Name, CONCAT(", ", Country.Name)) as CityCountry, InfectionEventDate.Year, SUM(InfectionEvent.Infected) FROM InfectionEvent INNER JOIN City ON InfectionEvent.CityID = City.ID INNER JOIN Country ON City.CountryCode = Country.Code INNER JOIN InfectionEventDate ON InfectionEvent.InfectionEventDateID = InfectionEventDate.ID GROUP BY CityCountry, InfectionEventDate.Year ORDER BY InfectionEventDate.Year;
 		
 		// Drill up & Down 
 		// Base Report: How many infected by Strain within a single Epidemic by Year
