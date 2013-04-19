@@ -69,17 +69,13 @@ public class ZombieEpidemic {
 	// set epidemic start date to whatever the dateProvider gives us
 	// then generate an identifier for this epidemic
 	// then get the first city to infect, and infect it
-	public void startInfection() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		
+	public void startInfection() {		
 		City genesis = cityProvider.get();
 		Date startDate = dateProvider.get();
 		InfectionEventDetail details =infectionEventDetailProvider.get();
 		
-		log.info("Epidemic " + details.getEpidemic() + " starting on " + sdf.format(startDate));
-		log.info("Choosing city for virulent strain genesis");
-
-		log.info("City chosen: " + genesis.toString() + "\n");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		log.info("Epidemic " + details.getEpidemic() + " starting on " + sdf.format(startDate) + " in " + genesis);
 		
 		infect(genesis, details, startDate);
 	}
@@ -121,9 +117,7 @@ public class ZombieEpidemic {
 	
 			infection.setZombies(infectedAfter);
 	
-			// TODO: random mutation, strain, vector
 			InfectionEvent event = new InfectionEvent(city, details, date);
-			
 			event.setHealthyBefore(healthyBefore);
 			event.setHealthyAfter(healthyAfter);
 			event.setInfected(infected);
@@ -176,7 +170,7 @@ public class ZombieEpidemic {
 			Country country = infectedCountry.getKey();
 			Float infectionPercentage = infectedCountry.getValue();
 		
-			log.info(String.format("%3.2f%% - %s (%s)", infectionPercentage, country));
+			log.info(String.format("%3.2f%% - %s", infectionPercentage, country));
 			
 			if(--countriesToDisplay == 0) {
 				break;
