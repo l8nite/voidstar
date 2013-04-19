@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
@@ -49,7 +50,7 @@ public class ZombieEpidemic {
 	
 	private int infectedWorldPopulation = 0;
 	private Set<City> infectedCities = new HashSet<>();
-	
+
 	@Inject
 	public ZombieEpidemic (Provider<City> cityProvider,  
 			Provider<Date> dateProvider, 
@@ -72,7 +73,7 @@ public class ZombieEpidemic {
 	public void startInfection() {		
 		City genesis = cityProvider.get();
 		Date startDate = dateProvider.get();
-		InfectionEventDetail details =infectionEventDetailProvider.get();
+		InfectionEventDetail details = infectionEventDetailProvider.get();
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		log.info("Epidemic " + details.getEpidemic() + " starting on " + sdf.format(startDate) + " in " + genesis);
@@ -85,7 +86,7 @@ public class ZombieEpidemic {
 	}
 
 	// infects the given city, generates infection event
-	private void infect(City city, InfectionEventDetail details, Date date) {
+	private void infect(City city, InfectionEventDetail detail, Date date) {
 		Session session = SessionManager.get();
 		Transaction tx = null;
 		try {
@@ -117,7 +118,7 @@ public class ZombieEpidemic {
 	
 			infection.setZombies(infectedAfter);
 	
-			InfectionEvent event = new InfectionEvent(city, details, date);
+			InfectionEvent event = new InfectionEvent(city, detail, date);
 			event.setHealthyBefore(healthyBefore);
 			event.setHealthyAfter(healthyAfter);
 			event.setInfected(infected);
