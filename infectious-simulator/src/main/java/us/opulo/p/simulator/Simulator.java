@@ -22,13 +22,13 @@ public class Simulator {
 		ZombieEpidemic zombieEpidemic = injector.getInstance(ZombieEpidemic.class);
 		zombieEpidemic.startInfection();
 
-//		for (int i = 1; i <= 1000; ++i) {	
-//			zombieEpidemic.spreadInfection();
-//			
-//			if (i % 100 == 0) {
-//				zombieEpidemic.reportInfectionProgress();
-//				Thread.sleep(2000);
-//			}
-//		}
+		for (int i = 1; i <= 1000; ++i) {	
+			zombieEpidemic.spreadInfection();
+			
+			if (i % 100 == 0) {
+				zombieEpidemic.reportInfectionProgress();
+				Thread.sleep(2000);
+			}
+		}
 	}
 }

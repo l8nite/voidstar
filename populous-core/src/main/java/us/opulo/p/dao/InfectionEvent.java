@@ -2,6 +2,7 @@ package us.opulo.p.dao;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -47,13 +48,13 @@ public class InfectionEvent extends HEntity {
 	@XmlTransient
 	private City city;
 	
-	@OneToOne
-	@JoinColumn(name="infectionEventDetailID", insertable = false)
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="infectionEventDetailID")
 	@XmlTransient
 	private InfectionEventDetail eventDetail;
 	
-	@OneToOne
-	@JoinColumn(name="infectionEventDateID", insertable = false)
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="infectionEventDateID")
 	@XmlTransient
 	private InfectionEventDate eventDate;
 	

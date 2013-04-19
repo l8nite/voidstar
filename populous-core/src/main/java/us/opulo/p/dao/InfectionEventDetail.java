@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -42,6 +43,7 @@ public class InfectionEventDetail extends HEntity {
 	private Integer id;
 	
 	@XmlElement(name="InfectionEventID")
+	@Transient
 	private Integer infectionEventID;
 	
 	@XmlElement(name="Mutation")
